@@ -1,0 +1,5 @@
+
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    

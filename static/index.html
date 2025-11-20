@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>InterviewLuck - AI-Powered Interview Prep Resources</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/static/js/tailwind-config.js"></script>
+
+    <link href="/static/css/main.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-sm transition-colors duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex flex-col">
+                    <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-400">InterviewLuck</h1>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Taking the luck out of interviewing</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span
+                        class="hidden sm:inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">
+                        Beta
+                    </span>
+                    <div class="flex items-center gap-2">
+                        <span class="text-sm text-gray-600 dark:text-gray-300">Light</span>
+                        <div class="dark-mode-toggle" id="darkModeToggle">
+                            <div class="dark-mode-toggle-circle"></div>
+                        </div>
+                        <span class="text-sm text-gray-600 dark:text-gray-300">Dark</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Search Section -->
+    <section class="py-12 bg-white dark:bg-gray-800 transition-colors duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gray-50 dark:bg-gray-900 rounded-lg shadow-lg p-8 transition-colors duration-200">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                    Find Your Interview Resources
+                </h3>
+                <form class="space-y-4" id="searchForm">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="relative">
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                                for="jobTitle">
+                                Job Title *
+                            </label>
+                            <input autocomplete="off"
+                                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                                id="jobTitle" name="jobTitle" placeholder="e.g., Software Engineer" required=""
+                                type="text" />
+                            <div class="absolute z-10 w-full mt-1 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg hidden max-h-60 overflow-y-auto"
+                                id="jobTitleDropdown">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                                for="companyName">
+                                Company Name *
+                            </label>
+                            <input
+                                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                                id="companyName" name="companyName" placeholder="e.g., Google" required=""
+                                type="text" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                                for="zipCode">
+                                Zip Code *
+                            </label>
+                            <input
+                                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                                id="zipCode" name="zipCode" pattern="[0-9]{5}" placeholder="e.g., 10001" required=""
+                                type="text" />
+                        </div>
+                    </div>
+                    <div class="flex justify-end mt-6">
+                        <button
+                            class="px-8 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200 shadow-md"
+                            type="submit">
+                            Find Resources
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 hidden" id="viewToggleContainer">
+        <div class="flex justify-end">
+            <button id="viewToggle" 
+                    class="px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 text-sm font-medium hidden">
+                Switch to Detailed View
+            </button>
+        </div>
+    </div>
+    <!-- Results Section -->
+    <section id="resultsSection" class="py-12 bg-gray-50 dark:bg-gray-900 transition-colors duration-200 hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Loading State -->
+            <div id="loadingState" class="text-center">
+                <!-- Spinner -->
+                <div class="flex justify-center mb-6">
+                    <div class="spinner"></div>
+                </div>
+                
+                <!-- Loading Text -->
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2" id="loadingText">
+                    Starting search...
+                </h3>
+                
+                <!-- Progress Indicator -->
+                <p class="text-gray-600 dark:text-gray-400 mb-4" id="progressIndicator">
+                    0/4 complete
+                </p>
+                
+                <!-- Completed Items List -->
+                <div class="max-w-md mx-auto space-y-2" id="completedItems">
+                    <div class="flex items-center justify-between p-3 bg-white dark:bg-gray-800 rounded-lg" id="status-company-info">
+                        <span class="text-gray-700 dark:text-gray-300">Company Information</span>
+                        <span class="loading-dot"></span>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-white dark:bg-gray-800 rounded-lg" id="status-salary">
+                        <span class="text-gray-700 dark:text-gray-300">Salary & Benefits</span>
+                        <span class="loading-dot"></span>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-white dark:bg-gray-800 rounded-lg" id="status-reviews">
+                        <span class="text-gray-700 dark:text-gray-300">Company Reviews</span>
+                        <span class="loading-dot"></span>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-white dark:bg-gray-800 rounded-lg" id="status-interview">
+                        <span class="text-gray-700 dark:text-gray-300">Interview Preparation</span>
+                        <span class="loading-dot"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Results Container (hidden initially, will show after loading) -->
+            <div id="resultsContainer" class="hidden">
+                <!-- Results cards will go here -->
+            </div>
+            
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer
+        class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-8 transition-colors duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-gray-600 dark:text-gray-400">
+                © 2025 InterviewLuck.io - Ace your next interview with confidence
+            </p>
+        </div>
+    </footer>
+
+
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/tailwind-config.js"></script>
+</body>
+
+</html>

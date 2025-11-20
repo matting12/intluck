@@ -1,0 +1,37 @@
+
+<template id="search-form-template">
+<section class="py-12 bg-white dark:bg-gray-800 transition-colors duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gray-50 dark:bg-gray-900 rounded-lg shadow-lg p-8">
+            <h3 class="text-2xl font-bold mb-6">Find Your Interview Resources</h3>
+
+            <form id="searchForm" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+                    <div class="relative">
+                        <label class="form-label">Job Title *</label>
+                        <input id="jobTitle" autocomplete="off" required class="form-input">
+                        <div id="jobTitleDropdown" class="dropdown hidden"></div>
+                    </div>
+
+                    <div>
+                        <label class="form-label">Company Name *</label>
+                        <input id="companyName" required class="form-input">
+                    </div>
+
+                    <div>
+                        <label class="form-label">Zip Code *</label>
+                        <input id="zipCode" required pattern="[0-9]{5}" class="form-input">
+                    </div>
+
+                </div>
+
+                <div class="flex justify-end mt-6">
+                    <button type="submit" class="btn-primary">Find Resources</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</section>
+</template>

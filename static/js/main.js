@@ -109,8 +109,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========== API CALLS ==========
     async function fetchAllResults(jobTitle, company, zipCode) {
         // TODO: Move API keys to backend/env vars - NEVER expose in production
-        const BRAVE_API_KEY = 'BSApFpZ7xVDKfVzChxSgGk4s8TN2LwJ';
-        const OPENAI_API_KEY = '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';
         
         const baseParams = {
             company: company,

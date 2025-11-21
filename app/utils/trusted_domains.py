@@ -173,6 +173,8 @@ URL_BLACKLIST_PATTERNS = [
 TITLE_BLACKLIST_PATTERNS = [
     'layoff',
     'layoffs',
+    'lay off',
+    'lay offs',
     'downsizing',
     'job cuts',
     'workforce reduction'

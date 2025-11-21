@@ -108,13 +108,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ========== API CALLS ==========
     async function fetchAllResults(jobTitle, company, zipCode) {
-        // TODO: Move API keys to backend/env vars - NEVER expose in production
-        
+       
         const baseParams = {
             company: company,
-            job_title: jobTitle,
-            brave_api_key: BRAVE_API_KEY,
-            openai_api_key: OPENAI_API_KEY
+            job_title: jobTitle
         };
         
         // Track progress
@@ -160,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     return data; 
                 }),
             
-            fetch(`/api/company-reviews?${new URLSearchParams({ company, brave_api_key: BRAVE_API_KEY, openai_api_key: OPENAI_API_KEY })}`)
+            fetch(`/api/company-reviews?${new URLSearchParams({ company })}`)
                 .then(r => {
                     if (!r.ok) throw new Error(`Company Reviews failed: ${r.status}`);
                     return r.json();
@@ -259,12 +256,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     ${displayLinks.map(link => renderLink(link, viewMode)).join('')}
                 </div>
                 
-                <!-- Read More Button -->
-                <div class="text-center mt-6">
-                    <button class="px-6 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 text-sm font-medium">
-                        Read More (Coming Soon)
-                    </button>
-                </div>
             </div>
         `;
     }

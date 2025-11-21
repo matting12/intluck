@@ -24,6 +24,7 @@ SEVEN_DAYS = 604800
 
 def _make_key(prefix: str, params: dict) -> str:
     """Generate cache key from prefix and params"""
+    print(params)
     param_str = json.dumps(params, sort_keys=True)
     hash_str = hashlib.md5(param_str.encode()).hexdigest()[:12]
     return f"{prefix}:{hash_str}"

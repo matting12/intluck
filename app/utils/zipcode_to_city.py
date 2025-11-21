@@ -19,10 +19,8 @@ async def zipcode_to_city(zipcode: str) -> str:
                 state = place['state abbreviation']
                 return f"{city}, {state}"
             else:
-                logger.warning(f"Zipcode lookup failed for {zipcode}")
                 return zipcode
                 
     except Exception as e:
-        logger.error(f"Zipcode conversion error: {e}")
         return zipcode  # Fallback to original input
     

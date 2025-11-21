@@ -15,6 +15,11 @@ from app.utils.zipcode_to_city import zipcode_to_city
 from app.utils.trusted_domains import filter_to_trusted_domains, filter_blacklisted, deduplicate_by_domain
 from app.utils import *
 
+import os
+
+BRAVE_API_KEY = os.getenv("BRAVE_API_KEY")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
 
 
 router = APIRouter()
@@ -24,7 +29,7 @@ logger = logging.getLogger(__name__)
 async def select_best_links_with_gpt(
     company: str,
     all_links: list[dict],
-    openai_api_key: str,
+    OPENAI_API_KEY: str,
     max_links: int = 5
 ) -> list[dict]:
     """
@@ -72,7 +77,7 @@ Return a JSON array with exactly {max_links} objects:
             response = await client.post(
                 "https://api.openai.com/v1/chat/completions",
                 headers={
-                    "Authorization": f"Bearer {openai_api_key}",
+                    "Authorization": f"Bearer {OPENAI_API_KEY}",
                     "Content-Type": "application/json"
                 },
                 json={
@@ -122,7 +127,7 @@ async def select_salary_links_with_gpt(
     company: str,
     job_title: str,
     all_links: list[dict],
-    openai_api_key: str,
+    OPENAI_API_KEY: str,
     max_links: int = 5
 ) -> list[dict]:
     """
@@ -167,7 +172,7 @@ Return a JSON array with exactly {max_links} objects:
             response = await client.post(
                 "https://api.openai.com/v1/chat/completions",
                 headers={
-                    "Authorization": f"Bearer {openai_api_key}",
+                    "Authorization": f"Bearer {OPENAI_API_KEY}",
                     "Content-Type": "application/json"
                 },
                 json={
@@ -215,7 +220,7 @@ Return a JSON array with exactly {max_links} objects:
 async def select_review_links_with_gpt(
     company: str,
     all_links: list[dict],
-    openai_api_key: str,
+    OPENAI_API_KEY: str,
     max_links: int = 6
 ) -> list[dict]:
     """
@@ -230,7 +235,7 @@ async def select_review_links_with_gpt(
 Select {max_links} links - EXACTLY 2 FROM EACH CATEGORY:
 
 **Company News & Updates (2 links):**
-- Recent news, layoffs, restructuring, earnings reports
+- Recent news & earnings reports
 - Financial performance, growth initiatives
 - Executive changes, mergers, acquisitions
 - Prioritize 2023-2025 content
@@ -279,7 +284,7 @@ Return a JSON array with exactly {max_links} objects (2 per category):
             response = await client.post(
                 "https://api.openai.com/v1/chat/completions",
                 headers={
-                    "Authorization": f"Bearer {openai_api_key}",
+                    "Authorization": f"Bearer {OPENAI_API_KEY}",
                     "Content-Type": "application/json"
                 },
                 json={
@@ -328,7 +333,7 @@ async def select_interview_prep_links_with_gpt(
     company: str,
     job_title: str,
     all_links: list[dict],
-    openai_api_key: str,
+    OPENAI_API_KEY: str,
     max_links: int = 6
 ) -> list[dict]:
     """
@@ -398,7 +403,7 @@ Return a JSON array with 4-6 objects:
             response = await client.post(
                 "https://api.openai.com/v1/chat/completions",
                 headers={
-                    "Authorization": f"Bearer {openai_api_key}",
+                    "Authorization": f"Bearer {OPENAI_API_KEY}",
                     "Content-Type": "application/json"
                 },
                 json={
@@ -488,8 +493,6 @@ def fallback_selection(all_links: list[dict], max_links: int) -> list[dict]:
 @router.get("/company-info", response_model=dict)
 async def get_company_info(
     company: str, 
-    brave_api_key: str,
-    openai_api_key: str,
     max_links: int = 5
 ):
     """
@@ -507,7 +510,7 @@ async def get_company_info(
     logger.info(f"Company info request: company='{company}'")
 
     # PASS 1: Identify domain
-    domain = await identify_company_domain(company, brave_api_key)
+    domain = await identify_company_domain(company, BRAVE_API_KEY)
     if not domain:
         return {
             "domain": None,
@@ -528,7 +531,7 @@ async def get_company_info(
     }
 
     tasks = [
-        brave_search(query, brave_api_key, category)
+        brave_search(query, BRAVE_API_KEY, category)
         for category, query in queries.items()
     ]
 
@@ -563,10 +566,7 @@ async def get_company_info(
     filter_start = time.time()
     
     filtered_links = filter_blacklisted(all_links)
-    logger.info(f"After blacklist filter: {len(filtered_links)} links")
-    
-    deduplicated_links = deduplicate_by_domain(filtered_links, max_per_domain=1)
-    logger.info(f"After domain dedup: {len(deduplicated_links)} links")
+    logger.info(f"After blacklist filter: {len(filtered_links)} links")    
     
     filter_elapsed = time.time() - filter_start
     logger.info(f"Pre-filtering took {filter_elapsed:.2f}s")
@@ -576,8 +576,8 @@ async def get_company_info(
     
     selected_links = await select_best_links_with_gpt(
         company,
-        deduplicated_links,
-        openai_api_key,
+        filtered_links,
+        OPENAI_API_KEY,
         max_links
     )
     
@@ -607,8 +607,6 @@ async def get_salary_benefits(
     company: str,
     job_title: str,
     location: str,
-    brave_api_key: str,
-    openai_api_key: str,
     max_links: int = 5
 ):
     start_time = time.time()
@@ -643,7 +641,7 @@ async def get_salary_benefits(
     }
 
     tasks = [
-        brave_search(query, brave_api_key, category)
+        brave_search(query, BRAVE_API_KEY, category)
         for category, query in queries.items()
     ]
 
@@ -693,7 +691,7 @@ async def get_salary_benefits(
         company,
         job_title,
         deduplicated_links,
-        openai_api_key,
+        OPENAI_API_KEY,
         max_links
     )
     
@@ -722,8 +720,6 @@ async def get_salary_benefits(
 @router.get("/company-reviews", response_model=dict)
 async def get_company_reviews(
     company: str,
-    brave_api_key: str,
-    openai_api_key: str,
     max_links: int = 6
 ):
     """
@@ -733,6 +729,8 @@ async def get_company_reviews(
     
     cache_params = {'company': company.lower().strip()}
     cached_result = get_cached('company_reviews', cache_params)
+    print(f"cache key: {cache_params}")
+    print(f"cache results: {cached_result}")
     if cached_result:
         elapsed = time.time() - start_time
         logger.info(f"Cache hit for company_reviews - returned in {elapsed:.2f}s")
@@ -744,13 +742,13 @@ async def get_company_reviews(
     search_start = time.time()
     
     queries = {
-        "news": f"{company} news layoffs restructuring earnings 2023 2024 2025",
+        "news": f"{company} merges purchases earnings 2024 2025",
         "culture": f"{company} employee reviews culture work-life balance glassdoor comparably blind indeed",
         "career": f"{company} career growth promotion training development glassdoor comparably"
     }
 
     tasks = [
-        brave_search(query, brave_api_key, category)
+        brave_search(query, BRAVE_API_KEY, category)
         for category, query in queries.items()
     ]
 
@@ -799,7 +797,7 @@ async def get_company_reviews(
     selected_links = await select_review_links_with_gpt(
         company,
         deduplicated_links,
-        openai_api_key,
+        OPENAI_API_KEY,
         max_links
     )
     
@@ -827,8 +825,6 @@ async def get_company_reviews(
 async def get_interview_prep(
     company: str,
     job_title: str,
-    brave_api_key: str,
-    openai_api_key: str,
     max_links: int = 6
 ):
     start_time = time.time()
@@ -858,7 +854,7 @@ async def get_interview_prep(
     search_start = time.time()
     
     tasks = [
-        brave_search(query, brave_api_key, f"query_{i}")
+        brave_search(query, BRAVE_API_KEY, f"query_{i}")
         for i, query in enumerate(queries)
     ]
 
@@ -911,7 +907,7 @@ async def get_interview_prep(
         company,
         job_title,
         deduplicated_links,  # CHANGE THIS: Pass deduplicated list
-        openai_api_key,
+        OPENAI_API_KEY,
         max_links
     )
     

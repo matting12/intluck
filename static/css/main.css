@@ -14,8 +14,40 @@ html {
     --clover-mid: #3D8B4F;
 }
 
+/* Fonts */
 body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #F5F5DC; /* Light green background */
+}
+
+h1, h2, h3, h4, h5, h6,
+.text-2xl,
+.text-xl,
+.font-bold,
+nav h1,
+button {
     font-family: 'Cinzel', Georgia, serif;
+}
+
+/* Page background - light mode */
+.bg-gray-50 {
+    background-color: #C8D5C8 !important;
+}
+.bg-white {
+    background-color: #D4DFD4 !important;
+}
+
+/* Dark mode stays unchanged */
+.dark .bg-gray-50 {
+    background-color: #111827 !important;
+}
+
+.dark .bg-white {
+    background-color: #1F2937 !important;
+}
+
+.dark body {
+    background-color: #111827;
 }
 
 .dark-mode-toggle {
@@ -160,3 +192,4 @@ body {
 .dark .text-blue-200 {
     color: #BFDBFE !important;
 }
+

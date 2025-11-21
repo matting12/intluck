@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -9,14 +8,20 @@ html {
     scroll-behavior: smooth;
 }
 
+:root {
+    --clover-dark: #1B5E37;
+    --clover-lime: #9ACD32;
+    --clover-mid: #3D8B4F;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Cinzel', Georgia, serif;
 }
 
 .dark-mode-toggle {
     width: 48px;
     height: 24px;
-    background-color: #D1D5DB;
+    background-color: var(--clover-mid);
     border-radius: 12px;
     position: relative;
     cursor: pointer;
@@ -42,22 +47,26 @@ body {
     transform: translateX(24px);
 }
 
-
-/* Spinner Animation */
+/* Spinner - Light theme green */
 .spinner {
     width: 48px;
     height: 48px;
-    border: 4px solid rgba(59, 130, 246, 0.2);
-    border-top-color: #3B82F6;
+    border: 4px solid rgba(27, 94, 55, 0.2);
+    border-top-color: var(--clover-dark);
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
+}
+
+/* Spinner - Dark theme stays blue */
+.dark .spinner {
+    border-color: rgba(96, 165, 250, 0.2);
+    border-top-color: #60A5FA;
 }
 
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
 
-/* Loading Dot Animation */
 .loading-dot {
     width: 8px;
     height: 8px;
@@ -69,8 +78,12 @@ body {
 .loading-dot.completed {
     width: 20px;
     height: 20px;
-    background-color: #10B981;
+    background-color: var(--clover-mid);
     animation: none;
+}
+
+.dark .loading-dot.completed {
+    background-color: #10B981;
 }
 
 .loading-dot.completed::before {
@@ -88,8 +101,62 @@ body {
     50% { opacity: 1; }
 }
 
-/* Dark mode support for spinner */
-.dark .spinner {
-    border-color: rgba(96, 165, 250, 0.2);
-    border-top-color: #60A5FA;
+/* ===== LIGHT THEME OVERRIDES (green) ===== */
+
+/* Buttons */
+.bg-blue-600 {
+    background-color: var(--clover-dark) !important;
+}
+.hover\:bg-blue-700:hover {
+    background-color: #145029 !important;
+}
+
+/* Text */
+.text-blue-600 {
+    color: var(--clover-dark) !important;
+}
+
+/* Beta badge */
+.bg-blue-100 {
+    background-color: rgba(154, 205, 50, 0.3) !important;
+}
+.text-blue-800 {
+    color: var(--clover-dark) !important;
+}
+
+/* Focus rings */
+.focus\:ring-blue-500:focus {
+    --tw-ring-color: var(--clover-mid) !important;
+}
+
+/* ===== DARK THEME STAYS BLUE (no changes) ===== */
+.dark .bg-blue-600 {
+    background-color: #3B82F6 !important;
+}
+.dark .bg-blue-500 {
+    background-color: #3B82F6 !important;
+}
+.dark .hover\:bg-blue-700:hover {
+    background-color: #2563EB !important;
+}
+.dark .hover\:bg-blue-600:hover {
+    background-color: #2563EB !important;
+}
+.dark .text-blue-600 {
+    color: #3B82F6 !important;
+}
+.dark .text-blue-400 {
+    color: #60A5FA !important;
+}
+.dark .bg-blue-100 {
+    background-color: rgba(59, 130, 246, 0.1) !important;
+}
+.dark .bg-blue-900 {
+    background-color: rgba(30, 58, 138, 0.5) !important;
+}
+.dark .text-blue-800 {
+    color: #1E40AF !important;
+}
+.dark .text-blue-200 {
+    color: #BFDBFE !important;
 }

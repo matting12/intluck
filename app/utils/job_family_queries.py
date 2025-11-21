@@ -26,10 +26,10 @@ def get_interview_prep_queries(company: str, job_title: str, job_family: str) ->
         ],
         
         "Finance & Accounting": [
-            f"{company} quarterly earnings OR 10-K OR 10-Q OR financial results",
-            f"{company} accounting software OR ERP system OR financial platform OR SAP OR Oracle OR NetSuite",
-            f"{company} {job_title} interview experience site:glassdoor.com OR site:indeed.com",
-            f"{company} financial performance OR revenue OR balance sheet OR SEC filings"
+            f'"{company}" quarterly earnings OR 10-K OR 10-Q site:sec.gov',
+            f'"{company}" accounting software OR ERP system OR SAP OR Oracle OR NetSuite',
+            f'"{company}" accountant interview experience site:glassdoor.com',
+            f'"{company}" financial analyst OR accounting careers'
         ],
         
         "Healthcare & Medical": [

@@ -22,7 +22,7 @@ async def brave_search(query: str, api_key: str, category: str = None):
         "X-Subscription-Token": api_key
     }
 
-    params = {"q": query, "count": 5}
+    params = {"q": query, "count": 20}
 
     try:
         async with httpx.AsyncClient() as client:

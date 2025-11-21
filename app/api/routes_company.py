@@ -12,6 +12,9 @@ from app.services.brave_search import brave_search
 from app.models.company_info import CompanyInfoResult
 from app.utils.link_formatting import format_link_for_display
 from app.utils.zipcode_to_city import zipcode_to_city
+from app.utils.trusted_domains import filter_to_trusted_domains, filter_blacklisted, deduplicate_by_domain
+from app.utils import *
+
 
 
 router = APIRouter()
@@ -25,7 +28,7 @@ async def select_best_links_with_gpt(
     max_links: int = 5
 ) -> list[dict]:
     """
-    Use GPT-4o-mini to select the most relevant company information links.
+    Use gpt-3.5-turbo to select the most relevant company information links.
     """
     
     if not all_links:
@@ -73,7 +76,7 @@ Return a JSON array with exactly {max_links} objects:
                     "Content-Type": "application/json"
                 },
                 json={
-                    "model": "gpt-4o-mini",
+                    "model": "gpt-3.5-turbo",
                     "messages": [
                         {
                             "role": "system",
@@ -123,7 +126,7 @@ async def select_salary_links_with_gpt(
     max_links: int = 5
 ) -> list[dict]:
     """
-    Use GPT-4o-mini to select the most relevant salary and benefits links.
+    Use gpt-3.5-turbo to select the most relevant salary and benefits links.
     Customized for compensation data from aggregator sites.
     """
     
@@ -168,7 +171,7 @@ Return a JSON array with exactly {max_links} objects:
                     "Content-Type": "application/json"
                 },
                 json={
-                    "model": "gpt-4o-mini",
+                    "model": "gpt-3.5-turbo",
                     "messages": [
                         {
                             "role": "system",
@@ -216,7 +219,7 @@ async def select_review_links_with_gpt(
     max_links: int = 6
 ) -> list[dict]:
     """
-    Use GPT-4o-mini to select 6 company review links (2 per category).
+    Use gpt-3.5-turbo to select 6 company review links (2 per category).
     """
     
     if not all_links:
@@ -280,7 +283,7 @@ Return a JSON array with exactly {max_links} objects (2 per category):
                     "Content-Type": "application/json"
                 },
                 json={
-                    "model": "gpt-4o-mini",
+                    "model": "gpt-3.5-turbo",
                     "messages": [
                         {
                             "role": "system",
@@ -329,7 +332,7 @@ async def select_interview_prep_links_with_gpt(
     max_links: int = 6
 ) -> list[dict]:
     """
-    Use GPT-4o-mini to select interview prep links with priority order.
+    Use gpt-3.5-turbo to select interview prep links with priority order.
     """
     
     if not all_links:
@@ -399,7 +402,7 @@ Return a JSON array with 4-6 objects:
                     "Content-Type": "application/json"
                 },
                 json={
-                    "model": "gpt-4o-mini",
+                    "model": "gpt-3.5-turbo",
                     "messages": [
                         {
                             "role": "system",
@@ -491,13 +494,16 @@ async def get_company_info(
 ):
     """
     Get curated company information links.
-    
-    Process:
-    1. Identify company domain
-    2. Run 4 parallel searches (about, culture, social, leadership)
-    3. Flatten and deduplicate results
-    4. Use GPT-4o-mini to select the top N most relevant links
     """
+    start_time = time.time()
+    
+    cache_params = {'company': company.lower().strip()}
+    cached_result = get_cached('company_info', cache_params)
+    if cached_result:
+        elapsed = time.time() - start_time
+        logger.info(f"Cache hit for company_info - returned in {elapsed:.2f}s")
+        return cached_result
+
     logger.info(f"Company info request: company='{company}'")
 
     # PASS 1: Identify domain
@@ -512,6 +518,8 @@ async def get_company_info(
     logger.info(f"Identified domain: {domain}")
 
     # PASS 2: Category queries (run in parallel)
+    search_start = time.time()
+    
     queries = {
         "about": f"site:{domain} about us overview mission",
         "culture": f"site:{domain} culture values careers life",
@@ -525,6 +533,9 @@ async def get_company_info(
     ]
 
     results_list = await asyncio.gather(*tasks, return_exceptions=True)
+    
+    search_elapsed = time.time() - search_start
+    logger.info(f"Brave searches took {search_elapsed:.2f}s")
 
     # PASS 3: Flatten and deduplicate
     seen_urls = set()
@@ -535,7 +546,6 @@ async def get_company_info(
             logger.error(f"Error in category '{category}': {result_data}")
             continue
         
-        # Assuming brave_search returns a list of dicts with url, title, description
         for link in result_data:
             url = link.get("url", "")
             if url and url not in seen_urls:
@@ -547,45 +557,85 @@ async def get_company_info(
                     "source_category": category
                 })
     
-    logger.info(f"Found {len(all_links)} unique links across all categories")
+    logger.info(f"Found {len(all_links)} unique links before filtering")
 
-    # PASS 4: Use GPT to select best links
+    # PASS 4: Pre-filter before GPT
+    filter_start = time.time()
+    
+    filtered_links = filter_blacklisted(all_links)
+    logger.info(f"After blacklist filter: {len(filtered_links)} links")
+    
+    deduplicated_links = deduplicate_by_domain(filtered_links, max_per_domain=1)
+    logger.info(f"After domain dedup: {len(deduplicated_links)} links")
+    
+    filter_elapsed = time.time() - filter_start
+    logger.info(f"Pre-filtering took {filter_elapsed:.2f}s")
+
+    # PASS 5: Use GPT to select best links
+    gpt_start = time.time()
+    
     selected_links = await select_best_links_with_gpt(
         company,
-        all_links,
+        deduplicated_links,
         openai_api_key,
         max_links
     )
+    
+    gpt_elapsed = time.time() - gpt_start
+    logger.info(f"GPT selection took {gpt_elapsed:.2f}s")
 
-    # Format the titles
+    # PASS 6: Format the titles
     formatted_links = [format_link_for_display(link) for link in selected_links]
 
-    return {
+    result = {
         "domain": domain,
         "links": formatted_links,
         "total_found": len(all_links)
-
     }
+
+    set_cached('company_info', cache_params, result, ttl=SEVEN_DAYS)
+    
+    total_elapsed = time.time() - start_time
+    logger.info(f"Total company_info took {total_elapsed:.2f}s (search: {search_elapsed:.2f}s, filter: {filter_elapsed:.2f}s, gpt: {gpt_elapsed:.2f}s)")
+    
+    return result
+
+
 
 @router.get("/salary-benefits", response_model=dict)
 async def get_salary_benefits(
     company: str,
     job_title: str,
-    location: str,  # Can be zipcode or city
+    location: str,
     brave_api_key: str,
     openai_api_key: str,
     max_links: int = 5
 ):
+    start_time = time.time()
+    
+    cache_params = {
+        'company': company.lower().strip(),
+        'job_title': job_title.lower().strip(),
+        'location': location.strip()
+    }
+    cached_result = get_cached('salary_benefits', cache_params)
+    if cached_result:
+        elapsed = time.time() - start_time
+        logger.info(f"Cache hit for salary_benefits - returned in {elapsed:.2f}s")
+        return cached_result
+    
     logger.info(f"Salary/benefits request: company='{company}', job_title='{job_title}', location='{location}'")
-
-    # Convert zipcode to city if it looks like a zipcode
+    
+    # Convert zipcode to city if needed
     if location.isdigit() and len(location) == 5:
         city_state = await zipcode_to_city(location)
-        logger.info(f"Converted zipcode {location} → {city_state}")
+        logger.info(f"Converted zipcode {location} -> {city_state}")
     else:
-        city_state = location  # Already a city name
+        city_state = location
     
-    # PASS 1: Parallel searches using city_state
+    # PASS 1: Parallel searches
+    search_start = time.time()
+    
     queries = {
         "salary": f"{company} {job_title} salary {city_state}",
         "benefits": f"{company} benefits 401k health insurance PTO",
@@ -598,6 +648,9 @@ async def get_salary_benefits(
     ]
 
     results_list = await asyncio.gather(*tasks, return_exceptions=True)
+    
+    search_elapsed = time.time() - search_start
+    logger.info(f"Brave searches took {search_elapsed:.2f}s")
 
     # PASS 2: Flatten and deduplicate
     seen_urls = set()
@@ -619,27 +672,52 @@ async def get_salary_benefits(
                     "source_category": category
                 })
     
-    logger.info(f"Found {len(all_links)} unique links for salary/benefits")
+    logger.info(f"Found {len(all_links)} unique links before filtering")
 
-    # PASS 3: Use GPT to select best links with salary-specific prompt
+    # PASS 3: Pre-filter before GPT
+    filter_start = time.time()
+    
+    filtered_links = filter_blacklisted(all_links)
+    logger.info(f"After blacklist filter: {len(filtered_links)} links")
+    
+    deduplicated_links = deduplicate_by_domain(filtered_links, max_per_domain=1)
+    logger.info(f"After domain dedup: {len(deduplicated_links)} links")
+    
+    filter_elapsed = time.time() - filter_start
+    logger.info(f"Pre-filtering took {filter_elapsed:.2f}s")
+
+    # PASS 4: Use GPT to select best links
+    gpt_start = time.time()
+    
     selected_links = await select_salary_links_with_gpt(
         company,
         job_title,
-        all_links,
+        deduplicated_links,
         openai_api_key,
         max_links
     )
+    
+    gpt_elapsed = time.time() - gpt_start
+    logger.info(f"GPT selection took {gpt_elapsed:.2f}s")
 
-    # PASS 4: Format titles for display
+    # PASS 5: Format titles for display
     formatted_links = [format_link_for_display(link) for link in selected_links]
 
-    return {
+    result = {
         "company": company,
         "job_title": job_title,
         "location": location,
         "links": formatted_links,
         "total_found": len(all_links)
     }
+
+    set_cached('salary_benefits', cache_params, result, ttl=ONE_DAY)
+    
+    total_elapsed = time.time() - start_time
+    logger.info(f"Total salary_benefits took {total_elapsed:.2f}s (search: {search_elapsed:.2f}s, filter: {filter_elapsed:.2f}s, gpt: {gpt_elapsed:.2f}s)")
+    
+    return result
+
 
 @router.get("/company-reviews", response_model=dict)
 async def get_company_reviews(
@@ -650,15 +728,21 @@ async def get_company_reviews(
 ):
     """
     Get company reviews and insights across news, culture, and career development.
-    
-    Process:
-    1. Run 3 parallel searches for news, culture, and career topics
-    2. Flatten and deduplicate results
-    3. Use GPT-4o-mini to select 6 links (2 per category)
     """
+    start_time = time.time()
+    
+    cache_params = {'company': company.lower().strip()}
+    cached_result = get_cached('company_reviews', cache_params)
+    if cached_result:
+        elapsed = time.time() - start_time
+        logger.info(f"Cache hit for company_reviews - returned in {elapsed:.2f}s")
+        return cached_result
+
     logger.info(f"Company reviews request: company='{company}'")
 
-    # PASS 1: Parallel searches across 3 categories
+    # PASS 1: Parallel searches
+    search_start = time.time()
+    
     queries = {
         "news": f"{company} news layoffs restructuring earnings 2023 2024 2025",
         "culture": f"{company} employee reviews culture work-life balance glassdoor comparably blind indeed",
@@ -671,6 +755,9 @@ async def get_company_reviews(
     ]
 
     results_list = await asyncio.gather(*tasks, return_exceptions=True)
+    
+    search_elapsed = time.time() - search_start
+    logger.info(f"Brave searches took {search_elapsed:.2f}s")
 
     # PASS 2: Flatten and deduplicate
     seen_urls = set()
@@ -692,24 +779,49 @@ async def get_company_reviews(
                     "source_category": category
                 })
     
-    logger.info(f"Found {len(all_links)} unique links for company reviews")
+    logger.info(f"Found {len(all_links)} unique links before filtering")
 
-    # PASS 3: Use GPT to select 6 links (2 per category)
+    # PASS 3: Pre-filter before GPT
+    filter_start = time.time()
+    
+    filtered_links = filter_blacklisted(all_links)
+    logger.info(f"After blacklist filter: {len(filtered_links)} links")
+    
+    deduplicated_links = deduplicate_by_domain(filtered_links, max_per_domain=1)
+    logger.info(f"After domain dedup: {len(deduplicated_links)} links")
+    
+    filter_elapsed = time.time() - filter_start
+    logger.info(f"Pre-filtering took {filter_elapsed:.2f}s")
+
+    # PASS 4: Use GPT to select 6 links
+    gpt_start = time.time()
+    
     selected_links = await select_review_links_with_gpt(
         company,
-        all_links,
+        deduplicated_links,
         openai_api_key,
         max_links
     )
+    
+    gpt_elapsed = time.time() - gpt_start
+    logger.info(f"GPT selection took {gpt_elapsed:.2f}s")
 
-    # PASS 4: Format titles for display
+    # PASS 5: Format titles for display
     formatted_links = [format_link_for_display(link) for link in selected_links]
 
-    return {
+    result = {
         "company": company,
         "links": formatted_links,
         "total_found": len(all_links)
     }
+
+    set_cached('company_reviews', cache_params, result, ttl=SEVEN_DAYS)
+    
+    total_elapsed = time.time() - start_time
+    logger.info(f"Total company_reviews took {total_elapsed:.2f}s (search: {search_elapsed:.2f}s, filter: {filter_elapsed:.2f}s, gpt: {gpt_elapsed:.2f}s)")
+    
+    return result
+
 
 @router.get("/interview-prep", response_model=dict)
 async def get_interview_prep(
@@ -719,37 +831,49 @@ async def get_interview_prep(
     openai_api_key: str,
     max_links: int = 6
 ):
-    """
-    Get interview preparation resources for a specific role at a company.
+    start_time = time.time()
     
-    Process:
-    1. Run 3 parallel searches for company-specific, role-generic, and tools/stack
-    2. Flatten and deduplicate results
-    3. Use GPT-4o-mini to select top 6 links with priority order
-    """
+    # Check cache first
+    cache_params = {
+        'company': company.lower().strip(),
+        'job_title': job_title.lower().strip()
+    }
+    
+    cached_result = get_cached('interview_prep', cache_params)
+    if cached_result:
+        elapsed = time.time() - start_time
+        logger.info(f"Cache hit for interview_prep - returned in {elapsed:.2f}s")
+        return cached_result
+    
     logger.info(f"Interview prep request: company='{company}', job_title='{job_title}'")
 
-    # PASS 1: Parallel searches
-    queries = {
-        "company_specific": f"{company} {job_title} interview questions process glassdoor blind",
-        "tech_stack": f"{company} tech stack tools technologies {job_title}",
-        "role_generic": f"{job_title} interview questions technical skills preparation"
-    }
+    # Infer job family
+    job_family = infer_job_family(job_title)
+    logger.info(f"Inferred job family: {job_family}")
 
+    # Get job family-specific queries
+    queries = get_interview_prep_queries(company, job_title, job_family)
+    
+    # PASS 1: Parallel searches
+    search_start = time.time()
+    
     tasks = [
-        brave_search(query, brave_api_key, category)
-        for category, query in queries.items()
+        brave_search(query, brave_api_key, f"query_{i}")
+        for i, query in enumerate(queries)
     ]
 
     results_list = await asyncio.gather(*tasks, return_exceptions=True)
+    
+    search_elapsed = time.time() - search_start
+    logger.info(f"Brave searches took {search_elapsed:.2f}s")
 
     # PASS 2: Flatten and deduplicate
     seen_urls = set()
     all_links = []
     
-    for category, result_data in zip(queries.keys(), results_list):
+    for i, result_data in enumerate(results_list):
         if isinstance(result_data, Exception):
-            logger.error(f"Error in category '{category}': {result_data}")
+            logger.error(f"Error in query {i}: {result_data}")
             continue
         
         for link in result_data:
@@ -760,31 +884,56 @@ async def get_interview_prep(
                     "url": url,
                     "title": link.get("title", ""),
                     "description": link.get("description", ""),
-                    "source_category": category
+                    "source_query": i
                 })
     
-    logger.info(f"Found {len(all_links)} unique links for interview prep")
+    logger.info(f"Found {len(all_links)} unique links before filtering")
 
-    # PASS 3: Use GPT to select best links with priority-based selection
+    # PASS 3: Pre-filter before GPT
+    filter_start = time.time()
+    
+    # Remove blacklisted URLs (job postings, layoffs, etc.)
+    filtered_links = filter_blacklisted(all_links)
+    logger.info(f"After blacklist filter: {len(filtered_links)} links")
+    
+    
+    # ADD THIS: Deduplicate by domain - max 1 link per domain
+    deduplicated_links = deduplicate_by_domain(filtered_links, max_per_domain=1)
+    logger.info(f"After domain dedup: {len(deduplicated_links)} links")
+    
+    filter_elapsed = time.time() - filter_start
+    logger.info(f"Pre-filtering took {filter_elapsed:.2f}s")
+
+    # PASS 4: Use GPT to select best links (now with much smaller input)
     gpt_start = time.time()
 
     selected_links = await select_interview_prep_links_with_gpt(
         company,
         job_title,
-        all_links,
+        deduplicated_links,  # CHANGE THIS: Pass deduplicated list
         openai_api_key,
         max_links
     )
+    
     gpt_elapsed = time.time() - gpt_start
     logger.info(f"GPT selection took {gpt_elapsed:.2f}s")
 
-    # PASS 4: Format titles for display
+    # PASS 5: Format titles for display
     formatted_links = [format_link_for_display(link) for link in selected_links]
 
-    return {
+    result = {
         "company": company,
         "job_title": job_title,
+        "job_family": job_family,
         "links": formatted_links,
         "total_found": len(all_links)
     }
+    
+    # Cache for 1 hour
+    set_cached('interview_prep', cache_params, result, ttl=3600)
+    
+    total_elapsed = time.time() - start_time
+    logger.info(f"Total interview_prep took {total_elapsed:.2f}s (search: {search_elapsed:.2f}s, filter: {filter_elapsed:.2f}s, gpt: {gpt_elapsed:.2f}s)")
+
+    return result
 

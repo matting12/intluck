@@ -12,6 +12,7 @@ async def identify_company_domain(company: str, api_key: str) -> str:
         "X-Subscription-Token": api_key
     }
 
+    print(query)
     params = {"q": query, "count": 10}  # Get more results to analyze
 
     try:

@@ -1,6 +1,119 @@
+console.log('main.js loaded');
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
     
+
+    console.log('DOM loaded, setting up event listeners');
+    
+    // Remote checkbox
+    const remoteCheckbox = document.getElementById('remoteRole');
+    const zipCodeInput = document.getElementById('zipCode');
+    
+    console.log('Remote checkbox:', remoteCheckbox);
+    console.log('Zipcode input:', zipCodeInput);
+
+    document.getElementById('remoteRole').addEventListener('change', function() {
+        const zipCodeInput = document.getElementById('zipCode');
+        console.log('hellooooj');
+        
+        if (this.checked) {
+            // Disable and grey out zipcode
+            zipCodeInput.disabled = true;
+            zipCodeInput.value = '';
+            zipCodeInput.required = false;
+            zipCodeInput.classList.add('bg-gray-200', 'dark:bg-gray-600', 'cursor-not-allowed', 'opacity-50');
+        } else {
+            // Re-enable zipcode
+            zipCodeInput.disabled = false;
+            zipCodeInput.required = true;
+            zipCodeInput.classList.remove('bg-gray-200', 'dark:bg-gray-600', 'cursor-not-allowed', 'opacity-50');
+        }
+    });
+
+    // ==========================================
+    // CONTACT FORM FUNCTIONALITY
+    // ==========================================
+    
+    const contactUsBtn = document.getElementById('contactUsBtn');
+    const contactModal = document.getElementById('contactModal');
+    const closeContactModal = document.getElementById('closeContactModal');
+    const cancelContact = document.getElementById('cancelContact');
+    const closeSuccessModal = document.getElementById('closeSuccessModal');
+    const contactForm = document.getElementById('contactForm');
+    
+    // Check if elements exist
+    if (!contactUsBtn || !contactModal) {
+        console.error('Contact form elements not found');
+        return;
+    }
+    
+    // Open contact modal
+    contactUsBtn.addEventListener('click', function() {
+        contactModal.classList.remove('hidden');
+        contactForm.classList.remove('hidden');
+        document.getElementById('contactSuccess').classList.add('hidden');
+    });
+    
+    // Close contact modal (X button)
+    closeContactModal.addEventListener('click', function() {
+        contactModal.classList.add('hidden');
+        resetContactForm();
+    });
+    
+    // Close contact modal (Cancel button)
+    cancelContact.addEventListener('click', function() {
+        contactModal.classList.add('hidden');
+        resetContactForm();
+    });
+    
+    // Close success modal
+    closeSuccessModal.addEventListener('click', function() {
+        contactModal.classList.add('hidden');
+        resetContactForm();
+    });
+    
+    // Close modal when clicking outside
+    contactModal.addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.classList.add('hidden');
+            resetContactForm();
+        }
+    });
+    
+    // Handle form submission
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('contactName').value.trim();
+        const email = document.getElementById('contactEmail').value.trim();
+        const message = document.getElementById('contactMessage').value.trim();
+        
+        // Use mailto link
+        const subject = encodeURIComponent(`InterviewLuck Contact from ${name}`);
+        const body = encodeURIComponent(`From: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+        
+        window.location.href = `mailto:contact@interviewluck.io?subject=${subject}&body=${body}`;
+        
+        showContactSuccess();
+    });
+    
+    function showContactSuccess() {
+        document.getElementById('contactForm').classList.add('hidden');
+        document.getElementById('contactSuccess').classList.remove('hidden');
+    }
+    
+    function resetContactForm() {
+        contactForm.reset();
+        contactForm.classList.remove('hidden');
+        document.getElementById('contactSuccess').classList.add('hidden');
+        
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+        }
+    }
+
     // ========== DARK MODE TOGGLE ==========
     const toggle = document.getElementById('darkModeToggle');
     const htmlElement = document.documentElement;
@@ -113,6 +226,12 @@ document.addEventListener('DOMContentLoaded', function() {
             company: company,
             job_title: jobTitle
         };
+
+        const baseParamsCompanyInfo = {
+            company: company,
+            job_title: jobTitle,
+            location: zipCode
+        }
         
         // Track progress
         let completed = 0;
@@ -137,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Fire all 4 endpoints in parallel
         const [companyInfo, salaryBenefits, companyReviews, interviewPrep] = await Promise.all([
-            fetch(`/api/company-info?${new URLSearchParams(baseParams)}`)
+            fetch(`/api/company-info?${new URLSearchParams(baseParamsCompanyInfo)}`)
                 .then(r => {
                     if (!r.ok) throw new Error(`Company Info failed: ${r.status}`);
                     return r.json();
@@ -189,28 +308,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ========== CARD RENDERING ==========
 
-    function renderResultsCards(results, viewMode) {
+    function renderResultsCards(results, viewMode, companyName) {
         const cards = [
             {
-                title: 'Company Information',
+                title: `${companyName} Overview`,
                 emoji: '📋',
                 color: 'text-blue-600 dark:text-blue-400',
                 links: results.companyInfo.links || []
             },
             {
-                title: 'Salary & Benefits',
+                title: `Total Rewards: Compensation, Benefits, and Perk at ${companyName}`,
                 emoji: '💰',
                 color: 'text-green-600 dark:text-green-400',
                 links: results.salaryBenefits.links || []
             },
             {
-                title: 'Company Reviews',
+                title: `${companyName} 3 C’s: Company, Culture, and Career`,
                 emoji: '💬',
                 color: 'text-purple-600 dark:text-purple-400',
                 links: results.companyReviews.links || []
             },
             {
-                title: 'Interview Preparation',
+                title: `${companyName} Interview Prep`,
                 emoji: '🎯',
                 color: 'text-red-600 dark:text-red-400',
                 links: results.interviewPrep.links || []
@@ -229,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg ${isCompact ? 'p-4' : 'p-6'} transition-colors duration-200">
                     <div class="mb-4">
                         <h3 class="${isCompact ? 'text-lg' : 'text-xl'} font-bold ${color}">
-                            ${emoji} ${title}
+                            ${title}
                         </h3>
                     </div>
                     <p class="text-gray-500 dark:text-gray-400 text-center py-8">
@@ -240,14 +359,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Show first 3 links in compact, all in detailed
-        const displayLinks = isCompact ? links.slice(0, 3) : links;
+        const displayLinks = isCompact ? links.slice(0, 5) : links;
         
         return `
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg ${isCompact ? 'p-4' : 'p-6'} transition-colors duration-200">
                 <!-- Card Header -->
                 <div class="mb-4">
                     <h3 class="${isCompact ? 'text-lg' : 'text-xl'} font-bold ${color}">
-                        ${emoji} ${title}
+                        ${title}
                     </h3>
                 </div>
                 
@@ -367,7 +486,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 // Render cards
-                resultsContainer.innerHTML = renderResultsCards(results, viewMode);
+                resultsContainer.innerHTML = renderResultsCards(results, viewMode, companyName);
                 
                 // Store results globally for view toggle
                 window.currentResults = results;

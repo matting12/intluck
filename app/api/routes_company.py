@@ -11,9 +11,14 @@ from app.services.domain_identifier import identify_company_domain
 from app.services.brave_search import brave_search
 from app.models.company_info import CompanyInfoResult
 from app.utils.link_formatting import format_link_for_display
-from app.utils.zipcode_to_city import zipcode_to_city
 from app.utils.trusted_domains import filter_to_trusted_domains, filter_blacklisted, deduplicate_by_domain
 from app.utils import *
+from app.utils.company_queries import build_company_overview_queries
+from app.utils.company_link_selection import select_top_link_per_category, order_by_priority
+from app.utils.domain_overrides import get_domain_override
+from app.utils.salary_queries import build_salary_benefits_queries
+from app.utils.salary_link_selection import select_top_salary_link_per_category, order_salary_by_priority
+
 
 import os
 
@@ -492,44 +497,59 @@ def fallback_selection(all_links: list[dict], max_links: int) -> list[dict]:
 
 @router.get("/company-info", response_model=dict)
 async def get_company_info(
-    company: str, 
-    max_links: int = 5
+    company: str,
+    job_title: str,
+    location: str,
+    max_links: int = 9,
+    no_cache: bool = False
 ):
     """
     Get curated company information links.
+    Uses category-specific queries restricted to company domain.
     """
     start_time = time.time()
+
+    cache_params = {
+        'company': company.lower().strip(),
+        'job_title': job_title.lower().strip(),
+        'location': location.strip()
+    }
     
-    cache_params = {'company': company.lower().strip()}
-    cached_result = get_cached('company_info', cache_params)
-    if cached_result:
-        elapsed = time.time() - start_time
-        logger.info(f"Cache hit for company_info - returned in {elapsed:.2f}s")
-        return cached_result
+    # Only check cache if no_cache is False
+    if not no_cache:
+        cached_result = get_cached('company_info', cache_params)
+        if cached_result:
+            elapsed = time.time() - start_time
+            logger.info(f"Cache hit for company_info - returned in {elapsed:.2f}s")
+            return cached_result
+    else:
+        logger.info(f"Cache disabled for this request")
 
-    logger.info(f"Company info request: company='{company}'")
+    logger.info(f"Company info request: company='{company}', job_title='{job_title}', location='{location}'")
 
-    # PASS 1: Identify domain
-    domain = await identify_company_domain(company, BRAVE_API_KEY)
-    if not domain:
-        return {
-            "domain": None,
-            "links": [],
-            "error": "Could not identify company domain"
-        }
+    # PASS 1: Identify company domain (with override check)
+    domain_override = get_domain_override(company)
+    
+    if domain_override:
+        domain = domain_override
+        logger.info(f"Using domain override: {domain}")
+    else:
+        domain = await identify_company_domain(company, BRAVE_API_KEY)
+        if not domain:
+            return {
+                "domain": None,
+                "links": [],
+                "error": "Could not identify company domain"
+            }
+        logger.info(f"Identified domain: {domain}")
 
-    logger.info(f"Identified domain: {domain}")
+    # PASS 2: Build category-specific queries
+    queries = build_company_overview_queries(company, domain, job_title, location)
+    logger.info(f"Built {len(queries)} category-specific queries")
 
-    # PASS 2: Category queries (run in parallel)
+    # PASS 3: Execute searches in parallel
     search_start = time.time()
     
-    queries = {
-        "about": f"site:{domain} about us overview mission",
-        "culture": f"site:{domain} culture values careers life",
-        "social": f"{company} linkedin twitter instagram facebook",
-        "executive": f"site:{domain} leadership team CEO executive blog",
-    }
-
     tasks = [
         brave_search(query, BRAVE_API_KEY, category)
         for category, query in queries.items()
@@ -540,75 +560,68 @@ async def get_company_info(
     search_elapsed = time.time() - search_start
     logger.info(f"Brave searches took {search_elapsed:.2f}s")
 
-    # PASS 3: Flatten and deduplicate
-    seen_urls = set()
-    all_links = []
-    
+    # PASS 4: Organize results by category
+    search_results = {}
     for category, result_data in zip(queries.keys(), results_list):
         if isinstance(result_data, Exception):
             logger.error(f"Error in category '{category}': {result_data}")
-            continue
-        
-        for link in result_data:
-            url = link.get("url", "")
-            if url and url not in seen_urls:
-                seen_urls.add(url)
-                all_links.append({
-                    "url": url,
-                    "title": link.get("title", ""),
-                    "description": link.get("description", ""),
-                    "source_category": category
-                })
+            search_results[category] = []
+        else:
+            search_results[category] = result_data
     
-    logger.info(f"Found {len(all_links)} unique links before filtering")
+    logger.info(f"Got results for {len([c for c, r in search_results.items() if r])} categories")
 
-    # PASS 4: Pre-filter before GPT
-    filter_start = time.time()
-    
-    filtered_links = filter_blacklisted(all_links)
-    logger.info(f"After blacklist filter: {len(filtered_links)} links")    
-    
-    filter_elapsed = time.time() - filter_start
-    logger.info(f"Pre-filtering took {filter_elapsed:.2f}s")
+    # PASS 5: Select top link per category (no GPT needed)
+    categorized_links = select_top_link_per_category(search_results)
+    logger.info(f"Selected {len(categorized_links)} links (1 per category)")
 
-    # PASS 5: Use GPT to select best links
-    gpt_start = time.time()
-    
-    selected_links = await select_best_links_with_gpt(
-        company,
-        filtered_links,
-        OPENAI_API_KEY,
-        max_links
-    )
-    
-    gpt_elapsed = time.time() - gpt_start
-    logger.info(f"GPT selection took {gpt_elapsed:.2f}s")
+    # PASS 6: Order by priority
+    ordered_links = order_by_priority(categorized_links)
 
-    # PASS 6: Format the titles
-    formatted_links = [format_link_for_display(link) for link in selected_links]
+    # PASS 6.5: Deduplicate by URL
+    seen_urls = set()
+    deduped_links = []
+
+    for link in ordered_links:
+        url = link.get('url', '')
+        if url and url not in seen_urls:
+            seen_urls.add(url)
+            deduped_links.append(link)
+        else:
+            logger.info(f"Duplicate URL filtered: {url}")
+
+    logger.info(f"After deduplication: {len(deduped_links)} links (removed {len(ordered_links) - len(deduped_links)} duplicates)")
+
+    # PASS 7: Format titles for display
+    formatted_links = [format_link_for_display(link) for link in deduped_links[:max_links]]
 
     result = {
         "domain": domain,
         "links": formatted_links,
-        "total_found": len(all_links)
+        "total_found": len(categorized_links)
     }
 
-    set_cached('company_info', cache_params, result, ttl=SEVEN_DAYS)
+    if not no_cache:
+        set_cached('company_info', cache_params, result, ttl=SEVEN_DAYS)
     
     total_elapsed = time.time() - start_time
-    logger.info(f"Total company_info took {total_elapsed:.2f}s (search: {search_elapsed:.2f}s, filter: {filter_elapsed:.2f}s, gpt: {gpt_elapsed:.2f}s)")
+    logger.info(f"Total company_info took {total_elapsed:.2f}s (search: {search_elapsed:.2f}s)")
     
     return result
-
 
 
 @router.get("/salary-benefits", response_model=dict)
 async def get_salary_benefits(
     company: str,
     job_title: str,
-    location: str,
-    max_links: int = 5
+    location: str = "REMOTE",
+    max_links: int = 5,
+    no_cache: bool = False
 ):
+    """
+    Get salary and benefits information.
+    Uses category-specific queries with fallback strategies.
+    """
     start_time = time.time()
     
     cache_params = {
@@ -616,103 +629,110 @@ async def get_salary_benefits(
         'job_title': job_title.lower().strip(),
         'location': location.strip()
     }
-    cached_result = get_cached('salary_benefits', cache_params)
-    if cached_result:
-        elapsed = time.time() - start_time
-        logger.info(f"Cache hit for salary_benefits - returned in {elapsed:.2f}s")
-        return cached_result
+    
+    if not no_cache:
+        cached_result = get_cached('salary_benefits', cache_params)
+        if cached_result:
+            elapsed = time.time() - start_time
+            logger.info(f"Cache hit for salary_benefits - returned in {elapsed:.2f}s")
+            return cached_result
+    else:
+        logger.info("Cache disabled for this request")
     
     logger.info(f"Salary/benefits request: company='{company}', job_title='{job_title}', location='{location}'")
     
-    # Convert zipcode to city if needed
-    if location.isdigit() and len(location) == 5:
-        city_state = await zipcode_to_city(location)
-        logger.info(f"Converted zipcode {location} -> {city_state}")
-    else:
-        city_state = location
+    # PASS 1: Get company domain (needed for site: searches)
+    domain_override = get_domain_override(company)
     
-    # PASS 1: Parallel searches
+    if domain_override:
+        domain = domain_override
+        logger.info(f"Using domain override: {domain}")
+    else:
+        domain = await identify_company_domain(company, BRAVE_API_KEY)
+        if not domain:
+            domain = f"{company.lower().replace(' ', '')}.com"
+            logger.warning(f"Could not identify domain, using fallback: {domain}")
+    
+    # PASS 2: Handle location conversion
+    if location == "REMOTE" or not location:
+        city_state = "Remote"
+        state = ""
+        logger.info("Remote role - location set to 'Remote'")
+    elif location:
+        # Assume location is already in "City, State" format from frontend
+        city_state = location
+        # Extract state if in "City, ST" format
+        if ',' in location:
+            state = location.split(',')[1].strip()
+        else:
+            state = ""
+        logger.info(f"Using location: {city_state}")
+    
+    # PASS 3: Build category-specific queries
+    queries = build_salary_benefits_queries(company, domain, job_title, city_state, state)
+    logger.info(f"Built {len(queries)} salary/benefits queries")
+    
+    # PASS 4: Execute searches in parallel
     search_start = time.time()
     
-    queries = {
-        "salary": f"{company} {job_title} salary {city_state}",
-        "benefits": f"{company} benefits 401k health insurance PTO",
-        "aggregators": f"{company} {job_title} {city_state} site:levels.fyi OR site:glassdoor.com"
-    }
-
     tasks = [
         brave_search(query, BRAVE_API_KEY, category)
         for category, query in queries.items()
     ]
-
+    
     results_list = await asyncio.gather(*tasks, return_exceptions=True)
     
     search_elapsed = time.time() - search_start
     logger.info(f"Brave searches took {search_elapsed:.2f}s")
-
-    # PASS 2: Flatten and deduplicate
-    seen_urls = set()
-    all_links = []
     
+    # PASS 5: Organize results by category
+    search_results = {}
     for category, result_data in zip(queries.keys(), results_list):
         if isinstance(result_data, Exception):
             logger.error(f"Error in category '{category}': {result_data}")
-            continue
-        
-        for link in result_data:
-            url = link.get("url", "")
-            if url and url not in seen_urls:
-                seen_urls.add(url)
-                all_links.append({
-                    "url": url,
-                    "title": link.get("title", ""),
-                    "description": link.get("description", ""),
-                    "source_category": category
-                })
+            search_results[category] = []
+        else:
+            search_results[category] = result_data
     
-    logger.info(f"Found {len(all_links)} unique links before filtering")
-
-    # PASS 3: Pre-filter before GPT
-    filter_start = time.time()
+    logger.info(f"Got results for {len([c for c, r in search_results.items() if r])} categories")
     
-    filtered_links = filter_blacklisted(all_links)
-    logger.info(f"After blacklist filter: {len(filtered_links)} links")
+    # PASS 6: Select top link per category (no GPT needed)
+    categorized_links = select_top_salary_link_per_category(search_results)
+    logger.info(f"Selected {len(categorized_links)} links (1 per category)")
     
-    deduplicated_links = deduplicate_by_domain(filtered_links, max_per_domain=1)
-    logger.info(f"After domain dedup: {len(deduplicated_links)} links")
+    # PASS 7: Order by priority
+    ordered_links = order_salary_by_priority(categorized_links)
     
-    filter_elapsed = time.time() - filter_start
-    logger.info(f"Pre-filtering took {filter_elapsed:.2f}s")
-
-    # PASS 4: Use GPT to select best links
-    gpt_start = time.time()
+    # PASS 8: Deduplicate by URL
+    seen_urls = set()
+    deduped_links = []
     
-    selected_links = await select_salary_links_with_gpt(
-        company,
-        job_title,
-        deduplicated_links,
-        OPENAI_API_KEY,
-        max_links
-    )
+    for link in ordered_links:
+        url = link.get('url', '')
+        if url and url not in seen_urls:
+            seen_urls.add(url)
+            deduped_links.append(link)
+        else:
+            logger.info(f"Duplicate URL filtered: {url}")
     
-    gpt_elapsed = time.time() - gpt_start
-    logger.info(f"GPT selection took {gpt_elapsed:.2f}s")
-
-    # PASS 5: Format titles for display
-    formatted_links = [format_link_for_display(link) for link in selected_links]
-
+    logger.info(f"After deduplication: {len(deduped_links)} links")
+    
+    # PASS 9: Format titles for display
+    formatted_links = [format_link_for_display(link) for link in deduped_links[:max_links]]
+    
     result = {
         "company": company,
         "job_title": job_title,
         "location": location,
         "links": formatted_links,
-        "total_found": len(all_links)
+        "total_found": len(categorized_links)
     }
-
-    set_cached('salary_benefits', cache_params, result, ttl=ONE_DAY)
+    
+    if not no_cache:
+        set_cached('salary_benefits', cache_params, result, ttl=ONE_DAY)
     
     total_elapsed = time.time() - start_time
-    logger.info(f"Total salary_benefits took {total_elapsed:.2f}s (search: {search_elapsed:.2f}s, filter: {filter_elapsed:.2f}s, gpt: {gpt_elapsed:.2f}s)")
+    logger.info(f"Total salary_benefits took {total_elapsed:.2f}s (search: {search_elapsed:.2f}s)")
     
     return result
 

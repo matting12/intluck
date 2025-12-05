@@ -12,11 +12,112 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="/static/js/tailwind-config.js"></script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, inline script running');
+            
+            // Remote checkbox
+            const remoteCheckbox = document.getElementById('remoteRole');
+            const zipCodeInput = document.getElementById('zipCode');
+            
+            console.log('Remote checkbox found:', remoteCheckbox);
+            console.log('Zipcode input found:', zipCodeInput);
+            
+            if (remoteCheckbox && zipCodeInput) {
+                remoteCheckbox.addEventListener('change', function() {
+                    console.log('Checkbox changed! Checked:', this.checked);
+                    
+                    if (this.checked) {
+                        zipCodeInput.disabled = true;
+                        zipCodeInput.value = '';
+                        zipCodeInput.required = false;
+                        zipCodeInput.classList.add('bg-gray-200', 'dark:bg-gray-600', 'cursor-not-allowed', 'opacity-50');
+                    } else {
+                        zipCodeInput.disabled = false;
+                        zipCodeInput.required = true;
+                        zipCodeInput.classList.remove('bg-gray-200', 'dark:bg-gray-600', 'cursor-not-allowed', 'opacity-50');
+                    }
+                });
+                console.log('Remote checkbox event listener added');
+            }
+            
+            // Contact Us button
+            const contactUsBtn = document.getElementById('contactUsBtn');
+            const contactModal = document.getElementById('contactModal');
+            const contactForm = document.getElementById('contactForm');
+            
+            console.log('Contact button found:', contactUsBtn);
+            console.log('Contact modal found:', contactModal);
+            
+            if (contactUsBtn && contactModal && contactForm) {
+                contactUsBtn.addEventListener('click', function() {
+                    console.log('Contact button clicked!');
+                    contactModal.classList.remove('hidden');
+                    contactForm.classList.remove('hidden');
+                    document.getElementById('contactSuccess').classList.add('hidden');
+                });
+                
+                document.getElementById('closeContactModal').addEventListener('click', function() {
+                    contactModal.classList.add('hidden');
+                });
+                
+                document.getElementById('cancelContact').addEventListener('click', function() {
+                    contactModal.classList.add('hidden');
+                });
+                
+                document.getElementById('closeSuccessModal').addEventListener('click', function() {
+                    contactModal.classList.add('hidden');
+                });
+                
+                contactModal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.add('hidden');
+                    }
+                });
+                
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('contactName').value.trim();
+                    const email = document.getElementById('contactEmail').value.trim();
+                    const message = document.getElementById('contactMessage').value.trim();
+                    
+                    const subject = encodeURIComponent(`InterviewLuck Contact from ${name}`);
+                    const body = encodeURIComponent(`From: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+                    
+                    window.location.href = `mailto:contact@interviewluck.com?subject=${subject}&body=${body}`;
+                    
+                    contactForm.classList.add('hidden');
+                    document.getElementById('contactSuccess').classList.remove('hidden');
+                });
+                
+                console.log('Contact form handlers added');
+            }
+        });
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 
     <link href="/static/css/main.css" rel="stylesheet" />
 </head>
+
+
+<script>
+    console.log('Inline script running');
+    document.getElementById('remoteRole')?.addEventListener('change', function() {
+        alert('Checkbox clicked!');
+        const zip = document.getElementById('zipCode');
+        if (this.checked) {
+            zip.disabled = true;
+            zip.classList.add('opacity-50');
+        } else {
+            zip.disabled = false;
+            zip.classList.remove('opacity-50');
+        }
+    });
+</script>
+
 
 <body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
     <!-- Navigation -->
@@ -85,8 +186,25 @@
                             </label>
                             <input
                                 class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                                id="zipCode" name="zipCode" pattern="[0-9]{5}" placeholder="e.g., 10001" required=""
-                                type="text" />
+                                id="zipCode" 
+                                name="zipCode" 
+                                pattern="[0-9]{5}" 
+                                placeholder="e.g., 10001" 
+                                required="" 
+                                type="text" 
+                            />
+                            
+                            <!-- Remote checkbox -->
+                            <div class="mt-2">
+                                <label class="flex items-center cursor-pointer">
+                                    <input 
+                                        type="checkbox" 
+                                        id="remoteRole" 
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
+                                    >
+                                    <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">This is a remote role</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <div class="flex justify-end mt-6">
@@ -158,14 +276,110 @@
         </div>
     </section>
     <!-- Footer -->
-    <footer
-        class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-8 transition-colors duration-200">
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-8 transition-colors duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="text-center text-gray-600 dark:text-gray-400">
-                © 2025 InterviewLuck.io - Ace your next interview with confidence
-            </p>
+            <div class="flex justify-between items-center">
+                <p class="text-center text-gray-600 dark:text-gray-400">
+                    © 2025 InterviewLuck.io - Taking the luck out of interviewing
+                </p>
+                <button id="contactUsBtn" class="text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium">
+                    Contact Us
+                </button>
+            </div>
         </div>
     </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full p-6 relative">
+            <!-- Close button -->
+            <button id="closeContactModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            
+            <!-- Modal content -->
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Contact Us</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
+                Have feedback or questions? We'd love to hear from you!
+            </p>
+            
+            <form id="contactForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="contactName">
+                        Name
+                    </label>
+                    <input 
+                        type="text" 
+                        id="contactName" 
+                        name="name"
+                        required
+                        class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                        placeholder="Your name"
+                    />
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="contactEmail">
+                        Email *
+                    </label>
+                    <input 
+                        type="email" 
+                        id="contactEmail" 
+                        name="email"
+                        required
+                        class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                        placeholder="your@email.com"
+                    />
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="contactMessage">
+                        Message *
+                    </label>
+                    <textarea 
+                        id="contactMessage" 
+                        name="message"
+                        required
+                        rows="4"
+                        class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"
+                        placeholder="How can we help you?"
+                    ></textarea>
+                </div>
+                
+                <div class="flex gap-3 pt-2">
+                    <button 
+                        type="button" 
+                        id="cancelContact"
+                        class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition"
+                    >
+                        Cancel
+                    </button>
+                    <button 
+                        type="submit" 
+                        class="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold rounded-lg transition"
+                    >
+                        Send Message
+                    </button>
+                </div>
+            </form>
+            
+            <!-- Success message (hidden by default) -->
+            <div id="contactSuccess" class="hidden">
+                <div class="text-center py-8">
+                    <svg class="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Message Sent!</h4>
+                    <p class="text-gray-600 dark:text-gray-400">We'll get back to you soon.</p>
+                    <button id="closeSuccessModal" class="mt-4 text-blue-600 dark:text-blue-400 hover:underline">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script src="/static/js/main.js"></script>

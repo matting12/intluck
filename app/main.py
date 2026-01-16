@@ -61,7 +61,11 @@ async def startup_event():
 
 @app.get("/")
 async def read_root():
-    return FileResponse("static/index.html")
+    response = FileResponse("static/index.html")
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "0"
+    return response
 
 app.include_router(autocomplete_router, prefix="/api/autocomplete")
 app.include_router(company_router, prefix="/api")

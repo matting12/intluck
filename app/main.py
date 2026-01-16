@@ -1,10 +1,11 @@
 from dotenv import load_dotenv
 load_dotenv()
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
+from starlette.middleware.base import BaseHTTPMiddleware
 
 import logging
 
@@ -20,6 +21,19 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 app = FastAPI(title="Job Matching API")
+
+
+# Add cache control middleware for static files
+class NoCacheStaticMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request, call_next):
+        response = await call_next(request)
+        if request.url.path.startswith("/static/"):
+            response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+            response.headers["Pragma"] = "no-cache"
+            response.headers["Expires"] = "0"
+        return response
+
+app.add_middleware(NoCacheStaticMiddleware)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
@@ -38,7 +52,11 @@ async def startup_event():
     logger.info("FastAPI server starting up")
     logger.info("Endpoints:")
     logger.info("  - /api/autocomplete/job-title")
+    logger.info("  - /api/autocomplete/company")
     logger.info("  - /api/company-info")
+    logger.info("  - /api/salary-benefits")
+    logger.info("  - /api/company-reviews")
+    logger.info("  - /api/interview-prep")
     logger.info("=" * 50)
 
 @app.get("/")

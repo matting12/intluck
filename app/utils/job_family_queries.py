@@ -3,159 +3,163 @@ Job family-specific query templates for company-specific interview prep.
 Each family has queries designed to find company tools, processes, and real interview data.
 """
 
+from app.utils.exact_match_companies import format_company_for_search
+
 def get_interview_prep_queries(company: str, job_title: str, job_family: str) -> list[str]:
     """
     Generate 3-4 targeted queries based on job family.
-    Focus on: company tools, business metrics, real interviews, role-specific intel
-    
+    Focus on: company-specific interview experiences, actual interview questions, role insights
+
     Args:
         company: Company name (e.g., "Microsoft", "Burlington")
         job_title: Job title (e.g., "Software Engineer", "Accountant")
         job_family: Job family category (e.g., "Technology & Engineering")
-    
+
     Returns:
         List of 3-4 search query strings optimized for that job family
     """
-    
+    # Format company name with exact matching if needed
+    c = format_company_for_search(company)
+
     query_templates = {
         "Technology & Engineering": [
-            f"{company} tech stack",
-            f"{company} engineering blog OR architecture OR infrastructure",
-            f"{company} {job_title} interview experience site:levels.fyi OR site:glassdoor.com OR site:leetcode.com",
-            f"{company} github OR open source OR developer resources"
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:levels.fyi OR site:leetcode.com',
+            f'{c} {job_title} interview experience site:reddit.com OR site:blind.com',
+            f'{c} engineering blog OR tech stack OR architecture',
+            f'{c} {job_title} "what to expect" OR "interview process"'
         ],
-        
+
         "Finance & Accounting": [
-            f'"{company}" quarterly earnings OR 10-K OR 10-Q site:sec.gov',
-            f'"{company}" accounting software OR ERP system OR SAP OR Oracle OR NetSuite',
-            f'"{company}" accountant interview experience site:glassdoor.com',
-            f'"{company}" financial analyst OR accounting careers'
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:indeed.com',
+            f'{c} {job_title} interview experience site:reddit.com OR site:wallstreetoasis.com',
+            f'{c} finance OR accounting "interview process"',
+            f'{c} {job_title} "what to expect" OR "how to prepare"'
         ],
-        
+
         "Healthcare & Medical": [
-            f"{company} EMR system OR electronic health records OR Epic OR Cerner",
-            f"{company} patient care protocols OR clinical guidelines OR treatment standards",
-            f"{company} {job_title} interview experience site:glassdoor.com OR site:indeed.com",
-            f"{company} hospital ranking OR patient outcomes OR quality metrics OR safety scores"
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:indeed.com',
+            f'{c} {job_title} interview experience site:reddit.com',
+            f'{c} healthcare "interview process" OR "hiring process"',
+            f'{c} {job_title} "what to expect" OR "how to prepare"'
         ],
-        
+
         "Sales & Marketing": [
-            f"{company} CRM system OR Salesforce OR HubSpot OR sales tools",
-            f"{company} marketing stack OR martech OR analytics platform OR Tableau OR Google Analytics",
-            f"{company} {job_title} interview experience site:glassdoor.com OR site:repvue.com OR site:indeed.com",
-            f"{company} go-to-market strategy OR sales process OR customer acquisition"
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:indeed.com',
+            f'{c} {job_title} interview experience site:reddit.com OR site:repvue.com',
+            f'{c} marketing OR sales "interview process" OR "hiring process"',
+            f'{c} {job_title} "what to expect" OR "how to prepare"'
         ],
-        
+
         "Operations & Supply Chain": [
-            f"{company} supply chain management OR logistics platform OR warehouse system",
-            f"{company} inventory management OR fulfillment OR distribution centers",
-            f"{company} {job_title} interview experience site:glassdoor.com OR site:indeed.com",
-            f"{company} operations OR efficiency OR process improvement OR lean"
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:indeed.com',
+            f'{c} {job_title} interview experience site:reddit.com',
+            f'{c} operations "interview process" OR "hiring process"',
+            f'{c} {job_title} "what to expect" OR "how to prepare"'
         ],
-        
+
         "Legal": [
-            f"{company} legal department OR general counsel OR legal team structure",
-            f"{company} practice management software OR legal tech OR case management",
-            f"{company} {job_title} interview experience site:glassdoor.com OR site:vault.com OR site:indeed.com",
-            f"{company} litigation OR regulatory OR compliance issues OR legal news"
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:vault.com',
+            f'{c} {job_title} interview experience site:reddit.com OR site:abovethelaw.com',
+            f'{c} legal "interview process" OR "hiring process"',
+            f'{c} {job_title} "what to expect" OR "how to prepare"'
         ],
-        
+
         "Human Resources": [
-            f"{company} HRIS system OR Workday OR ADP OR BambooHR OR HR platform",
-            f"{company} employee benefits OR compensation philosophy OR total rewards",
-            f"{company} {job_title} interview experience site:glassdoor.com OR site:indeed.com",
-            f"{company} culture OR employee engagement OR DEI initiatives OR workplace"
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:indeed.com',
+            f'{c} {job_title} interview experience site:reddit.com',
+            f'{c} HR "interview process" OR "hiring process"',
+            f'{c} {job_title} "what to expect" OR "how to prepare"'
         ],
-        
+
         "Customer Service & Support": [
-            f"{company} customer support platform OR Zendesk OR Salesforce Service Cloud OR help desk",
-            f"{company} customer satisfaction OR NPS OR support metrics OR service quality",
-            f"{company} {job_title} interview experience site:glassdoor.com OR site:indeed.com",
-            f"{company} support process OR ticket system OR customer experience"
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:indeed.com',
+            f'{c} {job_title} interview experience site:reddit.com',
+            f'{c} customer service "interview process" OR "hiring process"',
+            f'{c} {job_title} "what to expect" OR "how to prepare"'
         ],
-        
+
         "Data & Analytics": [
-            f"{company} data infrastructure OR data warehouse OR cloud platform OR Snowflake OR Databricks",
-            f"{company} analytics tools OR BI platform OR Tableau OR Power BI OR Looker",
-            f"{company} {job_title} interview experience site:glassdoor.com OR site:levels.fyi",
-            f"{company} data science OR machine learning OR AI initiatives OR data strategy"
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:levels.fyi',
+            f'{c} {job_title} interview experience site:reddit.com OR site:blind.com',
+            f'{c} data science OR analytics "interview process"',
+            f'{c} {job_title} "what to expect" OR "how to prepare"'
         ],
-        
+
         "Product Management": [
-            f"{company} product roadmap OR product strategy OR product vision",
-            f"{company} product management tools OR JIRA OR Aha OR ProductBoard OR roadmap",
-            f"{company} {job_title} interview experience site:glassdoor.com OR site:levels.fyi",
-            f"{company} product launches OR feature releases OR product updates"
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:levels.fyi',
+            f'{c} {job_title} interview experience site:reddit.com OR site:blind.com',
+            f'{c} product manager "interview process" OR "hiring process"',
+            f'{c} {job_title} "what to expect" OR "how to prepare"'
         ],
-        
+
         "Design & Creative": [
-            f"{company} design system OR design language OR brand guidelines",
-            f"{company} design tools OR Figma OR Sketch OR Adobe OR creative software",
-            f"{company} {job_title} interview experience site:glassdoor.com OR site:indeed.com",
-            f"{company} design process OR UX research OR design thinking OR creative workflow"
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:indeed.com',
+            f'{c} {job_title} interview experience site:reddit.com',
+            f'{c} design "interview process" OR "portfolio review"',
+            f'{c} {job_title} "what to expect" OR "how to prepare"'
         ],
-        
+
         "Education & Training": [
-            f"{company} curriculum OR teaching methods OR educational approach",
-            f"{company} learning management system OR LMS OR educational technology",
-            f"{company} {job_title} interview experience site:glassdoor.com OR site:indeed.com",
-            f"{company} student outcomes OR academic performance OR accreditation"
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:indeed.com',
+            f'{c} {job_title} interview experience site:reddit.com',
+            f'{c} education "interview process" OR "hiring process"',
+            f'{c} {job_title} "what to expect" OR "how to prepare"'
         ],
-        
+
         "Consulting": [
-            f"{company} consulting methodology OR framework OR approach",
-            f"{company} case study OR client success OR project examples",
-            f"{company} {job_title} interview experience site:glassdoor.com OR site:vault.com OR site:managementconsulted.com",
-            f"{company} practice areas OR industry expertise OR service offerings"
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:vault.com',
+            f'{c} {job_title} interview experience site:reddit.com OR site:managementconsulted.com',
+            f'{c} consulting "case interview" OR "interview process"',
+            f'{c} {job_title} "what to expect" OR "how to prepare"'
         ],
-        
+
         "Retail & Hospitality": [
-            f"{company} point of sale system OR POS OR inventory management",
-            f"{company} customer service OR guest experience OR service standards",
-            f"{company} {job_title} interview experience site:glassdoor.com OR site:indeed.com",
-            f"{company} store operations OR employee training OR retail technology"
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:indeed.com',
+            f'{c} {job_title} interview experience site:reddit.com',
+            f'{c} retail OR hospitality "interview process"',
+            f'{c} {job_title} "what to expect" OR "how to prepare"'
         ],
-        
+
         "Manufacturing & Engineering": [
-            f"{company} manufacturing process OR production system OR quality control",
-            f"{company} equipment OR machinery OR manufacturing technology OR automation",
-            f"{company} {job_title} interview experience site:glassdoor.com OR site:indeed.com",
-            f"{company} safety standards OR lean manufacturing OR continuous improvement"
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:indeed.com',
+            f'{c} {job_title} interview experience site:reddit.com',
+            f'{c} manufacturing "interview process" OR "hiring process"',
+            f'{c} {job_title} "what to expect" OR "how to prepare"'
         ],
-        
+
         "Research & Science": [
-            f"{company} research areas OR laboratories OR scientific focus",
-            f"{company} research tools OR equipment OR laboratory systems",
-            f"{company} {job_title} interview experience site:glassdoor.com OR site:indeed.com",
-            f"{company} publications OR research output OR scientific contributions"
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:indeed.com',
+            f'{c} {job_title} interview experience site:reddit.com',
+            f'{c} research "interview process" OR "hiring process"',
+            f'{c} {job_title} "what to expect" OR "how to prepare"'
         ],
-        
+
         "Real Estate & Property": [
-            f"{company} property management software OR real estate platform",
-            f"{company} portfolio OR properties OR real estate holdings",
-            f"{company} {job_title} interview experience site:glassdoor.com OR site:indeed.com",
-            f"{company} market analysis OR property valuation OR investment strategy"
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:indeed.com',
+            f'{c} {job_title} interview experience site:reddit.com',
+            f'{c} real estate "interview process" OR "hiring process"',
+            f'{c} {job_title} "what to expect" OR "how to prepare"'
         ],
-        
+
         "Media & Entertainment": [
-            f"{company} content management system OR production tools OR media technology",
-            f"{company} content strategy OR programming OR media offerings",
-            f"{company} {job_title} interview experience site:glassdoor.com OR site:indeed.com",
-            f"{company} audience OR viewership OR ratings OR content performance"
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:indeed.com',
+            f'{c} {job_title} interview experience site:reddit.com',
+            f'{c} media "interview process" OR "hiring process"',
+            f'{c} {job_title} "what to expect" OR "how to prepare"'
         ],
-        
+
         "Non-Profit & Government": [
-            f"{company} mission OR programs OR services OR initiatives",
-            f"{company} funding OR grants OR budget OR financial reporting",
-            f"{company} {job_title} interview experience site:glassdoor.com OR site:indeed.com",
-            f"{company} impact OR outcomes OR program effectiveness OR community"
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:indeed.com',
+            f'{c} {job_title} interview experience site:reddit.com',
+            f'{c} government OR nonprofit "interview process"',
+            f'{c} {job_title} "what to expect" OR "how to prepare"'
         ],
-        
+
         "Transportation & Logistics": [
-            f"{company} fleet management OR transportation system OR logistics platform",
-            f"{company} routing OR dispatch OR delivery operations",
-            f"{company} {job_title} interview experience site:glassdoor.com OR site:indeed.com",
-            f"{company} safety OR compliance OR operational efficiency"
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:indeed.com',
+            f'{c} {job_title} interview experience site:reddit.com',
+            f'{c} logistics "interview process" OR "hiring process"',
+            f'{c} {job_title} "what to expect" OR "how to prepare"'
         ]
     }
     
@@ -165,10 +169,10 @@ def get_interview_prep_queries(company: str, job_title: str, job_family: str) ->
     else:
         # Generic fallback for unknown job families
         return [
-            f"{company} {job_title} interview experience site:glassdoor.com OR site:indeed.com",
-            f"{company} tools and platforms for {job_title}",
-            f"{company} {job_title} interview questions",
-            f"{company} work environment OR culture for {job_title}"
+            f'{c} {job_title} interview questions site:glassdoor.com OR site:indeed.com',
+            f'{c} {job_title} interview experience site:reddit.com',
+            f'{c} {job_title} "interview process" OR "hiring process"',
+            f'{c} {job_title} "what to expect" OR "how to prepare"'
         ]
 
 

@@ -15,27 +15,35 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             console.log('DOM loaded, inline script running');
-            
+
             // Remote checkbox
             const remoteCheckbox = document.getElementById('remoteRole');
+            const stateInput = document.getElementById('stateInput');
+            const cityInput = document.getElementById('cityInput');
             const zipCodeInput = document.getElementById('zipCode');
-            
+
             console.log('Remote checkbox found:', remoteCheckbox);
-            console.log('Zipcode input found:', zipCodeInput);
-            
-            if (remoteCheckbox && zipCodeInput) {
+            console.log('Location inputs found:', stateInput, cityInput, zipCodeInput);
+
+            if (remoteCheckbox && stateInput && cityInput && zipCodeInput) {
                 remoteCheckbox.addEventListener('change', function() {
                     console.log('Checkbox changed! Checked:', this.checked);
-                    
+                    const disabledClasses = ['bg-gray-200', 'dark:bg-gray-600', 'cursor-not-allowed', 'opacity-50'];
+
                     if (this.checked) {
-                        zipCodeInput.disabled = true;
-                        zipCodeInput.value = '';
-                        zipCodeInput.required = false;
-                        zipCodeInput.classList.add('bg-gray-200', 'dark:bg-gray-600', 'cursor-not-allowed', 'opacity-50');
+                        // Disable all location fields
+                        [stateInput, cityInput, zipCodeInput].forEach(input => {
+                            input.disabled = true;
+                            input.value = '';
+                            input.required = false;
+                            input.classList.add(...disabledClasses);
+                        });
                     } else {
-                        zipCodeInput.disabled = false;
-                        zipCodeInput.required = true;
-                        zipCodeInput.classList.remove('bg-gray-200', 'dark:bg-gray-600', 'cursor-not-allowed', 'opacity-50');
+                        // Re-enable all location fields
+                        [stateInput, cityInput, zipCodeInput].forEach(input => {
+                            input.disabled = false;
+                            input.classList.remove(...disabledClasses);
+                        });
                     }
                 });
                 console.log('Remote checkbox event listener added');
@@ -103,20 +111,6 @@
 </head>
 
 
-<script>
-    console.log('Inline script running');
-    document.getElementById('remoteRole')?.addEventListener('change', function() {
-        alert('Checkbox clicked!');
-        const zip = document.getElementById('zipCode');
-        if (this.checked) {
-            zip.disabled = true;
-            zip.classList.add('opacity-50');
-        } else {
-            zip.disabled = false;
-            zip.classList.remove('opacity-50');
-        }
-    });
-</script>
 
 
 <body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
@@ -169,40 +163,58 @@
                                 id="jobTitleDropdown">
                             </div>
                         </div>
-                        <div>
+                        <div class="relative">
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                                 for="companyName">
                                 Company Name *
                             </label>
-                            <input
+                            <input autocomplete="off"
                                 class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                                 id="companyName" name="companyName" placeholder="e.g., Google" required=""
                                 type="text" />
+                            <div class="absolute z-10 w-full mt-1 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg hidden max-h-60 overflow-y-auto"
+                                id="companyNameDropdown">
+                            </div>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
-                                for="zipCode">
-                                Zip Code *
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Location *
                             </label>
-                            <input
-                                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                                id="zipCode" 
-                                name="zipCode" 
-                                pattern="[0-9]{5}" 
-                                placeholder="e.g., 10001" 
-                                required="" 
-                                type="text" 
-                            />
-                            
+                            <div class="grid grid-cols-3 gap-2" id="locationFields">
+                                <input
+                                    class="w-full px-3 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm"
+                                    id="stateInput"
+                                    name="state"
+                                    placeholder="State"
+                                    maxlength="2"
+                                    type="text"
+                                />
+                                <input
+                                    class="w-full px-3 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm"
+                                    id="cityInput"
+                                    name="city"
+                                    placeholder="City"
+                                    type="text"
+                                />
+                                <input
+                                    class="w-full px-3 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm"
+                                    id="zipCode"
+                                    name="zipCode"
+                                    pattern="[0-9]{5}"
+                                    placeholder="Zip"
+                                    type="text"
+                                />
+                            </div>
+
                             <!-- Remote checkbox -->
                             <div class="mt-2">
                                 <label class="flex items-center cursor-pointer">
-                                    <input 
-                                        type="checkbox" 
-                                        id="remoteRole" 
+                                    <input
+                                        type="checkbox"
+                                        id="remoteRole"
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
                                     >
-                                    <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">This is a remote role</span>
+                                    <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">Remote only</span>
                                 </label>
                             </div>
                         </div>

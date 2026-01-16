@@ -5,30 +5,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('DOM loaded, setting up event listeners');
     
-    // Remote checkbox
+    // Remote checkbox - handle all location fields
     const remoteCheckbox = document.getElementById('remoteRole');
+    const stateInput = document.getElementById('stateInput');
+    const cityInput = document.getElementById('cityInput');
     const zipCodeInput = document.getElementById('zipCode');
-    
-    console.log('Remote checkbox:', remoteCheckbox);
-    console.log('Zipcode input:', zipCodeInput);
 
-    document.getElementById('remoteRole').addEventListener('change', function() {
-        const zipCodeInput = document.getElementById('zipCode');
-        console.log('hellooooj');
-        
-        if (this.checked) {
-            // Disable and grey out zipcode
-            zipCodeInput.disabled = true;
-            zipCodeInput.value = '';
-            zipCodeInput.required = false;
-            zipCodeInput.classList.add('bg-gray-200', 'dark:bg-gray-600', 'cursor-not-allowed', 'opacity-50');
-        } else {
-            // Re-enable zipcode
-            zipCodeInput.disabled = false;
-            zipCodeInput.required = true;
-            zipCodeInput.classList.remove('bg-gray-200', 'dark:bg-gray-600', 'cursor-not-allowed', 'opacity-50');
-        }
-    });
+    console.log('Remote checkbox:', remoteCheckbox);
+    console.log('Location inputs:', stateInput, cityInput, zipCodeInput);
+
+    if (remoteCheckbox && stateInput && cityInput && zipCodeInput) {
+        remoteCheckbox.addEventListener('change', function() {
+            console.log('Remote checkbox changed:', this.checked);
+            const disabledClasses = ['bg-gray-200', 'dark:bg-gray-600', 'cursor-not-allowed', 'opacity-50'];
+
+            if (this.checked) {
+                // Disable all location fields
+                [stateInput, cityInput, zipCodeInput].forEach(input => {
+                    input.disabled = true;
+                    input.value = '';
+                    input.required = false;
+                    input.classList.add(...disabledClasses);
+                });
+            } else {
+                // Re-enable all location fields
+                [stateInput, cityInput, zipCodeInput].forEach(input => {
+                    input.disabled = false;
+                    input.classList.remove(...disabledClasses);
+                });
+            }
+        });
+    }
 
     // ==========================================
     // CONTACT FORM FUNCTIONALITY
@@ -217,20 +224,97 @@ document.addEventListener('DOMContentLoaded', function() {
             dropdown.classList.add('hidden');
         }
     });
-    
-    
+
+
+    // ========== COMPANY AUTOCOMPLETE ==========
+    const companyNameInput = document.getElementById('companyName');
+    const companyDropdown = document.getElementById('companyNameDropdown');
+
+    if (!companyNameInput || !companyDropdown) {
+        console.error('Company autocomplete elements not found');
+    } else {
+        // Search function with debounce for company
+        const performCompanySearch = debounce(async function(query) {
+            if (query.length < 2) {
+                companyDropdown.classList.add('hidden');
+                return;
+            }
+
+            try {
+                const url = `/api/autocomplete/company?q=${encodeURIComponent(query)}`;
+                const response = await fetch(url);
+                const results = await response.json();
+
+                if (results.length === 0) {
+                    companyDropdown.classList.add('hidden');
+                    return;
+                }
+
+                // Build dropdown HTML
+                companyDropdown.innerHTML = results
+                    .map(company => `
+                        <div class="dropdown-item px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer text-gray-900 dark:text-white">
+                            ${company}
+                        </div>
+                    `)
+                    .join('');
+
+                // Show dropdown
+                companyDropdown.classList.remove('hidden');
+
+                // Add click handlers to items
+                const items = companyDropdown.querySelectorAll('.dropdown-item');
+                items.forEach(item => {
+                    item.addEventListener('click', function() {
+                        const selectedValue = this.textContent.trim();
+                        companyNameInput.value = selectedValue;
+                        companyDropdown.classList.add('hidden');
+                    });
+                });
+
+            } catch (error) {
+                console.error('Company search error:', error);
+                companyDropdown.classList.add('hidden');
+            }
+        }, 300);
+
+        // Input event listener for company
+        companyNameInput.addEventListener('input', function(e) {
+            performCompanySearch(e.target.value);
+        });
+
+        // Click outside to close company dropdown
+        document.addEventListener('click', function(e) {
+            if (!companyNameInput.contains(e.target) && !companyDropdown.contains(e.target)) {
+                companyDropdown.classList.add('hidden');
+            }
+        });
+    }
+
+
     // ========== API CALLS ==========
-    async function fetchAllResults(jobTitle, company, zipCode) {
-       
+    async function fetchAllResults(jobTitle, company, location) {
+
         const baseParams = {
             company: company,
             job_title: jobTitle
         };
 
+        // Build location parameters for API calls
+        let locationParams = {};
+        if (location.type === 'remote') {
+            locationParams = { location: 'REMOTE' };
+        } else {
+            // Pass state, city, and zipcode separately
+            if (location.state) locationParams.state = location.state;
+            if (location.city) locationParams.city = location.city;
+            if (location.zipcode) locationParams.zipcode = location.zipcode;
+        }
+
         const baseParamsCompanyInfo = {
             company: company,
             job_title: jobTitle,
-            location: zipCode
+            ...locationParams
         }
         
         // Track progress
@@ -266,14 +350,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     return data; 
                 }),
             
-            fetch(`/api/salary-benefits?${new URLSearchParams({...baseParams, location: zipCode})}`)
+            fetch(`/api/salary-benefits?${new URLSearchParams({...baseParams, ...locationParams})}`)
                 .then(r => {
                     if (!r.ok) throw new Error(`Salary & Benefits failed: ${r.status}`);
                     return r.json();
                 })
-                .then(data => { 
+                .then(data => {
                     updateProgress('status-salary', 'Salary & Benefits');
-                    return data; 
+                    return data;
                 }),
             
             fetch(`/api/company-reviews?${new URLSearchParams({ company })}`)
@@ -306,10 +390,70 @@ document.addEventListener('DOMContentLoaded', function() {
         return { companyInfo, salaryBenefits, companyReviews, interviewPrep };
     }
 
+    // ========== VIDEO HELPER FUNCTIONS ==========
+
+    function toggleVideo(uniqueId) {
+        const embedContainer = document.getElementById(uniqueId);
+        const arrow = document.getElementById(`${uniqueId}-arrow`);
+
+        if (embedContainer.classList.contains('hidden')) {
+            embedContainer.classList.remove('hidden');
+            arrow.style.transform = 'rotate(180deg)';
+        } else {
+            embedContainer.classList.add('hidden');
+            arrow.style.transform = 'rotate(0deg)';
+        }
+    }
+
+    function extractVideoId(url) {
+        // YouTube patterns
+        if (url.includes('youtube.com/watch?v=')) {
+            const urlParams = new URLSearchParams(new URL(url).search);
+            return urlParams.get('v');
+        } else if (url.includes('youtu.be/')) {
+            return url.split('youtu.be/')[1].split('?')[0];
+        } else if (url.includes('youtube.com/embed/')) {
+            return url.split('youtube.com/embed/')[1].split('?')[0];
+        }
+
+        // Vimeo patterns
+        if (url.includes('vimeo.com/')) {
+            const match = url.match(/vimeo\.com\/(\d+)/);
+            return match ? match[1] : null;
+        }
+
+        return null;
+    }
+
+    function getEmbedUrl(url, videoId) {
+        if (!videoId) return '';
+
+        // YouTube embed
+        if (url.includes('youtube.com') || url.includes('youtu.be')) {
+            return `https://www.youtube.com/embed/${videoId}`;
+        }
+
+        // Vimeo embed
+        if (url.includes('vimeo.com')) {
+            return `https://player.vimeo.com/video/${videoId}`;
+        }
+
+        return '';
+    }
+
+    // Make toggleVideo available globally for onclick handlers
+    window.toggleVideo = toggleVideo;
+
     // ========== CARD RENDERING ==========
 
     function renderResultsCards(results, viewMode, companyName) {
         const cards = [
+            {
+                title: `${companyName} Interview Prep`,
+                emoji: '🎯',
+                color: 'text-red-600 dark:text-red-400',
+                links: results.interviewPrep.links || []
+            },
             {
                 title: `${companyName} Overview`,
                 emoji: '📋',
@@ -323,16 +467,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 links: results.salaryBenefits.links || []
             },
             {
-                title: `${companyName} 3 C’s: Company, Culture, and Career`,
+                title: `${companyName} 3 C's: Company, Culture, and Career`,
                 emoji: '💬',
                 color: 'text-purple-600 dark:text-purple-400',
                 links: results.companyReviews.links || []
-            },
-            {
-                title: `${companyName} Interview Prep`,
-                emoji: '🎯',
-                color: 'text-red-600 dark:text-red-400',
-                links: results.interviewPrep.links || []
             }
         ];
         
@@ -372,20 +510,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 <!-- Links List -->
                 <div class="space-y-3 mb-4">
-                    ${displayLinks.map(link => renderLink(link, viewMode)).join('')}
+                    ${displayLinks.map((link, index) => renderLink(link, viewMode, index)).join('')}
                 </div>
                 
             </div>
         `;
     }
 
-    function renderLink(link, viewMode) {
-        const { url, title, description, category } = link;
+    function renderLink(link, viewMode, linkIndex) {
+        const { url, title, description, category, type } = link;
         const isCompact = viewMode === 'compact';
-        
+
+        // Check if this is a video link
+        if (type === 'video') {
+            console.log('Video link detected:', url);
+            return renderVideoLink(link, viewMode, linkIndex);
+        }
+
+        // Regular link rendering
         return `
-            <a href="${url}" 
-            target="_blank" 
+            <a href="${url}"
+            target="_blank"
             rel="noopener noreferrer"
             class="group block ${isCompact ? 'p-3' : 'p-4'} bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200 border border-gray-200 dark:border-gray-700 relative">
                 <div class="flex items-start justify-between">
@@ -393,7 +538,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h4 class="font-semibold text-gray-900 dark:text-white mb-1 ${isCompact ? 'text-sm' : ''}">
                             ${title || 'Untitled'}
                         </h4>
-                        
+
                         ${isCompact && description ? `
                             <!-- Tooltip for compact view -->
                             <div class="hidden group-hover:block absolute left-0 right-0 top-full mt-2 z-20 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-lg shadow-xl p-3 max-w-md">
@@ -402,13 +547,13 @@ document.addEventListener('DOMContentLoaded', function() {
                                 </p>
                             </div>
                         ` : ''}
-                        
+
                         ${!isCompact && description ? `
                             <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 mb-2">
                                 ${description}
                             </p>
                         ` : ''}
-                        
+
                         ${category ? `
                             <span class="inline-block text-xs px-2 py-1 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">
                                 ${category}
@@ -420,6 +565,68 @@ document.addEventListener('DOMContentLoaded', function() {
                     </svg>
                 </div>
             </a>
+        `;
+    }
+
+    function renderVideoLink(link, viewMode, linkIndex) {
+        const { url, title, description, category } = link;
+        const isCompact = viewMode === 'compact';
+        const videoId = extractVideoId(url);
+        const uniqueId = `video-${linkIndex}-${Date.now()}`;
+
+        return `
+            <div class="${isCompact ? 'p-3' : 'p-4'} bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700">
+                <!-- Video Header (Clickable) -->
+                <div class="cursor-pointer" onclick="toggleVideo('${uniqueId}')">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-start flex-1 pr-4">
+                            <!-- Red YouTube Icon -->
+                            <svg class="w-6 h-6 text-red-600 flex-shrink-0 mr-3 mt-1" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1 ${isCompact ? 'text-sm' : ''}">
+                                    ${title || 'Video'}
+                                </h4>
+
+                                ${!isCompact && description ? `
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 mb-2">
+                                        ${description}
+                                    </p>
+                                ` : ''}
+
+                                ${category ? `
+                                    <span class="inline-block text-xs px-2 py-1 rounded-full bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200">
+                                        ${category}
+                                    </span>
+                                ` : ''}
+                            </div>
+                        </div>
+
+                        <!-- Dropdown Arrow -->
+                        <svg id="${uniqueId}-arrow" class="w-5 h-5 text-gray-400 flex-shrink-0 mt-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Video Embed (Hidden by default) -->
+                <div id="${uniqueId}" class="hidden mt-4">
+                    <div class="relative" style="padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <iframe
+                            class="absolute top-0 left-0 w-full h-full rounded-lg"
+                            src="${getEmbedUrl(url, videoId)}"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <a href="${url}" target="_blank" rel="noopener noreferrer" class="inline-block mt-2 text-sm text-blue-600 dark:text-blue-400 hover:underline">
+                        Watch on YouTube →
+                    </a>
+                </div>
+            </div>
         `;
     }
 
@@ -438,13 +645,29 @@ document.addEventListener('DOMContentLoaded', function() {
     if (searchForm) {
         searchForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
+
             // Extract form values
             const jobTitle = document.getElementById('jobTitle').value;
             const companyName = document.getElementById('companyName').value;
-            const zipCode = document.getElementById('zipCode').value;
-            
-            console.log('%c[INFO] Starting search with params:', 'color: blue', { jobTitle, companyName, zipCode });
+            const isRemote = document.getElementById('remoteRole').checked;
+            const state = document.getElementById('stateInput').value.trim().toUpperCase();
+            const city = document.getElementById('cityInput').value.trim();
+            const zipCode = document.getElementById('zipCode').value.trim();
+
+            // Build location object for API calls
+            let location;
+            if (isRemote) {
+                location = { type: 'remote' };
+            } else {
+                location = {
+                    type: 'location',
+                    state: state,
+                    city: city,
+                    zipcode: zipCode
+                };
+            }
+
+            console.log('%c[INFO] Starting search with params:', 'color: blue', { jobTitle, companyName, location });
             
             // Show results section and loading state
             const resultsSection = document.getElementById('resultsSection');
@@ -472,7 +695,7 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.textContent = 'Searching...';
             
             try {
-                const results = await fetchAllResults(jobTitle, companyName, zipCode);
+                const results = await fetchAllResults(jobTitle, companyName, location);
                 console.log('%c[OK] All results loaded successfully', 'color: green');
                 
                 // Get view mode from localStorage (default to compact)

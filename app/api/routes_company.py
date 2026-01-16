@@ -8,7 +8,7 @@ import logging
 
 
 from app.services.domain_identifier import identify_company_domain
-from app.services.brave_search import brave_search
+from app.services.brave_search import brave_search, brave_search_videos
 from app.models.company_info import CompanyInfoResult
 from app.utils.link_formatting import format_link_for_display
 from app.utils.trusted_domains import filter_to_trusted_domains, filter_blacklisted, deduplicate_by_domain
@@ -499,20 +499,40 @@ def fallback_selection(all_links: list[dict], max_links: int) -> list[dict]:
 async def get_company_info(
     company: str,
     job_title: str,
-    location: str,
+    location: str = None,
+    state: str = None,
+    city: str = None,
+    zipcode: str = None,
     max_links: int = 9,
     no_cache: bool = False
 ):
     """
     Get curated company information links.
     Uses category-specific queries restricted to company domain.
+    Accepts location as either:
+    - location="REMOTE" for remote roles
+    - state, city, zipcode for specific locations
     """
     start_time = time.time()
+
+    # Build location string from parameters
+    if location == "REMOTE":
+        location_str = "Remote"
+    elif city and state:
+        location_str = f"{city}, {state}"
+    elif city:
+        location_str = city
+    elif state:
+        location_str = state
+    elif zipcode:
+        location_str = zipcode
+    else:
+        location_str = "Remote"
 
     cache_params = {
         'company': company.lower().strip(),
         'job_title': job_title.lower().strip(),
-        'location': location.strip()
+        'location': location_str.strip()
     }
     
     # Only check cache if no_cache is False
@@ -525,7 +545,7 @@ async def get_company_info(
     else:
         logger.info(f"Cache disabled for this request")
 
-    logger.info(f"Company info request: company='{company}', job_title='{job_title}', location='{location}'")
+    logger.info(f"Company info request: company='{company}', job_title='{job_title}', location='{location_str}'")
 
     # PASS 1: Identify company domain (with override check)
     domain_override = get_domain_override(company)
@@ -544,31 +564,64 @@ async def get_company_info(
         logger.info(f"Identified domain: {domain}")
 
     # PASS 2: Build category-specific queries
-    queries = build_company_overview_queries(company, domain, job_title, location)
+    queries = build_company_overview_queries(company, domain, job_title, location_str)
     logger.info(f"Built {len(queries)} category-specific queries")
 
-    # PASS 3: Execute searches in parallel
+    # PASS 3: Execute searches in parallel (video + web)
     search_start = time.time()
-    
-    tasks = [
-        brave_search(query, BRAVE_API_KEY, category)
-        for category, query in queries.items()
-    ]
 
+    # Separate video queries from regular queries
+    video_queries = {k: v for k, v in queries.items() if k.startswith('video_')}
+    regular_queries = {k: v for k, v in queries.items() if not k.startswith('video_')}
+
+    # Build tasks for parallel execution
+    tasks = []
+    task_categories = []
+
+    # Add video search tasks
+    for category, query in video_queries.items():
+        tasks.append(brave_search_videos(query, BRAVE_API_KEY, count=3))
+        task_categories.append(category)
+
+    # Add regular search tasks
+    for category, query in regular_queries.items():
+        tasks.append(brave_search(query, BRAVE_API_KEY, category))
+        task_categories.append(category)
+
+    # Execute all searches in parallel
     results_list = await asyncio.gather(*tasks, return_exceptions=True)
-    
+
     search_elapsed = time.time() - search_start
     logger.info(f"Brave searches took {search_elapsed:.2f}s")
 
     # PASS 4: Organize results by category
     search_results = {}
-    for category, result_data in zip(queries.keys(), results_list):
+    for category, result_data in zip(task_categories, results_list):
         if isinstance(result_data, Exception):
             logger.error(f"Error in category '{category}': {result_data}")
             search_results[category] = []
         else:
             search_results[category] = result_data
-    
+
+    # Merge video results into their target categories
+    # video_overview -> about_us (prepend to existing results)
+    if 'video_overview' in search_results and search_results['video_overview']:
+        if 'about_us' not in search_results:
+            search_results['about_us'] = []
+        search_results['about_us'] = search_results['video_overview'] + search_results['about_us']
+        logger.info(f"Merged {len(search_results['video_overview'])} video(s) into about_us category")
+
+    # video_culture -> culture (prepend to existing results)
+    if 'video_culture' in search_results and search_results['video_culture']:
+        if 'culture' not in search_results:
+            search_results['culture'] = []
+        search_results['culture'] = search_results['video_culture'] + search_results['culture']
+        logger.info(f"Merged {len(search_results['video_culture'])} video(s) into culture category")
+
+    # Remove video_ categories from results (they've been merged)
+    search_results.pop('video_overview', None)
+    search_results.pop('video_culture', None)
+
     logger.info(f"Got results for {len([c for c, r in search_results.items() if r])} categories")
 
     # PASS 5: Select top link per category (no GPT needed)
@@ -614,22 +667,48 @@ async def get_company_info(
 async def get_salary_benefits(
     company: str,
     job_title: str,
-    location: str = "REMOTE",
+    location: str = None,
+    state: str = None,
+    city: str = None,
+    zipcode: str = None,
     max_links: int = 5,
     no_cache: bool = False
 ):
     """
     Get salary and benefits information.
     Uses category-specific queries with fallback strategies.
+    Accepts location as either:
+    - location="REMOTE" for remote roles
+    - state, city, zipcode for specific locations
     """
     start_time = time.time()
-    
+
+    # Build location string from parameters
+    if location == "REMOTE":
+        location_str = "Remote"
+        state_abbr = ""
+    elif city and state:
+        location_str = f"{city}, {state}"
+        state_abbr = state
+    elif city:
+        location_str = city
+        state_abbr = ""
+    elif state:
+        location_str = state
+        state_abbr = state
+    elif zipcode:
+        location_str = zipcode
+        state_abbr = ""
+    else:
+        location_str = "Remote"
+        state_abbr = ""
+
     cache_params = {
         'company': company.lower().strip(),
         'job_title': job_title.lower().strip(),
-        'location': location.strip()
+        'location': location_str.strip()
     }
-    
+
     if not no_cache:
         cached_result = get_cached('salary_benefits', cache_params)
         if cached_result:
@@ -638,8 +717,8 @@ async def get_salary_benefits(
             return cached_result
     else:
         logger.info("Cache disabled for this request")
-    
-    logger.info(f"Salary/benefits request: company='{company}', job_title='{job_title}', location='{location}'")
+
+    logger.info(f"Salary/benefits request: company='{company}', job_title='{job_title}', location='{location_str}'")
     
     # PASS 1: Get company domain (needed for site: searches)
     domain_override = get_domain_override(company)
@@ -653,23 +732,12 @@ async def get_salary_benefits(
             domain = f"{company.lower().replace(' ', '')}.com"
             logger.warning(f"Could not identify domain, using fallback: {domain}")
     
-    # PASS 2: Handle location conversion
-    if location == "REMOTE" or not location:
-        city_state = "Remote"
-        state = ""
-        logger.info("Remote role - location set to 'Remote'")
-    elif location:
-        # Assume location is already in "City, State" format from frontend
-        city_state = location
-        # Extract state if in "City, ST" format
-        if ',' in location:
-            state = location.split(',')[1].strip()
-        else:
-            state = ""
-        logger.info(f"Using location: {city_state}")
+    # PASS 2: Location is already processed above
+    city_state = location_str
+    logger.info(f"Using location: {city_state}, state: {state_abbr}")
     
     # PASS 3: Build category-specific queries
-    queries = build_salary_benefits_queries(company, domain, job_title, city_state, state)
+    queries = build_salary_benefits_queries(company, domain, job_title, city_state, state_abbr)
     logger.info(f"Built {len(queries)} salary/benefits queries")
     
     # PASS 4: Execute searches in parallel
@@ -723,7 +791,7 @@ async def get_salary_benefits(
     result = {
         "company": company,
         "job_title": job_title,
-        "location": location,
+        "location": location_str,
         "links": formatted_links,
         "total_found": len(categorized_links)
     }

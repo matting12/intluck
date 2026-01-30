@@ -4,7 +4,8 @@ __all__ = [
     'is_trusted_domain',
     'get_domain_confidence',
     'filter_to_trusted_domains',
-    'extract_domain'
+    'extract_domain',
+    'filter_by_company_name_in_title'
 ]
 
 from urllib.parse import urlparse
@@ -206,17 +207,82 @@ def filter_blacklisted(links: list[dict]) -> list[dict]:
 def deduplicate_by_domain(links: list[dict], max_per_domain: int = 1) -> list[dict]:
     """Keep only top N links per domain, sorted by confidence"""
     from collections import defaultdict
-    
+
     domain_groups = defaultdict(list)
     for link in links:
         domain = link.get('domain') or extract_domain(link.get('url', ''))
         domain_groups[domain].append(link)
-    
+
     result = []
     for domain, domain_links in domain_groups.items():
         domain_links.sort(key=lambda x: x.get('confidence', 0), reverse=True)
         result.extend(domain_links[:max_per_domain])
-    
+
     result.sort(key=lambda x: x.get('confidence', 0), reverse=True)
     return result
+
+
+def _company_name_in_title(title: str, company_name: str) -> bool:
+    """
+    Check if company name appears in the title.
+    Handles multi-word company names by checking the first significant word.
+    """
+    if not title or not company_name:
+        return False
+
+    title_lower = title.lower()
+    company_lower = company_name.lower()
+
+    # Direct match first
+    if company_lower in title_lower:
+        return True
+
+    # For multi-word names, check if the first significant word appears
+    # e.g., "Bell Helicopter" -> check for "bell"
+    company_words = [w for w in company_lower.split() if len(w) > 2]
+    if len(company_words) > 1:
+        return company_words[0] in title_lower
+
+    return False
+
+
+def filter_by_company_name_in_title(links: list[dict], company_name: str) -> list[dict]:
+    """
+    Filter links to only those with company name in title OR from trusted domains.
+
+    Trusted domains (Glassdoor, levels.fyi, etc.) are allowed through even without
+    company name in title, since they often have company info in URL/content instead.
+
+    Args:
+        links: List of link dicts with 'title' and 'url' keys
+        company_name: Company name to match
+
+    Returns:
+        Filtered list of links
+    """
+    if not company_name:
+        return links
+
+    # Trusted domains that get a pass on title matching
+    TRUSTED_PASS_DOMAINS = {
+        'glassdoor.com', 'levels.fyi', 'linkedin.com', 'indeed.com',
+        'payscale.com', 'salary.com', 'comparably.com', 'blind.com',
+        'teamblind.com', 'reddit.com', 'leetcode.com', 'github.com',
+        'vault.com', 'fishbowlapp.com', 'careerbliss.com'
+    }
+
+    def should_include(link):
+        # Always include if company name in title
+        if _company_name_in_title(link.get('title', ''), company_name):
+            return True
+
+        # Also include if from a trusted domain (they likely have relevant content)
+        domain = extract_domain(link.get('url', ''))
+        for trusted in TRUSTED_PASS_DOMAINS:
+            if domain == trusted or domain.endswith('.' + trusted):
+                return True
+
+        return False
+
+    return [link for link in links if should_include(link)]
 

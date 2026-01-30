@@ -11,7 +11,8 @@ from app.services.domain_identifier import identify_company_domain
 from app.services.brave_search import brave_search, brave_search_videos
 from app.models.company_info import CompanyInfoResult
 from app.utils.link_formatting import format_link_for_display
-from app.utils.trusted_domains import filter_to_trusted_domains, filter_blacklisted, deduplicate_by_domain
+from app.utils.trusted_domains import filter_to_trusted_domains, filter_blacklisted, deduplicate_by_domain, filter_by_company_name_in_title
+from app.utils.link_scoring import score_and_filter_links, score_link, DEFAULT_THRESHOLD
 from app.utils import *
 from app.utils.company_queries import build_company_overview_queries
 from app.utils.company_link_selection import select_top_link_per_category, order_by_priority
@@ -625,8 +626,9 @@ async def get_company_info(
     logger.info(f"Got results for {len([c for c, r in search_results.items() if r])} categories")
 
     # PASS 5: Select top link per category (no GPT needed)
-    categorized_links = select_top_link_per_category(search_results)
-    logger.info(f"Selected {len(categorized_links)} links (1 per category)")
+    # Filter to only links with company name in title for higher relevance
+    categorized_links = select_top_link_per_category(search_results, company_name=company)
+    logger.info(f"Selected {len(categorized_links)} links (1 per category, filtered by company name in title)")
 
     # PASS 6: Order by priority
     ordered_links = order_by_priority(categorized_links)
@@ -645,21 +647,33 @@ async def get_company_info(
 
     logger.info(f"After deduplication: {len(deduped_links)} links (removed {len(ordered_links) - len(deduped_links)} duplicates)")
 
-    # PASS 7: Format titles for display
-    formatted_links = [format_link_for_display(link) for link in deduped_links[:max_links]]
+    # PASS 7: Score and filter links by quality threshold
+    filtered_links, all_scored_links = score_and_filter_links(
+        deduped_links,
+        company_name=company,
+        threshold=DEFAULT_THRESHOLD,
+        max_links=max_links
+    )
+    logger.info(f"After scoring: {len(filtered_links)} links above threshold (from {len(deduped_links)})")
+
+    # PASS 8: Format titles for display
+    formatted_links = [format_link_for_display(link) for link in filtered_links]
+    all_formatted_links = [format_link_for_display(link) for link in all_scored_links]
 
     result = {
         "domain": domain,
         "links": formatted_links,
-        "total_found": len(categorized_links)
+        "all_links": all_formatted_links,  # For "more links" modal
+        "total_found": len(categorized_links),
+        "threshold": DEFAULT_THRESHOLD
     }
 
     if not no_cache:
         set_cached('company_info', cache_params, result, ttl=SEVEN_DAYS)
-    
+
     total_elapsed = time.time() - start_time
     logger.info(f"Total company_info took {total_elapsed:.2f}s (search: {search_elapsed:.2f}s)")
-    
+
     return result
 
 
@@ -765,8 +779,9 @@ async def get_salary_benefits(
     logger.info(f"Got results for {len([c for c, r in search_results.items() if r])} categories")
     
     # PASS 6: Select top link per category (no GPT needed)
-    categorized_links = select_top_salary_link_per_category(search_results)
-    logger.info(f"Selected {len(categorized_links)} links (1 per category)")
+    # Filter to only links with company name in title for higher relevance
+    categorized_links = select_top_salary_link_per_category(search_results, company_name=company)
+    logger.info(f"Selected {len(categorized_links)} links (1 per category, filtered by company name in title)")
     
     # PASS 7: Order by priority
     ordered_links = order_salary_by_priority(categorized_links)
@@ -784,21 +799,34 @@ async def get_salary_benefits(
             logger.info(f"Duplicate URL filtered: {url}")
     
     logger.info(f"After deduplication: {len(deduped_links)} links")
-    
-    # PASS 9: Format titles for display
-    formatted_links = [format_link_for_display(link) for link in deduped_links[:max_links]]
-    
+
+    # PASS 9: Score and filter links by quality threshold
+    filtered_links, all_scored_links = score_and_filter_links(
+        deduped_links,
+        company_name=company,
+        category="salary",
+        threshold=DEFAULT_THRESHOLD,
+        max_links=max_links
+    )
+    logger.info(f"After scoring: {len(filtered_links)} links above threshold")
+
+    # PASS 10: Format titles for display
+    formatted_links = [format_link_for_display(link) for link in filtered_links]
+    all_formatted_links = [format_link_for_display(link) for link in all_scored_links]
+
     result = {
         "company": company,
         "job_title": job_title,
         "location": location_str,
         "links": formatted_links,
-        "total_found": len(categorized_links)
+        "all_links": all_formatted_links,
+        "total_found": len(categorized_links),
+        "threshold": DEFAULT_THRESHOLD
     }
-    
+
     if not no_cache:
         set_cached('salary_benefits', cache_params, result, ttl=ONE_DAY)
-    
+
     total_elapsed = time.time() - start_time
     logger.info(f"Total salary_benefits took {total_elapsed:.2f}s (search: {search_elapsed:.2f}s)")
     
@@ -869,19 +897,23 @@ async def get_company_reviews(
 
     # PASS 3: Pre-filter before GPT
     filter_start = time.time()
-    
+
     filtered_links = filter_blacklisted(all_links)
     logger.info(f"After blacklist filter: {len(filtered_links)} links")
-    
-    deduplicated_links = deduplicate_by_domain(filtered_links, max_per_domain=1)
+
+    # Filter to only links with company name in title
+    company_filtered = filter_by_company_name_in_title(filtered_links, company)
+    logger.info(f"After company name filter: {len(company_filtered)} links")
+
+    deduplicated_links = deduplicate_by_domain(company_filtered, max_per_domain=1)
     logger.info(f"After domain dedup: {len(deduplicated_links)} links")
-    
+
     filter_elapsed = time.time() - filter_start
     logger.info(f"Pre-filtering took {filter_elapsed:.2f}s")
 
     # PASS 4: Use GPT to select 6 links
     gpt_start = time.time()
-    
+
     selected_links = await select_review_links_with_gpt(
         company,
         deduplicated_links,
@@ -892,17 +924,38 @@ async def get_company_reviews(
     gpt_elapsed = time.time() - gpt_start
     logger.info(f"GPT selection took {gpt_elapsed:.2f}s")
 
-    # PASS 5: Format titles for display
-    formatted_links = [format_link_for_display(link) for link in selected_links]
+    # PASS 5: Score and filter links by quality threshold
+    filtered_links, all_scored_links = score_and_filter_links(
+        selected_links,
+        company_name=company,
+        category="reviews",
+        threshold=DEFAULT_THRESHOLD,
+        max_links=max_links
+    )
+    logger.info(f"After scoring: {len(filtered_links)} links above threshold")
+
+    # Also score all deduplicated links for "more links" modal
+    _, all_candidates_scored = score_and_filter_links(
+        deduplicated_links,
+        company_name=company,
+        category="reviews",
+        threshold=0  # No threshold for all_links
+    )
+
+    # PASS 6: Format titles for display
+    formatted_links = [format_link_for_display(link) for link in filtered_links]
+    all_formatted_links = [format_link_for_display(link) for link in all_candidates_scored]
 
     result = {
         "company": company,
         "links": formatted_links,
-        "total_found": len(all_links)
+        "all_links": all_formatted_links,
+        "total_found": len(all_links),
+        "threshold": DEFAULT_THRESHOLD
     }
 
     set_cached('company_reviews', cache_params, result, ttl=SEVEN_DAYS)
-    
+
     total_elapsed = time.time() - start_time
     logger.info(f"Total company_reviews took {total_elapsed:.2f}s (search: {search_elapsed:.2f}s, filter: {filter_elapsed:.2f}s, gpt: {gpt_elapsed:.2f}s)")
     
@@ -975,16 +1028,19 @@ async def get_interview_prep(
 
     # PASS 3: Pre-filter before GPT
     filter_start = time.time()
-    
+
     # Remove blacklisted URLs (job postings, layoffs, etc.)
     filtered_links = filter_blacklisted(all_links)
     logger.info(f"After blacklist filter: {len(filtered_links)} links")
-    
-    
-    # ADD THIS: Deduplicate by domain - max 1 link per domain
-    deduplicated_links = deduplicate_by_domain(filtered_links, max_per_domain=1)
+
+    # Filter to only links with company name in title
+    company_filtered = filter_by_company_name_in_title(filtered_links, company)
+    logger.info(f"After company name filter: {len(company_filtered)} links")
+
+    # Deduplicate by domain - max 1 link per domain
+    deduplicated_links = deduplicate_by_domain(company_filtered, max_per_domain=1)
     logger.info(f"After domain dedup: {len(deduplicated_links)} links")
-    
+
     filter_elapsed = time.time() - filter_start
     logger.info(f"Pre-filtering took {filter_elapsed:.2f}s")
 
@@ -994,7 +1050,7 @@ async def get_interview_prep(
     selected_links = await select_interview_prep_links_with_gpt(
         company,
         job_title,
-        deduplicated_links,  # CHANGE THIS: Pass deduplicated list
+        deduplicated_links,
         OPENAI_API_KEY,
         max_links
     )
@@ -1002,20 +1058,41 @@ async def get_interview_prep(
     gpt_elapsed = time.time() - gpt_start
     logger.info(f"GPT selection took {gpt_elapsed:.2f}s")
 
-    # PASS 5: Format titles for display
-    formatted_links = [format_link_for_display(link) for link in selected_links]
+    # PASS 5: Score and filter links by quality threshold
+    filtered_links, all_scored_links = score_and_filter_links(
+        selected_links,
+        company_name=company,
+        category="interview",
+        threshold=DEFAULT_THRESHOLD,
+        max_links=max_links
+    )
+    logger.info(f"After scoring: {len(filtered_links)} links above threshold")
+
+    # Also score all deduplicated links for "more links" modal
+    _, all_candidates_scored = score_and_filter_links(
+        deduplicated_links,
+        company_name=company,
+        category="interview",
+        threshold=0  # No threshold for all_links
+    )
+
+    # PASS 6: Format titles for display
+    formatted_links = [format_link_for_display(link) for link in filtered_links]
+    all_formatted_links = [format_link_for_display(link) for link in all_candidates_scored]
 
     result = {
         "company": company,
         "job_title": job_title,
         "job_family": job_family,
         "links": formatted_links,
-        "total_found": len(all_links)
+        "all_links": all_formatted_links,
+        "total_found": len(all_links),
+        "threshold": DEFAULT_THRESHOLD
     }
-    
+
     # Cache for 1 hour
     set_cached('interview_prep', cache_params, result, ttl=3600)
-    
+
     total_elapsed = time.time() - start_time
     logger.info(f"Total interview_prep took {total_elapsed:.2f}s (search: {search_elapsed:.2f}s, filter: {filter_elapsed:.2f}s, gpt: {gpt_elapsed:.2f}s)")
 

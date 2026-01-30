@@ -452,34 +452,51 @@ document.addEventListener('DOMContentLoaded', function() {
                 title: `${companyName} Interview Prep`,
                 emoji: '🎯',
                 color: 'text-red-600 dark:text-red-400',
-                links: results.interviewPrep.links || []
+                links: results.interviewPrep.links || [],
+                allLinks: results.interviewPrep.all_links || [],
+                cardId: 'interview-prep'
             },
             {
                 title: `${companyName} Overview`,
                 emoji: '📋',
                 color: 'text-blue-600 dark:text-blue-400',
-                links: results.companyInfo.links || []
+                links: results.companyInfo.links || [],
+                allLinks: results.companyInfo.all_links || [],
+                cardId: 'company-info'
             },
             {
                 title: `Total Rewards: Compensation, Benefits, and Perk at ${companyName}`,
                 emoji: '💰',
                 color: 'text-green-600 dark:text-green-400',
-                links: results.salaryBenefits.links || []
+                links: results.salaryBenefits.links || [],
+                allLinks: results.salaryBenefits.all_links || [],
+                cardId: 'salary-benefits'
             },
             {
                 title: `${companyName} 3 C's: Company, Culture, and Career`,
                 emoji: '💬',
                 color: 'text-purple-600 dark:text-purple-400',
-                links: results.companyReviews.links || []
+                links: results.companyReviews.links || [],
+                allLinks: results.companyReviews.all_links || [],
+                cardId: 'company-reviews'
             }
         ];
-        
+
+        // Store all links globally for modal access
+        window.allLinksData = {
+            'interview-prep': results.interviewPrep.all_links || [],
+            'company-info': results.companyInfo.all_links || [],
+            'salary-benefits': results.salaryBenefits.all_links || [],
+            'company-reviews': results.companyReviews.all_links || []
+        };
+
         return cards.map(card => renderCard(card, viewMode)).join('');
     }
 
-    function renderCard({ title, emoji, color, links }, viewMode) {
+    function renderCard({ title, emoji, color, links, allLinks, cardId }, viewMode) {
         const isCompact = viewMode === 'compact';
-        
+        const hasMoreLinks = allLinks && allLinks.length > links.length;
+
         // Handle empty results
         if (!links || links.length === 0) {
             return `
@@ -490,35 +507,51 @@ document.addEventListener('DOMContentLoaded', function() {
                         </h3>
                     </div>
                     <p class="text-gray-500 dark:text-gray-400 text-center py-8">
-                        No results found for this category
+                        No high-quality results found for this category
                     </p>
+                    ${hasMoreLinks ? `
+                        <div class="text-center">
+                            <button onclick="showMoreLinksModal('${cardId}')" class="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+                                View ${allLinks.length} lower-scored results
+                            </button>
+                        </div>
+                    ` : ''}
                 </div>
             `;
         }
-        
-        // Show first 3 links in compact, all in detailed
+
+        // Show first 5 links in compact, all in detailed
         const displayLinks = isCompact ? links.slice(0, 5) : links;
-        
+
         return `
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg ${isCompact ? 'p-4' : 'p-6'} transition-colors duration-200">
                 <!-- Card Header -->
-                <div class="mb-4">
+                <div class="mb-4 flex justify-between items-start">
                     <h3 class="${isCompact ? 'text-lg' : 'text-xl'} font-bold ${color}">
                         ${title}
                     </h3>
+                    <span class="text-xs text-gray-400">${links.length} results</span>
                 </div>
-                
+
                 <!-- Links List -->
                 <div class="space-y-3 mb-4">
                     ${displayLinks.map((link, index) => renderLink(link, viewMode, index)).join('')}
                 </div>
-                
+
+                <!-- More Links Button -->
+                ${hasMoreLinks ? `
+                    <div class="text-center pt-2 border-t border-gray-200 dark:border-gray-700">
+                        <button onclick="showMoreLinksModal('${cardId}')" class="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+                            View all ${allLinks.length} results (including lower-scored)
+                        </button>
+                    </div>
+                ` : ''}
             </div>
         `;
     }
 
     function renderLink(link, viewMode, linkIndex) {
-        const { url, title, description, category, type } = link;
+        const { url, title, description, category, type, score } = link;
         const isCompact = viewMode === 'compact';
 
         // Check if this is a video link
@@ -526,6 +559,14 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Video link detected:', url);
             return renderVideoLink(link, viewMode, linkIndex);
         }
+
+        // Score badge color based on score (60/40/20 tiers)
+        // Highly Relevant (60+) / Relevant (40-59) / Tangential (<40)
+        const getScoreColor = (s) => {
+            if (s >= 60) return 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200';
+            if (s >= 40) return 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200';
+            return 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300';
+        };
 
         // Regular link rendering
         return `
@@ -535,9 +576,16 @@ document.addEventListener('DOMContentLoaded', function() {
             class="group block ${isCompact ? 'p-3' : 'p-4'} bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200 border border-gray-200 dark:border-gray-700 relative">
                 <div class="flex items-start justify-between">
                     <div class="flex-1 pr-4">
-                        <h4 class="font-semibold text-gray-900 dark:text-white mb-1 ${isCompact ? 'text-sm' : ''}">
-                            ${title || 'Untitled'}
-                        </h4>
+                        <div class="flex items-center gap-2 mb-1">
+                            <h4 class="font-semibold text-gray-900 dark:text-white ${isCompact ? 'text-sm' : ''}">
+                                ${title || 'Untitled'}
+                            </h4>
+                            ${score !== undefined ? `
+                                <span class="inline-block text-xs px-1.5 py-0.5 rounded ${getScoreColor(score)} font-mono">
+                                    ${score}
+                                </span>
+                            ` : ''}
+                        </div>
 
                         ${isCompact && description ? `
                             <!-- Tooltip for compact view -->
@@ -748,26 +796,89 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get current view mode
             const currentView = localStorage.getItem('viewMode') || 'compact';
             const newView = currentView === 'compact' ? 'detailed' : 'compact';
-            
+
             // Save to localStorage
             localStorage.setItem('viewMode', newView);
-            
+
             // Update button text
             updateViewToggleButton(newView);
-            
+
             // Re-render cards if results exist
             if (window.currentResults) {
                 const resultsContainer = document.getElementById('resultsContainer');
-                
+
                 // Update container classes
                 if (newView === 'compact') {
                     resultsContainer.className = 'grid grid-cols-1 md:grid-cols-2 gap-6';
                 } else {
                     resultsContainer.className = '';
                 }
-                
+
                 // Re-render
                 resultsContainer.innerHTML = renderResultsCards(window.currentResults, newView);
+            }
+        });
+    }
+
+    // ========== MORE LINKS MODAL ==========
+    window.showMoreLinksModal = function(cardId) {
+        const allLinks = window.allLinksData[cardId] || [];
+        const modal = document.getElementById('moreLinksModal');
+        const content = document.getElementById('moreLinksContent');
+        const title = document.getElementById('moreLinksTitle');
+
+        // Set title based on card
+        const titles = {
+            'interview-prep': 'All Interview Prep Links',
+            'company-info': 'All Company Overview Links',
+            'salary-benefits': 'All Salary & Benefits Links',
+            'company-reviews': 'All Company Reviews Links'
+        };
+        title.textContent = titles[cardId] || 'All Links';
+
+        // Score badge color (60/40/20 tiers)
+        const getScoreColor = (s) => {
+            if (s >= 60) return 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200';
+            if (s >= 40) return 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200';
+            return 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300';
+        };
+
+        // Render all links
+        content.innerHTML = allLinks.map(link => `
+            <a href="${link.url}" target="_blank" rel="noopener noreferrer"
+               class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors border border-gray-200 dark:border-gray-600">
+                <div class="flex-1 pr-4">
+                    <div class="font-medium text-gray-900 dark:text-white text-sm truncate">
+                        ${link.title || 'Untitled'}
+                    </div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400 truncate mt-1">
+                        ${new URL(link.url).hostname}
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs px-2 py-1 rounded font-mono ${getScoreColor(link.score || 0)}">
+                        ${link.score || 0}
+                    </span>
+                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                </div>
+            </a>
+        `).join('');
+
+        modal.classList.remove('hidden');
+    };
+
+    window.closeMoreLinksModal = function() {
+        document.getElementById('moreLinksModal').classList.add('hidden');
+    };
+
+    // Close modal on outside click
+    const moreLinksModal = document.getElementById('moreLinksModal');
+    if (moreLinksModal) {
+        moreLinksModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.add('hidden');
             }
         });
     }

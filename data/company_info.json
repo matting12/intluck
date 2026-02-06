@@ -1,0 +1,2916 @@
+{
+  "IBM": {
+    "full_name": "International Business Machines Corporation",
+    "description": "Technology and consulting - cloud, AI, enterprise software",
+    "also_known_as": ["International Business Machines", "Big Blue"],
+    "related": ["Microsoft", "Oracle", "Accenture"]
+  },
+  "PwC": {
+    "full_name": "PricewaterhouseCoopers",
+    "description": "Big Four accounting and consulting firm",
+    "related": ["Deloitte", "EY", "KPMG"]
+  },
+  "EY": {
+    "full_name": "Ernst & Young",
+    "description": "Big Four accounting and consulting firm",
+    "related": ["Deloitte", "PwC", "KPMG"]
+  },
+  "KPMG": {
+    "full_name": "Klynveld Peat Marwick Goerdeler",
+    "description": "Big Four accounting and consulting firm",
+    "related": ["Deloitte", "PwC", "EY"]
+  },
+  "Deloitte": {
+    "full_name": "Deloitte Touche Tohmatsu Limited",
+    "description": "Big Four accounting and consulting firm",
+    "related": ["PwC", "EY", "KPMG"]
+  },
+  "AMD": {
+    "full_name": "Advanced Micro Devices",
+    "description": "Semiconductor - CPUs, GPUs, data center chips",
+    "related": ["Intel", "NVIDIA", "Qualcomm"]
+  },
+  "Intel": {
+    "full_name": "Intel Corporation",
+    "description": "Semiconductor - CPUs, data center, foundry",
+    "related": ["AMD", "NVIDIA", "Qualcomm"]
+  },
+  "NVIDIA": {
+    "full_name": "NVIDIA Corporation",
+    "description": "GPU and AI computing - gaming, data center, automotive",
+    "related": ["AMD", "Intel", "Qualcomm"]
+  },
+  "Qualcomm": {
+    "full_name": "Qualcomm Incorporated",
+    "description": "Semiconductor - mobile chips, 5G, wireless technology",
+    "related": ["AMD", "Intel", "NVIDIA", "Broadcom"]
+  },
+  "Broadcom": {
+    "full_name": "Broadcom Inc.",
+    "description": "Semiconductor - networking, storage, wireless",
+    "related": ["Qualcomm", "Intel", "Texas Instruments"]
+  },
+  "Texas Instruments": {
+    "full_name": "Texas Instruments Incorporated",
+    "description": "Semiconductor - analog chips, embedded processors",
+    "also_known_as": ["TI"],
+    "related": ["Broadcom", "Qualcomm", "Intel"]
+  },
+  "AT&T": {
+    "full_name": "American Telephone and Telegraph",
+    "description": "Telecommunications - wireless, broadband, media",
+    "related": ["Verizon", "T-Mobile", "Comcast"]
+  },
+  "Verizon": {
+    "full_name": "Verizon Communications Inc.",
+    "description": "Telecommunications - wireless, fiber, business services",
+    "related": ["AT&T", "T-Mobile", "Comcast"]
+  },
+  "T-Mobile": {
+    "full_name": "T-Mobile US, Inc.",
+    "description": "Telecommunications - wireless carrier",
+    "related": ["AT&T", "Verizon"]
+  },
+  "Comcast": {
+    "full_name": "Comcast Corporation",
+    "description": "Telecommunications - cable, broadband, NBCUniversal",
+    "related": ["AT&T", "Verizon", "Disney"]
+  },
+  "UPS": {
+    "full_name": "United Parcel Service",
+    "description": "Package delivery and supply chain logistics",
+    "related": ["FedEx", "DHL", "Amazon"]
+  },
+  "FedEx": {
+    "full_name": "Federal Express Corporation",
+    "description": "Package delivery and logistics company",
+    "related": ["UPS", "DHL", "Amazon"]
+  },
+  "CVS Health": {
+    "full_name": "Consumer Value Stores Health",
+    "description": "Healthcare - pharmacy, insurance (Aetna), clinics",
+    "also_known_as": ["CVS"],
+    "related": ["Walgreens", "UnitedHealth Group"]
+  },
+  "Walgreens": {
+    "full_name": "Walgreens Boots Alliance",
+    "description": "Pharmacy and healthcare retail",
+    "related": ["CVS Health", "Rite Aid"]
+  },
+  "Meta": {
+    "full_name": "Meta Platforms, Inc.",
+    "description": "Social media - Facebook, Instagram, WhatsApp, Reality Labs",
+    "also_known_as": ["Facebook"],
+    "related": ["Facebook", "Google", "Snap", "TikTok"]
+  },
+  "Facebook": {
+    "full_name": "Facebook (now Meta Platforms)",
+    "description": "Social media platform - parent company is Meta",
+    "also_known_as": ["Meta"],
+    "related": ["Meta", "Instagram", "WhatsApp"]
+  },
+  "Alphabet": {
+    "full_name": "Alphabet Inc.",
+    "description": "Parent company of Google, YouTube, Waymo, DeepMind",
+    "related": ["Google", "YouTube", "Waymo"]
+  },
+  "Google": {
+    "full_name": "Google LLC",
+    "description": "Subsidiary of Alphabet - search, cloud, Android, ads",
+    "related": ["Alphabet", "Microsoft", "Amazon"]
+  },
+  "Amazon": {
+    "full_name": "Amazon.com, Inc.",
+    "description": "E-commerce, AWS cloud, streaming, devices",
+    "related": ["Microsoft", "Google", "Walmart"]
+  },
+  "AWS": {
+    "full_name": "Amazon Web Services",
+    "description": "Cloud computing - largest cloud provider globally",
+    "related": ["Amazon", "Microsoft", "Google"]
+  },
+  "Microsoft": {
+    "full_name": "Microsoft Corporation",
+    "description": "Technology - Windows, Office, Azure, Xbox, LinkedIn",
+    "related": ["Google", "Apple", "Amazon", "Oracle"]
+  },
+  "Apple": {
+    "full_name": "Apple Inc.",
+    "description": "Technology - iPhone, Mac, iPad, services, wearables",
+    "related": ["Microsoft", "Google", "Samsung"]
+  },
+  "GE": {
+    "full_name": "General Electric",
+    "description": "Industrial conglomerate - aerospace, power, healthcare",
+    "also_known_as": ["General Electric"],
+    "related": ["Honeywell", "Siemens", "3M"]
+  },
+  "Honeywell": {
+    "full_name": "Honeywell International Inc.",
+    "description": "Industrial conglomerate - aerospace, building tech, safety",
+    "related": ["GE", "3M", "Siemens"]
+  },
+  "3M": {
+    "full_name": "3M Company (Minnesota Mining and Manufacturing)",
+    "description": "Industrial conglomerate - safety, healthcare, consumer",
+    "related": ["Honeywell", "GE", "Johnson & Johnson"]
+  },
+  "GM": {
+    "full_name": "General Motors",
+    "description": "Automobile manufacturer - Chevy, Cadillac, GMC, Buick",
+    "also_known_as": ["General Motors"],
+    "related": ["Ford", "Stellantis", "Toyota"]
+  },
+  "Ford": {
+    "full_name": "Ford Motor Company",
+    "description": "Automobile manufacturer - Ford, Lincoln",
+    "related": ["General Motors", "GM", "Stellantis", "Toyota"]
+  },
+  "General Motors": {
+    "full_name": "General Motors Company",
+    "description": "Automobile manufacturer (GM) - Chevy, Cadillac, GMC",
+    "also_known_as": ["GM"],
+    "related": ["Ford", "Toyota", "Stellantis"]
+  },
+  "Toyota": {
+    "full_name": "Toyota Motor Corporation",
+    "description": "Automobile manufacturer - Toyota, Lexus",
+    "related": ["Honda", "Ford", "GM", "Nissan"]
+  },
+  "Honda": {
+    "full_name": "Honda Motor Co., Ltd.",
+    "description": "Automobile and motorcycle manufacturer",
+    "related": ["Toyota", "Nissan", "Ford"]
+  },
+  "Tesla": {
+    "full_name": "Tesla, Inc.",
+    "description": "Electric vehicles, energy storage, solar",
+    "related": ["Rivian", "Lucid Motors", "Ford", "GM"]
+  },
+  "Rivian": {
+    "full_name": "Rivian Automotive, Inc.",
+    "description": "Electric vehicle manufacturer - trucks, SUVs",
+    "related": ["Tesla", "Lucid Motors", "Ford"]
+  },
+  "Lucid Motors": {
+    "full_name": "Lucid Group, Inc.",
+    "description": "Luxury electric vehicle manufacturer",
+    "related": ["Tesla", "Rivian", "Mercedes-Benz"]
+  },
+  "HP": {
+    "full_name": "HP Inc.",
+    "description": "Computer hardware - PCs, printers",
+    "also_known_as": ["Hewlett-Packard"],
+    "related": ["Dell", "Lenovo", "HPE"]
+  },
+  "HPE": {
+    "full_name": "Hewlett Packard Enterprise",
+    "description": "Enterprise IT - servers, storage, networking",
+    "also_known_as": ["Hewlett Packard Enterprise"],
+    "related": ["HP", "Dell", "IBM", "Cisco"]
+  },
+  "Dell": {
+    "full_name": "Dell Technologies Inc.",
+    "description": "Technology - PCs, servers, storage, VMware",
+    "related": ["HP", "HPE", "Lenovo", "IBM"]
+  },
+  "Cisco": {
+    "full_name": "Cisco Systems, Inc.",
+    "description": "Networking - routers, switches, security, collaboration",
+    "related": ["Juniper Networks", "Arista Networks", "HPE"]
+  },
+  "Oracle": {
+    "full_name": "Oracle Corporation",
+    "description": "Enterprise software - database, cloud, ERP",
+    "related": ["Microsoft", "SAP", "Salesforce", "IBM"]
+  },
+  "SAP": {
+    "full_name": "SAP SE",
+    "description": "Enterprise software - ERP, business applications",
+    "related": ["Oracle", "Microsoft", "Salesforce", "Workday"]
+  },
+  "Salesforce": {
+    "full_name": "Salesforce, Inc.",
+    "description": "Cloud software - CRM, marketing, analytics",
+    "related": ["Oracle", "Microsoft", "SAP", "HubSpot"]
+  },
+  "Adobe": {
+    "full_name": "Adobe Inc.",
+    "description": "Software - Creative Cloud, Document Cloud, Experience Cloud",
+    "related": ["Microsoft", "Salesforce", "Autodesk"]
+  },
+  "Intuit": {
+    "full_name": "Intuit Inc.",
+    "description": "Financial software - TurboTax, QuickBooks, Mint, Credit Karma",
+    "related": ["H&R Block", "Xero", "PayPal"]
+  },
+  "ServiceNow": {
+    "full_name": "ServiceNow, Inc.",
+    "description": "Cloud software - IT service management, workflow automation",
+    "related": ["Salesforce", "Workday", "Atlassian"]
+  },
+  "Workday": {
+    "full_name": "Workday, Inc.",
+    "description": "Cloud software - HR, finance, planning",
+    "related": ["SAP", "Oracle", "ServiceNow", "ADP"]
+  },
+  "ADP": {
+    "full_name": "Automatic Data Processing, Inc.",
+    "description": "HR and payroll services",
+    "related": ["Workday", "Paychex", "Ceridian"]
+  },
+  "Snowflake": {
+    "full_name": "Snowflake Inc.",
+    "description": "Cloud data platform - data warehousing, analytics",
+    "related": ["Databricks", "MongoDB", "Datadog"]
+  },
+  "Databricks": {
+    "full_name": "Databricks, Inc.",
+    "description": "Data and AI platform - analytics, machine learning",
+    "related": ["Snowflake", "MongoDB", "Datadog"]
+  },
+  "MongoDB": {
+    "full_name": "MongoDB, Inc.",
+    "description": "Database - NoSQL document database",
+    "related": ["Snowflake", "Elastic", "Redis"]
+  },
+  "Datadog": {
+    "full_name": "Datadog, Inc.",
+    "description": "Cloud monitoring and analytics platform",
+    "related": ["Splunk", "New Relic", "Dynatrace"]
+  },
+  "Splunk": {
+    "full_name": "Splunk Inc. (now part of Cisco)",
+    "description": "Data platform - security, observability, analytics",
+    "related": ["Datadog", "Elastic", "Cisco"]
+  },
+  "Elastic": {
+    "full_name": "Elastic N.V.",
+    "description": "Search and observability platform - Elasticsearch",
+    "related": ["Splunk", "Datadog", "MongoDB"]
+  },
+  "Cloudflare": {
+    "full_name": "Cloudflare, Inc.",
+    "description": "Web infrastructure - CDN, security, edge computing",
+    "related": ["Akamai", "Fastly", "AWS"]
+  },
+  "Twilio": {
+    "full_name": "Twilio Inc.",
+    "description": "Cloud communications - APIs for messaging, voice, video",
+    "related": ["Vonage", "Bandwidth", "Plivo"]
+  },
+  "Atlassian": {
+    "full_name": "Atlassian Corporation",
+    "description": "Software - Jira, Confluence, Trello, Bitbucket",
+    "related": ["Microsoft", "ServiceNow", "Monday.com", "Asana"]
+  },
+  "JPMorgan Chase": {
+    "full_name": "JPMorgan Chase & Co.",
+    "description": "Banking - investment banking, retail, asset management",
+    "also_known_as": ["JPM", "Chase", "JP Morgan"],
+    "related": ["Goldman Sachs", "Morgan Stanley", "Bank of America"]
+  },
+  "Goldman Sachs": {
+    "full_name": "The Goldman Sachs Group, Inc.",
+    "description": "Investment banking and financial services",
+    "also_known_as": ["GS"],
+    "related": ["JPMorgan Chase", "Morgan Stanley", "Citi"]
+  },
+  "Morgan Stanley": {
+    "full_name": "Morgan Stanley",
+    "description": "Investment banking and wealth management",
+    "also_known_as": ["MS"],
+    "related": ["Goldman Sachs", "JPMorgan Chase", "UBS"]
+  },
+  "Bank of America": {
+    "full_name": "Bank of America Corporation",
+    "description": "Banking - retail, commercial, investment banking",
+    "also_known_as": ["BofA", "BoA"],
+    "related": ["JPMorgan Chase", "Wells Fargo", "Citi"]
+  },
+  "Citigroup": {
+    "full_name": "Citigroup Inc.",
+    "description": "Banking - global consumer and institutional banking",
+    "also_known_as": ["Citi"],
+    "related": ["JPMorgan Chase", "Bank of America", "Goldman Sachs"]
+  },
+  "Citi": {
+    "full_name": "Citigroup Inc.",
+    "description": "Banking - global consumer and institutional banking",
+    "also_known_as": ["Citigroup"],
+    "related": ["JPMorgan Chase", "Bank of America", "Goldman Sachs"]
+  },
+  "Wells Fargo": {
+    "full_name": "Wells Fargo & Company",
+    "description": "Banking - retail, commercial, mortgage",
+    "related": ["Bank of America", "JPMorgan Chase", "US Bank"]
+  },
+  "Capital One": {
+    "full_name": "Capital One Financial Corporation",
+    "description": "Banking - credit cards, retail banking, auto loans",
+    "related": ["Discover", "American Express", "Chase"]
+  },
+  "American Express": {
+    "full_name": "American Express Company",
+    "description": "Financial services - credit cards, travel, rewards",
+    "also_known_as": ["Amex"],
+    "related": ["Visa", "Mastercard", "Capital One"]
+  },
+  "Visa": {
+    "full_name": "Visa Inc.",
+    "description": "Payment technology - credit/debit card network",
+    "related": ["Mastercard", "American Express", "PayPal"]
+  },
+  "Mastercard": {
+    "full_name": "Mastercard Incorporated",
+    "description": "Payment technology - credit/debit card network",
+    "related": ["Visa", "American Express", "PayPal"]
+  },
+  "PayPal": {
+    "full_name": "PayPal Holdings, Inc.",
+    "description": "Digital payments - online payments, Venmo",
+    "related": ["Block", "Square", "Stripe", "Visa"]
+  },
+  "Block": {
+    "full_name": "Block, Inc.",
+    "description": "Financial services - Square, Cash App, Afterpay",
+    "also_known_as": ["Square"],
+    "related": ["Square", "PayPal", "Stripe"]
+  },
+  "Square": {
+    "full_name": "Square (now Block, Inc.)",
+    "description": "Payment processing - now part of Block",
+    "also_known_as": ["Block"],
+    "related": ["Block", "PayPal", "Stripe"]
+  },
+  "Stripe": {
+    "full_name": "Stripe, Inc.",
+    "description": "Payment processing - online payments infrastructure",
+    "related": ["PayPal", "Block", "Adyen"]
+  },
+  "Charles Schwab": {
+    "full_name": "The Charles Schwab Corporation",
+    "description": "Financial services - brokerage, banking, wealth management",
+    "related": ["Fidelity", "TD Ameritrade", "E*TRADE"]
+  },
+  "Fidelity": {
+    "full_name": "Fidelity Investments",
+    "description": "Financial services - asset management, brokerage, retirement",
+    "related": ["Vanguard", "Charles Schwab", "BlackRock"]
+  },
+  "Vanguard": {
+    "full_name": "The Vanguard Group, Inc.",
+    "description": "Asset management - index funds, ETFs, retirement",
+    "related": ["Fidelity", "BlackRock", "State Street"]
+  },
+  "BlackRock": {
+    "full_name": "BlackRock, Inc.",
+    "description": "Asset management - largest asset manager globally",
+    "related": ["Vanguard", "Fidelity", "State Street"]
+  },
+  "State Street": {
+    "full_name": "State Street Corporation",
+    "description": "Financial services - asset management, custody",
+    "related": ["BlackRock", "Vanguard", "BNY Mellon"]
+  },
+  "McKinsey": {
+    "full_name": "McKinsey & Company",
+    "description": "Management consulting - strategy, operations (MBB)",
+    "related": ["Boston Consulting Group", "Bain & Company", "Deloitte"]
+  },
+  "BCG": {
+    "full_name": "Boston Consulting Group",
+    "description": "Management consulting - strategy (MBB)",
+    "also_known_as": ["Boston Consulting Group"],
+    "related": ["McKinsey", "Bain & Company"]
+  },
+  "Boston Consulting Group": {
+    "full_name": "Boston Consulting Group",
+    "description": "Management consulting - strategy (BCG/MBB)",
+    "also_known_as": ["BCG"],
+    "related": ["McKinsey", "Bain & Company"]
+  },
+  "Bain & Company": {
+    "full_name": "Bain & Company",
+    "description": "Management consulting - strategy, private equity (MBB)",
+    "related": ["McKinsey", "Boston Consulting Group"]
+  },
+  "Accenture": {
+    "full_name": "Accenture plc",
+    "description": "Consulting and technology services - digital, cloud, security",
+    "related": ["Deloitte", "IBM", "Capgemini", "Infosys"]
+  },
+  "Capgemini": {
+    "full_name": "Capgemini SE",
+    "description": "Consulting and technology services",
+    "related": ["Accenture", "Infosys", "Cognizant"]
+  },
+  "Infosys": {
+    "full_name": "Infosys Limited",
+    "description": "IT services and consulting",
+    "related": ["TCS", "Wipro", "Cognizant", "Accenture"]
+  },
+  "TCS": {
+    "full_name": "Tata Consultancy Services",
+    "description": "IT services and consulting",
+    "also_known_as": ["Tata Consultancy Services"],
+    "related": ["Infosys", "Wipro", "Cognizant"]
+  },
+  "Wipro": {
+    "full_name": "Wipro Limited",
+    "description": "IT services and consulting",
+    "related": ["Infosys", "TCS", "Cognizant"]
+  },
+  "Cognizant": {
+    "full_name": "Cognizant Technology Solutions",
+    "description": "IT services and consulting",
+    "related": ["Infosys", "TCS", "Wipro", "Accenture"]
+  },
+  "SpaceX": {
+    "full_name": "Space Exploration Technologies Corp.",
+    "description": "Aerospace - rockets, Starlink, space transport",
+    "related": ["Blue Origin", "Boeing", "Lockheed Martin"]
+  },
+  "Blue Origin": {
+    "full_name": "Blue Origin, LLC",
+    "description": "Aerospace - rockets, space tourism",
+    "related": ["SpaceX", "Virgin Galactic", "Boeing"]
+  },
+  "Boeing": {
+    "full_name": "The Boeing Company",
+    "description": "Aerospace - commercial aircraft, defense, space",
+    "related": ["Airbus", "Lockheed Martin", "Northrop Grumman"]
+  },
+  "Airbus": {
+    "full_name": "Airbus SE",
+    "description": "Aerospace - commercial aircraft, helicopters, defense",
+    "related": ["Boeing", "Lockheed Martin", "Raytheon"]
+  },
+  "Lockheed Martin": {
+    "full_name": "Lockheed Martin Corporation",
+    "description": "Defense and aerospace - F-35, missiles, space",
+    "related": ["Boeing", "Northrop Grumman", "Raytheon", "General Dynamics"]
+  },
+  "Northrop Grumman": {
+    "full_name": "Northrop Grumman Corporation",
+    "description": "Defense and aerospace - bombers, drones, space",
+    "related": ["Lockheed Martin", "Boeing", "Raytheon"]
+  },
+  "Raytheon": {
+    "full_name": "RTX Corporation (formerly Raytheon)",
+    "description": "Defense and aerospace - missiles, radar, Pratt & Whitney",
+    "also_known_as": ["RTX", "Raytheon Technologies"],
+    "related": ["Lockheed Martin", "Northrop Grumman", "General Dynamics"]
+  },
+  "General Dynamics": {
+    "full_name": "General Dynamics Corporation",
+    "description": "Defense - ships, tanks, IT services, Gulfstream jets",
+    "related": ["Lockheed Martin", "Northrop Grumman", "Raytheon"]
+  },
+  "L3Harris": {
+    "full_name": "L3Harris Technologies, Inc.",
+    "description": "Defense - communications, sensors, space",
+    "related": ["Raytheon", "Northrop Grumman", "General Dynamics"]
+  },
+  "OpenAI": {
+    "full_name": "OpenAI",
+    "description": "AI research - ChatGPT, GPT-4, DALL-E",
+    "related": ["Anthropic", "Google", "Microsoft"]
+  },
+  "Anthropic": {
+    "full_name": "Anthropic",
+    "description": "AI safety company - Claude AI assistant",
+    "related": ["OpenAI", "Google", "Cohere"]
+  },
+  "Palantir": {
+    "full_name": "Palantir Technologies Inc.",
+    "description": "Data analytics - government, commercial big data",
+    "related": ["Snowflake", "Databricks", "C3.ai"]
+  },
+  "Uber": {
+    "full_name": "Uber Technologies, Inc.",
+    "description": "Ride-sharing, food delivery (Uber Eats), freight",
+    "related": ["Lyft", "DoorDash", "Instacart"]
+  },
+  "Lyft": {
+    "full_name": "Lyft, Inc.",
+    "description": "Ride-sharing service",
+    "related": ["Uber", "DoorDash"]
+  },
+  "DoorDash": {
+    "full_name": "DoorDash, Inc.",
+    "description": "Food delivery platform",
+    "related": ["Uber", "Grubhub", "Instacart"]
+  },
+  "Instacart": {
+    "full_name": "Instacart (Maplebear Inc.)",
+    "description": "Grocery delivery platform",
+    "related": ["DoorDash", "Uber", "Amazon"]
+  },
+  "Airbnb": {
+    "full_name": "Airbnb, Inc.",
+    "description": "Online marketplace - lodging, experiences, travel",
+    "related": ["Booking.com", "Vrbo", "Expedia"]
+  },
+  "Netflix": {
+    "full_name": "Netflix, Inc.",
+    "description": "Streaming entertainment - movies, TV shows, originals",
+    "related": ["Disney", "HBO", "Amazon", "Spotify"]
+  },
+  "Disney": {
+    "full_name": "The Walt Disney Company",
+    "description": "Entertainment - theme parks, streaming (Disney+), movies",
+    "related": ["Netflix", "Comcast", "Warner Bros. Discovery"]
+  },
+  "Spotify": {
+    "full_name": "Spotify Technology S.A.",
+    "description": "Audio streaming - music, podcasts",
+    "related": ["Apple", "Amazon", "Netflix"]
+  },
+  "X": {
+    "full_name": "X Corp.",
+    "description": "Social media platform - formerly Twitter",
+    "also_known_as": ["Twitter"],
+    "related": ["Twitter", "Meta", "Reddit"]
+  },
+  "Twitter": {
+    "full_name": "Twitter (now X Corp.)",
+    "description": "Social media platform - now called X",
+    "also_known_as": ["X"],
+    "related": ["X", "Meta", "Reddit"]
+  },
+  "Snap": {
+    "full_name": "Snap Inc.",
+    "description": "Social media - Snapchat, AR/VR technology",
+    "also_known_as": ["Snapchat"],
+    "related": ["Meta", "TikTok", "Pinterest"]
+  },
+  "TikTok": {
+    "full_name": "TikTok (ByteDance)",
+    "description": "Social media - short-form video platform",
+    "related": ["ByteDance", "Meta", "Snap", "YouTube"]
+  },
+  "ByteDance": {
+    "full_name": "ByteDance Ltd.",
+    "description": "Technology - parent company of TikTok",
+    "related": ["TikTok", "Meta", "Snap"]
+  },
+  "Pinterest": {
+    "full_name": "Pinterest, Inc.",
+    "description": "Social media - visual discovery, inspiration",
+    "related": ["Meta", "Snap", "Etsy"]
+  },
+  "Reddit": {
+    "full_name": "Reddit, Inc.",
+    "description": "Social media - online communities, discussions",
+    "related": ["X", "Twitter", "Discord"]
+  },
+  "Discord": {
+    "full_name": "Discord Inc.",
+    "description": "Communication platform - voice, video, text for communities",
+    "related": ["Slack", "Reddit", "Twitch"]
+  },
+  "Slack": {
+    "full_name": "Slack Technologies (Salesforce)",
+    "description": "Business communication - messaging, collaboration",
+    "related": ["Microsoft", "Discord", "Zoom", "Salesforce"]
+  },
+  "Zoom": {
+    "full_name": "Zoom Video Communications, Inc.",
+    "description": "Video communications - meetings, webinars, phone",
+    "related": ["Microsoft", "Cisco", "Google"]
+  },
+  "Dropbox": {
+    "full_name": "Dropbox, Inc.",
+    "description": "Cloud storage and collaboration",
+    "related": ["Google", "Microsoft", "Box"]
+  },
+  "Box": {
+    "full_name": "Box, Inc.",
+    "description": "Cloud content management and file sharing",
+    "related": ["Dropbox", "Microsoft", "Google"]
+  },
+  "LinkedIn": {
+    "full_name": "LinkedIn (Microsoft)",
+    "description": "Professional networking - jobs, networking, learning",
+    "related": ["Microsoft", "Indeed", "Glassdoor"]
+  },
+  "Indeed": {
+    "full_name": "Indeed (Recruit Holdings)",
+    "description": "Job search platform",
+    "related": ["LinkedIn", "Glassdoor", "ZipRecruiter"]
+  },
+  "Glassdoor": {
+    "full_name": "Glassdoor (Recruit Holdings)",
+    "description": "Job search and company reviews platform",
+    "related": ["LinkedIn", "Indeed", "Blind"]
+  },
+  "GitHub": {
+    "full_name": "GitHub (Microsoft)",
+    "description": "Software development - code hosting, collaboration",
+    "related": ["GitLab", "Microsoft", "Atlassian"]
+  },
+  "GitLab": {
+    "full_name": "GitLab Inc.",
+    "description": "DevOps platform - code, CI/CD, security",
+    "related": ["GitHub", "Atlassian", "JFrog"]
+  },
+  "Shopify": {
+    "full_name": "Shopify Inc.",
+    "description": "E-commerce platform - online stores, payments",
+    "related": ["Amazon", "BigCommerce", "Squarespace"]
+  },
+  "Etsy": {
+    "full_name": "Etsy, Inc.",
+    "description": "E-commerce - handmade, vintage marketplace",
+    "related": ["Amazon", "eBay", "Shopify"]
+  },
+  "eBay": {
+    "full_name": "eBay Inc.",
+    "description": "E-commerce - online auctions, marketplace",
+    "related": ["Amazon", "Etsy", "Mercari"]
+  },
+  "Coinbase": {
+    "full_name": "Coinbase Global, Inc.",
+    "description": "Cryptocurrency exchange and wallet",
+    "related": ["Robinhood", "Kraken", "Binance"]
+  },
+  "Robinhood": {
+    "full_name": "Robinhood Markets, Inc.",
+    "description": "Stock and crypto trading - commission-free",
+    "related": ["Coinbase", "Charles Schwab", "E*TRADE"]
+  },
+  "Epic Games": {
+    "full_name": "Epic Games, Inc.",
+    "description": "Gaming - Fortnite, Unreal Engine",
+    "related": ["Unity", "Roblox", "Activision Blizzard"]
+  },
+  "Unity": {
+    "full_name": "Unity Technologies",
+    "description": "Gaming - Unity game engine, tools",
+    "related": ["Epic Games", "Roblox", "Electronic Arts"]
+  },
+  "Roblox": {
+    "full_name": "Roblox Corporation",
+    "description": "Gaming platform - user-generated games, metaverse",
+    "related": ["Epic Games", "Unity", "Minecraft"]
+  },
+  "Electronic Arts": {
+    "full_name": "Electronic Arts Inc.",
+    "description": "Gaming - EA Sports, FIFA, Madden, Battlefield",
+    "also_known_as": ["EA"],
+    "related": ["Activision Blizzard", "Take-Two", "Ubisoft"]
+  },
+  "Activision Blizzard": {
+    "full_name": "Activision Blizzard (Microsoft)",
+    "description": "Gaming - Call of Duty, World of Warcraft, Candy Crush",
+    "related": ["Microsoft", "Electronic Arts", "Take-Two"]
+  },
+  "Take-Two Interactive": {
+    "full_name": "Take-Two Interactive Software, Inc.",
+    "description": "Gaming - GTA, NBA 2K, Red Dead Redemption",
+    "related": ["Electronic Arts", "Activision Blizzard", "Ubisoft"]
+  },
+  "Riot Games": {
+    "full_name": "Riot Games (Tencent)",
+    "description": "Gaming - League of Legends, Valorant",
+    "related": ["Epic Games", "Blizzard", "Valve"]
+  },
+  "Walmart": {
+    "full_name": "Walmart Inc.",
+    "description": "Retail - largest retailer, grocery, e-commerce",
+    "related": ["Amazon", "Target", "Costco"]
+  },
+  "Target": {
+    "full_name": "Target Corporation",
+    "description": "Retail - general merchandise, grocery",
+    "related": ["Walmart", "Amazon", "Costco"]
+  },
+  "Costco": {
+    "full_name": "Costco Wholesale Corporation",
+    "description": "Retail - membership warehouse club",
+    "related": ["Walmart", "Sam's Club", "BJ's"]
+  },
+  "Kroger": {
+    "full_name": "The Kroger Co.",
+    "description": "Retail - grocery supermarket chain",
+    "related": ["Albertsons", "Walmart", "Publix"]
+  },
+  "Home Depot": {
+    "full_name": "The Home Depot, Inc.",
+    "description": "Retail - home improvement",
+    "related": ["Lowe's", "Menards", "Ace Hardware"]
+  },
+  "Lowe's": {
+    "full_name": "Lowe's Companies, Inc.",
+    "description": "Retail - home improvement",
+    "related": ["Home Depot", "Menards", "Ace Hardware"]
+  },
+  "Nike": {
+    "full_name": "Nike, Inc.",
+    "description": "Apparel - athletic footwear, clothing, equipment",
+    "related": ["Adidas", "Under Armour", "Lululemon"]
+  },
+  "Adidas": {
+    "full_name": "Adidas AG",
+    "description": "Apparel - athletic footwear, clothing",
+    "related": ["Nike", "Puma", "Under Armour"]
+  },
+  "Lululemon": {
+    "full_name": "Lululemon Athletica Inc.",
+    "description": "Apparel - athletic wear, yoga, lifestyle",
+    "related": ["Nike", "Under Armour", "Athleta"]
+  },
+  "Under Armour": {
+    "full_name": "Under Armour, Inc.",
+    "description": "Apparel - athletic footwear, clothing",
+    "related": ["Nike", "Adidas", "Lululemon"]
+  },
+  "Starbucks": {
+    "full_name": "Starbucks Corporation",
+    "description": "Food & Beverage - coffee shops, beverages",
+    "related": ["McDonald's", "Dunkin'", "Peet's"]
+  },
+  "McDonald's": {
+    "full_name": "McDonald's Corporation",
+    "description": "Food & Beverage - fast food restaurants",
+    "related": ["Starbucks", "Yum! Brands", "Chipotle"]
+  },
+  "Chipotle": {
+    "full_name": "Chipotle Mexican Grill, Inc.",
+    "description": "Food & Beverage - fast casual restaurants",
+    "related": ["McDonald's", "Starbucks", "Sweetgreen"]
+  },
+  "Coca-Cola": {
+    "full_name": "The Coca-Cola Company",
+    "description": "Beverages - soft drinks, juices, water",
+    "related": ["PepsiCo", "Keurig Dr Pepper", "Monster Beverage"]
+  },
+  "PepsiCo": {
+    "full_name": "PepsiCo, Inc.",
+    "description": "Food & Beverages - Pepsi, Frito-Lay, Gatorade, Quaker",
+    "related": ["Coca-Cola", "Keurig Dr Pepper", "Mondelez"]
+  },
+  "Johnson & Johnson": {
+    "full_name": "Johnson & Johnson",
+    "description": "Healthcare - pharmaceuticals, medical devices, consumer",
+    "also_known_as": ["J&J", "JNJ"],
+    "related": ["Pfizer", "Merck", "Abbott"]
+  },
+  "Pfizer": {
+    "full_name": "Pfizer Inc.",
+    "description": "Pharmaceuticals - drugs, vaccines",
+    "related": ["Johnson & Johnson", "Merck", "AbbVie", "Moderna"]
+  },
+  "Merck": {
+    "full_name": "Merck & Co., Inc.",
+    "description": "Pharmaceuticals - drugs, vaccines, animal health",
+    "also_known_as": ["MSD"],
+    "related": ["Pfizer", "Johnson & Johnson", "AbbVie"]
+  },
+  "AbbVie": {
+    "full_name": "AbbVie Inc.",
+    "description": "Pharmaceuticals - immunology, oncology, aesthetics",
+    "related": ["Pfizer", "Johnson & Johnson", "Bristol-Myers Squibb"]
+  },
+  "Bristol-Myers Squibb": {
+    "full_name": "Bristol-Myers Squibb Company",
+    "description": "Pharmaceuticals - oncology, cardiovascular, immunology",
+    "also_known_as": ["BMS"],
+    "related": ["AbbVie", "Pfizer", "Merck"]
+  },
+  "Eli Lilly": {
+    "full_name": "Eli Lilly and Company",
+    "description": "Pharmaceuticals - diabetes, oncology, immunology",
+    "related": ["Novo Nordisk", "Pfizer", "Merck"]
+  },
+  "Moderna": {
+    "full_name": "Moderna, Inc.",
+    "description": "Biotechnology - mRNA vaccines and therapeutics",
+    "related": ["Pfizer", "BioNTech", "Johnson & Johnson"]
+  },
+  "Amgen": {
+    "full_name": "Amgen Inc.",
+    "description": "Biotechnology - biologics, biosimilars",
+    "related": ["Gilead", "Regeneron", "Biogen"]
+  },
+  "Gilead": {
+    "full_name": "Gilead Sciences, Inc.",
+    "description": "Biotechnology - HIV, hepatitis, oncology",
+    "related": ["Amgen", "Biogen", "Regeneron"]
+  },
+  "Thermo Fisher Scientific": {
+    "full_name": "Thermo Fisher Scientific Inc.",
+    "description": "Life sciences - lab equipment, diagnostics, reagents",
+    "related": ["Danaher", "Agilent", "Illumina"]
+  },
+  "Danaher": {
+    "full_name": "Danaher Corporation",
+    "description": "Life sciences and diagnostics",
+    "related": ["Thermo Fisher Scientific", "Agilent", "Abbott"]
+  },
+  "Abbott": {
+    "full_name": "Abbott Laboratories",
+    "description": "Healthcare - diagnostics, nutrition, devices, pharma",
+    "related": ["Johnson & Johnson", "Danaher", "Medtronic"]
+  },
+  "Medtronic": {
+    "full_name": "Medtronic plc",
+    "description": "Medical devices - cardiac, diabetes, surgical",
+    "related": ["Abbott", "Boston Scientific", "Stryker"]
+  },
+  "Boston Scientific": {
+    "full_name": "Boston Scientific Corporation",
+    "description": "Medical devices - cardiovascular, rhythm, urology",
+    "related": ["Medtronic", "Abbott", "Stryker"]
+  },
+  "Stryker": {
+    "full_name": "Stryker Corporation",
+    "description": "Medical devices - orthopedics, surgical, neurotechnology",
+    "related": ["Medtronic", "Johnson & Johnson", "Zimmer Biomet"]
+  },
+  "UnitedHealth Group": {
+    "full_name": "UnitedHealth Group Incorporated",
+    "description": "Healthcare - insurance (UHC), services (Optum)",
+    "also_known_as": ["UHG", "United Healthcare"],
+    "related": ["CVS Health", "Anthem", "Cigna", "Humana"]
+  },
+  "Anthem": {
+    "full_name": "Elevance Health (formerly Anthem)",
+    "description": "Healthcare - health insurance, Blue Cross Blue Shield",
+    "also_known_as": ["Elevance Health", "Blue Cross"],
+    "related": ["UnitedHealth Group", "CVS Health", "Cigna"]
+  },
+  "Cigna": {
+    "full_name": "The Cigna Group",
+    "description": "Healthcare - health insurance, pharmacy benefits",
+    "related": ["UnitedHealth Group", "Anthem", "Humana"]
+  },
+  "Humana": {
+    "full_name": "Humana Inc.",
+    "description": "Healthcare - health insurance, Medicare",
+    "related": ["UnitedHealth Group", "Cigna", "Anthem"]
+  },
+  "HCA Healthcare": {
+    "full_name": "HCA Healthcare, Inc.",
+    "description": "Healthcare - hospital systems, outpatient care",
+    "related": ["Kaiser Permanente", "Tenet Healthcare", "CommonSpirit"]
+  },
+  "Kaiser Permanente": {
+    "full_name": "Kaiser Permanente",
+    "description": "Healthcare - integrated managed care, hospitals",
+    "related": ["HCA Healthcare", "UnitedHealth Group", "Cleveland Clinic"]
+  },
+  "Cleveland Clinic": {
+    "full_name": "Cleveland Clinic",
+    "description": "Healthcare - nonprofit academic medical center",
+    "related": ["Mayo Clinic", "Johns Hopkins", "Mass General Brigham"]
+  },
+  "Mayo Clinic": {
+    "full_name": "Mayo Clinic",
+    "description": "Healthcare - nonprofit academic medical center",
+    "related": ["Cleveland Clinic", "Johns Hopkins", "Mass General Brigham"]
+  },
+  "Johns Hopkins": {
+    "full_name": "Johns Hopkins Medicine",
+    "description": "Healthcare and research - academic medical center",
+    "related": ["Mayo Clinic", "Cleveland Clinic", "Stanford Health Care"]
+  },
+  "Mass General Brigham": {
+    "full_name": "Mass General Brigham",
+    "description": "Healthcare - academic medical system in Boston",
+    "also_known_as": ["Partners HealthCare", "MGH"],
+    "related": ["Mayo Clinic", "Cleveland Clinic", "Johns Hopkins"]
+  },
+  "Stanford Health Care": {
+    "full_name": "Stanford Health Care",
+    "description": "Healthcare - academic medical center",
+    "related": ["UCSF Health", "UCLA Health", "Johns Hopkins"]
+  },
+  "UCLA Health": {
+    "full_name": "UCLA Health",
+    "description": "Healthcare - academic medical center in Los Angeles",
+    "related": ["Stanford Health Care", "UCSF Health", "Cedars-Sinai"]
+  },
+  "NYU Langone": {
+    "full_name": "NYU Langone Health",
+    "description": "Healthcare - academic medical center in New York",
+    "related": ["Mount Sinai", "NewYork-Presbyterian", "Memorial Sloan Kettering"]
+  },
+  "Procter & Gamble": {
+    "full_name": "The Procter & Gamble Company",
+    "description": "Consumer goods - household, personal care, beauty",
+    "also_known_as": ["P&G", "PG"],
+    "related": ["Unilever", "Colgate-Palmolive", "Johnson & Johnson"]
+  },
+  "Unilever": {
+    "full_name": "Unilever PLC",
+    "description": "Consumer goods - food, personal care, home care",
+    "related": ["Procter & Gamble", "Nestle", "Colgate-Palmolive"]
+  },
+  "Colgate-Palmolive": {
+    "full_name": "Colgate-Palmolive Company",
+    "description": "Consumer goods - oral care, personal care, home care",
+    "related": ["Procter & Gamble", "Unilever", "Church & Dwight"]
+  },
+  "Nestle": {
+    "full_name": "Nestle S.A.",
+    "description": "Food & Beverages - largest food company globally",
+    "related": ["Unilever", "PepsiCo", "Kraft Heinz"]
+  },
+  "Kraft Heinz": {
+    "full_name": "The Kraft Heinz Company",
+    "description": "Food & Beverages - packaged foods, condiments",
+    "related": ["Nestle", "General Mills", "Conagra"]
+  },
+  "General Mills": {
+    "full_name": "General Mills, Inc.",
+    "description": "Food - cereals, snacks, baking, pet food",
+    "related": ["Kellogg's", "Kraft Heinz", "PepsiCo"]
+  },
+  "Kellogg's": {
+    "full_name": "Kellanova (formerly Kellogg Company)",
+    "description": "Food - cereals, snacks",
+    "also_known_as": ["Kellanova", "Kellogg Company"],
+    "related": ["General Mills", "Post Holdings", "PepsiCo"]
+  },
+  "State Farm": {
+    "full_name": "State Farm Insurance",
+    "description": "Insurance - auto, home, life insurance",
+    "related": ["Allstate", "Progressive", "Geico"]
+  },
+  "Allstate": {
+    "full_name": "The Allstate Corporation",
+    "description": "Insurance - auto, home, life insurance",
+    "related": ["State Farm", "Progressive", "Geico"]
+  },
+  "Progressive": {
+    "full_name": "The Progressive Corporation",
+    "description": "Insurance - auto, home insurance",
+    "related": ["State Farm", "Allstate", "Geico"]
+  },
+  "Geico": {
+    "full_name": "GEICO (Berkshire Hathaway)",
+    "description": "Insurance - auto insurance",
+    "related": ["Progressive", "State Farm", "Allstate"]
+  },
+  "Berkshire Hathaway": {
+    "full_name": "Berkshire Hathaway Inc.",
+    "description": "Conglomerate - insurance, utilities, railroad, investments",
+    "related": ["Geico", "JPMorgan Chase", "BlackRock"]
+  },
+  "Delta Air Lines": {
+    "full_name": "Delta Air Lines, Inc.",
+    "description": "Airlines - major US airline",
+    "related": ["United Airlines", "American Airlines", "Southwest Airlines"]
+  },
+  "United Airlines": {
+    "full_name": "United Airlines Holdings, Inc.",
+    "description": "Airlines - major US airline",
+    "related": ["Delta Air Lines", "American Airlines", "Southwest Airlines"]
+  },
+  "American Airlines": {
+    "full_name": "American Airlines Group Inc.",
+    "description": "Airlines - largest airline by fleet size",
+    "related": ["Delta Air Lines", "United Airlines", "Southwest Airlines"]
+  },
+  "Southwest Airlines": {
+    "full_name": "Southwest Airlines Co.",
+    "description": "Airlines - low-cost carrier",
+    "related": ["Delta Air Lines", "United Airlines", "JetBlue"]
+  },
+  "Marriott": {
+    "full_name": "Marriott International, Inc.",
+    "description": "Hospitality - hotels, resorts, vacation rentals",
+    "related": ["Hilton", "Hyatt", "IHG"]
+  },
+  "Hilton": {
+    "full_name": "Hilton Worldwide Holdings Inc.",
+    "description": "Hospitality - hotels, resorts",
+    "related": ["Marriott", "Hyatt", "IHG"]
+  },
+  "Hyatt": {
+    "full_name": "Hyatt Hotels Corporation",
+    "description": "Hospitality - hotels, resorts",
+    "related": ["Marriott", "Hilton", "IHG"]
+  },
+  "Waymo": {
+    "full_name": "Waymo LLC (Alphabet)",
+    "description": "Autonomous vehicles - self-driving technology",
+    "related": ["Alphabet", "Cruise", "Tesla"]
+  },
+  "Cruise": {
+    "full_name": "Cruise LLC (GM)",
+    "description": "Autonomous vehicles - self-driving technology",
+    "related": ["Waymo", "General Motors", "Tesla"]
+  },
+  "Exxon Mobil": {
+    "full_name": "Exxon Mobil Corporation",
+    "description": "Energy - oil and gas, chemicals",
+    "also_known_as": ["ExxonMobil", "XOM"],
+    "related": ["Chevron", "Shell", "BP"]
+  },
+  "ExxonMobil": {
+    "full_name": "Exxon Mobil Corporation",
+    "description": "Energy - oil and gas, chemicals",
+    "also_known_as": ["Exxon Mobil", "XOM"],
+    "related": ["Chevron", "Shell", "BP"]
+  },
+  "Chevron": {
+    "full_name": "Chevron Corporation",
+    "description": "Energy - oil and gas",
+    "related": ["ExxonMobil", "Shell", "BP", "ConocoPhillips"]
+  },
+  "Shell": {
+    "full_name": "Shell plc",
+    "description": "Energy - oil, gas, renewables",
+    "related": ["ExxonMobil", "Chevron", "BP"]
+  },
+  "BP": {
+    "full_name": "BP plc (British Petroleum)",
+    "description": "Energy - oil, gas, renewables",
+    "also_known_as": ["British Petroleum"],
+    "related": ["Shell", "ExxonMobil", "Chevron"]
+  },
+  "ConocoPhillips": {
+    "full_name": "ConocoPhillips",
+    "description": "Energy - oil and gas exploration and production",
+    "related": ["ExxonMobil", "Chevron", "Occidental"]
+  },
+  "NextEra Energy": {
+    "full_name": "NextEra Energy, Inc.",
+    "description": "Energy - renewable energy, utilities",
+    "related": ["Duke Energy", "Southern Company", "Dominion Energy"]
+  },
+  "Duke Energy": {
+    "full_name": "Duke Energy Corporation",
+    "description": "Utilities - electric power, natural gas",
+    "related": ["NextEra Energy", "Southern Company", "Dominion Energy"]
+  },
+  "Caterpillar": {
+    "full_name": "Caterpillar Inc.",
+    "description": "Industrial - construction, mining equipment",
+    "also_known_as": ["CAT"],
+    "related": ["Deere & Company", "Komatsu", "CNH Industrial"]
+  },
+  "Deere & Company": {
+    "full_name": "Deere & Company",
+    "description": "Industrial - agricultural, construction equipment",
+    "also_known_as": ["John Deere"],
+    "related": ["Caterpillar", "AGCO", "CNH Industrial"]
+  },
+  "John Deere": {
+    "full_name": "Deere & Company",
+    "description": "Industrial - agricultural, construction equipment",
+    "also_known_as": ["Deere & Company"],
+    "related": ["Caterpillar", "AGCO", "CNH Industrial"]
+  },
+  "Autodesk": {
+    "full_name": "Autodesk, Inc.",
+    "description": "Software - CAD, 3D design, engineering",
+    "related": ["Adobe", "Dassault Systemes", "PTC"]
+  },
+  "VMware": {
+    "full_name": "VMware, Inc. (Broadcom)",
+    "description": "Software - virtualization, cloud infrastructure",
+    "related": ["Broadcom", "Microsoft", "Red Hat"]
+  },
+  "Red Hat": {
+    "full_name": "Red Hat, Inc. (IBM)",
+    "description": "Software - enterprise Linux, Kubernetes, cloud",
+    "related": ["IBM", "Canonical", "SUSE"]
+  },
+  "Palo Alto Networks": {
+    "full_name": "Palo Alto Networks, Inc.",
+    "description": "Cybersecurity - network security, cloud security",
+    "related": ["CrowdStrike", "Fortinet", "Zscaler"]
+  },
+  "CrowdStrike": {
+    "full_name": "CrowdStrike Holdings, Inc.",
+    "description": "Cybersecurity - endpoint security, threat intelligence",
+    "related": ["Palo Alto Networks", "SentinelOne", "Zscaler"]
+  },
+  "Fortinet": {
+    "full_name": "Fortinet, Inc.",
+    "description": "Cybersecurity - network security, firewalls",
+    "related": ["Palo Alto Networks", "Cisco", "Check Point"]
+  },
+  "Zscaler": {
+    "full_name": "Zscaler, Inc.",
+    "description": "Cybersecurity - cloud security, zero trust",
+    "related": ["CrowdStrike", "Palo Alto Networks", "Cloudflare"]
+  },
+  "Okta": {
+    "full_name": "Okta, Inc.",
+    "description": "Identity - identity management, single sign-on",
+    "related": ["Microsoft", "Ping Identity", "Auth0"]
+  },
+  "DocuSign": {
+    "full_name": "DocuSign, Inc.",
+    "description": "Software - electronic signatures, agreement cloud",
+    "related": ["Adobe", "Dropbox", "PandaDoc"]
+  },
+  "HubSpot": {
+    "full_name": "HubSpot, Inc.",
+    "description": "Software - CRM, marketing, sales, service",
+    "related": ["Salesforce", "Marketo", "Mailchimp"]
+  },
+  "Zendesk": {
+    "full_name": "Zendesk, Inc.",
+    "description": "Software - customer service, support platform",
+    "related": ["Salesforce", "Freshworks", "ServiceNow"]
+  },
+  "Asana": {
+    "full_name": "Asana, Inc.",
+    "description": "Software - work management, project tracking",
+    "related": ["Monday.com", "Atlassian", "Smartsheet"]
+  },
+  "Monday.com": {
+    "full_name": "monday.com Ltd.",
+    "description": "Software - work operating system, project management",
+    "related": ["Asana", "Atlassian", "Smartsheet"]
+  },
+  "Figma": {
+    "full_name": "Figma, Inc. (Adobe)",
+    "description": "Design - collaborative design platform",
+    "related": ["Adobe", "Canva", "Sketch"]
+  },
+  "Canva": {
+    "full_name": "Canva Pty Ltd",
+    "description": "Design - graphic design platform",
+    "related": ["Adobe", "Figma", "Visme"]
+  },
+  "Notion": {
+    "full_name": "Notion Labs, Inc.",
+    "description": "Productivity - workspace for notes, docs, projects",
+    "related": ["Atlassian", "Coda", "Airtable"]
+  },
+  "Airtable": {
+    "full_name": "Airtable",
+    "description": "Software - low-code database platform",
+    "related": ["Notion", "Monday.com", "Smartsheet"]
+  },
+  "Plaid": {
+    "full_name": "Plaid Inc.",
+    "description": "Fintech - financial data connectivity",
+    "related": ["Stripe", "Square", "Yodlee"]
+  },
+  "Affirm": {
+    "full_name": "Affirm Holdings, Inc.",
+    "description": "Fintech - buy now pay later",
+    "related": ["Klarna", "Afterpay", "PayPal"]
+  },
+  "Klarna": {
+    "full_name": "Klarna Bank AB",
+    "description": "Fintech - buy now pay later, payments",
+    "related": ["Affirm", "Afterpay", "PayPal"]
+  },
+  "Chime": {
+    "full_name": "Chime Financial, Inc.",
+    "description": "Fintech - digital banking, no-fee banking",
+    "related": ["Varo", "Current", "SoFi"]
+  },
+  "SoFi": {
+    "full_name": "SoFi Technologies, Inc.",
+    "description": "Fintech - student loans, investing, banking",
+    "related": ["Chime", "Robinhood", "Marcus"]
+  },
+  "Brex": {
+    "full_name": "Brex Inc.",
+    "description": "Fintech - corporate cards, expense management",
+    "related": ["Ramp", "Divvy", "American Express"]
+  },
+  "Ramp": {
+    "full_name": "Ramp Business Corporation",
+    "description": "Fintech - corporate cards, spend management",
+    "related": ["Brex", "Divvy", "Expensify"]
+  },
+  "Toast": {
+    "full_name": "Toast, Inc.",
+    "description": "Fintech - restaurant management, POS",
+    "related": ["Square", "Clover", "Lightspeed"]
+  },
+  "Gusto": {
+    "full_name": "Gusto, Inc.",
+    "description": "HR Tech - payroll, benefits, HR for SMBs",
+    "related": ["ADP", "Paychex", "Rippling"]
+  },
+  "Rippling": {
+    "full_name": "Rippling",
+    "description": "HR Tech - HR, IT, finance platform",
+    "related": ["Gusto", "ADP", "Workday"]
+  },
+  "Deel": {
+    "full_name": "Deel",
+    "description": "HR Tech - global payroll, contractor management",
+    "related": ["Remote", "Oyster", "Papaya Global"]
+  },
+  "Amplitude": {
+    "full_name": "Amplitude, Inc.",
+    "description": "Analytics - product analytics platform",
+    "related": ["Mixpanel", "Heap", "Segment"]
+  },
+  "Segment": {
+    "full_name": "Segment (Twilio)",
+    "description": "Analytics - customer data platform",
+    "related": ["Twilio", "Amplitude", "mParticle"]
+  },
+  "Vercel": {
+    "full_name": "Vercel Inc.",
+    "description": "Developer tools - frontend deployment, Next.js",
+    "related": ["Netlify", "AWS", "Cloudflare"]
+  },
+  "Netlify": {
+    "full_name": "Netlify, Inc.",
+    "description": "Developer tools - web deployment, serverless",
+    "related": ["Vercel", "AWS", "Cloudflare"]
+  },
+  "Supabase": {
+    "full_name": "Supabase, Inc.",
+    "description": "Developer tools - open source Firebase alternative",
+    "related": ["Firebase", "MongoDB", "PlanetScale"]
+  },
+  "HashiCorp": {
+    "full_name": "HashiCorp, Inc.",
+    "description": "Developer tools - Terraform, Vault, infrastructure",
+    "related": ["AWS", "Pulumi", "GitLab"]
+  },
+  "Confluent": {
+    "full_name": "Confluent, Inc.",
+    "description": "Data streaming - Apache Kafka, real-time data",
+    "related": ["Snowflake", "Databricks", "AWS"]
+  },
+  "Dbt Labs": {
+    "full_name": "dbt Labs, Inc.",
+    "description": "Data transformation - analytics engineering",
+    "related": ["Snowflake", "Databricks", "Fivetran"]
+  },
+  "Fivetran": {
+    "full_name": "Fivetran, Inc.",
+    "description": "Data integration - automated data pipelines",
+    "related": ["Airbyte", "Stitch", "dbt Labs"]
+  },
+  "Scale AI": {
+    "full_name": "Scale AI, Inc.",
+    "description": "AI - data labeling, AI infrastructure",
+    "related": ["OpenAI", "Anthropic", "Labelbox"]
+  },
+  "Weights & Biases": {
+    "full_name": "Weights & Biases, Inc.",
+    "description": "ML Ops - experiment tracking, model management",
+    "related": ["MLflow", "Neptune", "Comet"]
+  },
+  "Anduril": {
+    "full_name": "Anduril Industries",
+    "description": "Defense tech - autonomous systems, surveillance",
+    "related": ["Palantir", "SpaceX", "Shield AI"]
+  },
+  "Samsung": {
+    "full_name": "Samsung Electronics Co., Ltd.",
+    "description": "Technology - smartphones, semiconductors, displays, appliances",
+    "related": ["Apple", "LG", "Sony"]
+  },
+  "Sony": {
+    "full_name": "Sony Group Corporation",
+    "description": "Technology - electronics, gaming (PlayStation), entertainment",
+    "related": ["Samsung", "Microsoft", "Nintendo"]
+  },
+  "Nintendo": {
+    "full_name": "Nintendo Co., Ltd.",
+    "description": "Gaming - consoles, video games",
+    "related": ["Sony", "Microsoft", "Sega"]
+  },
+  "LG": {
+    "full_name": "LG Electronics Inc.",
+    "description": "Technology - appliances, displays, electronics",
+    "related": ["Samsung", "Sony", "Panasonic"]
+  },
+  "Lenovo": {
+    "full_name": "Lenovo Group Limited",
+    "description": "Technology - PCs, servers, smartphones",
+    "related": ["HP", "Dell", "Asus"]
+  },
+  "Asus": {
+    "full_name": "ASUSTeK Computer Inc.",
+    "description": "Technology - PCs, motherboards, gaming hardware",
+    "related": ["Lenovo", "HP", "MSI"]
+  },
+  "Logitech": {
+    "full_name": "Logitech International S.A.",
+    "description": "Technology - peripherals, webcams, gaming accessories",
+    "related": ["Razer", "Corsair", "SteelSeries"]
+  },
+  "Razer": {
+    "full_name": "Razer Inc.",
+    "description": "Gaming - peripherals, laptops, accessories",
+    "related": ["Logitech", "Corsair", "SteelSeries"]
+  },
+  "Western Digital": {
+    "full_name": "Western Digital Corporation",
+    "description": "Technology - hard drives, SSDs, data storage",
+    "also_known_as": ["WD"],
+    "related": ["Seagate", "Micron", "Samsung"]
+  },
+  "Seagate": {
+    "full_name": "Seagate Technology Holdings plc",
+    "description": "Technology - hard drives, data storage",
+    "related": ["Western Digital", "Micron", "Toshiba"]
+  },
+  "Micron": {
+    "full_name": "Micron Technology, Inc.",
+    "description": "Semiconductor - memory chips, DRAM, NAND",
+    "related": ["Samsung", "SK Hynix", "Western Digital"]
+  },
+  "Marvell": {
+    "full_name": "Marvell Technology, Inc.",
+    "description": "Semiconductor - data infrastructure chips",
+    "related": ["Broadcom", "Qualcomm", "Intel"]
+  },
+  "Analog Devices": {
+    "full_name": "Analog Devices, Inc.",
+    "description": "Semiconductor - analog, mixed-signal chips",
+    "also_known_as": ["ADI"],
+    "related": ["Texas Instruments", "NXP", "Microchip"]
+  },
+  "NXP": {
+    "full_name": "NXP Semiconductors N.V.",
+    "description": "Semiconductor - automotive, IoT, mobile chips",
+    "related": ["Analog Devices", "Infineon", "STMicroelectronics"]
+  },
+  "Infineon": {
+    "full_name": "Infineon Technologies AG",
+    "description": "Semiconductor - automotive, power, security chips",
+    "related": ["NXP", "STMicroelectronics", "ON Semiconductor"]
+  },
+  "ON Semiconductor": {
+    "full_name": "onsemi (ON Semiconductor)",
+    "description": "Semiconductor - power, sensors, automotive",
+    "also_known_as": ["onsemi"],
+    "related": ["Infineon", "NXP", "Texas Instruments"]
+  },
+  "Skyworks": {
+    "full_name": "Skyworks Solutions, Inc.",
+    "description": "Semiconductor - RF, wireless chips",
+    "related": ["Qualcomm", "Qorvo", "Broadcom"]
+  },
+  "Qorvo": {
+    "full_name": "Qorvo, Inc.",
+    "description": "Semiconductor - RF solutions, 5G",
+    "related": ["Skyworks", "Qualcomm", "Broadcom"]
+  },
+  "Applied Materials": {
+    "full_name": "Applied Materials, Inc.",
+    "description": "Semiconductor equipment - chip manufacturing tools",
+    "related": ["ASML", "Lam Research", "KLA"]
+  },
+  "ASML": {
+    "full_name": "ASML Holding N.V.",
+    "description": "Semiconductor equipment - lithography machines",
+    "related": ["Applied Materials", "Lam Research", "Tokyo Electron"]
+  },
+  "Lam Research": {
+    "full_name": "Lam Research Corporation",
+    "description": "Semiconductor equipment - etch, deposition",
+    "related": ["Applied Materials", "ASML", "KLA"]
+  },
+  "KLA": {
+    "full_name": "KLA Corporation",
+    "description": "Semiconductor equipment - inspection, metrology",
+    "related": ["Applied Materials", "ASML", "Lam Research"]
+  },
+  "Synopsys": {
+    "full_name": "Synopsys, Inc.",
+    "description": "Software - chip design, EDA tools",
+    "related": ["Cadence", "Mentor Graphics", "Ansys"]
+  },
+  "Cadence": {
+    "full_name": "Cadence Design Systems, Inc.",
+    "description": "Software - chip design, EDA tools",
+    "related": ["Synopsys", "Mentor Graphics", "Ansys"]
+  },
+  "Ansys": {
+    "full_name": "ANSYS, Inc.",
+    "description": "Software - simulation, engineering analysis",
+    "related": ["Synopsys", "Cadence", "Autodesk"]
+  },
+  "PTC": {
+    "full_name": "PTC Inc.",
+    "description": "Software - PLM, CAD, IoT",
+    "related": ["Autodesk", "Siemens", "Dassault Systemes"]
+  },
+  "Siemens": {
+    "full_name": "Siemens AG",
+    "description": "Industrial - automation, energy, healthcare, software",
+    "related": ["GE", "ABB", "Honeywell"]
+  },
+  "ABB": {
+    "full_name": "ABB Ltd",
+    "description": "Industrial - robotics, automation, power",
+    "related": ["Siemens", "Honeywell", "Rockwell Automation"]
+  },
+  "Rockwell Automation": {
+    "full_name": "Rockwell Automation, Inc.",
+    "description": "Industrial - automation, control systems",
+    "related": ["Siemens", "ABB", "Emerson"]
+  },
+  "Emerson": {
+    "full_name": "Emerson Electric Co.",
+    "description": "Industrial - automation, climate technologies",
+    "related": ["Rockwell Automation", "ABB", "Honeywell"]
+  },
+  "Parker Hannifin": {
+    "full_name": "Parker Hannifin Corporation",
+    "description": "Industrial - motion, control technologies",
+    "related": ["Eaton", "Emerson", "Illinois Tool Works"]
+  },
+  "Eaton": {
+    "full_name": "Eaton Corporation plc",
+    "description": "Industrial - power management, electrical",
+    "related": ["Parker Hannifin", "Emerson", "Schneider Electric"]
+  },
+  "Schneider Electric": {
+    "full_name": "Schneider Electric SE",
+    "description": "Industrial - energy management, automation",
+    "related": ["Siemens", "ABB", "Eaton"]
+  },
+  "Illinois Tool Works": {
+    "full_name": "Illinois Tool Works Inc.",
+    "description": "Industrial - diversified manufacturing",
+    "also_known_as": ["ITW"],
+    "related": ["Parker Hannifin", "Emerson", "Dover"]
+  },
+  "Dover": {
+    "full_name": "Dover Corporation",
+    "description": "Industrial - diversified manufacturing",
+    "related": ["Illinois Tool Works", "Parker Hannifin", "Fortive"]
+  },
+  "Fortive": {
+    "full_name": "Fortive Corporation",
+    "description": "Industrial - instrumentation, transportation",
+    "related": ["Danaher", "Dover", "Roper Technologies"]
+  },
+  "Roper Technologies": {
+    "full_name": "Roper Technologies, Inc.",
+    "description": "Industrial - diversified technology, software",
+    "related": ["Fortive", "Danaher", "IDEX"]
+  },
+  "Stanley Black & Decker": {
+    "full_name": "Stanley Black & Decker, Inc.",
+    "description": "Industrial - tools, industrial, security",
+    "related": ["Snap-on", "Milwaukee Tool", "Bosch"]
+  },
+  "Bosch": {
+    "full_name": "Robert Bosch GmbH",
+    "description": "Industrial - automotive, power tools, appliances",
+    "related": ["Siemens", "Stanley Black & Decker", "Continental"]
+  },
+  "Continental": {
+    "full_name": "Continental AG",
+    "description": "Automotive - tires, automotive technology",
+    "related": ["Bosch", "Denso", "Magna"]
+  },
+  "Denso": {
+    "full_name": "DENSO Corporation",
+    "description": "Automotive - parts, systems supplier",
+    "related": ["Bosch", "Continental", "Magna"]
+  },
+  "Magna": {
+    "full_name": "Magna International Inc.",
+    "description": "Automotive - parts, contract manufacturing",
+    "related": ["Denso", "Continental", "Aptiv"]
+  },
+  "Aptiv": {
+    "full_name": "Aptiv PLC",
+    "description": "Automotive - electrical, autonomous tech",
+    "related": ["Magna", "Continental", "Bosch"]
+  },
+  "BorgWarner": {
+    "full_name": "BorgWarner Inc.",
+    "description": "Automotive - propulsion, drivetrain",
+    "related": ["Aptiv", "Magna", "Continental"]
+  },
+  "Cummins": {
+    "full_name": "Cummins Inc.",
+    "description": "Industrial - engines, power generation",
+    "related": ["Caterpillar", "PACCAR", "Deere"]
+  },
+  "PACCAR": {
+    "full_name": "PACCAR Inc",
+    "description": "Automotive - trucks (Peterbilt, Kenworth)",
+    "related": ["Cummins", "Volvo", "Daimler Truck"]
+  },
+  "Volvo": {
+    "full_name": "Volvo Group",
+    "description": "Automotive - trucks, buses, construction equipment",
+    "related": ["PACCAR", "Daimler Truck", "Scania"]
+  },
+  "Daimler Truck": {
+    "full_name": "Daimler Truck Holding AG",
+    "description": "Automotive - trucks, buses (Freightliner, Mercedes-Benz)",
+    "related": ["PACCAR", "Volvo", "Navistar"]
+  },
+  "Mercedes-Benz": {
+    "full_name": "Mercedes-Benz Group AG",
+    "description": "Automotive - luxury vehicles",
+    "related": ["BMW", "Audi", "Lexus"]
+  },
+  "BMW": {
+    "full_name": "Bayerische Motoren Werke AG",
+    "description": "Automotive - luxury vehicles, motorcycles",
+    "related": ["Mercedes-Benz", "Audi", "Porsche"]
+  },
+  "Audi": {
+    "full_name": "Audi AG (Volkswagen)",
+    "description": "Automotive - luxury vehicles",
+    "related": ["BMW", "Mercedes-Benz", "Porsche"]
+  },
+  "Porsche": {
+    "full_name": "Porsche AG",
+    "description": "Automotive - luxury sports cars",
+    "related": ["Ferrari", "Lamborghini", "BMW"]
+  },
+  "Ferrari": {
+    "full_name": "Ferrari N.V.",
+    "description": "Automotive - luxury sports cars",
+    "related": ["Porsche", "Lamborghini", "McLaren"]
+  },
+  "Volkswagen": {
+    "full_name": "Volkswagen AG",
+    "description": "Automotive - vehicles (VW, Audi, Porsche, Lamborghini)",
+    "also_known_as": ["VW"],
+    "related": ["Toyota", "GM", "Ford"]
+  },
+  "Hyundai": {
+    "full_name": "Hyundai Motor Company",
+    "description": "Automotive - vehicles, Kia",
+    "related": ["Toyota", "Honda", "Kia"]
+  },
+  "Kia": {
+    "full_name": "Kia Corporation",
+    "description": "Automotive - vehicles",
+    "related": ["Hyundai", "Toyota", "Honda"]
+  },
+  "Nissan": {
+    "full_name": "Nissan Motor Co., Ltd.",
+    "description": "Automotive - vehicles, Infiniti",
+    "related": ["Toyota", "Honda", "Mitsubishi"]
+  },
+  "Mazda": {
+    "full_name": "Mazda Motor Corporation",
+    "description": "Automotive - vehicles",
+    "related": ["Toyota", "Honda", "Subaru"]
+  },
+  "Subaru": {
+    "full_name": "Subaru Corporation",
+    "description": "Automotive - vehicles, AWD specialist",
+    "related": ["Toyota", "Mazda", "Honda"]
+  },
+  "Stellantis": {
+    "full_name": "Stellantis N.V.",
+    "description": "Automotive - Jeep, Ram, Dodge, Chrysler, Fiat",
+    "related": ["GM", "Ford", "Volkswagen"]
+  },
+  "Polestar": {
+    "full_name": "Polestar Automotive Holding",
+    "description": "Automotive - electric performance vehicles",
+    "related": ["Tesla", "Lucid Motors", "Rivian"]
+  },
+  "Fisker": {
+    "full_name": "Fisker Inc.",
+    "description": "Automotive - electric vehicles",
+    "related": ["Tesla", "Rivian", "Lucid Motors"]
+  },
+  "Nio": {
+    "full_name": "NIO Inc.",
+    "description": "Automotive - electric vehicles (China)",
+    "related": ["Tesla", "XPeng", "Li Auto"]
+  },
+  "XPeng": {
+    "full_name": "XPeng Inc.",
+    "description": "Automotive - electric vehicles (China)",
+    "related": ["Nio", "Tesla", "Li Auto"]
+  },
+  "BYD": {
+    "full_name": "BYD Company Limited",
+    "description": "Automotive - electric vehicles, batteries (China)",
+    "related": ["Tesla", "Nio", "CATL"]
+  },
+  "CATL": {
+    "full_name": "Contemporary Amperex Technology",
+    "description": "Energy - EV batteries manufacturer",
+    "related": ["BYD", "LG Energy", "Panasonic"]
+  },
+  "US Bank": {
+    "full_name": "U.S. Bancorp",
+    "description": "Banking - retail, commercial banking",
+    "related": ["Wells Fargo", "PNC", "Truist"]
+  },
+  "PNC": {
+    "full_name": "PNC Financial Services Group",
+    "description": "Banking - retail, commercial banking",
+    "related": ["US Bank", "Truist", "Fifth Third"]
+  },
+  "Truist": {
+    "full_name": "Truist Financial Corporation",
+    "description": "Banking - retail, commercial (BB&T + SunTrust)",
+    "related": ["PNC", "US Bank", "Regions"]
+  },
+  "Fifth Third": {
+    "full_name": "Fifth Third Bancorp",
+    "description": "Banking - retail, commercial banking",
+    "related": ["PNC", "Huntington", "KeyBank"]
+  },
+  "Huntington": {
+    "full_name": "Huntington Bancshares",
+    "description": "Banking - retail, commercial banking",
+    "related": ["Fifth Third", "KeyBank", "Regions"]
+  },
+  "KeyBank": {
+    "full_name": "KeyCorp",
+    "description": "Banking - retail, commercial banking",
+    "related": ["Huntington", "Fifth Third", "Citizens"]
+  },
+  "Citizens": {
+    "full_name": "Citizens Financial Group",
+    "description": "Banking - retail, commercial banking",
+    "related": ["KeyBank", "Regions", "M&T Bank"]
+  },
+  "Regions": {
+    "full_name": "Regions Financial Corporation",
+    "description": "Banking - retail, commercial banking",
+    "related": ["Truist", "Citizens", "Huntington"]
+  },
+  "M&T Bank": {
+    "full_name": "M&T Bank Corporation",
+    "description": "Banking - retail, commercial banking",
+    "related": ["Citizens", "KeyBank", "People's United"]
+  },
+  "SVB": {
+    "full_name": "Silicon Valley Bank (First Citizens)",
+    "description": "Banking - tech, venture, startups",
+    "also_known_as": ["Silicon Valley Bank"],
+    "related": ["First Republic", "Signature Bank", "JPMorgan"]
+  },
+  "TD Bank": {
+    "full_name": "TD Bank, N.A.",
+    "description": "Banking - retail banking (US/Canada)",
+    "related": ["BMO", "RBC", "Scotiabank"]
+  },
+  "BMO": {
+    "full_name": "Bank of Montreal",
+    "description": "Banking - retail, commercial (US/Canada)",
+    "related": ["TD Bank", "RBC", "Scotiabank"]
+  },
+  "RBC": {
+    "full_name": "Royal Bank of Canada",
+    "description": "Banking - largest Canadian bank",
+    "related": ["TD Bank", "BMO", "Scotiabank"]
+  },
+  "Scotiabank": {
+    "full_name": "Bank of Nova Scotia",
+    "description": "Banking - Canadian bank, Latin America focus",
+    "related": ["RBC", "TD Bank", "BMO"]
+  },
+  "HSBC": {
+    "full_name": "HSBC Holdings plc",
+    "description": "Banking - global bank, Asia focus",
+    "related": ["Barclays", "Standard Chartered", "Deutsche Bank"]
+  },
+  "Barclays": {
+    "full_name": "Barclays PLC",
+    "description": "Banking - UK bank, investment banking",
+    "related": ["HSBC", "Lloyds", "NatWest"]
+  },
+  "Deutsche Bank": {
+    "full_name": "Deutsche Bank AG",
+    "description": "Banking - German bank, investment banking",
+    "related": ["UBS", "Credit Suisse", "Barclays"]
+  },
+  "UBS": {
+    "full_name": "UBS Group AG",
+    "description": "Banking - Swiss bank, wealth management",
+    "related": ["Credit Suisse", "Deutsche Bank", "Morgan Stanley"]
+  },
+  "Credit Suisse": {
+    "full_name": "Credit Suisse (now UBS)",
+    "description": "Banking - Swiss bank, merged with UBS",
+    "related": ["UBS", "Deutsche Bank", "Barclays"]
+  },
+  "BNP Paribas": {
+    "full_name": "BNP Paribas S.A.",
+    "description": "Banking - French bank, global presence",
+    "related": ["Societe Generale", "Credit Agricole", "Deutsche Bank"]
+  },
+  "Societe Generale": {
+    "full_name": "Societe Generale S.A.",
+    "description": "Banking - French bank",
+    "related": ["BNP Paribas", "Credit Agricole", "Natixis"]
+  },
+  "ING": {
+    "full_name": "ING Group N.V.",
+    "description": "Banking - Dutch bank, online banking",
+    "related": ["ABN AMRO", "Rabobank", "Deutsche Bank"]
+  },
+  "Santander": {
+    "full_name": "Banco Santander, S.A.",
+    "description": "Banking - Spanish bank, global presence",
+    "related": ["BBVA", "CaixaBank", "BNP Paribas"]
+  },
+  "BBVA": {
+    "full_name": "Banco Bilbao Vizcaya Argentaria",
+    "description": "Banking - Spanish bank, Latin America",
+    "related": ["Santander", "CaixaBank", "Itau"]
+  },
+  "Itau": {
+    "full_name": "Itau Unibanco Holding S.A.",
+    "description": "Banking - largest Brazilian bank",
+    "related": ["Bradesco", "Santander", "Banco do Brasil"]
+  },
+  "ICBC": {
+    "full_name": "Industrial and Commercial Bank of China",
+    "description": "Banking - largest bank in the world (China)",
+    "related": ["China Construction Bank", "Bank of China", "Agricultural Bank of China"]
+  },
+  "Nomura": {
+    "full_name": "Nomura Holdings, Inc.",
+    "description": "Investment banking - Japanese bank",
+    "related": ["Daiwa", "Mizuho", "MUFG"]
+  },
+  "MUFG": {
+    "full_name": "Mitsubishi UFJ Financial Group",
+    "description": "Banking - largest Japanese bank",
+    "related": ["Nomura", "Mizuho", "SMFG"]
+  },
+  "Lazard": {
+    "full_name": "Lazard Ltd",
+    "description": "Investment banking - M&A advisory, asset management",
+    "related": ["Evercore", "Moelis", "PJT Partners"]
+  },
+  "Evercore": {
+    "full_name": "Evercore Inc.",
+    "description": "Investment banking - M&A advisory",
+    "related": ["Lazard", "Moelis", "Centerview"]
+  },
+  "Moelis": {
+    "full_name": "Moelis & Company",
+    "description": "Investment banking - M&A advisory",
+    "related": ["Evercore", "Lazard", "PJT Partners"]
+  },
+  "Centerview": {
+    "full_name": "Centerview Partners",
+    "description": "Investment banking - M&A advisory",
+    "related": ["Evercore", "Lazard", "Perella Weinberg"]
+  },
+  "Perella Weinberg": {
+    "full_name": "Perella Weinberg Partners",
+    "description": "Investment banking - M&A advisory",
+    "also_known_as": ["PWP"],
+    "related": ["Centerview", "Evercore", "Moelis"]
+  },
+  "Houlihan Lokey": {
+    "full_name": "Houlihan Lokey, Inc.",
+    "description": "Investment banking - M&A, restructuring",
+    "related": ["Lazard", "Jefferies", "Moelis"]
+  },
+  "Jefferies": {
+    "full_name": "Jefferies Financial Group Inc.",
+    "description": "Investment banking - middle market",
+    "related": ["Houlihan Lokey", "Piper Sandler", "William Blair"]
+  },
+  "Piper Sandler": {
+    "full_name": "Piper Sandler Companies",
+    "description": "Investment banking - middle market",
+    "related": ["Jefferies", "William Blair", "Baird"]
+  },
+  "William Blair": {
+    "full_name": "William Blair & Company",
+    "description": "Investment banking - middle market, asset management",
+    "related": ["Piper Sandler", "Baird", "Raymond James"]
+  },
+  "Baird": {
+    "full_name": "Robert W. Baird & Co.",
+    "description": "Investment banking - middle market, wealth management",
+    "related": ["William Blair", "Piper Sandler", "Raymond James"]
+  },
+  "Raymond James": {
+    "full_name": "Raymond James Financial, Inc.",
+    "description": "Financial services - wealth management, banking",
+    "related": ["Baird", "Edward Jones", "Stifel"]
+  },
+  "Stifel": {
+    "full_name": "Stifel Financial Corp.",
+    "description": "Financial services - wealth management, banking",
+    "related": ["Raymond James", "Baird", "Oppenheimer"]
+  },
+  "Edward Jones": {
+    "full_name": "Edward Jones",
+    "description": "Financial services - wealth management",
+    "related": ["Raymond James", "Charles Schwab", "Fidelity"]
+  },
+  "Northern Trust": {
+    "full_name": "Northern Trust Corporation",
+    "description": "Financial services - asset management, custody",
+    "related": ["State Street", "BNY Mellon", "BlackRock"]
+  },
+  "BNY Mellon": {
+    "full_name": "The Bank of New York Mellon Corporation",
+    "description": "Financial services - custody, asset servicing",
+    "related": ["State Street", "Northern Trust", "JPMorgan"]
+  },
+  "T. Rowe Price": {
+    "full_name": "T. Rowe Price Group, Inc.",
+    "description": "Asset management - mutual funds, retirement",
+    "related": ["Fidelity", "Vanguard", "Franklin Templeton"]
+  },
+  "Franklin Templeton": {
+    "full_name": "Franklin Templeton Investments",
+    "description": "Asset management - mutual funds, ETFs",
+    "related": ["T. Rowe Price", "Invesco", "PIMCO"]
+  },
+  "Invesco": {
+    "full_name": "Invesco Ltd.",
+    "description": "Asset management - ETFs, mutual funds",
+    "related": ["Franklin Templeton", "T. Rowe Price", "BlackRock"]
+  },
+  "PIMCO": {
+    "full_name": "Pacific Investment Management Company",
+    "description": "Asset management - fixed income specialist",
+    "related": ["BlackRock", "Vanguard", "DoubleLine"]
+  },
+  "Wellington": {
+    "full_name": "Wellington Management Company",
+    "description": "Asset management - institutional investor",
+    "related": ["PIMCO", "Capital Group", "Fidelity"]
+  },
+  "Capital Group": {
+    "full_name": "Capital Group Companies",
+    "description": "Asset management - American Funds",
+    "related": ["Fidelity", "Vanguard", "T. Rowe Price"]
+  },
+  "Citadel": {
+    "full_name": "Citadel LLC",
+    "description": "Hedge fund - quantitative, market making",
+    "related": ["Two Sigma", "DE Shaw", "Renaissance Technologies"]
+  },
+  "Two Sigma": {
+    "full_name": "Two Sigma Investments",
+    "description": "Hedge fund - quantitative, technology-driven",
+    "related": ["Citadel", "DE Shaw", "Renaissance Technologies"]
+  },
+  "DE Shaw": {
+    "full_name": "D. E. Shaw & Co.",
+    "description": "Hedge fund - quantitative strategies",
+    "related": ["Two Sigma", "Citadel", "Renaissance Technologies"]
+  },
+  "Renaissance Technologies": {
+    "full_name": "Renaissance Technologies LLC",
+    "description": "Hedge fund - quantitative, Medallion Fund",
+    "also_known_as": ["RenTech"],
+    "related": ["Two Sigma", "Citadel", "DE Shaw"]
+  },
+  "Bridgewater": {
+    "full_name": "Bridgewater Associates",
+    "description": "Hedge fund - macro strategies, largest hedge fund",
+    "related": ["Citadel", "Two Sigma", "AQR"]
+  },
+  "AQR": {
+    "full_name": "AQR Capital Management",
+    "description": "Hedge fund - quantitative, factor investing",
+    "related": ["Bridgewater", "Two Sigma", "Citadel"]
+  },
+  "Point72": {
+    "full_name": "Point72 Asset Management",
+    "description": "Hedge fund - multi-strategy",
+    "related": ["Citadel", "Millennium", "Balyasny"]
+  },
+  "Millennium": {
+    "full_name": "Millennium Management",
+    "description": "Hedge fund - multi-strategy",
+    "related": ["Citadel", "Point72", "Balyasny"]
+  },
+  "Elliott": {
+    "full_name": "Elliott Investment Management",
+    "description": "Hedge fund - activist investing",
+    "related": ["Third Point", "Pershing Square", "ValueAct"]
+  },
+  "Third Point": {
+    "full_name": "Third Point LLC",
+    "description": "Hedge fund - activist, event-driven",
+    "related": ["Elliott", "Pershing Square", "Icahn Enterprises"]
+  },
+  "Pershing Square": {
+    "full_name": "Pershing Square Capital Management",
+    "description": "Hedge fund - activist investing, Bill Ackman",
+    "related": ["Third Point", "Elliott", "ValueAct"]
+  },
+  "Apollo": {
+    "full_name": "Apollo Global Management",
+    "description": "Private equity - alternative investments",
+    "related": ["Blackstone", "KKR", "Carlyle"]
+  },
+  "Blackstone": {
+    "full_name": "Blackstone Inc.",
+    "description": "Private equity - largest alternative asset manager",
+    "related": ["Apollo", "KKR", "Carlyle"]
+  },
+  "KKR": {
+    "full_name": "KKR & Co. Inc.",
+    "description": "Private equity - leveraged buyouts",
+    "also_known_as": ["Kohlberg Kravis Roberts"],
+    "related": ["Blackstone", "Apollo", "Carlyle"]
+  },
+  "Carlyle": {
+    "full_name": "The Carlyle Group",
+    "description": "Private equity - global alternative asset manager",
+    "related": ["Blackstone", "KKR", "Apollo"]
+  },
+  "TPG": {
+    "full_name": "TPG Inc.",
+    "description": "Private equity - growth, impact investing",
+    "also_known_as": ["Texas Pacific Group"],
+    "related": ["KKR", "Blackstone", "Warburg Pincus"]
+  },
+  "Warburg Pincus": {
+    "full_name": "Warburg Pincus LLC",
+    "description": "Private equity - growth equity",
+    "related": ["TPG", "General Atlantic", "Advent"]
+  },
+  "General Atlantic": {
+    "full_name": "General Atlantic",
+    "description": "Private equity - growth equity",
+    "related": ["Warburg Pincus", "TPG", "TA Associates"]
+  },
+  "Advent": {
+    "full_name": "Advent International",
+    "description": "Private equity - buyouts",
+    "related": ["Warburg Pincus", "Bain Capital", "Thoma Bravo"]
+  },
+  "Bain Capital": {
+    "full_name": "Bain Capital, LP",
+    "description": "Private equity - buyouts, ventures",
+    "related": ["Advent", "KKR", "Blackstone"]
+  },
+  "Thoma Bravo": {
+    "full_name": "Thoma Bravo",
+    "description": "Private equity - software, technology buyouts",
+    "related": ["Vista Equity", "Silver Lake", "Francisco Partners"]
+  },
+  "Vista Equity": {
+    "full_name": "Vista Equity Partners",
+    "description": "Private equity - enterprise software specialist",
+    "related": ["Thoma Bravo", "Silver Lake", "Francisco Partners"]
+  },
+  "Silver Lake": {
+    "full_name": "Silver Lake Partners",
+    "description": "Private equity - technology investments",
+    "related": ["Vista Equity", "Thoma Bravo", "Andreessen Horowitz"]
+  },
+  "Francisco Partners": {
+    "full_name": "Francisco Partners",
+    "description": "Private equity - technology buyouts",
+    "related": ["Thoma Bravo", "Vista Equity", "Silver Lake"]
+  },
+  "Andreessen Horowitz": {
+    "full_name": "Andreessen Horowitz",
+    "description": "Venture capital - technology, crypto",
+    "also_known_as": ["a16z"],
+    "related": ["Sequoia", "Accel", "Benchmark"]
+  },
+  "Sequoia": {
+    "full_name": "Sequoia Capital",
+    "description": "Venture capital - technology, early stage",
+    "related": ["Andreessen Horowitz", "Accel", "Kleiner Perkins"]
+  },
+  "Accel": {
+    "full_name": "Accel Partners",
+    "description": "Venture capital - technology, growth",
+    "related": ["Sequoia", "Andreessen Horowitz", "Index Ventures"]
+  },
+  "Kleiner Perkins": {
+    "full_name": "Kleiner Perkins",
+    "description": "Venture capital - technology, cleantech",
+    "related": ["Sequoia", "Benchmark", "Greylock"]
+  },
+  "Benchmark": {
+    "full_name": "Benchmark Capital",
+    "description": "Venture capital - early stage technology",
+    "related": ["Sequoia", "Andreessen Horowitz", "Accel"]
+  },
+  "Greylock": {
+    "full_name": "Greylock Partners",
+    "description": "Venture capital - enterprise, consumer tech",
+    "related": ["Sequoia", "Benchmark", "NEA"]
+  },
+  "NEA": {
+    "full_name": "New Enterprise Associates",
+    "description": "Venture capital - technology, healthcare",
+    "related": ["Greylock", "Sequoia", "GGV"]
+  },
+  "Lightspeed": {
+    "full_name": "Lightspeed Venture Partners",
+    "description": "Venture capital - early and growth stage",
+    "related": ["Sequoia", "Accel", "GGV"]
+  },
+  "GGV": {
+    "full_name": "GGV Capital",
+    "description": "Venture capital - US and Asia focus",
+    "related": ["Lightspeed", "NEA", "DCM"]
+  },
+  "Index Ventures": {
+    "full_name": "Index Ventures",
+    "description": "Venture capital - Europe and US focus",
+    "related": ["Accel", "Sequoia", "Balderton"]
+  },
+  "Insight Partners": {
+    "full_name": "Insight Partners",
+    "description": "Venture and growth equity - software",
+    "related": ["Tiger Global", "Coatue", "General Atlantic"]
+  },
+  "Tiger Global": {
+    "full_name": "Tiger Global Management",
+    "description": "Hedge fund and venture capital - tech growth",
+    "related": ["Insight Partners", "Coatue", "SoftBank"]
+  },
+  "Coatue": {
+    "full_name": "Coatue Management",
+    "description": "Hedge fund and venture capital - technology",
+    "related": ["Tiger Global", "Insight Partners", "D1 Capital"]
+  },
+  "SoftBank": {
+    "full_name": "SoftBank Group Corp.",
+    "description": "Conglomerate - Vision Fund, telecom, investments",
+    "related": ["Tiger Global", "Sequoia", "Tencent"]
+  },
+  "Y Combinator": {
+    "full_name": "Y Combinator",
+    "description": "Startup accelerator - seed funding",
+    "also_known_as": ["YC"],
+    "related": ["Techstars", "500 Startups", "Andreessen Horowitz"]
+  },
+  "Techstars": {
+    "full_name": "Techstars",
+    "description": "Startup accelerator - mentorship, funding",
+    "related": ["Y Combinator", "500 Startups", "Plug and Play"]
+  },
+  "Oliver Wyman": {
+    "full_name": "Oliver Wyman",
+    "description": "Management consulting - financial services focus",
+    "related": ["McKinsey", "BCG", "Bain & Company"]
+  },
+  "Roland Berger": {
+    "full_name": "Roland Berger",
+    "description": "Management consulting - European focus",
+    "related": ["McKinsey", "BCG", "Oliver Wyman"]
+  },
+  "Kearney": {
+    "full_name": "Kearney (formerly A.T. Kearney)",
+    "description": "Management consulting - operations, procurement",
+    "also_known_as": ["A.T. Kearney"],
+    "related": ["McKinsey", "BCG", "Accenture"]
+  },
+  "LEK": {
+    "full_name": "L.E.K. Consulting",
+    "description": "Management consulting - strategy",
+    "related": ["McKinsey", "BCG", "Bain & Company"]
+  },
+  "Strategy&": {
+    "full_name": "Strategy& (PwC)",
+    "description": "Management consulting - strategy (part of PwC)",
+    "also_known_as": ["Booz & Company"],
+    "related": ["McKinsey", "BCG", "PwC"]
+  },
+  "Monitor Deloitte": {
+    "full_name": "Monitor Deloitte",
+    "description": "Management consulting - strategy (part of Deloitte)",
+    "related": ["McKinsey", "BCG", "Deloitte"]
+  },
+  "Alvarez & Marsal": {
+    "full_name": "Alvarez & Marsal",
+    "description": "Consulting - restructuring, turnaround",
+    "also_known_as": ["A&M"],
+    "related": ["FTI Consulting", "AlixPartners", "Ankura"]
+  },
+  "FTI Consulting": {
+    "full_name": "FTI Consulting, Inc.",
+    "description": "Consulting - restructuring, forensics, communications",
+    "related": ["Alvarez & Marsal", "AlixPartners", "Kroll"]
+  },
+  "AlixPartners": {
+    "full_name": "AlixPartners, LLP",
+    "description": "Consulting - turnaround, restructuring",
+    "related": ["Alvarez & Marsal", "FTI Consulting", "McKinsey"]
+  },
+  "Huron": {
+    "full_name": "Huron Consulting Group",
+    "description": "Consulting - healthcare, education, business",
+    "related": ["Navigant", "Guidehouse", "Accenture"]
+  },
+  "Guidehouse": {
+    "full_name": "Guidehouse Inc.",
+    "description": "Consulting - government, healthcare, financial services",
+    "related": ["Huron", "Booz Allen Hamilton", "Deloitte"]
+  },
+  "Booz Allen Hamilton": {
+    "full_name": "Booz Allen Hamilton Inc.",
+    "description": "Consulting - government, defense, intelligence",
+    "related": ["Guidehouse", "SAIC", "Leidos"]
+  },
+  "SAIC": {
+    "full_name": "Science Applications International Corporation",
+    "description": "Technology - government IT services, defense",
+    "related": ["Booz Allen Hamilton", "Leidos", "CACI"]
+  },
+  "Leidos": {
+    "full_name": "Leidos Holdings, Inc.",
+    "description": "Technology - defense, intelligence, civil IT",
+    "related": ["SAIC", "Booz Allen Hamilton", "General Dynamics"]
+  },
+  "CACI": {
+    "full_name": "CACI International Inc",
+    "description": "Technology - defense, intelligence IT",
+    "related": ["SAIC", "Leidos", "ManTech"]
+  },
+  "ManTech": {
+    "full_name": "ManTech International Corporation",
+    "description": "Technology - defense, intelligence IT",
+    "related": ["CACI", "SAIC", "Booz Allen Hamilton"]
+  },
+  "BAE Systems": {
+    "full_name": "BAE Systems plc",
+    "description": "Defense - UK defense contractor",
+    "related": ["Lockheed Martin", "Raytheon", "Northrop Grumman"]
+  },
+  "Leonardo": {
+    "full_name": "Leonardo S.p.A.",
+    "description": "Defense - Italian aerospace and defense",
+    "related": ["BAE Systems", "Airbus", "Thales"]
+  },
+  "Thales": {
+    "full_name": "Thales Group",
+    "description": "Defense - French aerospace, defense, technology",
+    "related": ["Leonardo", "BAE Systems", "Airbus"]
+  },
+  "Safran": {
+    "full_name": "Safran S.A.",
+    "description": "Aerospace - aircraft engines, equipment",
+    "related": ["GE", "Rolls-Royce", "Airbus"]
+  },
+  "Rolls-Royce": {
+    "full_name": "Rolls-Royce Holdings plc",
+    "description": "Aerospace - aircraft engines, power systems",
+    "related": ["GE", "Safran", "Pratt & Whitney"]
+  },
+  "Textron": {
+    "full_name": "Textron Inc.",
+    "description": "Aerospace - Bell helicopters, Cessna, defense",
+    "related": ["Boeing", "Lockheed Martin", "General Dynamics"]
+  },
+  "Spirit AeroSystems": {
+    "full_name": "Spirit AeroSystems Holdings, Inc.",
+    "description": "Aerospace - aerostructures manufacturer",
+    "related": ["Boeing", "Airbus", "Lockheed Martin"]
+  },
+  "Howmet": {
+    "full_name": "Howmet Aerospace Inc.",
+    "description": "Aerospace - engineered products, fasteners",
+    "related": ["Spirit AeroSystems", "TransDigm", "Precision Castparts"]
+  },
+  "TransDigm": {
+    "full_name": "TransDigm Group Incorporated",
+    "description": "Aerospace - components manufacturer",
+    "related": ["Howmet", "Spirit AeroSystems", "Heico"]
+  },
+  "Virgin Galactic": {
+    "full_name": "Virgin Galactic Holdings, Inc.",
+    "description": "Aerospace - space tourism",
+    "related": ["Blue Origin", "SpaceX", "Rocket Lab"]
+  },
+  "Rocket Lab": {
+    "full_name": "Rocket Lab USA, Inc.",
+    "description": "Aerospace - small satellite launch",
+    "related": ["SpaceX", "Blue Origin", "Relativity Space"]
+  },
+  "Relativity Space": {
+    "full_name": "Relativity Space",
+    "description": "Aerospace - 3D-printed rockets",
+    "related": ["SpaceX", "Rocket Lab", "Blue Origin"]
+  },
+  "Planet Labs": {
+    "full_name": "Planet Labs PBC",
+    "description": "Aerospace - Earth imaging satellites",
+    "related": ["Maxar", "BlackSky", "Spire Global"]
+  },
+  "Maxar": {
+    "full_name": "Maxar Technologies Inc.",
+    "description": "Aerospace - satellites, Earth intelligence",
+    "related": ["Planet Labs", "L3Harris", "Northrop Grumman"]
+  },
+  "Macy's": {
+    "full_name": "Macy's, Inc.",
+    "description": "Retail - department stores, Bloomingdale's",
+    "related": ["Nordstrom", "Kohl's", "JCPenney"]
+  },
+  "Nordstrom": {
+    "full_name": "Nordstrom, Inc.",
+    "description": "Retail - department stores, fashion",
+    "related": ["Macy's", "Neiman Marcus", "Saks Fifth Avenue"]
+  },
+  "Kohl's": {
+    "full_name": "Kohl's Corporation",
+    "description": "Retail - department stores",
+    "related": ["Macy's", "JCPenney", "Target"]
+  },
+  "JCPenney": {
+    "full_name": "JCPenney Company, Inc.",
+    "description": "Retail - department stores",
+    "related": ["Kohl's", "Macy's", "Sears"]
+  },
+  "Neiman Marcus": {
+    "full_name": "Neiman Marcus Group",
+    "description": "Retail - luxury department stores",
+    "related": ["Nordstrom", "Saks Fifth Avenue", "Bloomingdale's"]
+  },
+  "Saks Fifth Avenue": {
+    "full_name": "Saks Fifth Avenue (HBC)",
+    "description": "Retail - luxury department stores",
+    "related": ["Neiman Marcus", "Nordstrom", "Bergdorf Goodman"]
+  },
+  "TJX": {
+    "full_name": "The TJX Companies, Inc.",
+    "description": "Retail - off-price (TJ Maxx, Marshalls, HomeGoods)",
+    "related": ["Ross Stores", "Burlington", "Nordstrom Rack"]
+  },
+  "Ross Stores": {
+    "full_name": "Ross Stores, Inc.",
+    "description": "Retail - off-price apparel and home",
+    "related": ["TJX", "Burlington", "dd's Discounts"]
+  },
+  "Burlington": {
+    "full_name": "Burlington Stores, Inc.",
+    "description": "Retail - off-price department store",
+    "related": ["TJX", "Ross Stores", "Kohl's"]
+  },
+  "Dollar General": {
+    "full_name": "Dollar General Corporation",
+    "description": "Retail - discount variety stores",
+    "related": ["Dollar Tree", "Family Dollar", "Five Below"]
+  },
+  "Dollar Tree": {
+    "full_name": "Dollar Tree, Inc.",
+    "description": "Retail - discount variety stores, Family Dollar",
+    "related": ["Dollar General", "Five Below", "99 Cents Only"]
+  },
+  "Five Below": {
+    "full_name": "Five Below, Inc.",
+    "description": "Retail - discount variety stores for teens",
+    "related": ["Dollar Tree", "Dollar General", "Target"]
+  },
+  "Best Buy": {
+    "full_name": "Best Buy Co., Inc.",
+    "description": "Retail - consumer electronics",
+    "related": ["Amazon", "Walmart", "Target"]
+  },
+  "GameStop": {
+    "full_name": "GameStop Corp.",
+    "description": "Retail - video games, electronics",
+    "related": ["Best Buy", "Amazon", "Walmart"]
+  },
+  "Ulta Beauty": {
+    "full_name": "Ulta Beauty, Inc.",
+    "description": "Retail - beauty products, salon services",
+    "related": ["Sephora", "Sally Beauty", "Bath & Body Works"]
+  },
+  "Sephora": {
+    "full_name": "Sephora (LVMH)",
+    "description": "Retail - beauty products",
+    "related": ["Ulta Beauty", "MAC", "LVMH"]
+  },
+  "Bath & Body Works": {
+    "full_name": "Bath & Body Works, Inc.",
+    "description": "Retail - personal care, home fragrance",
+    "related": ["Ulta Beauty", "Victoria's Secret", "L'Occitane"]
+  },
+  "Victoria's Secret": {
+    "full_name": "Victoria's Secret & Co.",
+    "description": "Retail - lingerie, beauty",
+    "related": ["Bath & Body Works", "Aerie", "ThirdLove"]
+  },
+  "Gap": {
+    "full_name": "Gap Inc.",
+    "description": "Retail - apparel (Gap, Old Navy, Banana Republic, Athleta)",
+    "related": ["H&M", "Zara", "American Eagle"]
+  },
+  "H&M": {
+    "full_name": "H&M Hennes & Mauritz AB",
+    "description": "Retail - fast fashion apparel",
+    "related": ["Zara", "Gap", "Uniqlo"]
+  },
+  "Zara": {
+    "full_name": "Zara (Inditex)",
+    "description": "Retail - fast fashion apparel",
+    "related": ["H&M", "Gap", "Uniqlo"]
+  },
+  "Uniqlo": {
+    "full_name": "Uniqlo (Fast Retailing)",
+    "description": "Retail - casual apparel",
+    "related": ["H&M", "Zara", "Gap"]
+  },
+  "American Eagle": {
+    "full_name": "American Eagle Outfitters, Inc.",
+    "description": "Retail - apparel (American Eagle, Aerie)",
+    "related": ["Gap", "Abercrombie & Fitch", "Hollister"]
+  },
+  "Abercrombie & Fitch": {
+    "full_name": "Abercrombie & Fitch Co.",
+    "description": "Retail - apparel (Abercrombie, Hollister)",
+    "related": ["American Eagle", "Gap", "Aeropostale"]
+  },
+  "Urban Outfitters": {
+    "full_name": "Urban Outfitters, Inc.",
+    "description": "Retail - apparel (Urban Outfitters, Anthropologie, Free People)",
+    "related": ["Gap", "H&M", "American Eagle"]
+  },
+  "Ralph Lauren": {
+    "full_name": "Ralph Lauren Corporation",
+    "description": "Apparel - fashion, luxury lifestyle brand",
+    "related": ["PVH", "Tommy Hilfiger", "Calvin Klein"]
+  },
+  "PVH": {
+    "full_name": "PVH Corp.",
+    "description": "Apparel - Calvin Klein, Tommy Hilfiger",
+    "related": ["Ralph Lauren", "Tapestry", "Capri Holdings"]
+  },
+  "Tapestry": {
+    "full_name": "Tapestry, Inc.",
+    "description": "Fashion - Coach, Kate Spade, Stuart Weitzman",
+    "related": ["Capri Holdings", "LVMH", "PVH"]
+  },
+  "Capri Holdings": {
+    "full_name": "Capri Holdings Limited",
+    "description": "Fashion - Michael Kors, Versace, Jimmy Choo",
+    "related": ["Tapestry", "LVMH", "Kering"]
+  },
+  "LVMH": {
+    "full_name": "LVMH Moët Hennessy Louis Vuitton",
+    "description": "Luxury - fashion, cosmetics, wine (Louis Vuitton, Dior, Sephora)",
+    "related": ["Kering", "Richemont", "Hermès"]
+  },
+  "Kering": {
+    "full_name": "Kering S.A.",
+    "description": "Luxury - fashion (Gucci, Saint Laurent, Balenciaga)",
+    "related": ["LVMH", "Richemont", "Prada"]
+  },
+  "Hermès": {
+    "full_name": "Hermès International S.A.",
+    "description": "Luxury - fashion, leather goods, scarves",
+    "related": ["LVMH", "Kering", "Chanel"]
+  },
+  "Chanel": {
+    "full_name": "Chanel S.A.",
+    "description": "Luxury - fashion, beauty, fragrance",
+    "related": ["LVMH", "Hermès", "Dior"]
+  },
+  "Prada": {
+    "full_name": "Prada S.p.A.",
+    "description": "Luxury - fashion, leather goods",
+    "related": ["LVMH", "Kering", "Gucci"]
+  },
+  "VF Corporation": {
+    "full_name": "VF Corporation",
+    "description": "Apparel - North Face, Vans, Timberland",
+    "related": ["Nike", "Hanesbrands", "PVH"]
+  },
+  "Hanesbrands": {
+    "full_name": "Hanesbrands Inc.",
+    "description": "Apparel - innerwear, activewear (Hanes, Champion)",
+    "related": ["VF Corporation", "Gildan", "Fruit of the Loom"]
+  },
+  "Columbia Sportswear": {
+    "full_name": "Columbia Sportswear Company",
+    "description": "Apparel - outdoor clothing and footwear",
+    "related": ["VF Corporation", "Patagonia", "The North Face"]
+  },
+  "Patagonia": {
+    "full_name": "Patagonia, Inc.",
+    "description": "Apparel - outdoor, sustainability-focused",
+    "related": ["Columbia Sportswear", "The North Face", "REI"]
+  },
+  "REI": {
+    "full_name": "REI (Recreational Equipment, Inc.)",
+    "description": "Retail - outdoor gear and apparel co-op",
+    "related": ["Patagonia", "Dick's Sporting Goods", "Bass Pro Shops"]
+  },
+  "Dick's Sporting Goods": {
+    "full_name": "Dick's Sporting Goods, Inc.",
+    "description": "Retail - sporting goods",
+    "related": ["REI", "Academy Sports", "Bass Pro Shops"]
+  },
+  "Foot Locker": {
+    "full_name": "Foot Locker, Inc.",
+    "description": "Retail - athletic footwear and apparel",
+    "related": ["Nike", "Finish Line", "JD Sports"]
+  },
+  "AutoZone": {
+    "full_name": "AutoZone, Inc.",
+    "description": "Retail - auto parts",
+    "related": ["O'Reilly Auto Parts", "Advance Auto Parts", "NAPA"]
+  },
+  "O'Reilly Auto Parts": {
+    "full_name": "O'Reilly Automotive, Inc.",
+    "description": "Retail - auto parts",
+    "related": ["AutoZone", "Advance Auto Parts", "NAPA"]
+  },
+  "CarMax": {
+    "full_name": "CarMax, Inc.",
+    "description": "Retail - used car retailer",
+    "related": ["Carvana", "AutoNation", "Vroom"]
+  },
+  "Carvana": {
+    "full_name": "Carvana Co.",
+    "description": "Retail - online used car retailer",
+    "related": ["CarMax", "Vroom", "Shift"]
+  },
+  "AutoNation": {
+    "full_name": "AutoNation, Inc.",
+    "description": "Retail - auto dealership group",
+    "related": ["Penske Automotive", "Lithia Motors", "CarMax"]
+  },
+  "Wayfair": {
+    "full_name": "Wayfair Inc.",
+    "description": "Retail - online home goods, furniture",
+    "related": ["Amazon", "Williams-Sonoma", "Overstock"]
+  },
+  "Williams-Sonoma": {
+    "full_name": "Williams-Sonoma, Inc.",
+    "description": "Retail - home goods (Williams-Sonoma, Pottery Barn, West Elm)",
+    "related": ["Wayfair", "Crate & Barrel", "RH"]
+  },
+  "RH": {
+    "full_name": "RH (Restoration Hardware)",
+    "description": "Retail - luxury home furnishings",
+    "also_known_as": ["Restoration Hardware"],
+    "related": ["Williams-Sonoma", "Pottery Barn", "Arhaus"]
+  },
+  "IKEA": {
+    "full_name": "IKEA (Ingka Group)",
+    "description": "Retail - furniture, home goods",
+    "related": ["Wayfair", "Williams-Sonoma", "Crate & Barrel"]
+  },
+  "Bed Bath & Beyond": {
+    "full_name": "Bed Bath & Beyond Inc.",
+    "description": "Retail - home goods (closed 2023)",
+    "related": ["Williams-Sonoma", "Target", "Amazon"]
+  },
+  "Petco": {
+    "full_name": "Petco Health and Wellness Company",
+    "description": "Retail - pet supplies and services",
+    "related": ["PetSmart", "Chewy", "Tractor Supply"]
+  },
+  "PetSmart": {
+    "full_name": "PetSmart Inc.",
+    "description": "Retail - pet supplies and services",
+    "related": ["Petco", "Chewy", "Tractor Supply"]
+  },
+  "Chewy": {
+    "full_name": "Chewy, Inc.",
+    "description": "Retail - online pet supplies",
+    "related": ["Petco", "PetSmart", "Amazon"]
+  },
+  "Tractor Supply": {
+    "full_name": "Tractor Supply Company",
+    "description": "Retail - rural lifestyle products",
+    "related": ["Petco", "PetSmart", "Rural King"]
+  },
+  "Albertsons": {
+    "full_name": "Albertsons Companies, Inc.",
+    "description": "Retail - grocery (Safeway, Vons, Jewel-Osco)",
+    "related": ["Kroger", "Publix", "Ahold Delhaize"]
+  },
+  "Publix": {
+    "full_name": "Publix Super Markets, Inc.",
+    "description": "Retail - grocery supermarket (Southeast US)",
+    "related": ["Kroger", "Albertsons", "Wegmans"]
+  },
+  "Wegmans": {
+    "full_name": "Wegmans Food Markets, Inc.",
+    "description": "Retail - grocery supermarket (Northeast US)",
+    "related": ["Publix", "Trader Joe's", "Whole Foods"]
+  },
+  "Trader Joe's": {
+    "full_name": "Trader Joe's Company",
+    "description": "Retail - grocery (specialty, private label)",
+    "related": ["Whole Foods", "Sprouts", "Aldi"]
+  },
+  "Whole Foods": {
+    "full_name": "Whole Foods Market (Amazon)",
+    "description": "Retail - natural and organic grocery",
+    "related": ["Trader Joe's", "Sprouts", "Amazon"]
+  },
+  "Sprouts": {
+    "full_name": "Sprouts Farmers Market, Inc.",
+    "description": "Retail - natural and organic grocery",
+    "related": ["Whole Foods", "Trader Joe's", "Natural Grocers"]
+  },
+  "Aldi": {
+    "full_name": "ALDI Inc.",
+    "description": "Retail - discount grocery",
+    "related": ["Lidl", "Trader Joe's", "Walmart"]
+  },
+  "Lidl": {
+    "full_name": "Lidl Stiftung & Co. KG",
+    "description": "Retail - discount grocery (German)",
+    "related": ["Aldi", "Walmart", "Grocery Outlet"]
+  },
+  "7-Eleven": {
+    "full_name": "7-Eleven, Inc.",
+    "description": "Retail - convenience stores",
+    "related": ["Circle K", "Wawa", "Sheetz"]
+  },
+  "Circle K": {
+    "full_name": "Circle K (Alimentation Couche-Tard)",
+    "description": "Retail - convenience stores",
+    "related": ["7-Eleven", "Wawa", "Casey's"]
+  },
+  "Wawa": {
+    "full_name": "Wawa, Inc.",
+    "description": "Retail - convenience stores, fuel (East Coast)",
+    "related": ["Sheetz", "7-Eleven", "QuikTrip"]
+  },
+  "Sheetz": {
+    "full_name": "Sheetz, Inc.",
+    "description": "Retail - convenience stores, fuel (Mid-Atlantic)",
+    "related": ["Wawa", "7-Eleven", "QuikTrip"]
+  },
+  "Casey's": {
+    "full_name": "Casey's General Stores, Inc.",
+    "description": "Retail - convenience stores, fuel (Midwest)",
+    "related": ["7-Eleven", "Kum & Go", "QuikTrip"]
+  },
+  "Yum! Brands": {
+    "full_name": "Yum! Brands, Inc.",
+    "description": "Food & Beverage - KFC, Taco Bell, Pizza Hut",
+    "related": ["McDonald's", "Restaurant Brands", "Darden"]
+  },
+  "Restaurant Brands": {
+    "full_name": "Restaurant Brands International",
+    "description": "Food & Beverage - Burger King, Tim Hortons, Popeyes",
+    "related": ["Yum! Brands", "McDonald's", "Wendy's"]
+  },
+  "Wendy's": {
+    "full_name": "The Wendy's Company",
+    "description": "Food & Beverage - fast food burgers",
+    "related": ["McDonald's", "Burger King", "Five Guys"]
+  },
+  "Chick-fil-A": {
+    "full_name": "Chick-fil-A, Inc.",
+    "description": "Food & Beverage - fast food chicken",
+    "related": ["Popeyes", "KFC", "Raising Cane's"]
+  },
+  "Darden": {
+    "full_name": "Darden Restaurants, Inc.",
+    "description": "Food & Beverage - Olive Garden, LongHorn, Capital Grille",
+    "related": ["Yum! Brands", "Brinker", "Bloomin' Brands"]
+  },
+  "Brinker": {
+    "full_name": "Brinker International, Inc.",
+    "description": "Food & Beverage - Chili's, Maggiano's",
+    "related": ["Darden", "Applebee's", "TGI Friday's"]
+  },
+  "Bloomin' Brands": {
+    "full_name": "Bloomin' Brands, Inc.",
+    "description": "Food & Beverage - Outback, Carrabba's, Fleming's",
+    "related": ["Darden", "Brinker", "Texas Roadhouse"]
+  },
+  "Texas Roadhouse": {
+    "full_name": "Texas Roadhouse, Inc.",
+    "description": "Food & Beverage - casual dining steakhouse",
+    "related": ["LongHorn Steakhouse", "Outback", "Cracker Barrel"]
+  },
+  "Cracker Barrel": {
+    "full_name": "Cracker Barrel Old Country Store",
+    "description": "Food & Beverage - casual dining, retail",
+    "related": ["Texas Roadhouse", "Bob Evans", "IHOP"]
+  },
+  "IHOP": {
+    "full_name": "IHOP (Dine Brands)",
+    "description": "Food & Beverage - breakfast restaurant",
+    "related": ["Denny's", "Waffle House", "Applebee's"]
+  },
+  "Denny's": {
+    "full_name": "Denny's Corporation",
+    "description": "Food & Beverage - diner restaurant",
+    "related": ["IHOP", "Waffle House", "Perkins"]
+  },
+  "Panera": {
+    "full_name": "Panera Bread (JAB Holding)",
+    "description": "Food & Beverage - fast casual bakery-cafe",
+    "related": ["Chipotle", "Sweetgreen", "Shake Shack"]
+  },
+  "Shake Shack": {
+    "full_name": "Shake Shack Inc.",
+    "description": "Food & Beverage - fast casual burgers",
+    "related": ["Five Guys", "In-N-Out", "Chipotle"]
+  },
+  "Five Guys": {
+    "full_name": "Five Guys Enterprises, LLC",
+    "description": "Food & Beverage - fast casual burgers",
+    "related": ["Shake Shack", "In-N-Out", "Wendy's"]
+  },
+  "In-N-Out": {
+    "full_name": "In-N-Out Burger",
+    "description": "Food & Beverage - fast food burgers (West Coast)",
+    "related": ["Five Guys", "Shake Shack", "Whataburger"]
+  },
+  "Whataburger": {
+    "full_name": "Whataburger",
+    "description": "Food & Beverage - fast food burgers (Texas/South)",
+    "related": ["In-N-Out", "Five Guys", "Culver's"]
+  },
+  "Sweetgreen": {
+    "full_name": "Sweetgreen, Inc.",
+    "description": "Food & Beverage - fast casual salads",
+    "related": ["Chipotle", "Panera", "CAVA"]
+  },
+  "CAVA": {
+    "full_name": "CAVA Group, Inc.",
+    "description": "Food & Beverage - fast casual Mediterranean",
+    "related": ["Sweetgreen", "Chipotle", "Nando's"]
+  },
+  "Peet's Coffee": {
+    "full_name": "Peet's Coffee (JDE Peet's)",
+    "description": "Food & Beverage - coffee shops, roaster",
+    "related": ["Starbucks", "Dunkin'", "Blue Bottle"]
+  },
+  "Dunkin'": {
+    "full_name": "Dunkin' (Inspire Brands)",
+    "description": "Food & Beverage - coffee, donuts",
+    "related": ["Starbucks", "Krispy Kreme", "Tim Hortons"]
+  },
+  "Krispy Kreme": {
+    "full_name": "Krispy Kreme, Inc.",
+    "description": "Food & Beverage - donuts",
+    "related": ["Dunkin'", "Tim Hortons", "Cinnabon"]
+  },
+  "Domino's": {
+    "full_name": "Domino's Pizza, Inc.",
+    "description": "Food & Beverage - pizza delivery",
+    "related": ["Pizza Hut", "Papa John's", "Little Caesars"]
+  },
+  "Papa John's": {
+    "full_name": "Papa John's International, Inc.",
+    "description": "Food & Beverage - pizza",
+    "related": ["Domino's", "Pizza Hut", "Little Caesars"]
+  },
+  "Subway": {
+    "full_name": "Subway IP LLC",
+    "description": "Food & Beverage - sandwiches",
+    "related": ["Jersey Mike's", "Jimmy John's", "Firehouse Subs"]
+  },
+  "Jersey Mike's": {
+    "full_name": "Jersey Mike's Franchise Systems, Inc.",
+    "description": "Food & Beverage - sub sandwiches",
+    "related": ["Subway", "Jimmy John's", "Firehouse Subs"]
+  },
+  "Jimmy John's": {
+    "full_name": "Jimmy John's (Inspire Brands)",
+    "description": "Food & Beverage - sandwiches",
+    "related": ["Jersey Mike's", "Subway", "Potbelly"]
+  },
+  "Wingstop": {
+    "full_name": "Wingstop Inc.",
+    "description": "Food & Beverage - chicken wings",
+    "related": ["Buffalo Wild Wings", "Zaxby's", "Raising Cane's"]
+  },
+  "Buffalo Wild Wings": {
+    "full_name": "Buffalo Wild Wings (Inspire Brands)",
+    "description": "Food & Beverage - chicken wings, sports bar",
+    "related": ["Wingstop", "Hooters", "Dave & Buster's"]
+  },
+  "Mondelez": {
+    "full_name": "Mondelez International, Inc.",
+    "description": "Food - snacks (Oreo, Cadbury, Ritz, Chips Ahoy)",
+    "related": ["PepsiCo", "Nestle", "Hershey"]
+  },
+  "Hershey": {
+    "full_name": "The Hershey Company",
+    "description": "Food - chocolate, confectionery",
+    "related": ["Mars", "Nestle", "Mondelez"]
+  },
+  "Mars": {
+    "full_name": "Mars, Incorporated",
+    "description": "Food - chocolate, pet care, gum (M&M's, Snickers, Pedigree)",
+    "related": ["Hershey", "Nestle", "Mondelez"]
+  },
+  "Keurig Dr Pepper": {
+    "full_name": "Keurig Dr Pepper Inc.",
+    "description": "Beverages - Dr Pepper, Snapple, Keurig coffee",
+    "also_known_as": ["KDP"],
+    "related": ["Coca-Cola", "PepsiCo", "Monster Beverage"]
+  },
+  "Monster Beverage": {
+    "full_name": "Monster Beverage Corporation",
+    "description": "Beverages - energy drinks",
+    "related": ["Red Bull", "Coca-Cola", "PepsiCo"]
+  },
+  "Red Bull": {
+    "full_name": "Red Bull GmbH",
+    "description": "Beverages - energy drinks",
+    "related": ["Monster Beverage", "Celsius", "Rockstar"]
+  },
+  "Celsius": {
+    "full_name": "Celsius Holdings, Inc.",
+    "description": "Beverages - fitness energy drinks",
+    "related": ["Monster Beverage", "Red Bull", "PepsiCo"]
+  },
+  "Constellation Brands": {
+    "full_name": "Constellation Brands, Inc.",
+    "description": "Beverages - beer, wine, spirits (Corona, Modelo)",
+    "related": ["AB InBev", "Molson Coors", "Diageo"]
+  },
+  "AB InBev": {
+    "full_name": "Anheuser-Busch InBev SA/NV",
+    "description": "Beverages - beer (Budweiser, Stella Artois, Corona)",
+    "also_known_as": ["Anheuser-Busch"],
+    "related": ["Molson Coors", "Heineken", "Constellation Brands"]
+  },
+  "Molson Coors": {
+    "full_name": "Molson Coors Beverage Company",
+    "description": "Beverages - beer (Coors, Miller, Blue Moon)",
+    "related": ["AB InBev", "Heineken", "Boston Beer"]
+  },
+  "Heineken": {
+    "full_name": "Heineken N.V.",
+    "description": "Beverages - beer",
+    "related": ["AB InBev", "Molson Coors", "Carlsberg"]
+  },
+  "Boston Beer": {
+    "full_name": "The Boston Beer Company, Inc.",
+    "description": "Beverages - craft beer (Samuel Adams), hard seltzer (Truly)",
+    "related": ["Molson Coors", "AB InBev", "Constellation Brands"]
+  },
+  "Diageo": {
+    "full_name": "Diageo plc",
+    "description": "Beverages - spirits (Johnnie Walker, Guinness, Smirnoff)",
+    "related": ["Pernod Ricard", "Brown-Forman", "Beam Suntory"]
+  },
+  "Pernod Ricard": {
+    "full_name": "Pernod Ricard S.A.",
+    "description": "Beverages - spirits (Absolut, Jameson, Malibu)",
+    "related": ["Diageo", "Brown-Forman", "Beam Suntory"]
+  },
+  "Brown-Forman": {
+    "full_name": "Brown-Forman Corporation",
+    "description": "Beverages - spirits (Jack Daniel's, Woodford Reserve)",
+    "related": ["Diageo", "Beam Suntory", "Constellation Brands"]
+  },
+  "L'Oreal": {
+    "full_name": "L'Oréal S.A.",
+    "description": "Beauty - cosmetics, skincare, haircare",
+    "related": ["Estee Lauder", "Unilever", "Procter & Gamble"]
+  },
+  "Estee Lauder": {
+    "full_name": "The Estée Lauder Companies Inc.",
+    "description": "Beauty - prestige cosmetics, skincare",
+    "related": ["L'Oreal", "LVMH", "Shiseido"]
+  },
+  "Shiseido": {
+    "full_name": "Shiseido Company, Limited",
+    "description": "Beauty - cosmetics, skincare (Japan)",
+    "related": ["Estee Lauder", "L'Oreal", "Kao"]
+  },
+  "Clorox": {
+    "full_name": "The Clorox Company",
+    "description": "Consumer goods - cleaning, household products",
+    "related": ["Procter & Gamble", "SC Johnson", "Church & Dwight"]
+  },
+  "Church & Dwight": {
+    "full_name": "Church & Dwight Co., Inc.",
+    "description": "Consumer goods - household, personal care (Arm & Hammer)",
+    "related": ["Clorox", "Procter & Gamble", "Colgate-Palmolive"]
+  },
+  "SC Johnson": {
+    "full_name": "S. C. Johnson & Son, Inc.",
+    "description": "Consumer goods - household (Windex, Glade, Raid)",
+    "related": ["Clorox", "Procter & Gamble", "Reckitt"]
+  },
+  "Reckitt": {
+    "full_name": "Reckitt Benckiser Group plc",
+    "description": "Consumer goods - household, health (Lysol, Dettol)",
+    "related": ["Procter & Gamble", "Unilever", "SC Johnson"]
+  },
+  "Kimberly-Clark": {
+    "full_name": "Kimberly-Clark Corporation",
+    "description": "Consumer goods - personal care (Kleenex, Huggies)",
+    "related": ["Procter & Gamble", "Georgia-Pacific", "Essity"]
+  },
+  "Spectrum Brands": {
+    "full_name": "Spectrum Brands Holdings, Inc.",
+    "description": "Consumer goods - hardware, pet, home",
+    "related": ["Stanley Black & Decker", "Energizer", "Newell Brands"]
+  },
+  "Newell Brands": {
+    "full_name": "Newell Brands Inc.",
+    "description": "Consumer goods - home, writing (Rubbermaid, Sharpie)",
+    "related": ["Spectrum Brands", "Stanley Black & Decker", "3M"]
+  },
+  "Energizer": {
+    "full_name": "Energizer Holdings, Inc.",
+    "description": "Consumer goods - batteries, personal care",
+    "related": ["Duracell", "Spectrum Brands", "Panasonic"]
+  },
+  "Duracell": {
+    "full_name": "Duracell (Berkshire Hathaway)",
+    "description": "Consumer goods - batteries",
+    "related": ["Energizer", "Panasonic", "Rayovac"]
+  },
+  "McCormick": {
+    "full_name": "McCormick & Company, Inc.",
+    "description": "Food - spices, seasonings, condiments",
+    "related": ["Kraft Heinz", "Conagra", "General Mills"]
+  },
+  "Conagra": {
+    "full_name": "Conagra Brands, Inc.",
+    "description": "Food - packaged foods (Birds Eye, Marie Callender's)",
+    "related": ["Kraft Heinz", "General Mills", "Campbell's"]
+  },
+  "Campbell's": {
+    "full_name": "Campbell Soup Company",
+    "description": "Food - soup, snacks, beverages",
+    "related": ["Conagra", "Kraft Heinz", "General Mills"]
+  },
+  "Hormel": {
+    "full_name": "Hormel Foods Corporation",
+    "description": "Food - meat, packaged foods (Spam, Skippy)",
+    "related": ["Tyson Foods", "JBS", "Smithfield"]
+  },
+  "Tyson Foods": {
+    "full_name": "Tyson Foods, Inc.",
+    "description": "Food - meat, chicken, prepared foods",
+    "related": ["JBS", "Perdue", "Cargill"]
+  },
+  "JBS": {
+    "full_name": "JBS S.A.",
+    "description": "Food - largest meat processor globally",
+    "related": ["Tyson Foods", "Cargill", "Smithfield"]
+  },
+  "Cargill": {
+    "full_name": "Cargill, Incorporated",
+    "description": "Food - agricultural commodities, food ingredients",
+    "related": ["ADM", "Bunge", "Louis Dreyfus"]
+  },
+  "ADM": {
+    "full_name": "Archer-Daniels-Midland Company",
+    "description": "Food - agricultural processing, ingredients",
+    "related": ["Cargill", "Bunge", "Ingredion"]
+  },
+  "Sysco": {
+    "full_name": "Sysco Corporation",
+    "description": "Food - foodservice distribution",
+    "related": ["US Foods", "Performance Food Group", "Gordon Food Service"]
+  },
+  "US Foods": {
+    "full_name": "US Foods Holding Corp.",
+    "description": "Food - foodservice distribution",
+    "related": ["Sysco", "Performance Food Group", "Gordon Food Service"]
+  }
+}

@@ -688,6 +688,246 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     
+    // ========== COMPANY CONFIRMATION MODAL ==========
+    const companyConfirmModal = document.getElementById('companyConfirmModal');
+    const closeCompanyConfirmModal = document.getElementById('closeCompanyConfirmModal');
+    const cancelCompanyConfirm = document.getElementById('cancelCompanyConfirm');
+    const confirmUserInput = document.getElementById('confirmUserInput');
+    const userCompanyInput = document.getElementById('userCompanyInput');
+    const companySuggestions = document.getElementById('companySuggestions');
+    const suggestionsSection = document.getElementById('suggestionsSection');
+    const acronymWarning = document.getElementById('acronymWarning');
+    const exactMatchBadge = document.getElementById('exactMatchBadge');
+    const customInputBadge = document.getElementById('customInputBadge');
+
+    // Store pending search data
+    let pendingSearchData = null;
+
+    // Close modal handlers
+    if (closeCompanyConfirmModal) {
+        closeCompanyConfirmModal.addEventListener('click', () => {
+            companyConfirmModal.classList.add('hidden');
+            pendingSearchData = null;
+        });
+    }
+
+    if (cancelCompanyConfirm) {
+        cancelCompanyConfirm.addEventListener('click', () => {
+            companyConfirmModal.classList.add('hidden');
+            pendingSearchData = null;
+        });
+    }
+
+    // Click outside to close
+    if (companyConfirmModal) {
+        companyConfirmModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.add('hidden');
+                pendingSearchData = null;
+            }
+        });
+    }
+
+    // Confirm user's original input
+    if (confirmUserInput) {
+        confirmUserInput.addEventListener('click', () => {
+            if (pendingSearchData) {
+                companyConfirmModal.classList.add('hidden');
+                executeSearch(pendingSearchData.jobTitle, pendingSearchData.companyName, pendingSearchData.location);
+            }
+        });
+    }
+
+    // Function to show company confirmation modal
+    async function showCompanyConfirmation(jobTitle, companyName, location) {
+        pendingSearchData = { jobTitle, companyName, location };
+
+        try {
+            // Fetch company confirmation data
+            const response = await fetch(`/api/autocomplete/company-confirm?q=${encodeURIComponent(companyName)}`);
+            const data = await response.json();
+
+            console.log('%c[INFO] Company confirmation data:', 'color: blue', data);
+
+            // Update modal content
+            userCompanyInput.textContent = data.query;
+
+            // Show full name and description if available
+            const fullNameEl = document.getElementById('exactMatchFullName');
+            const descriptionEl = document.getElementById('exactMatchDescription');
+
+            if (data.exact_match_full_name) {
+                fullNameEl.textContent = data.exact_match_full_name;
+                fullNameEl.classList.remove('hidden');
+            } else {
+                fullNameEl.classList.add('hidden');
+            }
+
+            if (data.exact_match_description) {
+                descriptionEl.textContent = data.exact_match_description;
+                descriptionEl.classList.remove('hidden');
+            } else {
+                descriptionEl.classList.add('hidden');
+            }
+
+            // Show appropriate badge
+            if (data.is_in_database) {
+                exactMatchBadge.classList.remove('hidden');
+                customInputBadge.classList.add('hidden');
+            } else {
+                exactMatchBadge.classList.add('hidden');
+                customInputBadge.classList.remove('hidden');
+            }
+
+            // Show acronym warning if applicable
+            const hasAcronymMatches = data.suggestions.some(s => s.reason === 'acronym');
+            if (hasAcronymMatches) {
+                acronymWarning.classList.remove('hidden');
+            } else {
+                acronymWarning.classList.add('hidden');
+            }
+
+            // Render suggestions
+            if (data.suggestions.length > 0) {
+                suggestionsSection.classList.remove('hidden');
+                companySuggestions.innerHTML = data.suggestions.map(suggestion => {
+                    const reasonBadges = {
+                        'acronym': '<span class="text-xs px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200">Acronym</span>',
+                        'related': '<span class="text-xs px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">Related</span>',
+                        'similar': '',
+                        'partial': ''
+                    };
+                    const reasonBadge = reasonBadges[suggestion.reason] || '';
+
+                    // Build description line
+                    let infoLine = '';
+                    if (suggestion.full_name && suggestion.full_name !== suggestion.name) {
+                        infoLine = `<p class="text-sm text-gray-600 dark:text-gray-400 mt-0.5">${suggestion.full_name}</p>`;
+                    }
+                    if (suggestion.description) {
+                        infoLine += `<p class="text-xs text-gray-500 dark:text-gray-500 mt-0.5">${suggestion.description}</p>`;
+                    }
+
+                    return `
+                        <button class="company-suggestion-btn w-full text-left p-3 border border-gray-200 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition group" data-company="${suggestion.name}">
+                            <div class="flex items-start justify-between">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 flex-wrap">
+                                        <span class="font-medium text-gray-900 dark:text-white">${suggestion.name}</span>
+                                        ${reasonBadge}
+                                    </div>
+                                    ${infoLine}
+                                </div>
+                                <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 flex-shrink-0 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </button>
+                    `;
+                }).join('');
+
+                // Add click handlers to suggestion buttons
+                companySuggestions.querySelectorAll('.company-suggestion-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const selectedCompany = this.dataset.company;
+                        companyConfirmModal.classList.add('hidden');
+                        // Update the input field with selected company
+                        document.getElementById('companyName').value = selectedCompany;
+                        // Execute search with selected company
+                        executeSearch(pendingSearchData.jobTitle, selectedCompany, pendingSearchData.location);
+                    });
+                });
+            } else {
+                suggestionsSection.classList.add('hidden');
+            }
+
+            // Show modal
+            companyConfirmModal.classList.remove('hidden');
+
+        } catch (error) {
+            console.error('%c[ERROR] Company confirmation failed:', 'color: red', error);
+            // On error, proceed with search anyway
+            executeSearch(jobTitle, companyName, location);
+        }
+    }
+
+    // Function to execute the actual search
+    async function executeSearch(jobTitle, companyName, location) {
+        console.log('%c[INFO] Starting search with confirmed company:', 'color: blue', { jobTitle, companyName, location });
+
+        // Show results section and loading state
+        const resultsSection = document.getElementById('resultsSection');
+        const loadingState = document.getElementById('loadingState');
+        const resultsContainer = document.getElementById('resultsContainer');
+
+        resultsSection.classList.remove('hidden');
+        loadingState.classList.remove('hidden');
+        resultsContainer.classList.add('hidden');
+
+        // Reset progress indicators
+        document.getElementById('progressIndicator').textContent = '0/4 complete';
+        document.getElementById('loadingText').textContent = 'Starting search...';
+
+        // Reset all status dots
+        ['status-company-info', 'status-salary', 'status-reviews', 'status-interview'].forEach(id => {
+            const dot = document.getElementById(id).querySelector('.loading-dot');
+            dot.classList.remove('completed');
+        });
+
+        // Disable button and show loading state
+        const submitButton = searchForm.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = 'Searching...';
+
+        try {
+            const results = await fetchAllResults(jobTitle, companyName, location);
+            console.log('%c[OK] All results loaded successfully', 'color: green');
+
+            // Get view mode from localStorage (default to compact)
+            const viewMode = localStorage.getItem('viewMode') || 'compact';
+
+            // Set container classes based on view mode
+            if (viewMode === 'compact') {
+                resultsContainer.className = 'grid grid-cols-1 md:grid-cols-2 gap-6';
+            } else {
+                resultsContainer.className = '';
+            }
+
+            // Render cards
+            resultsContainer.innerHTML = renderResultsCards(results, viewMode, companyName);
+
+            // Store results globally for view toggle
+            window.currentResults = results;
+            window.currentCompanyName = companyName;
+
+            // Hide loading, show results
+            loadingState.classList.add('hidden');
+            resultsContainer.classList.remove('hidden');
+
+            // Show view toggle button
+            const viewToggleContainer = document.getElementById('viewToggleContainer');
+            const viewToggle = document.getElementById('viewToggle');
+            if (viewToggleContainer && viewToggle) {
+                viewToggleContainer.classList.remove('hidden');
+                viewToggle.classList.remove('hidden');
+                updateViewToggleButton(viewMode);
+            }
+
+        } catch (error) {
+            console.error('%c[ERROR] Search failed:', 'color: red', error);
+            alert('Search failed. Check console for details.');
+
+            // Hide everything on error
+            resultsSection.classList.add('hidden');
+        } finally {
+            // Re-enable button
+            submitButton.disabled = false;
+            submitButton.textContent = originalText;
+            pendingSearchData = null;
+        }
+    }
+
     // ========== FORM SUBMISSION ==========
     const searchForm = document.getElementById('searchForm');
     if (searchForm) {
@@ -715,77 +955,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 };
             }
 
-            console.log('%c[INFO] Starting search with params:', 'color: blue', { jobTitle, companyName, location });
-            
-            // Show results section and loading state
-            const resultsSection = document.getElementById('resultsSection');
-            const loadingState = document.getElementById('loadingState');
-            const resultsContainer = document.getElementById('resultsContainer');
-            
-            resultsSection.classList.remove('hidden');
-            loadingState.classList.remove('hidden');
-            resultsContainer.classList.add('hidden');
-            
-            // Reset progress indicators
-            document.getElementById('progressIndicator').textContent = '0/4 complete';
-            document.getElementById('loadingText').textContent = 'Starting search...';
-            
-            // Reset all status dots
-            ['status-company-info', 'status-salary', 'status-reviews', 'status-interview'].forEach(id => {
-                const dot = document.getElementById(id).querySelector('.loading-dot');
-                dot.classList.remove('completed');
-            });
-            
-            // Disable button and show loading state
-            const submitButton = this.querySelector('button[type="submit"]');
-            const originalText = submitButton.textContent;
-            submitButton.disabled = true;
-            submitButton.textContent = 'Searching...';
-            
-            try {
-                const results = await fetchAllResults(jobTitle, companyName, location);
-                console.log('%c[OK] All results loaded successfully', 'color: green');
-                
-                // Get view mode from localStorage (default to compact)
-                const viewMode = localStorage.getItem('viewMode') || 'compact';
-                
-                // Set container classes based on view mode
-                if (viewMode === 'compact') {
-                    resultsContainer.className = 'grid grid-cols-1 md:grid-cols-2 gap-6';
-                } else {
-                    resultsContainer.className = '';
-                }
-                
-                // Render cards
-                resultsContainer.innerHTML = renderResultsCards(results, viewMode, companyName);
-                
-                // Store results globally for view toggle
-                window.currentResults = results;
-                
-                // Hide loading, show results
-                loadingState.classList.add('hidden');
-                resultsContainer.classList.remove('hidden');
-                
-                // Show view toggle button
-                const viewToggleContainer = document.getElementById('viewToggleContainer');
-                const viewToggle = document.getElementById('viewToggle');
-                if (viewToggleContainer && viewToggle) {
-                    viewToggleContainer.classList.remove('hidden');
-                    viewToggle.classList.remove('hidden');
-                    updateViewToggleButton(viewMode);
-                }
-                
-            } catch (error) {
-                console.error('%c[ERROR] Search failed:', 'color: red', error);
-                alert('Search failed. Check console for details.');
-                
-                // Hide everything on error
-                resultsSection.classList.add('hidden');
-            } finally {
-                // Re-enable button
-                submitButton.disabled = false;
-                submitButton.textContent = originalText;
-            }
+            // Show company confirmation modal
+            await showCompanyConfirmation(jobTitle, companyName, location);
         });
     }
 
@@ -804,7 +975,7 @@ document.addEventListener('DOMContentLoaded', function() {
             updateViewToggleButton(newView);
 
             // Re-render cards if results exist
-            if (window.currentResults) {
+            if (window.currentResults && window.currentCompanyName) {
                 const resultsContainer = document.getElementById('resultsContainer');
 
                 // Update container classes
@@ -815,7 +986,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
                 // Re-render
-                resultsContainer.innerHTML = renderResultsCards(window.currentResults, newView);
+                resultsContainer.innerHTML = renderResultsCards(window.currentResults, newView, window.currentCompanyName);
             }
         });
     }

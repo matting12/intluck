@@ -394,6 +394,79 @@
     </div>
 
 
+    <!-- Company Confirmation Modal -->
+    <div id="companyConfirmModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-lg w-full p-6 relative">
+            <!-- Close button -->
+            <button id="closeCompanyConfirmModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="mb-6">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Confirm Company</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                    Please confirm the company you're searching for to ensure accurate results.
+                </p>
+            </div>
+
+            <!-- User's Input -->
+            <div class="mb-4">
+                <p class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">You entered:</p>
+                <button id="confirmUserInput" class="w-full text-left p-4 border-2 border-blue-500 bg-blue-50 dark:bg-blue-900/20 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/40 transition group">
+                    <div class="flex items-center justify-between">
+                        <div class="flex-1">
+                            <div class="flex items-center flex-wrap gap-2">
+                                <span id="userCompanyInput" class="font-semibold text-gray-900 dark:text-white text-lg"></span>
+                                <span id="exactMatchBadge" class="hidden text-xs px-2 py-1 rounded-full bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">
+                                    Verified
+                                </span>
+                                <span id="customInputBadge" class="hidden text-xs px-2 py-1 rounded-full bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200">
+                                    Custom Entry
+                                </span>
+                            </div>
+                            <p id="exactMatchFullName" class="hidden text-sm text-gray-600 dark:text-gray-400 mt-1"></p>
+                            <p id="exactMatchDescription" class="hidden text-xs text-gray-500 dark:text-gray-500 mt-0.5"></p>
+                        </div>
+                        <svg class="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <p class="text-xs text-blue-600 dark:text-blue-400 mt-2 font-medium">Click to confirm and search</p>
+                </button>
+            </div>
+
+            <!-- Suggestions Section -->
+            <div id="suggestionsSection" class="hidden mb-4">
+                <p class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Did you mean one of these?</p>
+                <div id="companySuggestions" class="space-y-2 max-h-48 overflow-y-auto">
+                    <!-- Suggestions will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Acronym Warning -->
+            <div id="acronymWarning" class="hidden mb-4 p-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 rounded-lg">
+                <div class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                    <p class="text-sm text-amber-800 dark:text-amber-200">
+                        <span class="font-medium">Acronym detected!</span> Multiple companies may share this abbreviation. Please select the specific company you're researching.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Cancel Button -->
+            <div class="flex justify-end pt-4 border-t border-gray-200 dark:border-gray-700">
+                <button id="cancelCompanyConfirm" class="px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-medium transition">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- More Links Modal -->
     <div id="moreLinksModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-2xl w-full max-h-[80vh] flex flex-col">
@@ -421,7 +494,7 @@
         </div>
     </div>
 
-    <script src="/static/js/main.js?v=5"></script>
+    <script src="/static/js/main.js?v=7"></script>
     <script src="/static/js/tailwind-config.js?v=3"></script>
 </body>
 

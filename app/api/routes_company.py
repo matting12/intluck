@@ -517,18 +517,30 @@ async def get_company_info(
     start_time = time.time()
 
     # Build location string from parameters
+    # Normalize empty strings to None for cleaner checks
+    state = state.strip() if state else None
+    city = city.strip() if city else None
+    zipcode = zipcode.strip() if zipcode else None
+
     if location == "REMOTE":
         location_str = "Remote"
     elif city and state:
         location_str = f"{city}, {state}"
-    elif city:
-        location_str = city
+    elif state and zipcode:
+        # Have both state and zipcode - use state for readability
+        location_str = state
     elif state:
+        # State only is sufficient for location-based search
         location_str = state
     elif zipcode:
+        # Zipcode only is sufficient for location-based search
         location_str = zipcode
+    elif city:
+        location_str = city
     else:
         location_str = "Remote"
+
+    logger.info(f"Location params received: state={state}, city={city}, zipcode={zipcode} -> location_str={location_str}")
 
     cache_params = {
         'company': company.lower().strip(),
@@ -698,24 +710,37 @@ async def get_salary_benefits(
     start_time = time.time()
 
     # Build location string from parameters
+    # Normalize empty strings to None for cleaner checks
+    state = state.strip() if state else None
+    city = city.strip() if city else None
+    zipcode = zipcode.strip() if zipcode else None
+
     if location == "REMOTE":
         location_str = "Remote"
         state_abbr = ""
     elif city and state:
         location_str = f"{city}, {state}"
         state_abbr = state
-    elif city:
-        location_str = city
-        state_abbr = ""
+    elif state and zipcode:
+        # Have both state and zipcode - use state for readability
+        location_str = state
+        state_abbr = state
     elif state:
+        # State only is sufficient for location-based search
         location_str = state
         state_abbr = state
     elif zipcode:
+        # Zipcode only is sufficient for location-based search
         location_str = zipcode
+        state_abbr = ""
+    elif city:
+        location_str = city
         state_abbr = ""
     else:
         location_str = "Remote"
         state_abbr = ""
+
+    logger.info(f"Salary location params: state={state}, city={city}, zipcode={zipcode} -> location_str={location_str}")
 
     cache_params = {
         'company': company.lower().strip(),

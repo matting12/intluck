@@ -13,6 +13,9 @@ httpx==0.26.0
 # Environment variables
 python-dotenv==1.0.0
 
+# File locking for concurrent writes
+filelock==3.13.1
+
 # Optional: For production deployment
 gunicorn==21.2.0
 

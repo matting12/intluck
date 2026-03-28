@@ -13,10 +13,12 @@ logger = logging.getLogger(__name__)
 __all__ = [
     'score_link',
     'score_and_filter_links',
-    'DEFAULT_THRESHOLD'
+    'DEFAULT_THRESHOLD',
+    'YOUTUBE_THRESHOLD'
 ]
 
 DEFAULT_THRESHOLD = 45
+YOUTUBE_THRESHOLD = 85  # YouTube links require higher quality score
 
 # Domain confidence scores (adjusted per client feedback)
 # Glassdoor slightly lower, unknown sites get base score
@@ -206,6 +208,14 @@ def _freshness_score(url: str, description: str) -> int:
     return 5
 
 
+def _is_youtube_url(url: str) -> bool:
+    """Check if URL is a YouTube link."""
+    if not url:
+        return False
+    url_lower = url.lower()
+    return 'youtube.com' in url_lower or 'youtu.be' in url_lower
+
+
 def _url_quality_score(url: str) -> int:
     """Score based on URL structure quality (0-5)."""
     if not url:
@@ -311,8 +321,22 @@ def score_and_filter_links(
     # Sort by score descending
     scored_links.sort(key=lambda x: x.get('score', 0), reverse=True)
 
-    # Filter by threshold
-    filtered = [link for link in scored_links if link.get('score', 0) >= threshold]
+    # Filter by threshold (YouTube links require higher score)
+    filtered = []
+    for link in scored_links:
+        score = link.get('score', 0)
+        url = link.get('url', '')
+
+        if _is_youtube_url(url):
+            # YouTube requires 85+ to be included
+            if score >= YOUTUBE_THRESHOLD:
+                filtered.append(link)
+            else:
+                logger.debug(f"YouTube link filtered (score {score} < {YOUTUBE_THRESHOLD}): {url}")
+        else:
+            # Regular threshold for non-YouTube
+            if score >= threshold:
+                filtered.append(link)
 
     # Apply max limit if specified
     if max_links and len(filtered) > max_links:

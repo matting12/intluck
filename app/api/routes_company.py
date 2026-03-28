@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, BackgroundTasks
 import logging
 import asyncio
 import httpx
@@ -9,6 +9,8 @@ import logging
 
 from app.services.domain_identifier import identify_company_domain
 from app.services.brave_search import brave_search, brave_search_videos
+from app.services.company_enrichment import is_known_company, sync_enrich_and_save_company
+from app.services.precomputed_results import get_precomputed_company_info
 from app.models.company_info import CompanyInfoResult
 from app.utils.link_formatting import format_link_for_display
 from app.utils.trusted_domains import filter_to_trusted_domains, filter_blacklisted, deduplicate_by_domain, filter_by_company_name_in_title
@@ -500,6 +502,7 @@ def fallback_selection(all_links: list[dict], max_links: int) -> list[dict]:
 async def get_company_info(
     company: str,
     job_title: str,
+    background_tasks: BackgroundTasks,
     location: str = None,
     state: str = None,
     city: str = None,
@@ -559,6 +562,34 @@ async def get_company_info(
         logger.info(f"Cache disabled for this request")
 
     logger.info(f"Company info request: company='{company}', job_title='{job_title}', location='{location_str}'")
+
+    # Check pre-computed results first (fast path)
+    precomputed = get_precomputed_company_info(company)
+    if precomputed and precomputed.get("links"):
+        elapsed = time.time() - start_time
+        logger.info(f"Using pre-computed results for '{company}' - returned in {elapsed:.2f}s")
+
+        # Format links for display
+        formatted_links = [format_link_for_display(link) for link in precomputed["links"]]
+
+        result = {
+            "domain": precomputed.get("domain"),
+            "links": formatted_links,
+            "all_links": formatted_links,
+            "total_found": len(formatted_links),
+            "source": "precomputed"
+        }
+
+        # Cache the result
+        if not no_cache:
+            set_cached('company_info', cache_params, result, ttl=SEVEN_DAYS)
+
+        return result
+
+    # Trigger background enrichment if company not in database
+    if not is_known_company(company):
+        logger.info(f"New company detected: '{company}' - triggering background enrichment")
+        background_tasks.add_task(sync_enrich_and_save_company, company)
 
     # PASS 1: Identify company domain (with override check)
     domain_override = get_domain_override(company)
@@ -693,6 +724,7 @@ async def get_company_info(
 async def get_salary_benefits(
     company: str,
     job_title: str,
+    background_tasks: BackgroundTasks,
     location: str = None,
     state: str = None,
     city: str = None,
@@ -758,7 +790,11 @@ async def get_salary_benefits(
         logger.info("Cache disabled for this request")
 
     logger.info(f"Salary/benefits request: company='{company}', job_title='{job_title}', location='{location_str}'")
-    
+
+    # Trigger background enrichment if company not in database
+    if not is_known_company(company):
+        background_tasks.add_task(sync_enrich_and_save_company, company)
+
     # PASS 1: Get company domain (needed for site: searches)
     domain_override = get_domain_override(company)
     
@@ -861,6 +897,7 @@ async def get_salary_benefits(
 @router.get("/company-reviews", response_model=dict)
 async def get_company_reviews(
     company: str,
+    background_tasks: BackgroundTasks,
     max_links: int = 6
 ):
     """
@@ -878,6 +915,10 @@ async def get_company_reviews(
         return cached_result
 
     logger.info(f"Company reviews request: company='{company}'")
+
+    # Trigger background enrichment if company not in database
+    if not is_known_company(company):
+        background_tasks.add_task(sync_enrich_and_save_company, company)
 
     # PASS 1: Parallel searches
     search_start = time.time()
@@ -991,6 +1032,7 @@ async def get_company_reviews(
 async def get_interview_prep(
     company: str,
     job_title: str,
+    background_tasks: BackgroundTasks,
     max_links: int = 6
 ):
     start_time = time.time()
@@ -1008,6 +1050,10 @@ async def get_interview_prep(
         return cached_result
     
     logger.info(f"Interview prep request: company='{company}', job_title='{job_title}'")
+
+    # Trigger background enrichment if company not in database
+    if not is_known_company(company):
+        background_tasks.add_task(sync_enrich_and_save_company, company)
 
     # Infer job family
     job_family = infer_job_family(job_title)

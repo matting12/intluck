@@ -446,10 +446,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ========== CARD RENDERING ==========
 
-    function renderResultsCards(results, viewMode, companyName) {
+    function renderResultsCards(results, viewMode, companyName, jobTitle) {
         const cards = [
             {
-                title: `${companyName} Interview Prep`,
+                title: `${jobTitle} at ${companyName} Interview Prep`,
                 emoji: '🎯',
                 color: 'text-red-600 dark:text-red-400',
                 links: results.interviewPrep.links || [],
@@ -895,11 +895,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             // Render cards
-            resultsContainer.innerHTML = renderResultsCards(results, viewMode, companyName);
+            resultsContainer.innerHTML = renderResultsCards(results, viewMode, companyName, jobTitle);
 
             // Store results globally for view toggle
             window.currentResults = results;
             window.currentCompanyName = companyName;
+            window.currentJobTitle = jobTitle;
 
             // Hide loading, show results
             loadingState.classList.add('hidden');
@@ -986,7 +987,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
                 // Re-render
-                resultsContainer.innerHTML = renderResultsCards(window.currentResults, newView, window.currentCompanyName);
+                resultsContainer.innerHTML = renderResultsCards(window.currentResults, newView, window.currentCompanyName, window.currentJobTitle);
             }
         });
     }

@@ -724,7 +724,6 @@ async def get_company_info(
 async def get_salary_benefits(
     company: str,
     job_title: str,
-    background_tasks: BackgroundTasks,
     location: str = None,
     state: str = None,
     city: str = None,
@@ -790,10 +789,6 @@ async def get_salary_benefits(
         logger.info("Cache disabled for this request")
 
     logger.info(f"Salary/benefits request: company='{company}', job_title='{job_title}', location='{location_str}'")
-
-    # Trigger background enrichment if company not in database
-    if not is_known_company(company):
-        background_tasks.add_task(sync_enrich_and_save_company, company)
 
     # PASS 1: Get company domain (needed for site: searches)
     domain_override = get_domain_override(company)
@@ -897,7 +892,6 @@ async def get_salary_benefits(
 @router.get("/company-reviews", response_model=dict)
 async def get_company_reviews(
     company: str,
-    background_tasks: BackgroundTasks,
     max_links: int = 6
 ):
     """
@@ -915,10 +909,6 @@ async def get_company_reviews(
         return cached_result
 
     logger.info(f"Company reviews request: company='{company}'")
-
-    # Trigger background enrichment if company not in database
-    if not is_known_company(company):
-        background_tasks.add_task(sync_enrich_and_save_company, company)
 
     # PASS 1: Parallel searches
     search_start = time.time()
@@ -1032,7 +1022,6 @@ async def get_company_reviews(
 async def get_interview_prep(
     company: str,
     job_title: str,
-    background_tasks: BackgroundTasks,
     max_links: int = 6
 ):
     start_time = time.time()
@@ -1050,10 +1039,6 @@ async def get_interview_prep(
         return cached_result
     
     logger.info(f"Interview prep request: company='{company}', job_title='{job_title}'")
-
-    # Trigger background enrichment if company not in database
-    if not is_known_company(company):
-        background_tasks.add_task(sync_enrich_and_save_company, company)
 
     # Infer job family
     job_family = infer_job_family(job_title)

@@ -43,6 +43,9 @@ DOMAIN_OVERRIDES = {
     'mckinsey': 'mckinsey.com',
     'bcg': 'bcg.com',
     'bain': 'bain.com',
+    'spacex': 'spacex.com',
+    'booz allen hamilton': 'boozallen.com',
+    'booz allen': 'boozallen.com',
 }
 
 def get_domain_override(company: str) -> str | None:

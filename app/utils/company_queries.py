@@ -1,11 +1,11 @@
 """
 Query builders for company overview information.
-Generates specific queries for exactly 5 links:
-1. Company home page
+Generates queries for up to 5 links (slots dropped if no result found):
+1. Company website (home page)
 2. About Us / Who We Are
-3. Social Media
-4. Company History
-5. YouTube (official channel video)
+3. Social Media (Facebook/Instagram/X/TikTok)
+4. Community Engagement (CSR/foundation/giving)
+5. Video or Department Vertical (YouTube video preferred, dept page fallback)
 """
 
 from app.utils.exact_match_companies import format_company_for_search
@@ -17,13 +17,14 @@ __all__ = [
 
 
 def format_category_name(category_key: str) -> str:
-    """Convert category_key to display name"""
     category_names = {
-        'home': 'Home Page',
+        'home': 'Company Website',
         'about': 'About Us',
         'social': 'Social Media',
-        'history': 'Company History',
-        'youtube': 'Video'
+        'community': 'Community Engagement',
+        'video_or_vertical': 'Video',
+        'video': 'Video',
+        'dept_vertical': 'Department',
     }
     return category_names.get(category_key, category_key.replace('_', ' ').title())
 
@@ -35,30 +36,31 @@ def build_company_overview_queries(
     location: str = None,
 ) -> dict:
     """
-    Build 5 specific queries for company overview.
-    Each query targets exactly one type of page.
+    Build queries for company overview. Returns 6 query keys — video and
+    dept_vertical are both run and the winner becomes slot 5.
 
-    Returns: {category_name: search_query_string}
+    Returns: {category_key: search_query_string}
     """
-
-    # Format company name (exact match if needed)
     company_formatted = format_company_for_search(company)
 
     queries = {
-        # 1. Home page - just the company domain
+        # 1. Home page
         'home': f'{company_formatted} site:{company_domain}',
 
-        # 2. About Us / Who We Are page
-        'about': f'{company_formatted} ("about us" OR "who we are" OR "about the company") site:{company_domain}',
+        # 2. About Us
+        'about': f'{company_formatted} ("about us" OR "who we are" OR "about the company" OR "our company" OR "our story" OR "our mission" OR overview) site:{company_domain}',
 
-        # 3. Social Media page (links to social platforms)
-        'social': f'{company_formatted} (LinkedIn OR Facebook OR Instagram OR Twitter OR TikTok) site:{company_domain}',
+        # 3. Social Media — official profiles on major platforms (no YouTube, no LinkedIn)
+        'social': f'{company_formatted} (site:facebook.com OR site:instagram.com OR site:x.com OR site:tiktok.com)',
 
-        # 4. Company History
-        'history': f'{company_formatted} ("our history" OR "company history" OR "our story" OR "founded" OR "since") site:{company_domain}',
+        # 4. Community Engagement — CSR/foundation/giving on company domain
+        'community': f'{company_formatted} ("community" OR "foundation" OR "giving back" OR "corporate responsibility" OR "social impact" OR "CSR") site:{company_domain}',
 
-        # 5. YouTube - official company channel video
-        'youtube': f'{company_formatted} official site:youtube.com'
+        # 5a. Video — official YouTube channel page (web search surfaces channel pages better than video API)
+        'video': f'{company_formatted} official channel site:youtube.com',
+
+        # 5b. Department Vertical — careers/teams/divisions page on company domain
+        'dept_vertical': f'{company_formatted} (careers OR "our teams" OR "our people" OR "research" OR "divisions" OR "departments") site:{company_domain}',
     }
 
     return queries

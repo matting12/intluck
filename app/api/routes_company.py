@@ -563,8 +563,8 @@ async def get_company_info(
 
     logger.info(f"Company info request: company='{company}', job_title='{job_title}', location='{location_str}'")
 
-    # Check pre-computed results first (fast path)
-    precomputed = get_precomputed_company_info(company)
+    # Check pre-computed results first (fast path) — skipped when no_cache=True
+    precomputed = None if no_cache else get_precomputed_company_info(company)
     if precomputed and precomputed.get("links"):
         elapsed = time.time() - start_time
         logger.info(f"Using pre-computed results for '{company}' - returned in {elapsed:.2f}s")
@@ -619,11 +619,7 @@ async def get_company_info(
     task_categories = []
 
     for category, query in queries.items():
-        # Use video search for youtube category
-        if category == 'youtube':
-            tasks.append(brave_search_videos(query, BRAVE_API_KEY, count=5))
-        else:
-            tasks.append(brave_search(query, BRAVE_API_KEY, category))
+        tasks.append(brave_search(query, BRAVE_API_KEY, category))
         task_categories.append(category)
 
     # Execute all searches in parallel
@@ -644,7 +640,7 @@ async def get_company_info(
     logger.info(f"Got results for {len([c for c, r in search_results.items() if r])} categories")
 
     # PASS 5: Select top link per category
-    # New structure: home, about, social, history, youtube
+    # Order: home, about, social, community, video_or_vertical
     categorized_links = select_top_link_per_category(search_results, company_name=company, company_domain=domain)
     logger.info(f"Selected {len(categorized_links)} links (1 per category, filtered by company name in title)")
 
@@ -665,25 +661,17 @@ async def get_company_info(
 
     logger.info(f"After deduplication: {len(deduped_links)} links (removed {len(ordered_links) - len(deduped_links)} duplicates)")
 
-    # PASS 7: Score and filter links by quality threshold
-    filtered_links, all_scored_links = score_and_filter_links(
-        deduped_links,
-        company_name=company,
-        threshold=DEFAULT_THRESHOLD,
-        max_links=max_links
-    )
-    logger.info(f"After scoring: {len(filtered_links)} links above threshold (from {len(deduped_links)})")
-
-    # PASS 8: Format titles for display
-    formatted_links = [format_link_for_display(link) for link in filtered_links]
-    all_formatted_links = [format_link_for_display(link) for link in all_scored_links]
+    # PASS 7: Format titles for display
+    # Links are already curated (1 per category, domain + company-name validated) and
+    # ordered by priority — skip score-based re-sorting which would destroy the order
+    # and the YouTube 85-threshold which would drop curated video links.
+    formatted_links = [format_link_for_display(link) for link in deduped_links]
 
     result = {
         "domain": domain,
         "links": formatted_links,
-        "all_links": all_formatted_links,  # For "more links" modal
+        "all_links": formatted_links,
         "total_found": len(categorized_links),
-        "threshold": DEFAULT_THRESHOLD
     }
 
     if not no_cache:

@@ -178,7 +178,21 @@ TITLE_BLACKLIST_PATTERNS = [
     'lay offs',
     'downsizing',
     'job cuts',
-    'workforce reduction'
+    'workforce reduction',
+    # 404 / Page not found patterns
+    'page not found',
+    'page-not-found',
+    '404',
+    'not found',
+    'error 404',
+    'page doesn\'t exist',
+    'page does not exist',
+    'no longer available',
+    'has been removed',
+    'has been deleted',
+    'access denied',
+    'forbidden',
+    'unavailable'
 ]
 
 

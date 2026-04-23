@@ -611,25 +611,19 @@ async def get_company_info(
     queries = build_company_overview_queries(company, domain, job_title, location_str)
     logger.info(f"Built {len(queries)} category-specific queries")
 
-    # PASS 3: Execute searches in parallel (video + web)
+    # PASS 3: Execute searches in parallel
     search_start = time.time()
-
-    # Separate video queries from regular queries
-    video_queries = {k: v for k, v in queries.items() if k.startswith('video_')}
-    regular_queries = {k: v for k, v in queries.items() if not k.startswith('video_')}
 
     # Build tasks for parallel execution
     tasks = []
     task_categories = []
 
-    # Add video search tasks
-    for category, query in video_queries.items():
-        tasks.append(brave_search_videos(query, BRAVE_API_KEY, count=3))
-        task_categories.append(category)
-
-    # Add regular search tasks
-    for category, query in regular_queries.items():
-        tasks.append(brave_search(query, BRAVE_API_KEY, category))
+    for category, query in queries.items():
+        # Use video search for youtube category
+        if category == 'youtube':
+            tasks.append(brave_search_videos(query, BRAVE_API_KEY, count=5))
+        else:
+            tasks.append(brave_search(query, BRAVE_API_KEY, category))
         task_categories.append(category)
 
     # Execute all searches in parallel
@@ -647,30 +641,11 @@ async def get_company_info(
         else:
             search_results[category] = result_data
 
-    # Merge video results into their target categories
-    # video_overview -> about_us (prepend to existing results)
-    if 'video_overview' in search_results and search_results['video_overview']:
-        if 'about_us' not in search_results:
-            search_results['about_us'] = []
-        search_results['about_us'] = search_results['video_overview'] + search_results['about_us']
-        logger.info(f"Merged {len(search_results['video_overview'])} video(s) into about_us category")
-
-    # video_culture -> culture (prepend to existing results)
-    if 'video_culture' in search_results and search_results['video_culture']:
-        if 'culture' not in search_results:
-            search_results['culture'] = []
-        search_results['culture'] = search_results['video_culture'] + search_results['culture']
-        logger.info(f"Merged {len(search_results['video_culture'])} video(s) into culture category")
-
-    # Remove video_ categories from results (they've been merged)
-    search_results.pop('video_overview', None)
-    search_results.pop('video_culture', None)
-
     logger.info(f"Got results for {len([c for c, r in search_results.items() if r])} categories")
 
-    # PASS 5: Select top link per category (no GPT needed)
-    # Filter to only links with company name in title for higher relevance
-    categorized_links = select_top_link_per_category(search_results, company_name=company)
+    # PASS 5: Select top link per category
+    # New structure: home, about, social, history, youtube
+    categorized_links = select_top_link_per_category(search_results, company_name=company, company_domain=domain)
     logger.info(f"Selected {len(categorized_links)} links (1 per category, filtered by company name in title)")
 
     # PASS 6: Order by priority

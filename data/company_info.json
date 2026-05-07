@@ -6103,7 +6103,7 @@
   },
   "HEICO": {
     "full_name": "HEICO",
-    "description": "Fortune 1000 company"
+    "description": "Defense contractor"
   },
   "Travel + Leisure": {
     "full_name": "Travel + Leisure",
@@ -6299,7 +6299,7 @@
   },
   "Viasat": {
     "full_name": "Viasat",
-    "description": "Fortune 1000 company"
+    "description": "Defense contractor"
   },
   "Deckers Outdoor": {
     "full_name": "Deckers Outdoor",
@@ -6679,7 +6679,7 @@
   },
   "StandardAero": {
     "full_name": "StandardAero",
-    "description": "Fortune 1000 company"
+    "description": "Defense contractor"
   },
   "Chord Energy": {
     "full_name": "Chord Energy",
@@ -7171,7 +7171,7 @@
   },
   "Howmet Aerospace": {
     "full_name": "Howmet Aerospace",
-    "description": "Fortune 1000 company"
+    "description": "Defense contractor"
   },
   "Core & Main": {
     "full_name": "Core & Main",
@@ -7195,7 +7195,7 @@
   },
   "KBR": {
     "full_name": "KBR",
-    "description": "Fortune 1000 company"
+    "description": "Defense contractor"
   },
   "Post Holdings": {
     "full_name": "Post Holdings",
@@ -7343,7 +7343,7 @@
   },
   "GE Aerospace": {
     "full_name": "GE Aerospace",
-    "description": "Fortune 1000 company"
+    "description": "Defense contractor"
   },
   "Kellanova": {
     "full_name": "Kellanova",
@@ -8023,7 +8023,7 @@
   },
   "RTX": {
     "full_name": "RTX",
-    "description": "Fortune 1000 company"
+    "description": "Defense contractor"
   },
   "Walt Disney": {
     "full_name": "Walt Disney",
@@ -8399,7 +8399,7 @@
   },
   "Oshkosh": {
     "full_name": "Oshkosh",
-    "description": "Fortune 1000 company"
+    "description": "Defense contractor"
   },
   "Ryder System": {
     "full_name": "Ryder System",
@@ -8551,7 +8551,7 @@
   },
   "Amphenol": {
     "full_name": "Amphenol",
-    "description": "Fortune 1000 company"
+    "description": "Defense contractor"
   },
   "GXO Logistics": {
     "full_name": "GXO Logistics",
@@ -9682,5 +9682,11 @@
     "description": "Information on www",
     "industry": "Unknown",
     "domain": "jonesday.com"
+  },
+  "A&O Shearman": {
+    "full_name": "A&O Shearman",
+    "description": "We’re a global law firm focused on understanding client goals, delivering practical legal solutions",
+    "industry": "Unknown",
+    "domain": "aoshearman.com"
   }
 }

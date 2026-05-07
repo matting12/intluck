@@ -21,6 +21,7 @@ from app.utils.company_link_selection import select_top_link_per_category, order
 from app.utils.domain_overrides import get_domain_override
 from app.utils.salary_queries import build_salary_benefits_queries
 from app.utils.salary_link_selection import select_top_salary_link_per_category, order_salary_by_priority
+from app.utils.link_checker import filter_dead_links
 
 
 import os
@@ -661,11 +662,15 @@ async def get_company_info(
 
     logger.info(f"After deduplication: {len(deduped_links)} links (removed {len(ordered_links) - len(deduped_links)} duplicates)")
 
-    # PASS 7: Format titles for display
+    # PASS 7: Drop confirmed dead links (404/410) — parallel HEAD checks, short timeout
+    live_links = await filter_dead_links(deduped_links)
+    logger.info(f"After 404 check: {len(live_links)} live links (dropped {len(deduped_links) - len(live_links)})")
+
+    # PASS 8: Format titles for display
     # Links are already curated (1 per category, domain + company-name validated) and
     # ordered by priority — skip score-based re-sorting which would destroy the order
     # and the YouTube 85-threshold which would drop curated video links.
-    formatted_links = [format_link_for_display(link) for link in deduped_links]
+    formatted_links = [format_link_for_display(link) for link in live_links]
 
     result = {
         "domain": domain,

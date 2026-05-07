@@ -9,6 +9,7 @@ __all__ = [
 ]
 
 import logging
+import re
 from urllib.parse import urlparse
 from app.utils.salary_queries import format_salary_category_name
 
@@ -45,40 +46,48 @@ def _is_trusted_domain(url: str) -> bool:
 
 
 def _company_name_in_title(title: str, company_name: str) -> bool:
-    """
-    Check if company name appears in the title.
-    Handles multi-word company names by checking if all significant words appear.
-    """
+    """Check if company name appears in the title as a whole word (not as a substring of another word)."""
     if not title or not company_name:
         return False
 
     title_lower = title.lower()
     company_lower = company_name.lower()
 
-    # Direct match first
-    if company_lower in title_lower:
+    # Word-boundary match: "adp" must not be immediately followed by a letter/digit
+    # Prevents "ADP" matching inside "ADPI", "ADPList", etc.
+    pattern = re.escape(company_lower) + r'(?![a-zA-Z0-9])'
+    if re.search(pattern, title_lower):
         return True
 
-    # For multi-word names, check if the main words appear
-    # e.g., "Bell Helicopter" -> check for "bell" AND "helicopter"
+    # For multi-word names, check the first significant word with same boundary rule
     company_words = [w for w in company_lower.split() if len(w) > 2]
     if len(company_words) > 1:
-        # Require at least the first significant word (usually the brand name)
-        return company_words[0] in title_lower
+        word_pattern = re.escape(company_words[0]) + r'(?![a-zA-Z0-9])'
+        return bool(re.search(word_pattern, title_lower))
 
     return False
 
 
+def _company_name_in_url(url: str, company_name: str) -> bool:
+    """Check if company name appears as a path segment in the URL (not just a substring)."""
+    if not url or not company_name:
+        return False
+    try:
+        from urllib.parse import urlparse
+        path = urlparse(url).path.lower()
+        name = company_name.lower().replace(' ', '').replace('&', '').replace('.', '')
+        segments = [s for s in path.replace('-', '/').split('/') if s]
+        return name in segments
+    except Exception:
+        return False
+
+
 def _should_include_link(link: dict, company_name: str) -> bool:
-    """Check if link should be included based on company name OR trusted domain."""
-    # Always include if company name in title
+    """Check if link belongs to the right company — name must appear in title or URL path."""
     if _company_name_in_title(link.get('title', ''), company_name):
         return True
-
-    # Also include if from a trusted domain
-    if _is_trusted_domain(link.get('url', '')):
+    if _company_name_in_url(link.get('url', ''), company_name):
         return True
-
     return False
 
 

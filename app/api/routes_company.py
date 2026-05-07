@@ -498,7 +498,8 @@ def _rule_based_review_category(url: str, title: str) -> str:
 
 
 _INTERVIEW_DOMAINS    = {'glassdoor.com', 'blind.com', 'teamblind.com', 'reddit.com', 'interviewquery.com'}
-_TECH_STACK_INDICATORS = ['tech-stack', 'engineering', 'tech.', 'developer', 'github.com']
+_TECH_STACK_DOMAINS    = {'stackshare.io', 'github.com'}
+_TECH_STACK_INDICATORS = ['tech-stack', 'engineering', 'tech.', 'developer']
 _TECH_SKILLS_DOMAINS  = {'leetcode.com', 'hackerrank.com', 'codinginterview.com', 'neetcode.io'}
 
 def _rule_based_interview_category(url: str, title: str) -> str:
@@ -508,6 +509,8 @@ def _rule_based_interview_category(url: str, title: str) -> str:
         return 'Company Interview Questions'
     if any(d in domain for d in _TECH_SKILLS_DOMAINS):
         return 'Technical Skills'
+    if any(d in domain for d in _TECH_STACK_DOMAINS):
+        return 'Tech Stack & Tools'
     if any(ind in url_l or ind in title_l for ind in _TECH_STACK_INDICATORS):
         return 'Tech Stack & Tools'
     return 'General Prep'

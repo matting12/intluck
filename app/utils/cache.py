@@ -8,10 +8,14 @@ __all__ = [
     'SEVEN_DAYS'
 ]
 
+import os
 import time
 import hashlib
 import json
 from typing import Any
+
+# Set CACHE_ENABLED=false in .env to disable all caching
+_CACHE_ENABLED = os.getenv("CACHE_ENABLED", "true").lower() != "false"
 
 # In-memory cache storage
 _cache: dict[str, dict] = {}
@@ -31,21 +35,25 @@ def _make_key(prefix: str, params: dict) -> str:
 
 
 def get_cached(prefix: str, params: dict) -> Any | None:
-    """Get value from cache if exists and not expired"""
+    """Get value from cache if exists and not expired. Returns None if cache disabled."""
+    if not _CACHE_ENABLED:
+        return None
     key = _make_key(prefix, params)
-    
+
     if key in _cache:
         entry = _cache[key]
         if time.time() < entry['expires_at']:
             return entry['value']
         else:
             del _cache[key]
-    
+
     return None
 
 
 def set_cached(prefix: str, params: dict, value: Any, ttl: int = ONE_DAY) -> None:
-    """Store value in cache with TTL"""
+    """Store value in cache with TTL. No-op if cache disabled."""
+    if not _CACHE_ENABLED:
+        return
     key = _make_key(prefix, params)
     _cache[key] = {
         'value': value,

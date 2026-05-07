@@ -335,7 +335,7 @@ Return a JSON array with exactly {max_links} objects (2 per category):
                 
     except Exception as e:
         logger.error(f"GPT selection error for company reviews: {e}")
-        return fallback_selection(all_links, max_links)
+        return rule_based_review_selection(all_links, max_links)
 
 
 async def select_interview_prep_links_with_gpt(
@@ -454,27 +454,20 @@ Return a JSON array with 4-6 objects:
                 
     except Exception as e:
         logger.error(f"GPT selection error for interview prep: {e}")
-        return fallback_selection(all_links, max_links)
+        return rule_based_interview_selection(all_links, max_links)
 
 
 def fallback_selection(all_links: list[dict], max_links: int) -> list[dict]:
     """Simple rule-based fallback if GPT fails."""
-    
     scored = []
-    
     for link in all_links:
         url = link['url'].lower()
         title = link['title'].lower()
-        
-        # Skip obvious non-company-info links
         if any(bad in url for bad in ['job/', '/careers/job/', 'location/', '.pdf']):
             continue
-        if 'linkedin.com/in/' in url:  # individual profile
+        if 'linkedin.com/in/' in url:
             continue
-            
         score = 0
-        
-        # Score based on keywords
         if any(kw in title or kw in url for kw in ['about', 'mission', 'overview']):
             score += 10
         if any(kw in title or kw in url for kw in ['culture', 'values', 'life at']):
@@ -485,18 +478,66 @@ def fallback_selection(all_links: list[dict], max_links: int) -> list[dict]:
             score += 7
         if 'careers' in url and 'job' not in url:
             score += 5
-            
         scored.append((score, link))
-    
     scored.sort(reverse=True, key=lambda x: x[0])
-    
-    return [
-        {
-            **link,
-            "category": "Company Information"
-        }
-        for _, link in scored[:max_links]
-    ]
+    return [{**link, "category": "Company Information"} for _, link in scored[:max_links]]
+
+
+_CULTURE_DOMAINS = {'glassdoor.com', 'indeed.com', 'comparably.com', 'blind.com',
+                    'teamblind.com', 'fishbowlapp.com', 'fairygodboss.com', 'inhersight.com'}
+_CAREER_DOMAINS  = {'levels.fyi', 'vault.com', 'themuse.com', 'builtinnyc.com', 'builtin.com'}
+
+def _rule_based_review_category(url: str, title: str) -> str:
+    url_l, title_l = url.lower(), title.lower()
+    domain = url_l.split('/')[2].replace('www.', '') if '//' in url_l else ''
+    if any(d in domain for d in _CULTURE_DOMAINS):
+        return 'Culture & Work Environment'
+    if any(d in domain for d in _CAREER_DOMAINS):
+        return 'Career Development'
+    return 'Company News'
+
+
+_INTERVIEW_DOMAINS    = {'glassdoor.com', 'blind.com', 'teamblind.com', 'reddit.com', 'interviewquery.com'}
+_TECH_STACK_INDICATORS = ['tech-stack', 'engineering', 'tech.', 'developer', 'github.com']
+_TECH_SKILLS_DOMAINS  = {'leetcode.com', 'hackerrank.com', 'codinginterview.com', 'neetcode.io'}
+
+def _rule_based_interview_category(url: str, title: str) -> str:
+    url_l, title_l = url.lower(), title.lower()
+    domain = url_l.split('/')[2].replace('www.', '') if '//' in url_l else ''
+    if any(d in domain for d in _INTERVIEW_DOMAINS) or 'interview' in url_l:
+        return 'Company Interview Questions'
+    if any(d in domain for d in _TECH_SKILLS_DOMAINS):
+        return 'Technical Skills'
+    if any(ind in url_l or ind in title_l for ind in _TECH_STACK_INDICATORS):
+        return 'Tech Stack & Tools'
+    return 'General Prep'
+
+
+def rule_based_review_selection(all_links: list[dict], max_links: int = 6) -> list[dict]:
+    """Domain-based category assignment for company reviews when GPT is unavailable."""
+    buckets: dict[str, list] = {'Company News': [], 'Culture & Work Environment': [], 'Career Development': []}
+    for link in all_links:
+        cat = _rule_based_review_category(link.get('url', ''), link.get('title', ''))
+        if len(buckets[cat]) < 2:
+            buckets[cat].append({**link, 'category': cat})
+    result = buckets['Company News'] + buckets['Culture & Work Environment'] + buckets['Career Development']
+    return result[:max_links]
+
+
+def rule_based_interview_selection(all_links: list[dict], max_links: int = 6) -> list[dict]:
+    """Domain-based category assignment for interview prep when GPT is unavailable."""
+    buckets: dict[str, list] = {
+        'Company Interview Questions': [], 'Tech Stack & Tools': [],
+        'Technical Skills': [], 'General Prep': []
+    }
+    for link in all_links:
+        cat = _rule_based_interview_category(link.get('url', ''), link.get('title', ''))
+        buckets[cat].append({**link, 'category': cat})
+    # Priority order: interview questions first, fill remaining slots
+    result = []
+    for cat in ['Company Interview Questions', 'Tech Stack & Tools', 'Technical Skills', 'General Prep']:
+        result.extend(buckets[cat][:2])
+    return result[:max_links]
 
 
 @router.get("/company-info", response_model=dict)

@@ -47,6 +47,10 @@ EXACT_MATCH_COMPANIES = {
     "Five Below",
     "Seven Eleven",
     "Circle K",
+    "ADP",
+    "KBR",
+    "HII",
+    "RTX",
 }
 
 # Convert to lowercase set for case-insensitive matching

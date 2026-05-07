@@ -108,7 +108,7 @@ def build_salary_benefits_queries(
         'retirement_401k': f'{c} ("employee reviews" OR reviews OR ranking OR rating OR feedback OR experiences) (401K OR 401b OR "retirement options" OR "retirement plan" OR "retirement benefits" OR retirement OR pension OR saving OR "matching contribution") (site:glassdoor.com OR site:indeed.com OR site:ambitionbox.com OR site:blind.com OR site:levels.fyi OR site:reddit.com OR site:fishbowlapp.com OR site:h1bdata.info)',
 
         # 9. Annual pay increases
-        'pay_increases': f'{c} ("annual pay increase" OR "annual raise" OR "salary increase" OR "salary raise" OR "pay adjustment" OR "merit increase" OR "wage increase" OR "performance reviews" OR "cost of living") ("employee reviews" OR reviews OR ranking OR rating OR feedback OR experiences) (site:glassdoor.com OR site:indeed.com OR site:ambitionbox.com OR site:blind.com OR site:levels.fyi OR site:reddit.com OR site:fishbowlapp.com OR site:h1bdata.info)',
+        'pay_increases': f'{c} ("salary increase" OR "merit increase" OR "annual raise" OR "pay adjustment" OR "cost of living") (reviews OR rating OR feedback) (site:glassdoor.com OR site:indeed.com OR site:blind.com OR site:levels.fyi OR site:reddit.com)',
 
         # 10. Benefits comparison
         'benefits_comparison': f'{c} ("benefits package" OR "employee benefits" OR "compensation package" OR "health benefits" OR "retirement benefits") AND ("compare" OR "comparison" OR "market standards" OR "industry standards" OR "competitive" OR "value")'

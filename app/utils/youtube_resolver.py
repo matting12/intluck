@@ -25,29 +25,34 @@ logger = logging.getLogger(__name__)
 YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
 
 
+_CHANNEL_SUFFIX = r"(?:/(?:videos|about|featured|shorts|playlists|community|channels|streams))?"
+
 def _parse_channel_url(url: str):
     """
     Return (identifier, id_type) when the URL is a YouTube channel/user page,
     or None if it's already a video watch URL (or unrecognised format).
+
+    Handles common channel page suffixes (/videos, /about, /featured, etc.)
+    and mobile URLs (m.youtube.com).
 
     id_type: 'channel_id' | 'handle' | 'username' | 'custom'
     """
     try:
         path = urlparse(url).path.rstrip("/")
 
-        m = re.match(r"^/channel/([A-Za-z0-9_-]+)$", path)
+        m = re.match(r"^/channel/([A-Za-z0-9_-]+)" + _CHANNEL_SUFFIX + r"$", path)
         if m:
             return (m.group(1), "channel_id")
 
-        m = re.match(r"^/@([A-Za-z0-9_.\-]+)$", path)
+        m = re.match(r"^/@([A-Za-z0-9_.\-]+)" + _CHANNEL_SUFFIX + r"$", path)
         if m:
             return (m.group(1), "handle")
 
-        m = re.match(r"^/user/([A-Za-z0-9_.\-]+)$", path)
+        m = re.match(r"^/user/([A-Za-z0-9_.\-]+)" + _CHANNEL_SUFFIX + r"$", path)
         if m:
             return (m.group(1), "username")
 
-        m = re.match(r"^/c/([A-Za-z0-9_.\-]+)$", path)
+        m = re.match(r"^/c/([A-Za-z0-9_.\-]+)" + _CHANNEL_SUFFIX + r"$", path)
         if m:
             return (m.group(1), "custom")
 

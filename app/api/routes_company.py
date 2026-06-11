@@ -615,8 +615,15 @@ async def get_company_info(
         elapsed = time.time() - start_time
         logger.info(f"Using pre-computed results for '{company}' - returned in {elapsed:.2f}s")
 
+        # Resolve any YouTube channel URLs to actual video watch URLs
+        resolved_links = []
+        for link in precomputed["links"]:
+            if link.get("type") == "video" and "youtube.com" in link.get("url", ""):
+                link = await resolve_youtube_channel_to_video(link)
+            resolved_links.append(link)
+
         # Format links for display
-        formatted_links = [format_link_for_display(link) for link in precomputed["links"]]
+        formatted_links = [format_link_for_display(link) for link in resolved_links]
 
         result = {
             "domain": precomputed.get("domain"),

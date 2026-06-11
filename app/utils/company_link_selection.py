@@ -147,12 +147,13 @@ def select_top_link_per_category(search_results: dict, company_name: str = None,
         l for l in search_results.get('video', [])
         if _is_youtube_url(l.get('url', '')) and _company_name_in_title(l.get('title', ''), company_name)
     ]
-    # Prefer official channel pages over watch URLs
-    channel_hits = [l for l in video_candidates if _is_youtube_channel(l.get('url', ''))]
-    if channel_hits:
-        video_link = channel_hits[0].copy()
+    # Prefer actual watch URLs (embeddable) over channel pages
+    watch_hits = [l for l in video_candidates if not _is_youtube_channel(l.get('url', ''))]
+    if watch_hits:
+        video_link = watch_hits[0].copy()
         video_link['type'] = 'video'
     elif video_candidates:
+        # Only channel URLs found; resolver will attempt to convert to a video URL
         video_link = video_candidates[0].copy()
         video_link['type'] = 'video'
 

@@ -56,8 +56,8 @@ def build_company_overview_queries(
         # 4. Community Engagement — CSR/foundation/giving on company domain
         'community': f'{company_formatted} ("community" OR "foundation" OR "giving back" OR "corporate responsibility" OR "social impact" OR "CSR") site:{company_domain}',
 
-        # 5a. Video — official YouTube channel page (web search surfaces channel pages better than video API)
-        'video': f'{company_formatted} official channel site:youtube.com',
+        # 5a. Video — search for actual watch URLs so we get an embeddable video, not just a channel page
+        'video': f'{company_formatted} official video site:youtube.com/watch',
 
         # 5b. Department Vertical — careers/teams/divisions page on company domain
         'dept_vertical': f'{company_formatted} (careers OR "our teams" OR "our people" OR "research" OR "divisions" OR "departments") site:{company_domain}',

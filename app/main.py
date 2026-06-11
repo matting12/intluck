@@ -12,6 +12,7 @@ import logging
 
 from app.api.routes_autocomplete import router as autocomplete_router
 from app.api.routes_company import router as company_router
+from app.api.routes_questions import router as questions_router
 
 
 logging.basicConfig(
@@ -69,3 +70,4 @@ async def read_root():
 
 app.include_router(autocomplete_router, prefix="/api/autocomplete")
 app.include_router(company_router, prefix="/api")
+app.include_router(questions_router, prefix="/api")

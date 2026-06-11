@@ -18,6 +18,7 @@ from app.utils.link_scoring import score_and_filter_links, score_link, DEFAULT_T
 from app.utils import *
 from app.utils.company_queries import build_company_overview_queries
 from app.utils.company_link_selection import select_top_link_per_category, order_by_priority
+from app.utils.youtube_resolver import resolve_youtube_channel_to_video
 from app.utils.domain_overrides import get_domain_override
 from app.utils.salary_queries import build_salary_benefits_queries
 from app.utils.salary_link_selection import select_top_salary_link_per_category, order_salary_by_priority
@@ -688,6 +689,12 @@ async def get_company_info(
     # Order: home, about, social, community, video_or_vertical
     categorized_links = select_top_link_per_category(search_results, company_name=company, company_domain=domain)
     logger.info(f"Selected {len(categorized_links)} links (1 per category, filtered by company name in title)")
+
+    # PASS 5.5: Resolve YouTube channel URLs to actual video URLs
+    if "video_or_vertical" in categorized_links:
+        video_slot = categorized_links["video_or_vertical"]
+        if video_slot.get("type") == "video":
+            categorized_links["video_or_vertical"] = await resolve_youtube_channel_to_video(video_slot)
 
     # PASS 6: Order by priority
     ordered_links = order_by_priority(categorized_links)

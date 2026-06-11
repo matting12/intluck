@@ -1054,4 +1054,143 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+
+    // ========== TAB SWITCHING ==========
+    window.switchTab = function(tab) {
+        const resourcesPanel = document.getElementById('tab-panel-resources');
+        const questionsPanel = document.getElementById('tab-panel-questions');
+        const btnResources = document.getElementById('tab-resources');
+        const btnQuestions = document.getElementById('tab-questions');
+
+        if (tab === 'questions') {
+            resourcesPanel.classList.add('hidden');
+            questionsPanel.classList.remove('hidden');
+            btnResources.classList.remove('active');
+            btnQuestions.classList.add('active');
+        } else {
+            resourcesPanel.classList.remove('hidden');
+            questionsPanel.classList.add('hidden');
+            btnResources.classList.add('active');
+            btnQuestions.classList.remove('active');
+        }
+
+        localStorage.setItem('activeTab', tab);
+    };
+
+    // Restore last active tab on page load
+    const savedTab = localStorage.getItem('activeTab') || 'resources';
+    window.switchTab(savedTab);
+
+
+    // ========== QUESTION GENERATION ==========
+    const generateQuestionsBtn = document.getElementById('generateQuestionsBtn');
+    const regenerateBtn = document.getElementById('regenerateBtn');
+    const jdInput = document.getElementById('jobDescriptionInput');
+    const jdError = document.getElementById('jdError');
+    const questionsLoadingState = document.getElementById('questionsLoadingState');
+    const questionsResults = document.getElementById('questionsResults');
+    const questionsErrorDiv = document.getElementById('questionsError');
+    const questionsErrorMsg = document.getElementById('questionsErrorMsg');
+
+    function renderQuestionList(questions, listId) {
+        const list = document.getElementById(listId);
+        if (!list) return;
+        list.innerHTML = questions.map((q, i) => `
+            <li class="question-item">
+                <span class="question-number">${i + 1}</span>
+                <p class="text-sm text-gray-800 dark:text-gray-200 leading-relaxed">${escapeHtml(q)}</p>
+            </li>
+        `).join('');
+    }
+
+    function escapeHtml(str) {
+        return str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
+    async function doGenerateQuestions() {
+        const jd = jdInput ? jdInput.value.trim() : '';
+
+        if (!jd) {
+            if (jdError) {
+                jdError.textContent = 'Please enter a job description or job title.';
+                jdError.classList.remove('hidden');
+            }
+            if (jdInput) jdInput.focus();
+            return;
+        }
+
+        if (jdError) jdError.classList.add('hidden');
+
+        // Show loading, hide results and errors
+        if (questionsResults) questionsResults.classList.add('hidden');
+        if (questionsErrorDiv) questionsErrorDiv.classList.add('hidden');
+        if (questionsLoadingState) questionsLoadingState.classList.remove('hidden');
+
+        if (generateQuestionsBtn) {
+            generateQuestionsBtn.disabled = true;
+            generateQuestionsBtn.textContent = 'Generating...';
+        }
+
+        try {
+            const response = await fetch('/api/generate-questions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ job_description: jd }),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.detail || 'Failed to generate questions.');
+            }
+
+            renderQuestionList(data.behavioral || [], 'behavioralQuestionsList');
+            renderQuestionList(data.technical || [], 'technicalQuestionsList');
+
+            if (questionsLoadingState) questionsLoadingState.classList.add('hidden');
+            if (questionsResults) questionsResults.classList.remove('hidden');
+
+            // Scroll to results on mobile
+            if (questionsResults) {
+                questionsResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+        } catch (err) {
+            console.error('Question generation error:', err);
+            if (questionsLoadingState) questionsLoadingState.classList.add('hidden');
+            if (questionsErrorMsg) questionsErrorMsg.textContent = err.message || 'Failed to generate questions. Please try again.';
+            if (questionsErrorDiv) questionsErrorDiv.classList.remove('hidden');
+        } finally {
+            if (generateQuestionsBtn) {
+                generateQuestionsBtn.disabled = false;
+                generateQuestionsBtn.textContent = 'Generate Questions';
+            }
+        }
+    }
+
+    if (generateQuestionsBtn) {
+        generateQuestionsBtn.addEventListener('click', doGenerateQuestions);
+    }
+
+    if (regenerateBtn) {
+        regenerateBtn.addEventListener('click', doGenerateQuestions);
+    }
+
+    if (jdInput) {
+        jdInput.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'Enter') {
+                doGenerateQuestions();
+            }
+        });
+        // Clear error on input
+        jdInput.addEventListener('input', function() {
+            if (jdError) jdError.classList.add('hidden');
+        });
+    }
 });

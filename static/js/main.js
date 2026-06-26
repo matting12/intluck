@@ -663,6 +663,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const { url, title, description, category } = link;
         const isCompact = viewMode === 'compact';
         const videoId = extractVideoId(url);
+
+        // Channel/unresolved URL — degrade to a plain link so we don't embed
+        // the channel page, which shows as a 240p thumbnail grid
+        if (!videoId) {
+            return renderLink(link, viewMode, linkIndex);
+        }
+
         const uniqueId = `video-${linkIndex}-${Date.now()}`;
 
         return `

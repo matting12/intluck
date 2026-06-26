@@ -70,19 +70,29 @@ def _uploads_playlist_id(channel_id: str) -> str:
 
 async def _resolve_via_api(identifier: str, id_type: str, api_key: str):
     """
-    Use the YouTube Data API to get the most recent video from a channel.
-    Returns a dict with url/title/description, or None on any failure.
-    Uses 2 quota units: channels.list (1) + playlistItems.list (1).
+    Use the YouTube Data API to get the best video from a channel.
+    Prefers the channel's featured/unsubscribed trailer; falls back to the
+    most recent upload if no trailer is set.
+
+    Quota cost: 2 units (channels.list + videos.list or playlistItems.list).
     """
     try:
         async with httpx.AsyncClient(timeout=10.0) as client:
-            # Step 1: resolve identifier → channel_id
+            # Step 1: resolve identifier → channel_id + fetch brandingSettings
+            # (combined into one call for handle/username/custom; separate for channel_id)
             if id_type == "channel_id":
                 channel_id = identifier
+                resp = await client.get(
+                    "https://www.googleapis.com/youtube/v3/channels",
+                    params={"part": "brandingSettings", "id": channel_id, "key": api_key},
+                )
+                resp.raise_for_status()
+                items = resp.json().get("items", [])
+                branding = items[0].get("brandingSettings", {}).get("channel", {}) if items else {}
             elif id_type == "handle":
                 resp = await client.get(
                     "https://www.googleapis.com/youtube/v3/channels",
-                    params={"part": "id", "forHandle": identifier, "key": api_key},
+                    params={"part": "id,brandingSettings", "forHandle": identifier, "key": api_key},
                 )
                 resp.raise_for_status()
                 items = resp.json().get("items", [])
@@ -90,21 +100,41 @@ async def _resolve_via_api(identifier: str, id_type: str, api_key: str):
                     logger.warning("YouTube API: no channel for handle=%s", identifier)
                     return None
                 channel_id = items[0]["id"]
+                branding = items[0].get("brandingSettings", {}).get("channel", {})
             elif id_type in ("username", "custom"):
                 param_key = "forUsername" if id_type == "username" else "forHandle"
                 resp = await client.get(
                     "https://www.googleapis.com/youtube/v3/channels",
-                    params={"part": "id", param_key: identifier, "key": api_key},
+                    params={"part": "id,brandingSettings", param_key: identifier, "key": api_key},
                 )
                 resp.raise_for_status()
                 items = resp.json().get("items", [])
                 if not items:
                     return None
                 channel_id = items[0]["id"]
+                branding = items[0].get("brandingSettings", {}).get("channel", {})
             else:
                 return None
 
-            # Step 2: fetch first item from uploads playlist (1 quota unit)
+            # Step 2a: try the channel's featured/unsubscribed trailer first
+            trailer_id = branding.get("unsubscribedTrailer")
+            if trailer_id:
+                resp = await client.get(
+                    "https://www.googleapis.com/youtube/v3/videos",
+                    params={"part": "snippet", "id": trailer_id, "key": api_key},
+                )
+                resp.raise_for_status()
+                items = resp.json().get("items", [])
+                if items:
+                    snippet = items[0]["snippet"]
+                    logger.info("YouTube: using featured trailer %s for channel %s", trailer_id, channel_id)
+                    return {
+                        "url": f"https://www.youtube.com/watch?v={trailer_id}",
+                        "title": snippet.get("title", ""),
+                        "description": (snippet.get("description") or "")[:300],
+                    }
+
+            # Step 2b: fall back to most recent upload from uploads playlist
             uploads_id = _uploads_playlist_id(channel_id)
             resp = await client.get(
                 "https://www.googleapis.com/youtube/v3/playlistItems",
@@ -123,13 +153,10 @@ async def _resolve_via_api(identifier: str, id_type: str, api_key: str):
 
             snippet = items[0]["snippet"]
             vid = snippet["resourceId"]["videoId"]
-            title = snippet.get("title", "")
-            description = (snippet.get("description") or "")[:300]
-
             return {
                 "url": f"https://www.youtube.com/watch?v={vid}",
-                "title": title,
-                "description": description,
+                "title": snippet.get("title", ""),
+                "description": (snippet.get("description") or "")[:300],
             }
 
     except Exception as e:
@@ -137,10 +164,43 @@ async def _resolve_via_api(identifier: str, id_type: str, api_key: str):
         return None
 
 
+def _extract_playlist_id(url: str) -> str | None:
+    """Return the playlist ID from a youtube.com/playlist?list=... URL, or None."""
+    try:
+        from urllib.parse import parse_qs
+        qs = parse_qs(urlparse(url).query)
+        ids = qs.get("list", [])
+        return ids[0] if ids else None
+    except Exception:
+        return None
+
+
+async def _first_video_from_playlist(playlist_id: str, api_key: str):
+    """Fetch the first video from a YouTube playlist (1 quota unit)."""
+    try:
+        async with httpx.AsyncClient(timeout=10.0) as client:
+            resp = await client.get(
+                "https://www.googleapis.com/youtube/v3/playlistItems",
+                params={"part": "snippet", "playlistId": playlist_id, "maxResults": 1, "key": api_key},
+            )
+            resp.raise_for_status()
+            items = resp.json().get("items", [])
+            if not items:
+                return None
+            snippet = items[0]["snippet"]
+            vid = snippet["resourceId"]["videoId"]
+            title = snippet.get("title", "")
+            description = (snippet.get("description") or "")[:300]
+            return {"url": f"https://www.youtube.com/watch?v={vid}", "title": title, "description": description}
+    except Exception as e:
+        logger.warning("Playlist resolution failed (id=%s): %s", playlist_id, e)
+        return None
+
+
 async def resolve_youtube_channel_to_video(link: dict) -> dict:
     """
-    If `link` is a YouTube channel URL, attempt to resolve it to the most
-    recent video using the YouTube Data API.
+    If `link` is a YouTube channel or playlist URL, attempt to resolve it to
+    the most recent video using the YouTube Data API.
 
     Returns the original link unchanged if:
     - it's already a video URL (/watch?v=...)
@@ -149,6 +209,23 @@ async def resolve_youtube_channel_to_video(link: dict) -> dict:
     """
     url = link.get("url", "")
     if "youtube.com" not in url and "youtu.be" not in url:
+        return link
+
+    # Handle playlist URLs
+    playlist_id = _extract_playlist_id(url)
+    if playlist_id and "watch" not in url:
+        if not YOUTUBE_API_KEY:
+            return link
+        resolved = await _first_video_from_playlist(playlist_id, YOUTUBE_API_KEY)
+        if resolved:
+            updated = link.copy()
+            updated["url"] = resolved["url"]
+            if resolved.get("title"):
+                updated["title"] = resolved["title"]
+            if resolved.get("description") is not None:
+                updated["description"] = resolved["description"]
+            logger.info("Resolved playlist %s → %s", url, resolved["url"])
+            return updated
         return link
 
     parsed = _parse_channel_url(url)

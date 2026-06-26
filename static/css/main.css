@@ -303,3 +303,23 @@ button {
     color: #FBBF24;
 }
 
+/* ===== TALKING POINT CARDS ===== */
+.talking-point-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-left: 4px solid #6366F1;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    transition: box-shadow 0.15s ease;
+}
+
+.talking-point-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.dark .talking-point-card {
+    background-color: #1F2937;
+    border-color: #374151;
+    border-left-color: #818CF8;
+}
+

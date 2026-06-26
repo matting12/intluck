@@ -103,24 +103,31 @@ async def _call_openai(jd: str) -> dict:
 
 
 _RESUME_PROMPT = """\
-You are a resume keyword analyzer. Given a job description and a resume, extract technical skills, tools, technologies, frameworks, languages, and domain keywords.
+You are a resume keyword analyzer and interview coach. Given a job description and a resume, extract technical skills, tools, technologies, frameworks, languages, and domain keywords.
 
 Categorize them into exactly three groups:
 - "matching": skills/technologies present in BOTH the resume AND the job description
 - "missing": important skills/technologies mentioned in the JD that are NOT found in the resume
 - "somewhat_related": skills that are adjacent or partially overlapping (e.g., "AWS vs GCP", "React vs Vue.js", "Postgres vs MySQL")
 
+Then generate "talking_points": for each item in "missing" and "somewhat_related", write a first-person interview statement (1-2 sentences) the candidate can adapt to bridge the gap. Be specific, confident, and honest.
+
 Rules:
 - Focus only on technical skills, tools, languages, frameworks, certifications, and domain-specific keywords. Ignore generic soft skills.
 - For "somewhat_related", write each item as a short comparison string like "AWS (resume) vs GCP (JD)".
-- Limit each list to the 15 most important items.
+- Limit each keyword list to the 15 most important items.
 - If a category has no items, return an empty array.
+- Each talking_point object must have: "keyword" (exact string from missing or somewhat_related), "type" ("missing" or "somewhat_related"), "statement" (the interview talking point).
 
 Respond ONLY with valid JSON — no explanation, no markdown fences:
 {{
   "matching": ["Python", "SQL"],
   "missing": ["Kubernetes", "Terraform"],
-  "somewhat_related": ["AWS (resume) vs GCP (JD)"]
+  "somewhat_related": ["AWS (resume) vs GCP (JD)"],
+  "talking_points": [
+    {{"keyword": "Kubernetes", "type": "missing", "statement": "While I haven't worked with Kubernetes in production, I have hands-on Docker experience and a solid understanding of container orchestration concepts — I've been actively working through Kubernetes labs and am confident I can get productive quickly."}},
+    {{"keyword": "AWS (resume) vs GCP (JD)", "type": "somewhat_related", "statement": "My cloud experience is primarily on AWS, where I've worked with EC2, S3, and Lambda — the core concepts transfer directly to GCP and I've already started exploring GCP equivalents like Cloud Run and BigQuery."}}
+  ]
 }}
 
 Job Description:
@@ -152,10 +159,21 @@ def _parse_resume_response(content: str) -> dict:
             raise ValueError("No JSON found in AI response")
         data = json.loads(match.group())
 
+    raw_points = data.get("talking_points", [])
+    talking_points = []
+    for p in raw_points:
+        if isinstance(p, dict) and p.get("keyword") and p.get("statement"):
+            talking_points.append({
+                "keyword": str(p["keyword"]),
+                "type": str(p.get("type", "missing")),
+                "statement": str(p["statement"]),
+            })
+
     return {
         "matching": [str(k) for k in data.get("matching", [])],
         "missing": [str(k) for k in data.get("missing", [])],
         "somewhat_related": [str(k) for k in data.get("somewhat_related", [])],
+        "talking_points": talking_points,
     }
 
 

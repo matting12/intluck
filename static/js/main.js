@@ -1221,6 +1221,50 @@ document.addEventListener('DOMContentLoaded', function() {
         if (resumeFileNameEl) resumeFileNameEl.textContent = '';
     }
 
+    function renderTalkingPoints(points) {
+        const section = document.getElementById('talkingPointsSection');
+        const list = document.getElementById('talkingPointsList');
+        if (!section || !list) return;
+
+        if (!points || points.length === 0) {
+            section.classList.add('hidden');
+            return;
+        }
+
+        section.classList.remove('hidden');
+        list.innerHTML = points.map((p, i) => {
+            const isMissing = p.type === 'missing';
+            const badgeClass = isMissing ? 'badge-red' : 'badge-amber';
+            const badgeLabel = isMissing ? 'Missing' : 'Somewhat Related';
+            return `
+            <div class="talking-point-card">
+                <div class="flex items-center justify-between gap-3 flex-wrap">
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <span class="keyword-badge ${badgeClass}">${badgeLabel}</span>
+                        <span class="font-semibold text-sm text-gray-800 dark:text-gray-100">${escapeHtml(p.keyword)}</span>
+                    </div>
+                    <button
+                        class="copy-btn text-xs text-blue-600 dark:text-blue-400 hover:underline flex-shrink-0"
+                        data-index="${i}"
+                        onclick="copyTalkingPoint(this)">
+                        Copy
+                    </button>
+                </div>
+                <p class="talking-point-text mt-2 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">${escapeHtml(p.statement)}</p>
+            </div>`;
+        }).join('');
+    }
+
+    window.copyTalkingPoint = function(btn) {
+        const card = btn.closest('.talking-point-card');
+        const text = card ? card.querySelector('.talking-point-text').textContent : '';
+        if (!text) return;
+        navigator.clipboard.writeText(text).then(() => {
+            btn.textContent = 'Copied!';
+            setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+        });
+    };
+
     function renderKeywordBadges(keywords, containerId, emptyId, colorClass) {
         const container = document.getElementById(containerId);
         const emptyMsg = document.getElementById(emptyId);
@@ -1326,6 +1370,7 @@ document.addEventListener('DOMContentLoaded', function() {
             renderKeywordBadges(data.matching, 'matchingKeywords', 'matchingEmpty', 'badge-green');
             renderKeywordBadges(data.missing, 'missingKeywords', 'missingEmpty', 'badge-red');
             renderKeywordBadges(data.somewhat_related, 'relatedKeywords', 'relatedEmpty', 'badge-amber');
+            renderTalkingPoints(data.talking_points || []);
 
             if (resumeLoadingState) resumeLoadingState.classList.add('hidden');
             if (resumeResults) {

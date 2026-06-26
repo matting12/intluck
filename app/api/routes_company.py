@@ -1072,16 +1072,22 @@ async def get_interview_prep(
 
     # Get job family-specific queries
     queries = get_interview_prep_queries(company, job_title, job_family)
-    
-    # PASS 1: Parallel searches
+    inspirational_queries = get_inspirational_post_queries(company)
+
+    # PASS 1: Parallel searches (interview prep + inspirational posts together)
     search_start = time.time()
-    
-    tasks = [
+
+    all_tasks = [
         brave_search(query, BRAVE_API_KEY, f"query_{i}")
         for i, query in enumerate(queries)
+    ] + [
+        brave_search(query, BRAVE_API_KEY, f"inspo_{i}")
+        for i, query in enumerate(inspirational_queries)
     ]
 
-    results_list = await asyncio.gather(*tasks, return_exceptions=True)
+    all_results = await asyncio.gather(*all_tasks, return_exceptions=True)
+    results_list = all_results[:len(queries)]
+    inspo_results_list = all_results[len(queries):]
     
     search_elapsed = time.time() - search_start
     logger.info(f"Brave searches took {search_elapsed:.2f}s")
@@ -1162,6 +1168,34 @@ async def get_interview_prep(
     formatted_links = [format_link_for_display(link) for link in filtered_links]
     all_formatted_links = [format_link_for_display(link) for link in all_candidates_scored]
 
+    # Collect and deduplicate inspirational posts (LinkedIn Pulse + Medium)
+    company_lower = company.lower()
+    seen_inspo_urls = set()
+    inspo_posts = []
+    for result_data in inspo_results_list:
+        if isinstance(result_data, Exception):
+            continue
+        for link in result_data:
+            url = link.get("url", "")
+            if not url or url in seen_inspo_urls:
+                continue
+            url_lower = url.lower()
+            title_lower = link.get("title", "").lower()
+            desc_lower = link.get("description", "").lower()
+            # Keep only posts that mention the company in URL, title, or description
+            if company_lower not in url_lower and company_lower not in title_lower and company_lower not in desc_lower:
+                continue
+            seen_inspo_urls.add(url)
+            inspo_posts.append(format_link_for_display({
+                "url": url,
+                "title": link.get("title", ""),
+                "description": link.get("description", ""),
+            }))
+            if len(inspo_posts) >= 3:
+                break
+        if len(inspo_posts) >= 3:
+            break
+
     result = {
         "company": company,
         "job_title": job_title,
@@ -1169,7 +1203,8 @@ async def get_interview_prep(
         "links": formatted_links,
         "all_links": all_formatted_links,
         "total_found": len(all_links),
-        "threshold": DEFAULT_THRESHOLD
+        "threshold": DEFAULT_THRESHOLD,
+        "inspirational_posts": inspo_posts,
     }
 
     # Cache for 1 hour

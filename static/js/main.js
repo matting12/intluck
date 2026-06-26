@@ -446,6 +446,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ========== CARD RENDERING ==========
 
+    function renderInspirationalCard(posts, companyName, jobTitle, viewMode) {
+        const isCompact = viewMode === 'compact';
+        const padding = isCompact ? 'p-4' : 'p-6';
+
+        const postItems = posts.length > 0
+            ? posts.map(post => {
+                const domain = (() => { try { return new URL(post.url).hostname.replace('www.', ''); } catch(_) { return ''; } })();
+                const isLinkedIn = domain.includes('linkedin');
+                const isMedium = domain.includes('medium');
+                const sourceLabel = isLinkedIn ? 'LinkedIn' : isMedium ? 'Medium' : domain;
+                const sourceColor = isLinkedIn ? 'text-blue-600 dark:text-blue-400' : 'text-green-600 dark:text-green-400';
+                return `
+                <a href="${post.url}" target="_blank" rel="noopener noreferrer"
+                    class="block group p-3 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-orange-200 dark:hover:border-orange-700 hover:bg-orange-50 dark:hover:bg-orange-900/10 transition-colors duration-150">
+                    <div class="flex items-start gap-2">
+                        <span class="mt-0.5 text-base flex-shrink-0">✨</span>
+                        <div class="min-w-0">
+                            <p class="text-sm font-medium text-gray-800 dark:text-gray-100 group-hover:text-orange-700 dark:group-hover:text-orange-300 leading-snug line-clamp-2">${post.title || post.url}</p>
+                            ${post.description ? `<p class="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-2">${post.description}</p>` : ''}
+                            <span class="text-xs font-semibold ${sourceColor} mt-1 inline-block">${sourceLabel}</span>
+                        </div>
+                    </div>
+                </a>`;
+            }).join('')
+            : `<p class="text-gray-500 dark:text-gray-400 text-center py-8 text-sm">No inspirational posts found for ${companyName} right now.</p>`;
+
+        return `
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg ${padding} transition-colors duration-200">
+            <div class="mb-4">
+                <h3 class="${isCompact ? 'text-lg' : 'text-xl'} font-bold text-orange-600 dark:text-orange-400">
+                    ✨ Inspirational Stories
+                </h3>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                    Real people sharing how they got into ${companyName} — not just ${jobTitle} roles
+                </p>
+            </div>
+            <div class="space-y-2">${postItems}</div>
+        </div>`;
+    }
+
     function renderResultsCards(results, viewMode, companyName, jobTitle) {
         const cards = [
             {
@@ -490,7 +530,10 @@ document.addEventListener('DOMContentLoaded', function() {
             'company-reviews': results.companyReviews.all_links || []
         };
 
-        return cards.map(card => renderCard(card, viewMode)).join('');
+        const inspirationalPosts = results.interviewPrep.inspirational_posts || [];
+        const mainCards = cards.map(card => renderCard(card, viewMode)).join('');
+        const inspoCard = renderInspirationalCard(inspirationalPosts, companyName, jobTitle, viewMode);
+        return mainCards + inspoCard;
     }
 
     function renderCard({ title, emoji, color, links, allLinks, cardId }, viewMode) {

@@ -201,6 +201,19 @@ def get_interview_prep_queries(company: str, job_title: str, job_family: str) ->
         ]
 
 
+def get_inspirational_post_queries(company: str) -> list[str]:
+    """
+    Searches for LinkedIn Pulse and Medium posts where someone shares their
+    story of getting hired at the company. Intentionally broad — not tied to
+    a specific job title so we catch any inspiring hiring story at the company.
+    """
+    c = format_company_for_search(company)
+    return [
+        f'{c} ("how I got" OR "how I landed" OR "my journey to" OR "I got hired" OR "I joined" OR "how I broke into") site:linkedin.com/pulse',
+        f'{c} ("how I got a job" OR "how I landed" OR "my journey" OR "I got hired" OR "I joined" OR "offer") site:medium.com',
+    ]
+
+
 def get_company_info_queries(company: str) -> list[str]:
     """
     Generate queries for company information section.

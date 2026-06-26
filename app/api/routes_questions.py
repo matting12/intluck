@@ -110,12 +110,13 @@ Categorize them into exactly three groups:
 - "missing": important skills/technologies mentioned in the JD that are NOT found in the resume
 - "somewhat_related": skills that are adjacent or partially overlapping (e.g., "AWS vs GCP", "React vs Vue.js", "Postgres vs MySQL")
 
-Then generate "talking_points": for each item in "missing" and "somewhat_related", write a first-person interview statement (1-2 sentences) the candidate can adapt to bridge the gap. Be specific, confident, and honest.
+Then generate "talking_points": for the 3 most important items in "missing" and the 3 most important items in "somewhat_related" (max 6 total), write a first-person interview statement (1-2 sentences) the candidate can adapt to bridge the gap. Be specific, confident, and honest.
 
 Rules:
 - Focus only on technical skills, tools, languages, frameworks, certifications, and domain-specific keywords. Ignore generic soft skills.
 - For "somewhat_related", write each item as a short comparison string like "AWS (resume) vs GCP (JD)".
 - Limit each keyword list to the 15 most important items.
+- Limit "talking_points" to exactly 3 per type — 3 for "missing", 3 for "somewhat_related".
 - If a category has no items, return an empty array.
 - Each talking_point object must have: "keyword" (exact string from missing or somewhat_related), "type" ("missing" or "somewhat_related"), "statement" (the interview talking point).
 
@@ -160,14 +161,19 @@ def _parse_resume_response(content: str) -> dict:
         data = json.loads(match.group())
 
     raw_points = data.get("talking_points", [])
-    talking_points = []
+    missing_points, related_points = [], []
     for p in raw_points:
         if isinstance(p, dict) and p.get("keyword") and p.get("statement"):
-            talking_points.append({
+            entry = {
                 "keyword": str(p["keyword"]),
                 "type": str(p.get("type", "missing")),
                 "statement": str(p["statement"]),
-            })
+            }
+            if entry["type"] == "somewhat_related":
+                related_points.append(entry)
+            else:
+                missing_points.append(entry)
+    talking_points = missing_points[:3] + related_points[:3]
 
     return {
         "matching": [str(k) for k in data.get("matching", [])],

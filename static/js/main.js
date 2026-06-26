@@ -1193,4 +1193,160 @@ document.addEventListener('DOMContentLoaded', function() {
             if (jdError) jdError.classList.add('hidden');
         });
     }
+
+
+    // ========== RESUME ANALYSIS ==========
+    const resumeFileInput = document.getElementById('resumeFileInput');
+    const resumeDropZone = document.getElementById('resumeDropZone');
+    const resumeDropLabel = document.getElementById('resumeDropLabel');
+    const resumeFileChosen = document.getElementById('resumeFileChosen');
+    const resumeFileNameEl = document.getElementById('resumeFileName');
+    const resumeFileError = document.getElementById('resumeFileError');
+    const analyzeResumeBtn = document.getElementById('analyzeResumeBtn');
+    const resumeLoadingState = document.getElementById('resumeLoadingState');
+    const resumeResults = document.getElementById('resumeResults');
+    const resumeErrorDiv = document.getElementById('resumeError');
+    const resumeErrorMsg = document.getElementById('resumeErrorMsg');
+
+    function showResumeFile(file) {
+        if (resumeDropLabel) resumeDropLabel.classList.add('hidden');
+        if (resumeFileChosen) resumeFileChosen.classList.remove('hidden');
+        if (resumeFileNameEl) resumeFileNameEl.textContent = file.name;
+        if (resumeFileError) resumeFileError.classList.add('hidden');
+    }
+
+    function clearResumeFile() {
+        if (resumeDropLabel) resumeDropLabel.classList.remove('hidden');
+        if (resumeFileChosen) resumeFileChosen.classList.add('hidden');
+        if (resumeFileNameEl) resumeFileNameEl.textContent = '';
+    }
+
+    function renderKeywordBadges(keywords, containerId, emptyId, colorClass) {
+        const container = document.getElementById(containerId);
+        const emptyMsg = document.getElementById(emptyId);
+        if (!container) return;
+        if (!keywords || keywords.length === 0) {
+            container.innerHTML = '';
+            if (emptyMsg) emptyMsg.classList.remove('hidden');
+            return;
+        }
+        if (emptyMsg) emptyMsg.classList.add('hidden');
+        container.innerHTML = keywords.map(kw =>
+            `<span class="keyword-badge ${colorClass}">${escapeHtml(kw)}</span>`
+        ).join('');
+    }
+
+    if (resumeFileInput) {
+        resumeFileInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) showResumeFile(file);
+            else clearResumeFile();
+        });
+    }
+
+    // Drag-and-drop highlight
+    if (resumeDropZone) {
+        resumeDropZone.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            this.classList.add('border-blue-400', 'dark:border-blue-500', 'bg-blue-50', 'dark:bg-blue-900/10');
+        });
+        resumeDropZone.addEventListener('dragleave', function() {
+            this.classList.remove('border-blue-400', 'dark:border-blue-500', 'bg-blue-50', 'dark:bg-blue-900/10');
+        });
+        resumeDropZone.addEventListener('drop', function(e) {
+            e.preventDefault();
+            this.classList.remove('border-blue-400', 'dark:border-blue-500', 'bg-blue-50', 'dark:bg-blue-900/10');
+            const file = e.dataTransfer.files[0];
+            if (file && resumeFileInput) {
+                const dt = new DataTransfer();
+                dt.items.add(file);
+                resumeFileInput.files = dt.files;
+                showResumeFile(file);
+            }
+        });
+    }
+
+    async function doAnalyzeResume() {
+        const jd = jdInput ? jdInput.value.trim() : '';
+        const file = resumeFileInput ? resumeFileInput.files[0] : null;
+
+        if (!jd) {
+            if (jdError) {
+                jdError.textContent = 'Please enter a job description above before analyzing your resume.';
+                jdError.classList.remove('hidden');
+            }
+            if (jdInput) jdInput.focus();
+            return;
+        }
+
+        if (!file) {
+            if (resumeFileError) {
+                resumeFileError.textContent = 'Please upload a PDF or DOCX resume file.';
+                resumeFileError.classList.remove('hidden');
+            }
+            return;
+        }
+
+        const ext = file.name.split('.').pop().toLowerCase();
+        if (!['pdf', 'docx'].includes(ext)) {
+            if (resumeFileError) {
+                resumeFileError.textContent = 'Only PDF and DOCX files are supported.';
+                resumeFileError.classList.remove('hidden');
+            }
+            return;
+        }
+
+        if (resumeFileError) resumeFileError.classList.add('hidden');
+
+        if (resumeResults) resumeResults.classList.add('hidden');
+        if (resumeErrorDiv) resumeErrorDiv.classList.add('hidden');
+        if (resumeLoadingState) resumeLoadingState.classList.remove('hidden');
+
+        if (analyzeResumeBtn) {
+            analyzeResumeBtn.disabled = true;
+            analyzeResumeBtn.textContent = 'Analyzing...';
+        }
+
+        try {
+            const formData = new FormData();
+            formData.append('resume', file);
+            formData.append('job_description', jd);
+
+            const response = await fetch('/api/analyze-resume', {
+                method: 'POST',
+                body: formData,
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.detail || 'Failed to analyze resume.');
+            }
+
+            renderKeywordBadges(data.matching, 'matchingKeywords', 'matchingEmpty', 'badge-green');
+            renderKeywordBadges(data.missing, 'missingKeywords', 'missingEmpty', 'badge-red');
+            renderKeywordBadges(data.somewhat_related, 'relatedKeywords', 'relatedEmpty', 'badge-amber');
+
+            if (resumeLoadingState) resumeLoadingState.classList.add('hidden');
+            if (resumeResults) {
+                resumeResults.classList.remove('hidden');
+                resumeResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+        } catch (err) {
+            console.error('Resume analysis error:', err);
+            if (resumeLoadingState) resumeLoadingState.classList.add('hidden');
+            if (resumeErrorMsg) resumeErrorMsg.textContent = err.message || 'Failed to analyze resume. Please try again.';
+            if (resumeErrorDiv) resumeErrorDiv.classList.remove('hidden');
+        } finally {
+            if (analyzeResumeBtn) {
+                analyzeResumeBtn.disabled = false;
+                analyzeResumeBtn.textContent = 'Analyze Resume';
+            }
+        }
+    }
+
+    if (analyzeResumeBtn) {
+        analyzeResumeBtn.addEventListener('click', doAnalyzeResume);
+    }
 });

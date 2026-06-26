@@ -14,8 +14,8 @@ import hashlib
 import json
 from typing import Any
 
-# Set CACHE_ENABLED=false in .env to disable all caching
-_CACHE_ENABLED = os.getenv("CACHE_ENABLED", "true").lower() != "false"
+# Set CACHE_ENABLED=true in .env to enable caching
+_CACHE_ENABLED = os.getenv("CACHE_ENABLED", "false").lower() != "false"
 
 # In-memory cache storage
 _cache: dict[str, dict] = {}

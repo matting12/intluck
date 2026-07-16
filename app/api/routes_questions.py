@@ -78,8 +78,17 @@ async def generate_questions(body: QuestionRequest):
     except HTTPException:
         raise
     except httpx.HTTPStatusError as e:
-        logger.error("AI API HTTP error %s: %s", e.response.status_code, e.response.text[:300])
-        raise HTTPException(status_code=502, detail="The AI service returned an error. Please try again.")
+        status = e.response.status_code
+        logger.error("AI API HTTP error %s: %s", status, e.response.text[:300])
+        if status in (401, 403):
+            detail = "AI service authentication failed. Check your API key."
+        elif status == 429:
+            detail = "AI service rate limit reached. Please try again in a moment."
+        elif status in (402, 529):
+            detail = "AI service quota exceeded. API credits may be depleted."
+        else:
+            detail = f"AI service error ({status}). Please try again."
+        raise HTTPException(status_code=502, detail=detail)
     except Exception as e:
         logger.error("Question generation failed: %s", e)
         raise HTTPException(status_code=500, detail="Failed to generate questions. Please try again.")
@@ -222,8 +231,17 @@ async def analyze_resume(
     except HTTPException:
         raise
     except httpx.HTTPStatusError as e:
-        logger.error("AI API error %s: %s", e.response.status_code, e.response.text[:300])
-        raise HTTPException(status_code=502, detail="The AI service returned an error. Please try again.")
+        status = e.response.status_code
+        logger.error("AI API error %s: %s", status, e.response.text[:300])
+        if status in (401, 403):
+            detail = "AI service authentication failed. Check your API key."
+        elif status == 429:
+            detail = "AI service rate limit reached. Please try again in a moment."
+        elif status in (402, 529):
+            detail = "AI service quota exceeded. API credits may be depleted."
+        else:
+            detail = f"AI service error ({status}). Please try again."
+        raise HTTPException(status_code=502, detail=detail)
     except Exception as e:
         logger.error("Resume analysis failed: %s", e)
         raise HTTPException(status_code=500, detail="Failed to analyze resume. Please try again.")

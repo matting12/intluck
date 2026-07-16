@@ -17,11 +17,11 @@ from app.utils.trusted_domains import filter_to_trusted_domains, filter_blacklis
 from app.utils.link_scoring import score_and_filter_links, score_link, DEFAULT_THRESHOLD
 from app.utils import *
 from app.utils.company_queries import build_company_overview_queries
-from app.utils.company_link_selection import select_top_link_per_category, order_by_priority
+from app.utils.company_link_selection import select_top_link_per_category, order_by_priority, select_additional_links
 from app.utils.youtube_resolver import resolve_youtube_channel_to_video
 from app.utils.domain_overrides import get_domain_override
 from app.utils.salary_queries import build_salary_benefits_queries
-from app.utils.salary_link_selection import select_top_salary_link_per_category, order_salary_by_priority
+from app.utils.salary_link_selection import select_top_salary_link_per_category, order_salary_by_priority, select_additional_salary_links
 from app.utils.link_checker import filter_dead_links
 
 
@@ -609,8 +609,8 @@ async def get_company_info(
 
     logger.info(f"Company info request: company='{company}', job_title='{job_title}', location='{location_str}'")
 
-    # Check pre-computed results first (fast path) — skipped when no_cache=True
-    precomputed = None if no_cache else get_precomputed_company_info(company)
+    # Pre-computed results fast path is temporarily disabled — always run a live search
+    precomputed = None
     if precomputed and precomputed.get("links"):
         elapsed = time.time() - start_time
         logger.info(f"Using pre-computed results for '{company}' - returned in {elapsed:.2f}s")
@@ -692,19 +692,29 @@ async def get_company_info(
 
     logger.info(f"Got results for {len([c for c, r in search_results.items() if r])} categories")
 
-    # PASS 5: Select top link per category
-    # Order: home, about, social, community, video_or_vertical
-    categorized_links = select_top_link_per_category(search_results, company_name=company, company_domain=domain)
+    # PASS 5: Select top link per category (official company sources only)
+    # Order: home, about, mission_culture, community, social, leadership, executive_content, role_specific
+    categorized_links = select_top_link_per_category(search_results, company_name=company, company_domain=domain, job_title=job_title)
     logger.info(f"Selected {len(categorized_links)} links (1 per category, filtered by company name in title)")
 
     # PASS 5.5: Resolve YouTube channel URLs to actual video URLs
-    if "video_or_vertical" in categorized_links:
-        video_slot = categorized_links["video_or_vertical"]
+    if "executive_content" in categorized_links:
+        video_slot = categorized_links["executive_content"]
         if video_slot.get("type") == "video":
-            categorized_links["video_or_vertical"] = await resolve_youtube_channel_to_video(video_slot)
+            categorized_links["executive_content"] = await resolve_youtube_channel_to_video(video_slot)
 
     # PASS 6: Order by priority
     ordered_links = order_by_priority(categorized_links)
+
+    # PASS 6.1: Slot 8 - fill remaining room (up to max_links) with additional qualifying links
+    remaining_slots = max(0, max_links - len(ordered_links))
+    additional_links = select_additional_links(
+        search_results, categorized_links,
+        company_name=company, company_domain=domain,
+        max_links=remaining_slots
+    )
+    ordered_links.extend(additional_links)
+    logger.info(f"Added {len(additional_links)} additional links (slot 8)")
 
     # PASS 6.5: Deduplicate by URL
     seen_urls = set()
@@ -734,7 +744,7 @@ async def get_company_info(
         "domain": domain,
         "links": formatted_links,
         "all_links": formatted_links,
-        "total_found": len(categorized_links),
+        "total_found": len(formatted_links),
     }
 
     if not no_cache:
@@ -754,7 +764,7 @@ async def get_salary_benefits(
     state: str = None,
     city: str = None,
     zipcode: str = None,
-    max_links: int = 5,
+    max_links: int = 9,
     no_cache: bool = False
 ):
     """
@@ -867,11 +877,20 @@ async def get_salary_benefits(
     
     # PASS 7: Order by priority
     ordered_links = order_salary_by_priority(categorized_links)
-    
+
+    # PASS 7.1: Remaining slots - fill remaining room (up to max_links) with more benefits/perks reviews
+    remaining_slots = max(0, max_links - len(ordered_links))
+    additional_links = select_additional_salary_links(
+        search_results, categorized_links,
+        company_name=company, max_links=remaining_slots
+    )
+    ordered_links.extend(additional_links)
+    logger.info(f"Added {len(additional_links)} additional benefits review links")
+
     # PASS 8: Deduplicate by URL
     seen_urls = set()
     deduped_links = []
-    
+
     for link in ordered_links:
         url = link.get('url', '')
         if url and url not in seen_urls:
@@ -879,31 +898,25 @@ async def get_salary_benefits(
             deduped_links.append(link)
         else:
             logger.info(f"Duplicate URL filtered: {url}")
-    
+
     logger.info(f"After deduplication: {len(deduped_links)} links")
 
-    # PASS 9: Score and filter links by quality threshold
-    filtered_links, all_scored_links = score_and_filter_links(
-        deduped_links,
-        company_name=company,
-        category="salary",
-        threshold=DEFAULT_THRESHOLD,
-        max_links=max_links
-    )
-    logger.info(f"After scoring: {len(filtered_links)} links above threshold")
+    # PASS 9: Drop confirmed dead links (404/410) — parallel HEAD checks, short timeout
+    live_links = await filter_dead_links(deduped_links)
+    logger.info(f"After 404 check: {len(live_links)} live links (dropped {len(deduped_links) - len(live_links)})")
 
     # PASS 10: Format titles for display
-    formatted_links = [format_link_for_display(link) for link in filtered_links]
-    all_formatted_links = [format_link_for_display(link) for link in all_scored_links]
+    # Links are already curated (priority order + company-name validated) — skip
+    # score-based re-sorting, which would destroy the curated order.
+    formatted_links = [format_link_for_display(link) for link in live_links]
 
     result = {
         "company": company,
         "job_title": job_title,
         "location": location_str,
         "links": formatted_links,
-        "all_links": all_formatted_links,
-        "total_found": len(categorized_links),
-        "threshold": DEFAULT_THRESHOLD
+        "all_links": formatted_links,
+        "total_found": len(formatted_links),
     }
 
     if not no_cache:

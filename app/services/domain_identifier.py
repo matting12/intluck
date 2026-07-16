@@ -55,8 +55,12 @@ async def identify_company_domain(company: str, api_key: str) -> str:
                 if any(excluded in domain for excluded in excluded_domains):
                     continue
                 
-                # Skip subdomains that look like documentation/support
-                if any(subdomain in parsed.netloc for subdomain in ['docs.', 'support.', 'help.', 'blog.', 'dev.', 'developers.']):
+                # Skip subdomains that look like documentation/support, investor relations,
+                # or a client login/account portal (not the public marketing site)
+                if any(subdomain in parsed.netloc for subdomain in [
+                    'docs.', 'support.', 'help.', 'blog.', 'dev.', 'developers.', 'investors.', 'investor.', 'ir.',
+                    'online.', 'login.', 'portal.', 'secure.', 'myaccount.', 'signin.', 'account.'
+                ]):
                     continue
                 
                 # Initialize score for this domain

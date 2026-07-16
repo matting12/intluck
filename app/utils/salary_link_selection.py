@@ -1,11 +1,22 @@
 """
-Link selection and ordering for salary & benefits.
-Similar to company_link_selection but for compensation data.
+Link selection and ordering for salary & benefits (company overview box 3).
+Selects up to 6 links in strict priority order:
+1. Company Website - Benefits/Total Rewards/Perks (benefits_landing)
+2. Salary Information                              (salary_1)
+3. Salary Information                              (salary_2)
+4. Salary Information                              (salary_3)
+5. Medical Benefits & Perks                        (medical_benefits)
+6. Benefits & Perks Reviews                        (benefits_reviews)
+
+Slots are dropped if no qualifying link is found — no fillers. Remaining room
+(up to a caller-supplied cap) is filled with extra benefits/perks reviews via
+select_additional_salary_links.
 """
 
 __all__ = [
     'select_top_salary_link_per_category',
-    'order_salary_by_priority'
+    'order_salary_by_priority',
+    'select_additional_salary_links'
 ]
 
 import logging
@@ -20,8 +31,14 @@ TRUSTED_PASS_DOMAINS = {
     'glassdoor.com', 'levels.fyi', 'linkedin.com', 'indeed.com',
     'payscale.com', 'salary.com', 'comparably.com', 'blind.com',
     'teamblind.com', 'reddit.com', 'leetcode.com', 'github.com',
-    'vault.com', 'fishbowlapp.com', 'careerbliss.com'
+    'vault.com', 'fishbowlapp.com', 'careerbliss.com', 'greatplacetowork.com',
+    'ambitionbox.com', 'bls.gov', 'h1bdata.info'
 }
+
+PRIORITY_ORDER = ['benefits_landing', 'salary_1', 'salary_2', 'salary_3', 'medical_benefits', 'benefits_reviews']
+
+# Categories the "remaining links" catch-all draws from — review-focused only
+REVIEW_CATEGORIES = ['medical_benefits', 'benefits_reviews']
 
 
 def _extract_domain(url: str) -> str:
@@ -73,7 +90,6 @@ def _company_name_in_url(url: str, company_name: str) -> bool:
     if not url or not company_name:
         return False
     try:
-        from urllib.parse import urlparse
         path = urlparse(url).path.lower()
         name = company_name.lower().replace(' ', '').replace('&', '').replace('.', '')
         segments = [s for s in path.replace('-', '/').split('/') if s]
@@ -93,81 +109,103 @@ def _should_include_link(link: dict, company_name: str) -> bool:
 
 def select_top_salary_link_per_category(search_results: dict, company_name: str = None) -> dict:
     """
-    For each category, select the top Brave search result.
+    For each non-salary category, select the top Brave search result.
+    For 'salary', select up to 3 distinct-domain results to fill slots
+    salary_1/salary_2/salary_3.
 
-    If company_name is provided, filters to only links containing the company name in title.
+    If company_name is provided, filters to only links containing the company
+    name in title or URL (or a trusted domain, for salary results).
 
     Args:
         search_results: {category: [list of link dicts]}
-        company_name: Optional company name to filter by (must appear in title)
+        company_name: Optional company name to filter by
 
     Returns:
-        {category: single_link_dict}
+        {category_key: single_link_dict} — category_key is 'salary_1'/'salary_2'/'salary_3'
+        for the salary bucket, otherwise the category name itself.
     """
 
     categorized = {}
 
     for category, links in search_results.items():
-        if links and len(links) > 0:
-            filtered_links = links
+        if not links:
+            continue
 
-            # Filter by company name in title OR trusted domain
-            if company_name:
-                filtered_links = [
-                    link for link in links
-                    if _should_include_link(link, company_name)
-                ]
-                if filtered_links:
-                    logger.info(f"[{category}] Filtered to {len(filtered_links)} relevant links")
-                else:
-                    logger.info(f"[{category}] No relevant links found, skipping category")
-                    continue  # Skip this category entirely
+        filtered_links = links
+        if company_name:
+            filtered_links = [
+                link for link in links
+                if _should_include_link(link, company_name) or (category == 'salary' and _is_trusted_domain(link.get('url', '')))
+            ]
+            if not filtered_links:
+                logger.info(f"[{category}] No relevant links found, skipping category")
+                continue
+            logger.info(f"[{category}] Filtered to {len(filtered_links)} relevant links")
 
-            # Take first result from Brave
-            top_link = filtered_links[0].copy()
+        if category == 'salary':
+            seen_domains = set()
+            slot_num = 1
+            for link in filtered_links:
+                if slot_num > 3:
+                    break
+                domain = _extract_domain(link.get('url', ''))
+                if domain in seen_domains:
+                    continue
+                seen_domains.add(domain)
+                slot_key = f'salary_{slot_num}'
+                entry = link.copy()
+                entry['category'] = format_salary_category_name('salary')
+                entry['category_key'] = slot_key
+                categorized[slot_key] = entry
+                slot_num += 1
+            continue
 
-            # Add formatted category name
-            top_link['category'] = format_salary_category_name(category)
-            top_link['category_key'] = category
-
-            categorized[category] = top_link
+        top_link = filtered_links[0].copy()
+        top_link['category'] = format_salary_category_name(category)
+        top_link['category_key'] = category
+        categorized[category] = top_link
 
     return categorized
 
 
 def order_salary_by_priority(categorized_links: dict) -> list:
+    """Return links in strict display order, omitting missing slots."""
+    return [categorized_links[cat] for cat in PRIORITY_ORDER if cat in categorized_links]
+
+
+def select_additional_salary_links(
+    search_results: dict,
+    categorized_links: dict,
+    company_name: str = None,
+    max_links: int = 5
+) -> list:
     """
-    Return links in spec-defined priority order.
-    
-    Priority order from spec:
-    1. Benefits landing page
-    2. Perks
-    3. ERG groups
-    4. Salary
-    5. Equity/Stock
-    6. Health insurance reviews
-    7. Insurance cost
-    8. Retirement/401K
-    9. Pay increases
-    10. Benefits comparison
+    Remaining slots: leftover benefits/perks review links not already used in a
+    priority slot, drawn only from the review-focused search buckets
+    (medical_benefits, benefits_reviews) — i.e. "reviews on benefits".
     """
-    
-    priority_order = [
-        'benefits_landing',
-        'perks',
-        'erg_groups',
-        'salary',
-        'equity',
-        'health_insurance',
-        'insurance_cost',
-        'retirement_401k',
-        'pay_increases',
-        'benefits_comparison'
-    ]
-    
-    ordered = []
-    for category in priority_order:
-        if category in categorized_links:
-            ordered.append(categorized_links[category])
-    
-    return ordered
+    if max_links <= 0:
+        return []
+
+    seen_urls = {link.get('url') for link in categorized_links.values() if link.get('url')}
+    additional = []
+
+    for category in REVIEW_CATEGORIES:
+        for link in search_results.get(category, []):
+            if len(additional) >= max_links:
+                return additional
+
+            url = link.get('url', '')
+            if not url or url in seen_urls:
+                continue
+
+            if company_name and not _should_include_link(link, company_name):
+                continue
+
+            seen_urls.add(url)
+            extra = link.copy()
+            extra['category'] = format_salary_category_name('additional')
+            extra['category_key'] = 'additional'
+            additional.append(extra)
+
+    return additional

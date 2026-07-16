@@ -46,6 +46,23 @@ DOMAIN_OVERRIDES = {
     'spacex': 'spacex.com',
     'booz allen hamilton': 'boozallen.com',
     'booz allen': 'boozallen.com',
+    'live nation entertainment': 'livenation.com',
+    'live nation': 'livenation.com',
+    'frontier group holdings': 'flyfrontier.com',
+    'united airlines holdings': 'united.com',
+    'paypal holdings': 'paypal.com',
+    'peloton interactive': 'onepeloton.com',
+    'sirius xm holdings': 'siriusxm.com',
+    'crowdstrike holdings': 'crowdstrike.com',
+    'intercontinental exchange': 'ice.com',
+    'qvc group': 'qvc.com',
+    'amc entertainment holdings': 'amctheatres.com',
+    'warner bros. discovery': 'wbd.com',
+    'automatic data processing': 'adp.com',
+    'capital one financial': 'capitalone.com',
+    'pnc financial services group': 'pnc.com',
+    'honeywell international': 'honeywell.com',
+    'baird': 'rwbaird.com',
 }
 
 def get_domain_override(company: str) -> str | None:

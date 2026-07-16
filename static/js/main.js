@@ -498,10 +498,16 @@ document.addEventListener('DOMContentLoaded', function() {
     function renderCard({ title, emoji, color, links, allLinks, cardId, inspirationalPosts, companyName }, viewMode) {
         const isCompact = viewMode === 'compact';
         const hasMoreLinks = allLinks && allLinks.length > links.length;
+
+        // The first inspirational story (if any) rides along as the final link in
+        // this card, rendered the same as any other link — not a separate section.
         const inspo = inspirationalPosts || [];
+        const inspoLink = inspo.length > 0 ? { ...inspo[0], category: '✨ Inspirational Story' } : null;
+
+        const baseLinks = links || [];
 
         // Handle empty results
-        if (!links || links.length === 0) {
+        if (baseLinks.length === 0 && !inspoLink) {
             return `
                 <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg ${isCompact ? 'p-4' : 'p-6'} transition-colors duration-200">
                     <div class="mb-4">
@@ -519,13 +525,14 @@ document.addEventListener('DOMContentLoaded', function() {
                             </button>
                         </div>
                     ` : ''}
-                    ${inspo.length > 0 ? renderInspirationSection(inspo, isCompact) : ''}
                 </div>
             `;
         }
 
-        // Show first 5 links in compact, all in detailed
-        const displayLinks = isCompact ? links.slice(0, 5) : links;
+        // Show first 5 links in compact, all in detailed — the inspirational
+        // story is appended after that cutoff so it's always the final link.
+        const displayLinks = isCompact ? baseLinks.slice(0, 5) : baseLinks;
+        if (inspoLink) displayLinks.push(inspoLink);
 
         return `
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg ${isCompact ? 'p-4' : 'p-6'} transition-colors duration-200">
@@ -534,7 +541,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h3 class="${isCompact ? 'text-lg' : 'text-xl'} font-bold ${color}">
                         ${title}
                     </h3>
-                    <span class="text-xs text-gray-400">${links.length} results</span>
+                    <span class="text-xs text-gray-400">${baseLinks.length} results</span>
                 </div>
 
                 <!-- Links List -->
@@ -550,38 +557,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         </button>
                     </div>
                 ` : ''}
-
-                ${inspo.length > 0 ? renderInspirationSection(inspo, isCompact) : ''}
             </div>
         `;
     }
 
-    function renderInspirationSection(posts, isCompact) {
-        const items = posts.map(post => {
-            const domain = (() => { try { return new URL(post.url).hostname.replace('www.', ''); } catch(_) { return ''; } })();
-            const isLinkedIn = domain.includes('linkedin');
-            const sourceLabel = isLinkedIn ? 'LinkedIn' : 'Medium';
-            const sourceColor = isLinkedIn ? 'text-blue-500 dark:text-blue-400' : 'text-green-600 dark:text-green-400';
-            return `
-                <a href="${post.url}" target="_blank" rel="noopener noreferrer"
-                    class="block group p-3 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-orange-200 dark:hover:border-orange-700 hover:bg-orange-50 dark:hover:bg-orange-900/10 transition-colors duration-150">
-                    <div class="flex items-start gap-2">
-                        <span class="mt-0.5 flex-shrink-0">✨</span>
-                        <div class="min-w-0">
-                            <p class="text-sm font-medium text-gray-800 dark:text-gray-100 group-hover:text-orange-700 dark:group-hover:text-orange-300 leading-snug line-clamp-2">${post.title || post.url}</p>
-                            ${post.description ? `<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5 line-clamp-1">${post.description}</p>` : ''}
-                            <span class="text-xs font-semibold ${sourceColor} mt-0.5 inline-block">${sourceLabel}</span>
-                        </div>
-                    </div>
-                </a>`;
-        }).join('');
-
-        return `
-            <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-                <p class="text-xs font-semibold text-orange-600 dark:text-orange-400 uppercase tracking-wide mb-2">✨ Inspirational Stories</p>
-                <div class="space-y-2">${items}</div>
-            </div>`;
-    }
 
     function renderLink(link, viewMode, linkIndex) {
         const { url, title, description, category, type, score } = link;
@@ -739,6 +718,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const acronymWarning = document.getElementById('acronymWarning');
     const exactMatchBadge = document.getElementById('exactMatchBadge');
     const customInputBadge = document.getElementById('customInputBadge');
+    const companyLogo = document.getElementById('companyLogo');
 
     // Store pending search data
     let pendingSearchData = null;
@@ -791,6 +771,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Update modal content
             userCompanyInput.textContent = data.query;
+
+            // Show company logo if we could resolve one (hide gracefully on load failure)
+            if (data.exact_match_logo_url) {
+                companyLogo.onerror = () => companyLogo.classList.add('hidden');
+                companyLogo.src = data.exact_match_logo_url;
+                companyLogo.alt = `${data.query} logo`;
+                companyLogo.classList.remove('hidden');
+            } else {
+                companyLogo.classList.add('hidden');
+                companyLogo.removeAttribute('src');
+            }
 
             // Show full name and description if available
             const fullNameEl = document.getElementById('exactMatchFullName');
@@ -848,11 +839,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         infoLine += `<p class="text-xs text-gray-500 dark:text-gray-500 mt-0.5">${suggestion.description}</p>`;
                     }
 
+                    const logoImg = suggestion.logo_url
+                        ? `<img src="${suggestion.logo_url}" alt="" class="w-5 h-5 rounded object-contain bg-white border border-gray-200 flex-shrink-0" onerror="this.classList.add('hidden')" />`
+                        : '';
+
                     return `
                         <button class="company-suggestion-btn w-full text-left p-3 border border-gray-200 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition group" data-company="${suggestion.name}">
                             <div class="flex items-start justify-between">
                                 <div class="flex-1">
                                     <div class="flex items-center gap-2 flex-wrap">
+                                        ${logoImg}
                                         <span class="font-medium text-gray-900 dark:text-white">${suggestion.name}</span>
                                         ${reasonBadge}
                                     </div>

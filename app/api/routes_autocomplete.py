@@ -2,28 +2,21 @@ from fastapi import APIRouter, HTTPException
 import logging
 
 from app.utils.file_loader import load_json_file
+from app.utils.domain_overrides import get_domain_override
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
 
-# Cache for companies list
-_companies_cache = None
-_company_info_cache = None
-
 def get_companies():
-    global _companies_cache
-    if _companies_cache is None:
-        _companies_cache = load_json_file("data/top_companies.json")
-    return _companies_cache
+    # Caching temporarily disabled — always read the current file from disk.
+    return load_json_file("data/top_companies.json")
 
 def get_company_info():
-    global _company_info_cache
-    if _company_info_cache is None:
-        try:
-            _company_info_cache = load_json_file("data/company_info.json")
-        except:
-            _company_info_cache = {}
-    return _company_info_cache
+    # Caching temporarily disabled — always read the current file from disk.
+    try:
+        return load_json_file("data/company_info.json")
+    except Exception:
+        return {}
 
 
 @router.get("/job-title")
@@ -87,9 +80,14 @@ async def confirm_company(q: str):
     # Helper to get company details
     def get_details(company_name):
         info = company_info.get(company_name, {})
+        domain = get_domain_override(company_name) or info.get("domain")
         return {
             "full_name": info.get("full_name"),
-            "description": info.get("description")
+            "description": info.get("description"),
+            "domain": domain,
+            # Clearbit's logo API was sunset Dec 2025 — Google's favicon service
+            # needs no signup/API key and is still live.
+            "logo_url": f"https://www.google.com/s2/favicons?domain={domain}&sz=128" if domain else None
         }
 
     # Check for exact match (case-insensitive)
@@ -179,7 +177,9 @@ async def confirm_company(q: str):
                 "name": c,
                 "reason": "acronym",
                 "full_name": details["full_name"],
-                "description": details["description"]
+                "description": details["description"],
+                "domain": details["domain"],
+                "logo_url": details["logo_url"]
             })
             seen.add(c)
 
@@ -191,7 +191,9 @@ async def confirm_company(q: str):
                 "name": c,
                 "reason": "related",
                 "full_name": details["full_name"],
-                "description": details["description"]
+                "description": details["description"],
+                "domain": details["domain"],
+                "logo_url": details["logo_url"]
             })
             seen.add(c)
 
@@ -203,7 +205,9 @@ async def confirm_company(q: str):
                 "name": c,
                 "reason": "similar",
                 "full_name": details["full_name"],
-                "description": details["description"]
+                "description": details["description"],
+                "domain": details["domain"],
+                "logo_url": details["logo_url"]
             })
             seen.add(c)
 
@@ -215,7 +219,9 @@ async def confirm_company(q: str):
                 "name": c,
                 "reason": "similar",
                 "full_name": details["full_name"],
-                "description": details["description"]
+                "description": details["description"],
+                "domain": details["domain"],
+                "logo_url": details["logo_url"]
             })
             seen.add(c)
 
@@ -227,7 +233,9 @@ async def confirm_company(q: str):
                 "name": c,
                 "reason": "partial",
                 "full_name": details["full_name"],
-                "description": details["description"]
+                "description": details["description"],
+                "domain": details["domain"],
+                "logo_url": details["logo_url"]
             })
             seen.add(c)
 
@@ -244,6 +252,8 @@ async def confirm_company(q: str):
         "exact_match": exact_match,
         "exact_match_full_name": exact_match_details["full_name"] if exact_match_details else None,
         "exact_match_description": exact_match_details["description"] if exact_match_details else None,
+        "exact_match_domain": exact_match_details["domain"] if exact_match_details else None,
+        "exact_match_logo_url": exact_match_details["logo_url"] if exact_match_details else None,
         "suggestions": suggestions[:8],  # Limit to 8 suggestions
         "needs_confirmation": needs_confirmation,
         "is_in_database": exact_match is not None

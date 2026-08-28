@@ -3,20 +3,21 @@ Link selection and ordering for company overview (box 2).
 Direct links from official company sources only — selects up to 8 links in
 strict priority order:
 1. Company Website          (home)
-2. About Us                 (about)
-3. Mission, Vision & Culture (mission_culture)
-4. Community Engagement     (community)
-5. Official Social Media    (social)
-6. Leadership & Executives  (leadership)
-7. Executive Content        (executive_content) — videos, podcasts, investor recordings
+2. About & Mission          (about) — about us / mission statement / goals
+3. Official Social Media    (social) — company's "follow us" hub, or a verified profile
+4. YouTube                  (youtube) — official channel, resolved to its featured video
+5. Community Engagement     (community)
+6. Recent News              (news)
+7. Investor Relations       (investor)
 8. Role-Specific Page       (role_specific) — department page, or the exec who owns it
 
 Every slot is restricted to the company's own domain, except 'social'
-(official social profiles) and 'executive_content' (official YouTube channel /
-podcast appearances / investor recordings, which don't live on the company
-domain but are still directly produced by the company).
+(also allows verified social profiles) and 'youtube' (official YouTube
+channel, which doesn't live on the company domain but is directly produced
+by the company).
 
-Slots are dropped if no qualifying link is found — no fillers.
+Slots are dropped if no qualifying link is found — no fillers. Missing slots
+are simply skipped; the next slot in the order takes its place.
 """
 
 __all__ = [
@@ -34,13 +35,7 @@ logger = logging.getLogger(__name__)
 
 SOCIAL_DOMAINS = {'facebook.com', 'instagram.com', 'x.com', 'twitter.com', 'tiktok.com', 'linkedin.com'}
 
-# Official channels/platforms companies publish executive content to directly
-EXEC_CONTENT_DOMAINS = {'youtube.com', 'youtu.be', 'spotify.com', 'podcasts.apple.com'}
-
-PRIORITY_ORDER = ['home', 'about', 'mission_culture', 'community', 'social', 'leadership', 'executive_content', 'role_specific']
-
-# Categories official-only sources are drawn from for the "additional links" catch-all
-OFFICIAL_DOMAIN_CATEGORIES = {'home', 'about', 'mission_culture', 'community', 'leadership', 'role_specific'}
+PRIORITY_ORDER = ['home', 'about', 'social', 'youtube', 'community', 'news', 'investor', 'role_specific']
 
 
 def _extract_domain(url: str) -> str:
@@ -59,18 +54,9 @@ def _is_social_url(url: str) -> bool:
     return any(s in domain for s in SOCIAL_DOMAINS)
 
 
-def _is_exec_content_url(url: str) -> bool:
-    domain = _extract_domain(url)
-    return any(d in domain for d in EXEC_CONTENT_DOMAINS)
-
-
 def _is_youtube_url(url: str) -> bool:
     domain = _extract_domain(url)
     return 'youtube.com' in domain or 'youtu.be' in domain
-
-
-def _is_youtube_channel(url: str) -> bool:
-    return any(p in url for p in ['/channel/', '/c/', '/@', '/user/'])
 
 
 def _on_company_domain(url: str, company_domain: str) -> bool:
@@ -172,13 +158,32 @@ def select_top_link_per_category(search_results: dict, company_name: str = None,
                         break
 
         elif category == 'social':
+            # Prefer the company's own "follow us" hub page (lists every channel);
+            # fall back to a single verified social profile.
+            keywords = category_keywords.get('social', [])
             for link in links:
                 url = link.get('url', '')
-                if _is_social_url(url) and _company_handle_in_url(url, company_name):
+                title = link.get('title', '')
+                if (_on_company_domain(url, company_domain)
+                        and _matches_any_keyword(f"{title} {url}", keywords)):
                     selected_link = link.copy()
                     break
+            if not selected_link:
+                for link in links:
+                    url = link.get('url', '')
+                    if _is_social_url(url) and _company_handle_in_url(url, company_name):
+                        selected_link = link.copy()
+                        break
 
-        elif category in ('about', 'mission_culture', 'community', 'leadership', 'role_specific'):
+        elif category == 'youtube':
+            for link in links:
+                url = link.get('url', '')
+                if _is_youtube_url(url) and _company_name_in_title(link.get('title', ''), company_name):
+                    selected_link = link.copy()
+                    selected_link['type'] = 'video'  # resolved to featured video downstream
+                    break
+
+        elif category in ('about', 'community', 'news', 'investor', 'role_specific', 'landing_pages'):
             # Require the topical keyword in the TITLE specifically — a curated,
             # reliable signal — rather than the description, which is free-form
             # marketing copy that can namedrop a topic without the page actually
@@ -192,22 +197,6 @@ def select_top_link_per_category(search_results: dict, company_name: str = None,
                         and _matches_any_keyword(title, keywords)):
                     selected_link = link.copy()
                     break
-
-        elif category == 'executive_content':
-            keywords = category_keywords.get('executive_content', [])
-            candidates = [
-                link for link in links
-                if (_is_exec_content_url(link.get('url', '')) or _on_company_domain(link.get('url', ''), company_domain))
-                and _company_name_in_title(link.get('title', ''), company_name)
-                and _matches_any_keyword(link.get('title', ''), keywords)
-            ]
-            # Prefer an actual YouTube watch URL (embeddable) over a channel page
-            watch_hits = [l for l in candidates if not (_is_youtube_url(l.get('url', '')) and _is_youtube_channel(l.get('url', '')))]
-            chosen = watch_hits[0] if watch_hits else (candidates[0] if candidates else None)
-            if chosen:
-                selected_link = chosen.copy()
-                if _is_youtube_url(selected_link.get('url', '')):
-                    selected_link['type'] = 'video'
 
         if not selected_link:
             logger.info(f"[{category}] No qualifying link found, skipping")
@@ -235,8 +224,9 @@ def select_additional_links(
 ) -> list:
     """
     Fill remaining room with leftover official-source links only: on the
-    company domain, an official social profile, or executive content (official
-    YouTube/podcast/investor recording) — never a generic third-party result.
+    company domain, a verified social profile, or the official YouTube channel
+    — never a generic third-party result. Draws on the 'landing_pages' results
+    (careers, benefits, history, podcast, expansions) among others.
     """
     if max_links <= 0:
         return []
@@ -257,7 +247,7 @@ def select_additional_links(
             is_official = (
                 _on_company_domain(url, company_domain) or
                 (_is_social_url(url) and _company_handle_in_url(url, company_name)) or
-                (_is_exec_content_url(url) and _company_name_in_title(title, company_name))
+                (_is_youtube_url(url) and _company_name_in_title(title, company_name))
             )
             if not is_official:
                 continue
@@ -269,3 +259,29 @@ def select_additional_links(
             additional.append(extra)
 
     return additional
+
+
+def _demo():
+    """Self-check: priority order + skip-missing behaviour. Run: python -m app.utils.company_link_selection"""
+    company, domain = "Delta Air Lines", "delta.com"
+    results = {
+        'home': [{'url': 'https://www.delta.com/', 'title': 'Delta Air Lines'}],
+        'about': [{'url': 'https://www.delta.com/us/en/about-delta/overview',
+                   'title': 'About Delta - Our Mission'}],
+        'social': [{'url': 'https://www.delta.com/us/en/about-delta/follow-us',
+                    'title': 'Follow Delta on Social Media'}],
+        'youtube': [{'url': 'https://www.youtube.com/@delta', 'title': 'Delta Air Lines - YouTube'}],
+        'community': [],  # no qualifying link -> slot skipped
+        'news': [{'url': 'https://news.delta.com/', 'title': 'Delta News Hub - Newsroom'}],
+        'investor': [{'url': 'https://ir.delta.com/', 'title': 'Delta Air Lines Investor Relations'}],
+        'role_specific': [],
+    }
+    categorized = select_top_link_per_category(results, company_name=company, company_domain=domain)
+    ordered = [l['category_key'] for l in order_by_priority(categorized)]
+    assert ordered == ['home', 'about', 'social', 'youtube', 'news', 'investor'], ordered
+    assert categorized['youtube']['type'] == 'video'
+    print("ok:", ordered)
+
+
+if __name__ == "__main__":
+    _demo()

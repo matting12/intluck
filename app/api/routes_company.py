@@ -693,15 +693,15 @@ async def get_company_info(
     logger.info(f"Got results for {len([c for c, r in search_results.items() if r])} categories")
 
     # PASS 5: Select top link per category (official company sources only)
-    # Order: home, about, mission_culture, community, social, leadership, executive_content, role_specific
+    # Order: home, about, social, youtube, community, news, investor, role_specific
     categorized_links = select_top_link_per_category(search_results, company_name=company, company_domain=domain, job_title=job_title)
     logger.info(f"Selected {len(categorized_links)} links (1 per category, filtered by company name in title)")
 
-    # PASS 5.5: Resolve YouTube channel URLs to actual video URLs
-    if "executive_content" in categorized_links:
-        video_slot = categorized_links["executive_content"]
+    # PASS 5.5: Resolve the official YouTube channel URL to its featured/home video
+    if "youtube" in categorized_links:
+        video_slot = categorized_links["youtube"]
         if video_slot.get("type") == "video":
-            categorized_links["executive_content"] = await resolve_youtube_channel_to_video(video_slot)
+            categorized_links["youtube"] = await resolve_youtube_channel_to_video(video_slot)
 
     # PASS 6: Order by priority
     ordered_links = order_by_priority(categorized_links)

@@ -3,13 +3,14 @@ Query builders for company overview information (box 2).
 Direct links from official company sources only — up to 8 links in strict
 priority order (slots dropped if no qualifying result found):
 1. Company Website
-2. About Us / Company Overview
-3. Mission, Vision & Culture
-4. Community Engagement / Partnerships / Social Responsibility
-5. Official Social Media (LinkedIn, X/Twitter, Instagram, Facebook, TikTok)
-6. Leadership / Executive Team
-7. Executive Content (videos, podcasts, investor recordings)
-8. Role-Specific Page (department page for the job title, or the exec who owns it)
+2. About & Mission        (about us / mission statement / goals)
+3. Official Social Media  (company's "follow us" hub, or a verified profile)
+4. YouTube                (official channel — resolved to its featured/home video)
+5. Community Engagement   (community involvement / giving back / social responsibility)
+6. Recent News           (newsroom / press releases)
+7. Investor Relations    (financial reports / stock / earnings)
+8. Role-Specific / Company Pages (careers, benefits, history, podcast, expansions —
+   tied to the job title where possible)
 
 CATEGORY_KEYWORDS is the single source of truth for each category's topical
 terms — used both to build the search query *and* (by company_link_selection)
@@ -27,11 +28,18 @@ __all__ = [
 ]
 
 CATEGORY_KEYWORDS = {
-    'about': ['about us', 'who we are', 'our story', 'overview'],
-    'mission_culture': ['our mission', 'our vision', 'company culture', 'our values', 'our goals', 'mission', 'vision', 'culture'],
-    'community': ['community', 'foundation', 'giving back', 'corporate responsibility', 'social impact', 'csr', 'partnerships', 'partnership'],
-    'leadership': ['leadership team', 'executive team', 'our leaders', 'meet the team', 'c-suite', 'board of directors', 'management team', 'leadership', 'executives'],
-    'executive_content': ['ceo', 'cfo', 'executive', 'leadership', 'investor day', 'annual meeting', 'earnings', 'podcast', 'interview', 'investor'],
+    'about': ['about us', 'who we are', 'our story', 'overview', 'our mission',
+              'mission statement', 'our goals', 'our vision', 'our values', 'mission'],
+    'social': ['social media', 'follow us', 'connect with us', 'stay connected', 'our channels'],
+    'community': ['community', 'community involvement', 'community engagement', 'giving back',
+                  'social responsibility', 'corporate responsibility', 'social impact',
+                  'foundation', 'csr'],
+    'news': ['newsroom', 'news room', 'recent news', 'press releases', 'press room',
+             'media center', 'in the news', 'news'],
+    'investor': ['investor relations', 'investors', 'financial reports', 'annual report',
+                 'quarterly results', 'sec filings', 'stock', 'earnings'],
+    'landing_pages': ['careers', 'benefits', 'company history', 'our history', 'heritage',
+                      'podcast', 'expansion', 'new locations'],
 }
 
 # Maps a job family (see app.utils.job_family) to the department the role
@@ -66,13 +74,14 @@ ROLE_DEPARTMENT_MAP = {
 def format_category_name(category_key: str) -> str:
     category_names = {
         'home': 'Company Website',
-        'about': 'About Us',
-        'mission_culture': 'Mission, Vision & Culture',
-        'community': 'Community Engagement',
+        'about': 'About & Mission',
         'social': 'Official Social Media',
-        'leadership': 'Leadership & Executive Team',
-        'executive_content': 'Executive Content',
+        'youtube': 'YouTube',
+        'community': 'Community Engagement',
+        'news': 'Recent News',
+        'investor': 'Investor Relations',
         'role_specific': 'Role-Specific Page',
+        'landing_pages': 'Company Pages',
         'additional': 'Additional Links',
     }
     return category_names.get(category_key, category_key.replace('_', ' ').title())
@@ -109,8 +118,8 @@ def build_company_overview_queries(
     """
     Build queries for company overview — direct links from official company
     sources only. Every query is restricted to the company's own domain,
-    except 'social' (official social profiles) and 'executive_content'
-    (official YouTube channel / podcast appearances / investor recordings).
+    except 'social' (also allows verified social profiles) and 'youtube'
+    (official YouTube channel).
 
     Returns: {category_key: search_query_string}
     """
@@ -122,26 +131,32 @@ def build_company_overview_queries(
         # 1. Company Website
         'home': f'{c} site:{company_domain}',
 
-        # 2. About Us / Company Overview
+        # 2. About & Mission (about us / mission statement / goals)
         'about': f'{c} ({_or_query(CATEGORY_KEYWORDS["about"])}) site:{company_domain}',
 
-        # 3. Mission, Vision & Culture
-        'mission_culture': f'{c} ({_or_query(CATEGORY_KEYWORDS["mission_culture"])}) site:{company_domain}',
+        # 3. Official Social Media — the company's own "follow us" hub, else a verified profile
+        'social': f'{c} ({_or_query(CATEGORY_KEYWORDS["social"])}) '
+                  f'(site:{company_domain} OR site:facebook.com OR site:instagram.com '
+                  f'OR site:x.com OR site:tiktok.com OR site:linkedin.com/company)',
 
-        # 4. Community Engagement / Partnerships / Social Responsibility
+        # 4. YouTube — official channel (resolved to its featured/home video downstream)
+        'youtube': f'{c} official channel site:youtube.com',
+
+        # 5. Community Engagement / involvement / giving back / social responsibility
         'community': f'{c} ({_or_query(CATEGORY_KEYWORDS["community"])}) site:{company_domain}',
 
-        # 5. Official Social Media
-        'social': f'{c} official (site:facebook.com OR site:instagram.com OR site:x.com OR site:tiktok.com OR site:linkedin.com/company)',
+        # 6. Recent News / newsroom
+        'news': f'{c} ({_or_query(CATEGORY_KEYWORDS["news"])}) site:{company_domain}',
 
-        # 6. Leadership / Executive Team
-        'leadership': f'{c} ({_or_query(CATEGORY_KEYWORDS["leadership"])}) site:{company_domain}',
-
-        # 7. Executive Content — videos, podcasts, investor recordings (official channel/site only)
-        'executive_content': f'{c} ({_or_query(CATEGORY_KEYWORDS["executive_content"])}) (site:youtube.com/watch OR site:spotify.com OR site:podcasts.apple.com OR site:{company_domain})',
+        # 7. Investor Relations / financial reports / stock reports
+        'investor': f'{c} ({_or_query(CATEGORY_KEYWORDS["investor"])}) site:{company_domain}',
 
         # 8. Role-Specific Page — department page for the job title, falling back to the exec who owns it
         'role_specific': f'{c} ({_or_query(role_terms)}) (team OR division OR department OR leadership OR "meet our") site:{company_domain}',
+
+        # 8b. Company Pages — careers/benefits/history/podcast/expansions, feeds the
+        #     "additional links" overflow after the priority slots are filled
+        'landing_pages': f'{c} ({_or_query(CATEGORY_KEYWORDS["landing_pages"])}) site:{company_domain}',
     }
 
     return queries

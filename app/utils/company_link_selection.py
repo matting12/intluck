@@ -30,6 +30,7 @@ import logging
 import re
 from urllib.parse import urlparse
 from app.utils.company_queries import format_category_name, get_category_keywords
+from app.utils.youtube_resolver import parse_channel_url
 
 logger = logging.getLogger(__name__)
 
@@ -176,9 +177,13 @@ def select_top_link_per_category(search_results: dict, company_name: str = None,
                         break
 
         elif category == 'youtube':
+            # Require an actual channel URL (not a bare video result that merely
+            # mentions the company in its title, which could be a fan/news upload)
+            # so the downstream resolver always lands on the company's own channel.
             for link in links:
                 url = link.get('url', '')
-                if _is_youtube_url(url) and _company_name_in_title(link.get('title', ''), company_name):
+                if (_is_youtube_url(url) and parse_channel_url(url) is not None
+                        and _company_name_in_title(link.get('title', ''), company_name)):
                     selected_link = link.copy()
                     selected_link['type'] = 'video'  # resolved to featured video downstream
                     break

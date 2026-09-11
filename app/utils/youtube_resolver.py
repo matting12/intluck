@@ -27,7 +27,7 @@ YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
 
 _CHANNEL_SUFFIX = r"(?:/(?:videos|about|featured|shorts|playlists|community|channels|streams))?"
 
-def _parse_channel_url(url: str):
+def parse_channel_url(url: str):
     """
     Return (identifier, id_type) when the URL is a YouTube channel/user page,
     or None if it's already a video watch URL (or unrecognised format).
@@ -228,7 +228,7 @@ async def resolve_youtube_channel_to_video(link: dict) -> dict:
             return updated
         return link
 
-    parsed = _parse_channel_url(url)
+    parsed = parse_channel_url(url)
     if parsed is None:
         # Already a video/watch URL — nothing to do
         return link

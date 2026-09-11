@@ -1,7 +1,8 @@
 """
 Async 404 checker for curated links.
-Runs parallel HEAD requests and drops confirmed dead links (404/410).
-Keeps links on timeout, network error, 403, or 405 — only drops hard 404s.
+Runs parallel HEAD requests and drops confirmed dead links: 404/410 responses,
+or a DNS/connect failure (host doesn't exist or refused the connection).
+Keeps links on timeout or any other network error — only drops hard failures.
 """
 
 import asyncio
@@ -36,8 +37,14 @@ async def _check_url(link: dict) -> dict | None:
 
             return link
 
+    except httpx.ConnectError:
+        # DNS resolution failure or refused connection — the host doesn't
+        # exist or isn't listening at all, unlike a slow/timing-out server.
+        logger.info(f"[404-filter] Dropping dead link (connect error): {url[:70]}")
+        return None
+
     except Exception:
-        # Keep on timeout or any network error — don't punish slow sites
+        # Keep on timeout or any other network error — don't punish slow sites
         return link
 
 
@@ -57,3 +64,20 @@ async def filter_dead_links(links: list[dict]) -> list[dict]:
         logger.info(f"[404-filter] Dropped {dropped} dead link(s) from {len(links)}")
 
     return live
+
+
+async def _demo():
+    """Self-check: a dead (no-DNS) host is dropped, a live one is kept.
+    Run: python -m app.utils.link_checker (needs network access)"""
+    links = [
+        {'url': 'https://cgp.coca-cola.com/', 'title': 'decommissioned subdomain'},
+        {'url': 'https://www.coca-cola.com/', 'title': 'live site'},
+    ]
+    live = await filter_dead_links(links)
+    live_urls = {l['url'] for l in live}
+    assert live_urls == {'https://www.coca-cola.com/'}, live_urls
+    print("ok:", live_urls)
+
+
+if __name__ == "__main__":
+    asyncio.run(_demo())

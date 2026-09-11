@@ -28,7 +28,7 @@ __all__ = [
 ]
 
 CATEGORY_KEYWORDS = {
-    'about': ['about us', 'who we are', 'our story', 'overview', 'our mission',
+    'about': ['about us', 'who we are', 'our story', 'company overview', 'our mission',
               'mission statement', 'our goals', 'our vision', 'our values', 'mission'],
     'social': ['social media', 'follow us', 'connect with us', 'stay connected', 'our channels'],
     'community': ['community', 'community involvement', 'community engagement', 'giving back',

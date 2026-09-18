@@ -634,9 +634,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const videoId = extractVideoId(url);
 
         // Channel/unresolved URL — degrade to a plain link so we don't embed
-        // the channel page, which shows as a 240p thumbnail grid
+        // the channel page, which shows as a 240p thumbnail grid. Clear `type`
+        // so renderLink doesn't route straight back here (infinite recursion).
         if (!videoId) {
-            return renderLink(link, viewMode, linkIndex);
+            return renderLink({ ...link, type: undefined }, viewMode, linkIndex);
         }
 
         const uniqueId = `video-${linkIndex}-${Date.now()}`;

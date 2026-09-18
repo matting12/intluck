@@ -30,7 +30,7 @@ import logging
 import re
 from urllib.parse import urlparse
 from app.utils.company_queries import format_category_name, get_category_keywords
-from app.utils.youtube_resolver import parse_channel_url
+from app.utils.youtube_resolver import parse_channel_url, resolve_youtube_channel_to_video
 
 logger = logging.getLogger(__name__)
 
@@ -131,7 +131,7 @@ def _company_handle_in_url(url: str, company_name: str) -> bool:
         return False
 
 
-def select_top_link_per_category(search_results: dict, company_name: str = None, company_domain: str = None, job_title: str = None) -> dict:
+async def select_top_link_per_category(search_results: dict, company_name: str = None, company_domain: str = None, job_title: str = None) -> dict:
     """
     Select the best official-source link per category. Slots with no
     qualifying result are omitted.
@@ -180,15 +180,24 @@ def select_top_link_per_category(search_results: dict, company_name: str = None,
 
         elif category == 'youtube':
             # Require an actual channel URL (not a bare video result that merely
-            # mentions the company in its title, which could be a fan/news upload)
-            # so the downstream resolver always lands on the company's own channel.
+            # mentions the company in its title, which could be a fan/news upload).
+            # A title claiming to be "official" isn't proof by itself — impersonator
+            # channels do that too — so each candidate is verified (LLM + thumbnail
+            # check, in the resolver) before it can fill the slot; a candidate that
+            # fails verification is skipped in favor of the next one, rather than
+            # left in place as a wrong result.
             for link in links:
                 url = link.get('url', '')
-                if (_is_youtube_url(url) and parse_channel_url(url) is not None
+                if not (_is_youtube_url(url) and parse_channel_url(url) is not None
                         and _company_name_in_title(link.get('title', ''), company_name)):
-                    selected_link = link.copy()
-                    selected_link['type'] = 'video'  # resolved to featured video downstream
-                    break
+                    continue
+                resolved = await resolve_youtube_channel_to_video(link.copy(), company_name=company_name)
+                if resolved is None:
+                    logger.info(f"[youtube] Candidate rejected, trying next: {link.get('title', '')[:60]}")
+                    continue
+                selected_link = resolved
+                selected_link['type'] = 'video'
+                break
 
             if not selected_link:
                 # No official channel found — don't waste the slot, fall back to
@@ -282,7 +291,7 @@ def select_additional_links(
     return additional
 
 
-def _demo():
+async def _demo():
     """Self-check: priority order + skip-missing behaviour. Run: python -m app.utils.company_link_selection"""
     company, domain = "Delta Air Lines", "delta.com"
     results = {
@@ -297,7 +306,10 @@ def _demo():
         'investor': [{'url': 'https://ir.delta.com/', 'title': 'Delta Air Lines Investor Relations'}],
         'role_specific': [],
     }
-    categorized = select_top_link_per_category(results, company_name=company, company_domain=domain)
+    # No YOUTUBE_API_KEY/OPENAI_API_KEY in this bare script run, so the resolver
+    # can't attempt verification — it hands the channel candidate back unchanged,
+    # same as today's graceful degradation.
+    categorized = await select_top_link_per_category(results, company_name=company, company_domain=domain)
     ordered = [l['category_key'] for l in order_by_priority(categorized)]
     assert ordered == ['home', 'about', 'social', 'youtube', 'news', 'investor'], ordered
     assert categorized['youtube']['type'] == 'video'
@@ -308,7 +320,7 @@ def _demo():
         {'url': 'https://www.delta.com/us/en/about-delta/follow-us', 'title': 'Follow Delta on Social Media'},
         {'url': 'https://www.instagram.com/delta', 'title': 'Delta Air Lines (@delta) - Instagram'},
     ]}
-    categorized_no_yt = select_top_link_per_category(results_no_yt, company_name=company, company_domain=domain)
+    categorized_no_yt = await select_top_link_per_category(results_no_yt, company_name=company, company_domain=domain)
     assert categorized_no_yt['youtube']['url'] == 'https://www.instagram.com/delta'
     assert categorized_no_yt['youtube']['category'] == 'Official Social Media'
     assert 'type' not in categorized_no_yt['youtube']
@@ -316,4 +328,5 @@ def _demo():
 
 
 if __name__ == "__main__":
-    _demo()
+    import asyncio
+    asyncio.run(_demo())

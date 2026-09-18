@@ -619,7 +619,7 @@ async def get_company_info(
         resolved_links = []
         for link in precomputed["links"]:
             if link.get("type") == "video" and "youtube.com" in link.get("url", ""):
-                link = await resolve_youtube_channel_to_video(link, company_name=company)
+                link = await resolve_youtube_channel_to_video(link, company_name=company) or link
             resolved_links.append(link)
 
         # Format links for display
@@ -692,16 +692,11 @@ async def get_company_info(
 
     logger.info(f"Got results for {len([c for c, r in search_results.items() if r])} categories")
 
-    # PASS 5: Select top link per category (official company sources only)
+    # PASS 5: Select top link per category (official company sources only).
+    # The youtube slot is verified and resolved to its featured video inline here.
     # Order: home, about, social, youtube, community, news, investor, role_specific
-    categorized_links = select_top_link_per_category(search_results, company_name=company, company_domain=domain, job_title=job_title)
+    categorized_links = await select_top_link_per_category(search_results, company_name=company, company_domain=domain, job_title=job_title)
     logger.info(f"Selected {len(categorized_links)} links (1 per category, filtered by company name in title)")
-
-    # PASS 5.5: Resolve the official YouTube channel URL to its featured/home video
-    if "youtube" in categorized_links:
-        video_slot = categorized_links["youtube"]
-        if video_slot.get("type") == "video":
-            categorized_links["youtube"] = await resolve_youtube_channel_to_video(video_slot, company_name=company)
 
     # PASS 6: Order by priority
     ordered_links = order_by_priority(categorized_links)

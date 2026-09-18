@@ -28,6 +28,11 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 # Thumbnail keys the YouTube API returns, in descending resolution order.
 _THUMBNAIL_QUALITIES = ("maxres", "standard", "high", "medium", "default")
 
+# Sentinel: the channel was actively checked and rejected (not official, or no
+# high-quality video available) — distinct from `None`, which means resolution
+# simply couldn't be attempted (no API key, transient error).
+_REJECTED = object()
+
 _CHANNEL_SUFFIX = r"(?:/(?:videos|about|featured|shorts|playlists|community|channels|streams))?"
 
 def parse_channel_url(url: str):
@@ -79,12 +84,24 @@ def _best_thumbnail(thumbnails: dict):
     return None, None
 
 
-async def _is_official_channel(company_name: str, channel_title: str, channel_description: str) -> bool:
+async def _is_official_channel(
+    company_name: str,
+    channel_title: str,
+    channel_description: str,
+    subscriber_count: str = None,
+    video_count: str = None,
+) -> bool:
     """
     Ask an LLM to confirm this is the company's own official channel, not a fan
-    channel, reseller, news outlet, or unrelated channel that merely mentions
-    the company. Skipped (assumed valid) if no OPENAI_API_KEY is configured,
-    or on any API error — verification is a filter, not a hard requirement.
+    channel, impersonator, reseller, news outlet, or unrelated channel that
+    merely mentions the company. Skipped (assumed valid) if no OPENAI_API_KEY
+    is configured, or on any API error — verification is a filter, not a hard
+    requirement.
+
+    A channel's title alone is a weak signal — anyone can name a channel
+    "<Brand> Official". Subscriber/video counts are included so the model can
+    catch obvious impersonators (e.g. a real global brand's channel showing 0
+    subscribers and a handful of unrelated videos).
     """
     if not OPENAI_API_KEY:
         return True
@@ -92,11 +109,15 @@ async def _is_official_channel(company_name: str, channel_title: str, channel_de
     prompt = (
         f'Company: "{company_name}"\n'
         f'YouTube channel title: "{channel_title}"\n'
-        f'Channel description: "{(channel_description or "")[:300]}"\n\n'
-        "Is this channel officially owned and operated by the company itself "
-        "(not a fan channel, reseller, franchisee, news outlet, or unrelated "
-        'channel that merely mentions the company)? Reply with exactly one '
-        'word: "yes" or "no".'
+        f'Channel description: "{(channel_description or "")[:300]}"\n'
+        f'Subscriber count: {subscriber_count if subscriber_count is not None else "unknown"}\n'
+        f'Video count: {video_count if video_count is not None else "unknown"}\n\n'
+        "Is this channel genuinely owned and operated by the company itself "
+        "(not a fan channel, impersonator, reseller, franchisee, news outlet, "
+        "or unrelated channel that merely uses the company's name)? A channel "
+        "claiming to be \"official\" in its title is not enough evidence on its "
+        "own — weigh whether the subscriber/video counts and description are "
+        "plausible for that company. Reply with exactly one word: \"yes\" or \"no\"."
     )
     try:
         async with httpx.AsyncClient(timeout=10.0) as client:
@@ -125,32 +146,37 @@ async def _resolve_via_api(identifier: str, id_type: str, api_key: str, company_
     most recent upload if no trailer is set.
 
     When `company_name` is given (and OPENAI_API_KEY is set), confirms via LLM
-    that the channel is officially the company's own before returning anything.
-    Also rejects a candidate whose only available thumbnail is low-resolution
-    ("default", 120x90) — not good enough to show as a preview.
+    that the channel is officially the company's own before returning anything
+    — returns `_REJECTED` (not `None`) if it isn't, so the caller can try the
+    next candidate instead of silently keeping a wrong channel.
+    Also rejects (as `_REJECTED`) a candidate whose only available thumbnail
+    is low-resolution ("default", 120x90) — not good enough to show as a
+    preview.
 
     Quota cost: 2 units (channels.list + videos.list or playlistItems.list).
     """
     try:
         async with httpx.AsyncClient(timeout=10.0) as client:
-            # Step 1: resolve identifier → channel_id + fetch snippet/brandingSettings
+            # Step 1: resolve identifier → channel_id + fetch snippet/statistics/brandingSettings
             # (combined into one call for handle/username/custom; separate for channel_id)
+            channel_parts = "snippet,statistics,brandingSettings"
             if id_type == "channel_id":
                 channel_id = identifier
                 resp = await client.get(
                     "https://www.googleapis.com/youtube/v3/channels",
-                    params={"part": "snippet,brandingSettings", "id": channel_id, "key": api_key},
+                    params={"part": channel_parts, "id": channel_id, "key": api_key},
                 )
                 resp.raise_for_status()
                 items = resp.json().get("items", [])
                 if not items:
                     return None
                 snippet0 = items[0].get("snippet", {})
+                stats0 = items[0].get("statistics", {})
                 branding = items[0].get("brandingSettings", {}).get("channel", {})
             elif id_type == "handle":
                 resp = await client.get(
                     "https://www.googleapis.com/youtube/v3/channels",
-                    params={"part": "id,snippet,brandingSettings", "forHandle": identifier, "key": api_key},
+                    params={"part": f"id,{channel_parts}", "forHandle": identifier, "key": api_key},
                 )
                 resp.raise_for_status()
                 items = resp.json().get("items", [])
@@ -159,12 +185,13 @@ async def _resolve_via_api(identifier: str, id_type: str, api_key: str, company_
                     return None
                 channel_id = items[0]["id"]
                 snippet0 = items[0].get("snippet", {})
+                stats0 = items[0].get("statistics", {})
                 branding = items[0].get("brandingSettings", {}).get("channel", {})
             elif id_type in ("username", "custom"):
                 param_key = "forUsername" if id_type == "username" else "forHandle"
                 resp = await client.get(
                     "https://www.googleapis.com/youtube/v3/channels",
-                    params={"part": "id,snippet,brandingSettings", param_key: identifier, "key": api_key},
+                    params={"part": f"id,{channel_parts}", param_key: identifier, "key": api_key},
                 )
                 resp.raise_for_status()
                 items = resp.json().get("items", [])
@@ -172,15 +199,20 @@ async def _resolve_via_api(identifier: str, id_type: str, api_key: str, company_
                     return None
                 channel_id = items[0]["id"]
                 snippet0 = items[0].get("snippet", {})
+                stats0 = items[0].get("statistics", {})
                 branding = items[0].get("brandingSettings", {}).get("channel", {})
             else:
                 return None
 
             if company_name and not await _is_official_channel(
-                company_name, snippet0.get("title", ""), snippet0.get("description", "")
+                company_name,
+                snippet0.get("title", ""),
+                snippet0.get("description", ""),
+                stats0.get("subscriberCount"),
+                stats0.get("videoCount"),
             ):
                 logger.info("Rejected non-official channel '%s' for company '%s'", snippet0.get("title", ""), company_name)
-                return None
+                return _REJECTED
 
             # Step 2a: try the channel's featured/unsubscribed trailer first
             trailer_id = branding.get("unsubscribedTrailer")
@@ -202,7 +234,7 @@ async def _resolve_via_api(identifier: str, id_type: str, api_key: str, company_
                             "description": (snippet.get("description") or "")[:300],
                             "thumbnail": thumb_url,
                         }
-                    logger.info("Skipping trailer %s: no high-quality thumbnail available", trailer_id)
+                    logger.info("Skipping trailer %s: no high-quality thumbnail available, trying latest upload instead", trailer_id)
 
             # Step 2b: fall back to most recent upload from uploads playlist
             uploads_id = _uploads_playlist_id(channel_id)
@@ -226,7 +258,7 @@ async def _resolve_via_api(identifier: str, id_type: str, api_key: str, company_
             thumb_url, thumb_quality = _best_thumbnail(snippet.get("thumbnails", {}))
             if not thumb_url or thumb_quality == "default":
                 logger.info("Skipping upload %s: no high-quality thumbnail available", vid)
-                return None
+                return _REJECTED
             return {
                 "url": f"https://www.youtube.com/watch?v={vid}",
                 "title": snippet.get("title", ""),
@@ -276,21 +308,22 @@ async def _first_video_from_playlist(playlist_id: str, api_key: str):
         return None
 
 
-async def resolve_youtube_channel_to_video(link: dict, company_name: str = None) -> dict:
+async def resolve_youtube_channel_to_video(link: dict, company_name: str = None):
     """
     If `link` is a YouTube channel or playlist URL, attempt to resolve it to
     the most recent video using the YouTube Data API.
 
     When `company_name` is given, the resolved channel must be confirmed
     (via LLM, if OPENAI_API_KEY is set) as the company's own official channel,
-    and the video must have a high-quality thumbnail — otherwise the original
-    link is kept unchanged.
+    and the video must have a high-quality thumbnail.
 
-    Returns the original link unchanged if:
-    - it's already a video URL (/watch?v=...)
-    - no YOUTUBE_API_KEY is configured
-    - the API call fails for any reason
-    - `company_name` was given and the channel couldn't be confirmed official
+    Returns:
+    - the resolved video link (new url/title/description/thumbnail), on success
+    - the original link unchanged, if resolution simply couldn't be attempted
+      (already a video URL, no YOUTUBE_API_KEY, or a transient API error)
+    - `None`, if `company_name` was given and the channel was actively
+      checked and rejected as not official (or had no usable thumbnail) —
+      callers should try another candidate rather than use this link
     """
     url = link.get("url", "")
     if "youtube.com" not in url and "youtu.be" not in url:
@@ -328,6 +361,9 @@ async def resolve_youtube_channel_to_video(link: dict, company_name: str = None)
 
     identifier, id_type = parsed
     resolved = await _resolve_via_api(identifier, id_type, YOUTUBE_API_KEY, company_name)
+
+    if resolved is _REJECTED:
+        return None
 
     if resolved is None:
         logger.info("Could not resolve channel URL to video, keeping channel link: %s", url)

@@ -619,7 +619,7 @@ async def get_company_info(
         resolved_links = []
         for link in precomputed["links"]:
             if link.get("type") == "video" and "youtube.com" in link.get("url", ""):
-                link = await resolve_youtube_channel_to_video(link)
+                link = await resolve_youtube_channel_to_video(link, company_name=company)
             resolved_links.append(link)
 
         # Format links for display
@@ -701,7 +701,7 @@ async def get_company_info(
     if "youtube" in categorized_links:
         video_slot = categorized_links["youtube"]
         if video_slot.get("type") == "video":
-            categorized_links["youtube"] = await resolve_youtube_channel_to_video(video_slot)
+            categorized_links["youtube"] = await resolve_youtube_channel_to_video(video_slot, company_name=company)
 
     # PASS 6: Order by priority
     ordered_links = order_by_priority(categorized_links)

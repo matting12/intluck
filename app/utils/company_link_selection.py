@@ -30,6 +30,7 @@ import logging
 import re
 from urllib.parse import urlparse
 from app.utils.company_queries import format_category_name, get_category_keywords
+from app.utils.youtube_resolver import parse_channel_url
 
 logger = logging.getLogger(__name__)
 
@@ -139,7 +140,9 @@ def select_top_link_per_category(search_results: dict, company_name: str = None,
     category_keywords = get_category_keywords(job_title)
 
     for category, links in search_results.items():
-        if not links:
+        # 'youtube' still needs to run with an empty list so it can fall back
+        # to an alternate social profile below.
+        if not links and category != 'youtube':
             logger.info(f"[{category}] No links found, skipping")
             continue
 
@@ -176,12 +179,30 @@ def select_top_link_per_category(search_results: dict, company_name: str = None,
                         break
 
         elif category == 'youtube':
+            # Require an actual channel URL (not a bare video result that merely
+            # mentions the company in its title, which could be a fan/news upload)
+            # so the downstream resolver always lands on the company's own channel.
             for link in links:
                 url = link.get('url', '')
-                if _is_youtube_url(url) and _company_name_in_title(link.get('title', ''), company_name):
+                if (_is_youtube_url(url) and parse_channel_url(url) is not None
+                        and _company_name_in_title(link.get('title', ''), company_name)):
                     selected_link = link.copy()
                     selected_link['type'] = 'video'  # resolved to featured video downstream
                     break
+
+            if not selected_link:
+                # No official channel found — don't waste the slot, fall back to
+                # another verified social profile (distinct from the one already
+                # chosen for the 'social' slot, processed earlier in this loop).
+                primary_social_url = categorized.get('social', {}).get('url')
+                for social_link in search_results.get('social', []):
+                    social_url = social_link.get('url', '')
+                    if (social_url and social_url != primary_social_url
+                            and _is_social_url(social_url)
+                            and _company_handle_in_url(social_url, company_name)):
+                        selected_link = social_link.copy()
+                        selected_link['category'] = 'Official Social Media'
+                        break
 
         elif category in ('about', 'community', 'news', 'investor', 'role_specific', 'landing_pages'):
             # Require the topical keyword in the TITLE specifically — a curated,
@@ -202,7 +223,7 @@ def select_top_link_per_category(search_results: dict, company_name: str = None,
             logger.info(f"[{category}] No qualifying link found, skipping")
             continue
 
-        selected_link['category'] = format_category_name(category)
+        selected_link.setdefault('category', format_category_name(category))
         selected_link['category_key'] = category
         categorized[category] = selected_link
         logger.info(f"[{category}] Selected: {selected_link.get('title', '')[:60]}")
@@ -281,6 +302,17 @@ def _demo():
     assert ordered == ['home', 'about', 'social', 'youtube', 'news', 'investor'], ordered
     assert categorized['youtube']['type'] == 'video'
     print("ok:", ordered)
+
+    # No official YouTube channel -> falls back to another verified social profile
+    results_no_yt = {**results, 'youtube': [], 'social': [
+        {'url': 'https://www.delta.com/us/en/about-delta/follow-us', 'title': 'Follow Delta on Social Media'},
+        {'url': 'https://www.instagram.com/delta', 'title': 'Delta Air Lines (@delta) - Instagram'},
+    ]}
+    categorized_no_yt = select_top_link_per_category(results_no_yt, company_name=company, company_domain=domain)
+    assert categorized_no_yt['youtube']['url'] == 'https://www.instagram.com/delta'
+    assert categorized_no_yt['youtube']['category'] == 'Official Social Media'
+    assert 'type' not in categorized_no_yt['youtube']
+    print("ok: youtube falls back to alt social profile")
 
 
 if __name__ == "__main__":

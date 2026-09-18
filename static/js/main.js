@@ -629,17 +629,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function renderVideoLink(link, viewMode, linkIndex) {
-        const { url, title, description, category } = link;
+        const { url, title, description, category, thumbnail } = link;
         const isCompact = viewMode === 'compact';
         const videoId = extractVideoId(url);
 
         // Channel/unresolved URL — degrade to a plain link so we don't embed
-        // the channel page, which shows as a 240p thumbnail grid
+        // the channel page, which shows as a 240p thumbnail grid. Clear `type`
+        // so renderLink doesn't route straight back here (infinite recursion).
         if (!videoId) {
-            return renderLink(link, viewMode, linkIndex);
+            return renderLink({ ...link, type: undefined }, viewMode, linkIndex);
         }
 
         const uniqueId = `video-${linkIndex}-${Date.now()}`;
+        // Backend picks the highest-resolution thumbnail the YouTube API has for
+        // this video (maxres when available); hqdefault always exists as a fallback.
+        const thumbnailUrl = thumbnail || `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
 
         return `
             <div class="${isCompact ? 'p-3' : 'p-4'} bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700">
@@ -647,10 +651,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="cursor-pointer" onclick="toggleVideo('${uniqueId}')">
                     <div class="flex items-start justify-between">
                         <div class="flex items-start flex-1 pr-4">
-                            <!-- Red YouTube Icon -->
-                            <svg class="w-6 h-6 text-red-600 flex-shrink-0 mr-3 mt-1" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                            </svg>
+                            <img src="${thumbnailUrl}" alt="" loading="lazy"
+                                class="w-24 h-auto flex-shrink-0 mr-3 rounded object-cover"
+                                onerror="this.remove()">
 
                             <div class="flex-1">
                                 <h4 class="font-semibold text-gray-900 dark:text-white mb-1 ${isCompact ? 'text-sm' : ''}">

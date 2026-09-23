@@ -63,6 +63,8 @@ DOMAIN_OVERRIDES = {
     'pnc financial services group': 'pnc.com',
     'honeywell international': 'honeywell.com',
     'baird': 'rwbaird.com',
+    'delta air lines': 'delta.com',
+    'delta': 'delta.com',
 }
 
 def get_domain_override(company: str) -> str | None:

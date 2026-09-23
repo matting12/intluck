@@ -9,7 +9,7 @@ import logging
 
 from app.services.domain_identifier import identify_company_domain
 from app.services.brave_search import brave_search, brave_search_videos
-from app.services.company_enrichment import is_known_company, sync_enrich_and_save_company
+from app.services.company_enrichment import is_known_company, sync_enrich_and_save_company, get_known_domain
 from app.services.precomputed_results import get_precomputed_company_info
 from app.models.company_info import CompanyInfoResult
 from app.utils.link_formatting import format_link_for_display
@@ -644,12 +644,17 @@ async def get_company_info(
         logger.info(f"New company detected: '{company}' - triggering background enrichment")
         background_tasks.add_task(sync_enrich_and_save_company, company)
 
-    # PASS 1: Identify company domain (with override check)
+    # PASS 1: Identify company domain — manual override, then our own company
+    # database, before falling back to guessing from live search results.
     domain_override = get_domain_override(company)
-    
+    known_domain = get_known_domain(company)
+
     if domain_override:
         domain = domain_override
         logger.info(f"Using domain override: {domain}")
+    elif known_domain:
+        domain = known_domain
+        logger.info(f"Using known company domain: {domain}")
     else:
         domain = await identify_company_domain(company, BRAVE_API_KEY)
         if not domain:

@@ -1,23 +1,15 @@
 """
 Link selection and ordering for salary & benefits (company overview box 3).
-Selects up to 6 links in strict priority order:
-1. Company Website - Benefits/Total Rewards/Perks (benefits_landing)
-2. Salary Information                              (salary_1)
-3. Salary Information                              (salary_2)
-4. Salary Information                              (salary_3)
-5. Medical Benefits & Perks                        (medical_benefits)
-6. Benefits & Perks Reviews                        (benefits_reviews)
-
-Slots are dropped if no qualifying link is found — no fillers. Remaining room
-(up to a caller-supplied cap) is filled with extra benefits/perks reviews via
-select_additional_salary_links.
+Selects up to 9 links in strict priority order (see SLOTS):
+1.   Company Website - Benefits/Total Rewards/Perks
+2-3. Salary Information for job title at company
+4-5. Negotiating Salary — at the company, else for the job title
+6-7. Benefits & Perks Reviews from external sites
+8.   Benefits video on social media
+9.   Industry Benefits Comparison
 """
 
-__all__ = [
-    'select_top_salary_link_per_category',
-    'order_salary_by_priority',
-    'select_additional_salary_links'
-]
+__all__ = ['select_salary_links']
 
 import logging
 import re
@@ -35,10 +27,38 @@ TRUSTED_PASS_DOMAINS = {
     'ambitionbox.com', 'bls.gov', 'h1bdata.info'
 }
 
-PRIORITY_ORDER = ['benefits_landing', 'salary_1', 'salary_2', 'salary_3', 'medical_benefits', 'benefits_reviews']
+# Display slots in strict order: (category_key, search buckets drawn from in order,
+# max links, one-link-per-domain). Missing links are dropped — no fillers.
+SLOTS = [
+    ('benefits_landing', ['benefits_landing'], 1, True),
+    ('salary', ['salary'], 2, True),
+    # Company-specific negotiation advice first, then job-title advice fills the rest
+    ('negotiation', ['negotiation_company', 'negotiation_role'], 2, True),
+    ('benefits_reviews', ['benefits_reviews', 'medical_benefits'], 2, True),
+    ('benefits_videos', ['benefits_videos'], 1, False),
+    ('industry_comparison', ['industry_comparison'], 1, True),
+]
 
-# Categories the "remaining links" catch-all draws from — review-focused only
-REVIEW_CATEGORIES = ['medical_benefits', 'benefits_reviews']
+# Buckets about the job title / industry, not the company — skip the company-name check
+NO_COMPANY_FILTER = {'negotiation_role', 'industry_comparison'}
+
+# Title must show the page is actually on-topic (search engines drift to generic salary/perks pages)
+NEGOTIATION_TITLE = re.compile(r'(?=.*negotiat)(?=.*\b(salary|pay|offer|compensation|raise)\b)', re.I)
+TITLE_MUST_MATCH = {
+    'negotiation_company': NEGOTIATION_TITLE,
+    'negotiation_role': NEGOTIATION_TITLE,
+    # Whole words only — "compar" alone would match the site name "Comparably"
+    'industry_comparison': re.compile(
+        r'(?=.*\b(compare[sd]?|comparing|comparison|vs|versus|benchmarks?|industry|average|survey)\b)'
+        r'(?=.*\b(benefits?|perks?|compensation|pay|working|rewards)\b)', re.I),
+    # Employee benefits, not customer loyalty perks (e.g. airline status, membership rewards)
+    'benefits_videos': re.compile(r'employee|\bwork|\bjobs?\b|career|total rewards|401k|staff|hiring', re.I),
+}
+
+# Individual video/post URLs only — not channel, profile, or tag/discover pages
+VIDEO_URL = re.compile(
+    r'youtube\.com/(watch\?v=|shorts/)|youtu\.be/|tiktok\.com/@[^/]+/video/'
+    r'|instagram\.com/(reel|p)/|linkedin\.com/(posts|feed/update)/', re.I)
 
 
 def _extract_domain(url: str) -> str:
@@ -107,105 +127,96 @@ def _should_include_link(link: dict, company_name: str) -> bool:
     return False
 
 
-def select_top_salary_link_per_category(search_results: dict, company_name: str = None) -> dict:
+def _qualifies(link: dict, bucket: str, company_name: str) -> bool:
+    pattern = TITLE_MUST_MATCH.get(bucket)
+    if pattern and not pattern.search(link.get('title', '')):
+        return False
+    if bucket == 'benefits_videos' and not VIDEO_URL.search(link.get('url', '')):
+        return False
+    if not company_name or bucket in NO_COMPANY_FILTER:
+        return True
+    if _should_include_link(link, company_name):
+        return True
+    # Salary aggregators often title pages by job, not company
+    return bucket == 'salary' and _is_trusted_domain(link.get('url', ''))
+
+
+def select_salary_links(search_results: dict, company_name: str = None) -> list:
     """
-    For each non-salary category, select the top Brave search result.
-    For 'salary', select up to 3 distinct-domain results to fill slots
-    salary_1/salary_2/salary_3.
-
-    If company_name is provided, filters to only links containing the company
-    name in title or URL (or a trusted domain, for salary results).
-
-    Args:
-        search_results: {category: [list of link dicts]}
-        company_name: Optional company name to filter by
-
-    Returns:
-        {category_key: single_link_dict} — category_key is 'salary_1'/'salary_2'/'salary_3'
-        for the salary bucket, otherwise the category name itself.
+    Fill SLOTS in order from the search buckets. Returns display-ordered links,
+    each tagged with 'category' and 'category_key'. A URL is used at most once.
     """
+    used_urls = set()
+    ordered = []
 
-    categorized = {}
-
-    for category, links in search_results.items():
-        if not links:
-            continue
-
-        filtered_links = links
-        if company_name:
-            filtered_links = [
-                link for link in links
-                if _should_include_link(link, company_name) or (category == 'salary' and _is_trusted_domain(link.get('url', '')))
-            ]
-            if not filtered_links:
-                logger.info(f"[{category}] No relevant links found, skipping category")
-                continue
-            logger.info(f"[{category}] Filtered to {len(filtered_links)} relevant links")
-
-        if category == 'salary':
-            seen_domains = set()
-            slot_num = 1
-            for link in filtered_links:
-                if slot_num > 3:
+    for category_key, buckets, max_count, distinct_domains in SLOTS:
+        picked = []
+        seen_domains = set()
+        for bucket in buckets:
+            for link in search_results.get(bucket, []):
+                if len(picked) >= max_count:
                     break
-                domain = _extract_domain(link.get('url', ''))
-                if domain in seen_domains:
+                url = link.get('url', '')
+                domain = _extract_domain(url)
+                if not url or url in used_urls or (distinct_domains and domain in seen_domains):
                     continue
+                if not _qualifies(link, bucket, company_name):
+                    continue
+                used_urls.add(url)
                 seen_domains.add(domain)
-                slot_key = f'salary_{slot_num}'
                 entry = link.copy()
-                entry['category'] = format_salary_category_name('salary')
-                entry['category_key'] = slot_key
-                categorized[slot_key] = entry
-                slot_num += 1
-            continue
+                entry['category'] = format_salary_category_name(category_key)
+                entry['category_key'] = category_key
+                if category_key == 'benefits_videos' and ('youtube.com' in domain or domain == 'youtu.be'):
+                    entry['type'] = 'video'
+                picked.append(entry)
+        logger.info(f"[{category_key}] {len(picked)}/{max_count} links")
+        ordered.extend(picked)
 
-        top_link = filtered_links[0].copy()
-        top_link['category'] = format_salary_category_name(category)
-        top_link['category_key'] = category
-        categorized[category] = top_link
-
-    return categorized
+    return ordered
 
 
-def order_salary_by_priority(categorized_links: dict) -> list:
-    """Return links in strict display order, omitting missing slots."""
-    return [categorized_links[cat] for cat in PRIORITY_ORDER if cat in categorized_links]
+def _demo():
+    """Self-check: slot order, negotiation fallback, filters. Run: python -m app.utils.salary_link_selection"""
+    company = "Delta Air Lines"
+    results = {
+        'benefits_landing': [{'url': 'https://www.delta.com/benefits', 'title': 'Delta Benefits & Total Rewards'}],
+        'salary': [
+            {'url': 'https://www.glassdoor.com/a', 'title': 'Delta Pilot Salaries'},
+            {'url': 'https://www.glassdoor.com/b', 'title': 'Delta Pilot Pay'},  # same domain -> skipped
+            {'url': 'https://www.levels.fyi/x', 'title': 'Pilot pay'},           # trusted, no company name -> ok
+        ],
+        'negotiation_company': [{'url': 'https://www.glassdoor.com/q', 'title': 'Delta: how would you negotiate with a vendor'},
+                                {'url': 'https://blog.example.com/delta', 'title': 'Negotiating your Delta offer'}],
+        'negotiation_role': [
+            {'url': 'https://www.levels.fyi/p', 'title': 'Pilot Salaries'},  # not about negotiating
+            {'url': 'https://www.reddit.com/r/pilots/1', 'title': 'How to negotiate pilot salary'},
+            {'url': 'https://www.reddit.com/r/pilots/2', 'title': 'Negotiating pilot offer'},  # same domain -> skipped
+            {'url': 'https://www.indeed.com/advice', 'title': 'Negotiating pilot pay'},
+        ],
+        'benefits_reviews': [{'url': 'https://www.glassdoor.com/r', 'title': 'Delta Benefits Reviews'},
+                             {'url': 'https://www.indeed.com/r', 'title': 'United Benefits'}],  # wrong company
+        'medical_benefits': [{'url': 'https://www.comparably.com/m', 'title': 'Delta Health Benefits'}],
+        'benefits_videos': [{'url': 'https://www.youtube.com/watch?v=abc', 'title': 'Delta Air Lines employee perks'},
+                            {'url': 'https://www.youtube.com/watch?v=zzz', 'title': 'Delta Medallion perks'},
+                            {'url': 'https://www.tiktok.com/discover/delta-perks', 'title': 'Delta perks'},  # tag page
+                            {'url': 'https://www.tiktok.com/@delta/video/1', 'title': 'Delta employee benefits day'},
+                            {'url': 'https://www.youtube.com/watch?v=def', 'title': 'Delta 401k for employees'}],  # over cap
+        'industry_comparison': [{'url': 'https://www.comparably.com/delta/perks', 'title': 'Delta Airlines Benefits | Comparably'},
+                                {'url': 'https://example.com/fin', 'title': 'Delta financial benchmarks'},  # not about benefits
+                                {'url': 'https://www.shrm.org/airline', 'title': 'Airline benefits benchmark'}],
+    }
+    links = select_salary_links(results, company_name=company)
+    keys = [l['category_key'] for l in links]
+    assert keys == ['benefits_landing', 'salary', 'salary', 'negotiation', 'negotiation',
+                    'benefits_reviews', 'benefits_reviews', 'benefits_videos', 'industry_comparison'], keys
+    neg = [l['url'] for l in links if l['category_key'] == 'negotiation']
+    assert neg == ['https://blog.example.com/delta', 'https://www.reddit.com/r/pilots/1'], neg
+    vids = [l for l in links if l['category_key'] == 'benefits_videos']
+    assert len(vids) == 1 and vids[0]['type'] == 'video'
+    assert [l['url'] for l in links][-1] == 'https://www.shrm.org/airline'
+    print("ok:", keys)
 
 
-def select_additional_salary_links(
-    search_results: dict,
-    categorized_links: dict,
-    company_name: str = None,
-    max_links: int = 5
-) -> list:
-    """
-    Remaining slots: leftover benefits/perks review links not already used in a
-    priority slot, drawn only from the review-focused search buckets
-    (medical_benefits, benefits_reviews) — i.e. "reviews on benefits".
-    """
-    if max_links <= 0:
-        return []
-
-    seen_urls = {link.get('url') for link in categorized_links.values() if link.get('url')}
-    additional = []
-
-    for category in REVIEW_CATEGORIES:
-        for link in search_results.get(category, []):
-            if len(additional) >= max_links:
-                return additional
-
-            url = link.get('url', '')
-            if not url or url in seen_urls:
-                continue
-
-            if company_name and not _should_include_link(link, company_name):
-                continue
-
-            seen_urls.add(url)
-            extra = link.copy()
-            extra['category'] = format_salary_category_name('additional')
-            extra['category_key'] = 'additional'
-            additional.append(extra)
-
-    return additional
+if __name__ == "__main__":
+    _demo()

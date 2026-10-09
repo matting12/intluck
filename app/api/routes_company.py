@@ -23,6 +23,8 @@ from app.utils.domain_overrides import get_domain_override
 from app.utils.salary_queries import build_salary_benefits_queries
 from app.utils.salary_link_selection import select_top_salary_link_per_category, order_salary_by_priority, select_additional_salary_links
 from app.utils.link_checker import filter_dead_links
+from app.utils.review_queries import build_review_queries, NEWS_CATEGORIES
+from app.utils.review_link_selection import select_review_links
 
 
 import os
@@ -227,118 +229,6 @@ Return a JSON array with exactly {max_links} objects:
         return fallback_selection(all_links, max_links)
 
 
-async def select_review_links_with_gpt(
-    company: str,
-    all_links: list[dict],
-    OPENAI_API_KEY: str,
-    max_links: int = 6
-) -> list[dict]:
-    """
-    Use gpt-3.5-turbo to select 6 company review links (2 per category).
-    """
-    
-    if not all_links:
-        return []
-    
-    prompt = f"""You are analyzing search results about {company} to find insights on company news, culture, and career development.
-
-Select {max_links} links - EXACTLY 2 FROM EACH CATEGORY:
-
-**Company News & Updates (2 links):**
-- Recent news & earnings reports
-- Financial performance, growth initiatives
-- Executive changes, mergers, acquisitions
-- Prioritize 2023-2025 content
-
-**Culture & Work Environment (2 links):**
-- Employee reviews about culture and values
-- Work-life balance, remote work policies
-- Team dynamics, diversity initiatives
-- What makes this company unique
-
-**Career Development (2 links):**
-- Promotion paths and career progression
-- Training programs, tuition reimbursement
-- Mentorship and professional development
-- Employee growth opportunities
-
-Prioritize:
-1. Glassdoor, Comparably, Blind, Indeed, LinkedIn for culture/career
-2. Recent content (2023-2025) for news
-3. Employee perspectives over company press releases
-4. Specific examples and data over generic statements
-
-AVOID:
-- Company press releases (too biased)
-- Individual job postings
-- Old news (pre-2023)
-- Generic articles without specific insights
-
-Available links:
-{json.dumps(all_links, indent=2)}
-
-YOU MUST RESPOND WITH ONLY VALID JSON. NO MARKDOWN. NO CODE BLOCKS. NO EXPLANATIONS.
-
-Return a JSON array with exactly {max_links} objects (2 per category):
-[
-  {{
-    "url": "full URL",
-    "title": "page title",
-    "description": "description",
-    "category": "Company News" | "Culture & Work Environment" | "Career Development"
-  }}
-]"""
-
-    try:
-        async with httpx.AsyncClient() as client:
-            response = await client.post(
-                "https://api.openai.com/v1/chat/completions",
-                headers={
-                    "Authorization": f"Bearer {OPENAI_API_KEY}",
-                    "Content-Type": "application/json"
-                },
-                json={
-                    "model": "gpt-3.5-turbo",
-                    "messages": [
-                        {
-                            "role": "system",
-                            "content": "You are a company research assistant. You ONLY respond with valid JSON arrays. Never use markdown code blocks. Select EXACTLY 2 links per category."
-                        },
-                        {
-                            "role": "user",
-                            "content": prompt
-                        }
-                    ],
-                    "temperature": 0.3,
-                    "max_tokens": 800
-                },
-                timeout=15
-            )
-            response.raise_for_status()
-            
-            result = response.json()
-            content = result["choices"][0]["message"]["content"].strip()
-            
-            # Strip markdown if present
-            if content.startswith("```"):
-                content = content.split("```")[1]
-                if content.startswith("json"):
-                    content = content[4:]
-            content = content.strip()
-            
-            selected_links = json.loads(content)
-            
-            if isinstance(selected_links, list) and len(selected_links) > 0:
-                return selected_links[:max_links]
-            else:
-                logger.warning("Invalid GPT response structure, using fallback")
-                return fallback_selection(all_links, max_links)
-                
-    except Exception as e:
-        logger.error(f"GPT selection error for company reviews: {e}")
-        return rule_based_review_selection(all_links, max_links)
-
-
 async def select_interview_prep_links_with_gpt(
     company: str,
     job_title: str,
@@ -488,21 +378,6 @@ _CULTURE_DOMAINS = {'glassdoor.com', 'indeed.com', 'comparably.com', 'blind.com'
                     'teamblind.com', 'fishbowlapp.com', 'fairygodboss.com', 'inhersight.com'}
 _CAREER_DOMAINS  = {'levels.fyi', 'vault.com', 'themuse.com', 'builtinnyc.com', 'builtin.com'}
 
-def _rule_based_review_category(url: str, title: str) -> str:
-    url_l, title_l = url.lower(), title.lower()
-    domain = url_l.split('/')[2].replace('www.', '') if '//' in url_l else ''
-    if any(d in domain for d in _CULTURE_DOMAINS):
-        return 'Culture & Work Environment'
-    if any(d in domain for d in _CAREER_DOMAINS):
-        return 'Career Development'
-    return 'Company News'
-
-
-_INTERVIEW_DOMAINS    = {'glassdoor.com', 'blind.com', 'teamblind.com', 'reddit.com', 'interviewquery.com'}
-_TECH_STACK_DOMAINS    = {'stackshare.io', 'github.com'}
-_TECH_STACK_INDICATORS = ['tech-stack', 'engineering', 'tech.', 'developer']
-_TECH_SKILLS_DOMAINS  = {'leetcode.com', 'hackerrank.com', 'codinginterview.com', 'neetcode.io'}
-
 def _rule_based_interview_category(url: str, title: str) -> str:
     url_l, title_l = url.lower(), title.lower()
     domain = url_l.split('/')[2].replace('www.', '') if '//' in url_l else ''
@@ -515,17 +390,6 @@ def _rule_based_interview_category(url: str, title: str) -> str:
     if any(ind in url_l or ind in title_l for ind in _TECH_STACK_INDICATORS):
         return 'Tech Stack & Tools'
     return 'General Prep'
-
-
-def rule_based_review_selection(all_links: list[dict], max_links: int = 6) -> list[dict]:
-    """Domain-based category assignment for company reviews when GPT is unavailable."""
-    buckets: dict[str, list] = {'Company News': [], 'Culture & Work Environment': [], 'Career Development': []}
-    for link in all_links:
-        cat = _rule_based_review_category(link.get('url', ''), link.get('title', ''))
-        if len(buckets[cat]) < 2:
-            buckets[cat].append({**link, 'category': cat})
-    result = buckets['Company News'] + buckets['Culture & Work Environment'] + buckets['Career Development']
-    return result[:max_links]
 
 
 def rule_based_interview_selection(all_links: list[dict], max_links: int = 6) -> list[dict]:
@@ -931,129 +795,57 @@ async def get_salary_benefits(
 @router.get("/company-reviews", response_model=dict)
 async def get_company_reviews(
     company: str,
-    max_links: int = 6
+    no_cache: bool = False
 ):
     """
-    Get company reviews and insights across news, culture, and career development.
+    Company news and reviews (box 4), one link per slot in strict order:
+    business news, financials, leadership news, then culture, work-life balance,
+    DEI, career development, and tuition reimbursement reviews.
     """
     start_time = time.time()
-    
+
     cache_params = {'company': company.lower().strip()}
-    cached_result = get_cached('company_reviews', cache_params)
-    print(f"cache key: {cache_params}")
-    print(f"cache results: {cached_result}")
-    if cached_result:
-        elapsed = time.time() - start_time
-        logger.info(f"Cache hit for company_reviews - returned in {elapsed:.2f}s")
-        return cached_result
+    if not no_cache:
+        cached_result = get_cached('company_reviews', cache_params)
+        if cached_result:
+            logger.info(f"Cache hit for company_reviews - returned in {time.time() - start_time:.2f}s")
+            return cached_result
 
     logger.info(f"Company reviews request: company='{company}'")
 
-    # PASS 1: Parallel searches
-    search_start = time.time()
-    
-    queries = {
-        "news": f"{company} merges purchases earnings 2024 2025",
-        "culture": f"{company} employee reviews culture work-life balance glassdoor comparably blind indeed",
-        "career": f"{company} career growth promotion training development glassdoor comparably"
-    }
-
-    tasks = [
-        brave_search(query, BRAVE_API_KEY, category)
+    # PASS 1: Parallel searches — news slots limited to the past year
+    queries = build_review_queries(company)
+    results_list = await asyncio.gather(*[
+        brave_search(query, BRAVE_API_KEY, category, freshness='py' if category in NEWS_CATEGORIES else None)
         for category, query in queries.items()
-    ]
+    ], return_exceptions=True)
+    search_elapsed = time.time() - start_time
 
-    results_list = await asyncio.gather(*tasks, return_exceptions=True)
-    
-    search_elapsed = time.time() - search_start
-    logger.info(f"Brave searches took {search_elapsed:.2f}s")
-
-    # PASS 2: Flatten and deduplicate
-    seen_urls = set()
-    all_links = []
-    
+    search_results = {}
     for category, result_data in zip(queries.keys(), results_list):
         if isinstance(result_data, Exception):
             logger.error(f"Error in category '{category}': {result_data}")
-            continue
-        
-        for link in result_data:
-            url = link.get("url", "")
-            if url and url not in seen_urls:
-                seen_urls.add(url)
-                all_links.append({
-                    "url": url,
-                    "title": link.get("title", ""),
-                    "description": link.get("description", ""),
-                    "source_category": category
-                })
-    
-    logger.info(f"Found {len(all_links)} unique links before filtering")
+            search_results[category] = []
+        else:
+            search_results[category] = filter_blacklisted(result_data)
 
-    # PASS 3: Pre-filter before GPT
-    filter_start = time.time()
-
-    filtered_links = filter_blacklisted(all_links)
-    logger.info(f"After blacklist filter: {len(filtered_links)} links")
-
-    # Filter to only links with company name in title
-    company_filtered = filter_by_company_name_in_title(filtered_links, company)
-    logger.info(f"After company name filter: {len(company_filtered)} links")
-
-    deduplicated_links = deduplicate_by_domain(company_filtered, max_per_domain=1)
-    logger.info(f"After domain dedup: {len(deduplicated_links)} links")
-
-    filter_elapsed = time.time() - filter_start
-    logger.info(f"Pre-filtering took {filter_elapsed:.2f}s")
-
-    # PASS 4: Use GPT to select 6 links
-    gpt_start = time.time()
-
-    selected_links = await select_review_links_with_gpt(
-        company,
-        deduplicated_links,
-        OPENAI_API_KEY,
-        max_links
-    )
-    
-    gpt_elapsed = time.time() - gpt_start
-    logger.info(f"GPT selection took {gpt_elapsed:.2f}s")
-
-    # PASS 5: Score and filter links by quality threshold
-    filtered_links, all_scored_links = score_and_filter_links(
-        selected_links,
-        company_name=company,
-        category="reviews",
-        threshold=DEFAULT_THRESHOLD,
-        max_links=max_links
-    )
-    logger.info(f"After scoring: {len(filtered_links)} links above threshold")
-
-    # Also score all deduplicated links for "more links" modal
-    _, all_candidates_scored = score_and_filter_links(
-        deduplicated_links,
-        company_name=company,
-        category="reviews",
-        threshold=0  # No threshold for all_links
-    )
-
-    # PASS 6: Format titles for display
-    formatted_links = [format_link_for_display(link) for link in filtered_links]
-    all_formatted_links = [format_link_for_display(link) for link in all_candidates_scored]
+    # PASS 2: Fill slots in order, drop dead links, format for display
+    ordered_links = select_review_links(search_results, company_name=company)
+    live_links = await filter_dead_links(ordered_links)
+    formatted_links = [format_link_for_display(link) for link in live_links]
 
     result = {
         "company": company,
         "links": formatted_links,
-        "all_links": all_formatted_links,
-        "total_found": len(all_links),
-        "threshold": DEFAULT_THRESHOLD
+        "all_links": formatted_links,
+        "total_found": len(formatted_links),
     }
 
-    set_cached('company_reviews', cache_params, result, ttl=SEVEN_DAYS)
+    if not no_cache:
+        # News changes daily
+        set_cached('company_reviews', cache_params, result, ttl=ONE_DAY)
 
-    total_elapsed = time.time() - start_time
-    logger.info(f"Total company_reviews took {total_elapsed:.2f}s (search: {search_elapsed:.2f}s, filter: {filter_elapsed:.2f}s, gpt: {gpt_elapsed:.2f}s)")
-    
+    logger.info(f"Total company_reviews took {time.time() - start_time:.2f}s (search: {search_elapsed:.2f}s)")
     return result
 
 

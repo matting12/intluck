@@ -28,6 +28,10 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 # Thumbnail keys the YouTube API returns, in descending resolution order.
 _THUMBNAIL_QUALITIES = ("maxres", "standard", "high", "medium", "default")
 
+# "medium" (320x180) and "default" (120x90) are too small to read as a preview —
+# only accept a thumbnail YouTube actually generated at 480x360 or better.
+_HIGH_QUALITY_THUMBNAILS = {"maxres", "standard", "high"}
+
 # Sentinel: the channel was actively checked and rejected (not official, or no
 # high-quality video available) — distinct from `None`, which means resolution
 # simply couldn't be attempted (no API key, transient error).
@@ -226,7 +230,7 @@ async def _resolve_via_api(identifier: str, id_type: str, api_key: str, company_
                 if items:
                     snippet = items[0]["snippet"]
                     thumb_url, thumb_quality = _best_thumbnail(snippet.get("thumbnails", {}))
-                    if thumb_url and thumb_quality != "default":
+                    if thumb_url and thumb_quality in _HIGH_QUALITY_THUMBNAILS:
                         logger.info("YouTube: using featured trailer %s for channel %s", trailer_id, channel_id)
                         return {
                             "url": f"https://www.youtube.com/watch?v={trailer_id}",
@@ -256,8 +260,8 @@ async def _resolve_via_api(identifier: str, id_type: str, api_key: str, company_
             snippet = items[0]["snippet"]
             vid = snippet["resourceId"]["videoId"]
             thumb_url, thumb_quality = _best_thumbnail(snippet.get("thumbnails", {}))
-            if not thumb_url or thumb_quality == "default":
-                logger.info("Skipping upload %s: no high-quality thumbnail available", vid)
+            if not thumb_url or thumb_quality not in _HIGH_QUALITY_THUMBNAILS:
+                logger.info("Skipping upload %s: no high-quality thumbnail available (best: %s)", vid, thumb_quality)
                 return _REJECTED
             return {
                 "url": f"https://www.youtube.com/watch?v={vid}",
@@ -297,8 +301,8 @@ async def _first_video_from_playlist(playlist_id: str, api_key: str):
             snippet = items[0]["snippet"]
             vid = snippet["resourceId"]["videoId"]
             thumb_url, thumb_quality = _best_thumbnail(snippet.get("thumbnails", {}))
-            if not thumb_url or thumb_quality == "default":
-                logger.info("Skipping playlist video %s: no high-quality thumbnail available", vid)
+            if not thumb_url or thumb_quality not in _HIGH_QUALITY_THUMBNAILS:
+                logger.info("Skipping playlist video %s: no high-quality thumbnail available (best: %s)", vid, thumb_quality)
                 return None
             title = snippet.get("title", "")
             description = (snippet.get("description") or "")[:300]
@@ -394,6 +398,12 @@ def _demo():
     assert _best_thumbnail({"default": {"url": "d"}}) == ("d", "default")
     assert _best_thumbnail({}) == (None, None)
     print("ok: thumbnail quality picking")
+
+    # "medium" (320x180) and "default" (120x90) read as blurry at preview size —
+    # only maxres/standard/high (480x360+) should pass the acceptance gate.
+    assert "maxres" in _HIGH_QUALITY_THUMBNAILS and "standard" in _HIGH_QUALITY_THUMBNAILS and "high" in _HIGH_QUALITY_THUMBNAILS
+    assert "medium" not in _HIGH_QUALITY_THUMBNAILS and "default" not in _HIGH_QUALITY_THUMBNAILS
+    print("ok: high-quality threshold excludes medium/default")
 
 
 if __name__ == "__main__":

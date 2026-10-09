@@ -86,6 +86,17 @@ def is_known_company(company_name: str) -> bool:
     return False
 
 
+def get_known_domain(company_name: str) -> Optional[str]:
+    """Return the stored official domain for a known company, if we have one on file."""
+    company_info = _load_company_info()
+    company_lower = company_name.lower().strip()
+
+    for known, info in company_info.items():
+        if known.lower() == company_lower:
+            return info.get("domain")
+    return None
+
+
 async def enrich_company_via_search(company_name: str) -> Optional[dict]:
     """
     Fallback: Use Brave Search to get basic company info.

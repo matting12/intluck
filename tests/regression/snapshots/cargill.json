@@ -1,0 +1,138 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.cargill.com/",
+      "title": "Creating a more food secure world | Cargill"
+    },
+    {
+      "slot": "about",
+      "url": "https://www.cargill.com/about/cargill-at-a-glance",
+      "title": "Company overview of global supply chain partner | Cargill"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=mstbjehP0i8",
+      "title": "Global Gun News | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.cargill.com/about/community-engagement",
+      "title": "Community Engagement | Cargill"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.cargill.com/news",
+      "title": "Cargill Newsroom | Cargill"
+    },
+    {
+      "slot": "investor",
+      "url": "https://www.cargill.com/about/2026-annual-report",
+      "title": "Cargill 2026 Annual Report: Food, Agriculture, Innovation and Supply Chain Progress | Cargill"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.cargill.com/about",
+      "title": "About our purpose, employees, history and culture | Cargill"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.cargill.com/foodservice",
+      "title": "Cargill Foodservice – North America | Cargill"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.cargill.com/foodservice/our-products",
+      "title": "Our Products | Cargill"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://www.cargill.com/page/my-health/mh-health-and-wellness",
+      "title": "Your Benefits | Cargill"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.payscale.com/research/US/Employer=Cargill/Salary",
+      "title": "Average Cargill Salary in 2026 | PayScale"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/cargill/salaries/software-engineer/locations/atlanta-area",
+      "title": "Cargill Software Engineer Salary in Atlanta Area | Levels.fyi"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.hellointerview.com/learn/salary-negotiation/introduction",
+      "title": "Software Engineer Salary Negotiation | Salary Negotiation"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Reviews/Cargill-Reviews-E2739.htm",
+      "title": "Cargill Reviews (5,841): Pros & Cons of Working At Cargill | Glassdoor"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Cargill/reviews",
+      "title": "Cargill Employee Reviews | Indeed"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.youtube.com/watch?v=6Ew0WTnMs4c",
+      "title": "Cargill Incorporated Employee Benefits | Youtube"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.benefitspro.org/reports/2354-compare-cargill-s-employee-health-insurance-and-benefits",
+      "title": "Compare CARGILL's Employee Health Insurance and Benefits - benefitsPRO.org | Benefitspro"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://www.startribune.com/cargill-layoffs-80-jobs-minnesota-headquarters-ongoing-restructuring/601511896",
+      "title": "Cargill laying off 80 more employees at Minnesota headquarters | Startribune"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.ttnews.com/articles/cargill-earnings-q1-2027",
+      "title": "Cargill profit undercut by cattle costs, cocoa losses - TT | Ttnews"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://executive-moves.com/company/cargill/",
+      "title": "Cargill | Leadership, Appointments and Company Profile | Executive Moves"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/cargill",
+      "title": "Cargill Culture | Comparably"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Cargill-work-life-balance-Reviews-EI_IE2739.0,7_KH8,25.htm",
+      "title": "Cargill \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Cargill-DEI-E2739.htm",
+      "title": "Diversity, Equity & Inclusion (DEI) at Cargill | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.glassdoor.com/FAQ/Cargill-Question-FAQ200058-E2739.htm",
+      "title": "Cargill Q&A: How are promotions handled at Cargill? | Glassdoor"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.cargill.com/page/my-health/mh-tuition-reimbursement",
+      "title": "Tuition Reimbursement | Cargill"
+    }
+  ]
+}

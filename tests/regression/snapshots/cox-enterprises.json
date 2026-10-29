@@ -1,0 +1,138 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.coxenterprises.com/",
+      "title": "Empower to Build - Cox Enterprises | Coxenterprises"
+    },
+    {
+      "slot": "about",
+      "url": "https://www.coxenterprises.com/about-us/our-purpose",
+      "title": "Mission and Vision - Cox Enterprises | Coxenterprises"
+    },
+    {
+      "slot": "social",
+      "url": "https://www.linkedin.com/company/cox-media",
+      "title": "Cox Media | LinkedIn"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=JlphML7IXR8",
+      "title": "A Day in the Life at Cox Cleantech Accelerator LIVE 2026 | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.coxenterprises.com/our-impact/our-collective-impact-report/caring-for-people",
+      "title": "Cox Corporate Responsibility Program | Cox Enterprises"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.coxenterprises.com/press-releases",
+      "title": "Press Releases Archive - Cox Enterprises | Coxenterprises"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.coxenterprises.com/about-us",
+      "title": "Mission and Vision - Cox Enterprises | Coxenterprises"
+    },
+    {
+      "slot": "additional",
+      "url": "https://jobs.coxenterprises.com/en/learn-about-us/businesses/",
+      "title": "Explore Our Family of Businesses - Cox Careers | Coxenterprises"
+    },
+    {
+      "slot": "additional",
+      "url": "https://jobs.coxenterprises.com/en/",
+      "title": "Cox Careers - Cox Enterprises | Coxenterprises"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://jobs.coxenterprises.com/en/learn-about-us/benefits/",
+      "title": "Employee Benefits & Wellness | Cox Careers"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/cox-enterprises/salaries/software-engineer",
+      "title": "Cox Enterprises Software Engineer Salary | $98K-$158K+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.comparably.com/companies/cox-enterprises/salaries/software-engineer",
+      "title": "Cox Enterprises Software Engineer Salary | Comparably"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://smudailycampus.com/1034112/news/cox-hosts-salary-negotiation-workshop-for-students/",
+      "title": "Cox hosts salary negotiation workshop for students – The Daily Campus | Smudailycampus"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Cox-Enterprises/reviews",
+      "title": "Cox Enterprises Employee Reviews | Indeed"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.comparably.com/companies/cox-enterprises/reviews",
+      "title": "Cox Enterprises Employee Reviews | Comparably"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.youtube.com/watch?v=ezTfwocu0_A",
+      "title": "Spotlight on Cox Benefits: Flexible PTO, Employee Relief Fund, Employee Discounts - YouTube | Youtube"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.salary.com/research/company/cox-salary",
+      "title": "Cox Average Salary and Pay Ranges | Salary.com"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://www.ajc.com/business/2026/08/heres-what-the-cox-charter-merger-could-mean-for-you/",
+      "title": "Here's what the Cox-Charter merger could mean for you. | Ajc"
+    },
+    {
+      "slot": "financials",
+      "url": "https://grupocox.com/en/cox-increases-its-revenues-by-62-to-1140-million-euros-and-obtains-a-record-ebitda-of-225-million-euros-in-2025/",
+      "title": "Cox increases its revenues by 62% to 1,140 million euros and obtains a record EBITDA of 225 million euros in 2025 - Cox | Grupocox"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.coxenterprises.com/press-releases/cox-enterprises-announces-executive-leadership-changes",
+      "title": "Cox Enterprises Announces Executive Leadership Changes - Cox Enterprises | Coxenterprises"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Cox-Enterprises-company-culture-Reviews-EI_IE2755.0,15_KH16,31.htm",
+      "title": "Cox Enterprises \"company culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Cox-Enterprises-work-life-balance-Reviews-EI_IE2755.0,15_KH16,33.htm",
+      "title": "Cox Enterprises \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Cox-Enterprises-DEI-E2755.htm",
+      "title": "Diversity, Equity & Inclusion (DEI) at Cox Enterprises | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Cox-Enterprises",
+      "title": "Cox Enterprises Careers and Employment | Indeed.com"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.glassdoor.com/Benefits/Cox-Automotive-Tuition-Assistance-US-BNFT41_E981845_N1.htm",
+      "title": "Cox Automotive Employee Benefit: Tuition Assistance | Glassdoor"
+    }
+  ]
+}

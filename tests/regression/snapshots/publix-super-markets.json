@@ -1,0 +1,138 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.publix.com/",
+      "title": "Publix: Where Shopping is a Pleasure | Publix Super Markets"
+    },
+    {
+      "slot": "about",
+      "url": "https://corporate.publix.com/about-publix/company-overview/mission-statement-guarantee",
+      "title": "Mission Statement & Guarantee | Company Overview | About Publix | Publix Super Markets"
+    },
+    {
+      "slot": "social",
+      "url": "https://hello.publix.com/connect-with-us-every-which-way/",
+      "title": "Connect With Us, Every Which Way. - Hello Publix | Publix Super Markets"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=pTCEQc-3Jqs",
+      "title": "The Publix name means quality. | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://csr.publix.com/",
+      "title": "Publix Corporate Social Responsibility | Publix"
+    },
+    {
+      "slot": "news",
+      "url": "https://corporate.publix.com/newsroom/category/press-releases",
+      "title": "Press Releases - Newsroom | Publix Super Markets"
+    },
+    {
+      "slot": "investor",
+      "url": "https://corporate.publix.com/about-publix/stockholders",
+      "title": "Publix Investor Relations | Shareholder and Stock Information"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.publix.com/locations",
+      "title": "Locations | Publix Super Markets"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.publix.com/shop-online",
+      "title": "Shop Online | Publix Super Markets"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://csr.publix.com/associate-benefits/",
+      "title": "Associate benefits. | Publix Corporate Social Responsibility"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.comparably.com/companies/publix-super-markets/salaries/software-engineer",
+      "title": "Publix Super Markets Software Engineer Salary | Comparably"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/publix/salaries/software-engineer",
+      "title": "Publix Software Engineer Salary | $100K-$134K+ | Levels.fyi"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.reddit.com/r/publix/comments/150tzek/negotiating_raise/",
+      "title": "r/publix on Reddit: negotiating raise | Reddit"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.comparably.com/companies/publix-super-markets/reviews",
+      "title": "Publix Super Markets Employee Reviews | Comparably"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Publix/reviews",
+      "title": "Working at Publix: 25,096 Reviews | Indeed.com"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.youtube.com/watch?v=XLiZxPraERg",
+      "title": "Publix Super Markets Employee Benefits | Benefit Overview Summary - YouTube"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.benefitspro.org/reports/5724-compare-publix-super-markets-employee-health-insurance-and-benefits",
+      "title": "Compare PUBLIX SUPER MARKETS' Employee Health Insurance and Benefits - benefitsPRO.org | Benefitspro"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://builtin.com/company/publix-super-markets/faq/stability-growth",
+      "title": "Publix Super Markets Company Growth, Stability & Outlook 2026 | Built In"
+    },
+    {
+      "slot": "financials",
+      "url": "https://csimarket.com/stocks/PUSH-Income-Statement",
+      "title": "Publix Super Markets Inc (PUSH) Quarterly Income Statement, Revenue, Operating Income & Net Income through Jun 27 2026 | CSIMarket"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.grocerydive.com/news/publix-executive-chairman-todd-jones-retire-grocery-supermarkets/819298/",
+      "title": "Publix Executive Chairman Todd Jones to retire | Grocery Dive"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/publix-super-markets",
+      "title": "Publix Super Markets Culture | Comparably"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/publix-super-markets/work-life-balance",
+      "title": "Publix Super Markets Work Life Balance | Comparably"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Publix-DEI-E2945.htm",
+      "title": "Diversity, Equity & Inclusion (DEI) at Publix | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Publix",
+      "title": "Publix Careers and Employment | Indeed.com"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://learn.org/articles/publix-tuition-reimbursement",
+      "title": "How To Get Publix Tuition Reimbursement & Scholarships 2027 | Learn"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://corporate.exxonmobil.com/",
+      "title": "ExxonMobil | Exxonmobil"
+    },
+    {
+      "slot": "about",
+      "url": "https://corporate.exxonmobil.com/who-we-are",
+      "title": "Who we are | About us | ExxonMobil"
+    },
+    {
+      "slot": "social",
+      "url": "https://uk.linkedin.com/company/exxonmobil",
+      "title": "ExxonMobil | LinkedIn"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=jxnY1qYx_mk",
+      "title": "Reducing Carbon Emissions With Innovative Energy Solutions | ExxonMobil"
+    },
+    {
+      "slot": "community",
+      "url": "https://corporate.exxonmobil.com/who-we-are/contact-us/citizenship",
+      "title": "Corporate citizenship and community investments | ExxonMobil"
+    },
+    {
+      "slot": "news",
+      "url": "https://corporate.exxonmobil.com/news",
+      "title": "Newsroom | ExxonMobil"
+    },
+    {
+      "slot": "investor",
+      "url": "https://corporate.exxonmobil.com/Investors/Investor-relations?c=115024&p=irol-asm",
+      "title": "Investor relations | ExxonMobil"
+    },
+    {
+      "slot": "additional",
+      "url": "https://corporate.exxonmobil.com/locations/united-states",
+      "title": "United States operations | ExxonMobil"
+    },
+    {
+      "slot": "additional",
+      "url": "https://corporate.exxonmobil.com/careers",
+      "title": "Career opportunities | ExxonMobil"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/exxonmobil/salaries/software-engineer",
+      "title": "ExxonMobil Software Engineer Salary | $123K-$220K+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/ExxonMobil-Software-Engineer-Salaries-E237_D_KO11,28.htm",
+      "title": "ExxonMobil Software Engineer Salaries (124 Salaries submitted) | Glassdoor"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thelayoff.com/t/1erEOqTc",
+      "title": "Exxon does not negotiate salary - post regarding ExxonMobil Corp. layoffs | Thelayoff"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.glassdoor.com/Community/salary-negotiations-dvf8-5/anyone-know-if-exxonmobil-allows-for-salary-negotiations-for-an-incoming-experienced-hire-have-heard-mixed-reviews",
+      "title": "Anyone know if ExxonMobil allows for salary negotiations ... | Glassdoor"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Reviews/ExxonMobil-Reviews-E237.htm",
+      "title": "ExxonMobil Reviews (8,503): Pros & Cons of Working At ExxonMobil | Glassdoor"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Exxonmobil/reviews",
+      "title": "ExxonMobil Employee Reviews | Indeed"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.indeed.com/companies/compare/Exxonmobil-vs-Marathon-Petroleum-19210402632eee9f-64a356f86b3314eb",
+      "title": "Compare working at ExxonMobil vs Marathon Petroleum | Indeed.com"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://www.mirrorreview.com/news/exxon-mobil-redomiciliation-merger/",
+      "title": "Exxon Mobil Redomiciliation Merger Forms “ExxonMobil ... | Mirrorreview"
+    },
+    {
+      "slot": "financials",
+      "url": "https://investor.exxonmobil.com/company-information/press-releases/detail/1204/exxonmobil-announces-first-quarter-2026-results",
+      "title": "ExxonMobil Announces First-Quarter 2026 Results :: ExxonMobil Holdings Corporation (XOM) | Exxonmobil"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://creately.com/org-chart/fortune-500/exxonmobil/",
+      "title": "ExxonMobil Org Chart: Functional Leadership Structure | Creately"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/ExxonMobil-company-culture-Reviews-EI_IE237.0,10_KH11,26.htm",
+      "title": "ExxonMobil \"company culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Exxon-Mobil-work-life-balance-Reviews-EI_IE5101671.0,11_KH12,29.htm",
+      "title": "Exxon Mobil \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/ExxonMobil-DEI-E237.htm",
+      "title": "Diversity, Equity & Inclusion (DEI) at ExxonMobil | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.glassdoor.com/Reviews/ExxonMobil-career-path-Reviews-EI_IE237.0,10_KH11,22.htm",
+      "title": "ExxonMobil \"career path\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.glassdoor.com/Benefits/ExxonMobil-Tuition-Assistance-US-BNFT41_E237_N1.htm",
+      "title": "ExxonMobil Employee Benefit: Tuition Assistance | Glassdoor"
+    }
+  ]
+}

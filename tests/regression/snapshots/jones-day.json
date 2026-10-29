@@ -1,0 +1,133 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.jonesday.com/en",
+      "title": "Home | Jones Day"
+    },
+    {
+      "slot": "social",
+      "url": "https://be.linkedin.com/company/jones-day",
+      "title": "Jones Day | LinkedIn"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=bXhd4InAi2Y",
+      "title": "In Our Own Words: One Firm Worldwide® | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.jonesday.com/en/insights/2014/05/what-is-the-jones-day-foundation",
+      "title": "What is the Jones Day Foundation? | Insights | Jones Day"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.jonesday.com/en/news",
+      "title": "News | Jones Day"
+    },
+    {
+      "slot": "investor",
+      "url": "https://www.jonesday.com/en/insights/2025/10/navigating-the-secs-potential-shift-to-semiannual-reporting",
+      "title": "Navigating the SEC's Potential Shift to Semiannual Reporting: Key Considerations for Corporate Leaders | Insights | Jones Day"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.jonesday.com/en/lawyers",
+      "title": "Lawyers | Jones Day"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.jonesday.com/en/firm",
+      "title": "Firm Overview | Jones Day"
+    },
+    {
+      "slot": "additional",
+      "url": "https://whatmakesusone.jonesday.com/",
+      "title": "What Makes Us One | Jones Day Values & Culture"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://www.jonesday.com/en/careers/locations/united-states?tab=compensationandbenefits",
+      "title": "United States | Jones Day"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/Jones-Day-Associate-Attorney-Salaries-E3244_D_KO10,28.htm",
+      "title": "Jones Day Associate Attorney Salaries (75 Salaries submitted) | Glassdoor"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.indeed.com/cmp/Jones-Day/salaries/Associate-Attorney",
+      "title": "Associate Attorney Salaries in the United States for Jones Day | Indeed.com"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.larsonmaddox.com/en-us/industry-insights/career-advice/how-to-negotiate-a-salary-you-deserve",
+      "title": "How to Negotiate Your Salary as a Lawyer | Larson Maddox"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.bcgsearch.com/article/900054316/Sealing-the-Deal-How-to-Ace-a-Legal-Job-Offer-Negotiation/",
+      "title": "Sealing the Deal: How to Ace a Legal Job Offer Negotiation | BCGSearch.com"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Jones-Day/reviews",
+      "title": "Working at Jones Day: 116 Reviews | Indeed.com"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Reviews/Jones-Day-Reviews-E3244.htm",
+      "title": "Jones Day Reviews (439): Pros & Cons of Working At Jones Day | Glassdoor"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.salary.com/research/company/jones-day-salary",
+      "title": "Jones Day Average Salary and Pay Ranges | Salary.com"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://www.mediapost.com/publications/article/415579/dow-jones-is-cutting-staff-as-it-merges-two-units.html?edition=142844",
+      "title": "Around the Net In Media: Dow Jones Is Cutting Staff As It Merges Two Units, Union Charges | Mediapost"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.thecerbatgem.com/2026/10/28/jones-lang-lasalle-nysejll-announces-quarterly-earnings-results-beats-estimates-by-0-61-eps.html",
+      "title": "Jones Lang LaSalle (NYSE:JLL) Announces Quarterly Earnings Results, Beats Estimates By $0.61 EPS - The Cerbat Gem | Thecerbatgem"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://secure.businesswire.com/news/home/20251217325164/en/Jones-Day-Names-33-New-Partners",
+      "title": "Jones Day Names 33 New Partners | Businesswire"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Jones-Day-culture-Reviews-EI_IE3244.0,9_KH10,17.htm",
+      "title": "Jones Day \"culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Jones-Day-work-life-balance-Reviews-EI_IE3244.0,9_KH10,27.htm",
+      "title": "Jones Day \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/McConnell-and-Jones-DEI-E710149.htm",
+      "title": "McConnell & Jones: Diversity, Equity & Inclusion | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.glassdoor.com/Reviews/Employee-Review-Jones-Day-E3244-RVW105177218.htm",
+      "title": "Jones Day - Job security but struggles with promotions and attitudes | Glassdoor"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.jobzmall.com/jones-day/faqs/does-jones-day-offer-any-tuition-reimbursement-programs",
+      "title": "Does Jones Day offer any tuition reimbursement programs? | Jones Day FAQs | JobzMall"
+    }
+  ]
+}

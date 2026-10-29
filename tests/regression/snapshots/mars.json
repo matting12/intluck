@@ -1,0 +1,138 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.mars.com/",
+      "title": "Global Petcare, Food & Nutrition, and Snacking Brands | Mars, Incorporated"
+    },
+    {
+      "slot": "social",
+      "url": "https://www.linkedin.com/company/mars",
+      "title": "Mars | LinkedIn"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=5CnzpapVjQg",
+      "title": "D-MARS Adventure | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.mars.com/news-and-stories/community-impact",
+      "title": "Community Impact | Mars Global"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.mars.com/news-and-stories/press-releases-statements",
+      "title": "Press Releases and Statements | Mars Global"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.mars.com/about/history",
+      "title": "Our History | Mars Global"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.mars.com/our-brands/all-brands",
+      "title": "Mars Brands: A-Z | Mars Global"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.mars.com/about",
+      "title": "All About Mars | Mars Global"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.mars.com/our-brands/mars-snacking",
+      "title": "Mars Snacking: Inspiring Happiness with Better Snacks for Better Days | Mars, Incorporated"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://careers.mars.com/global/en/wellbeing-benefits",
+      "title": "Benefits & Wellbeing - Mars job opportunities | Mars"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/mars/salaries",
+      "title": "Mars Salaries | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.comparably.com/companies/mars/salaries/software-engineer",
+      "title": "Mars Software Engineer Salary | Comparably"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.hellointerview.com/learn/salary-negotiation/introduction",
+      "title": "Software Engineer Salary Negotiation | Salary Negotiation"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.comparably.com/companies/mars/reviews",
+      "title": "Mars Employee Reviews | Comparably"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Mars/reviews",
+      "title": "Mars Employee Reviews | Indeed"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.youtube.com/watch?v=vsyRbDar6Vw",
+      "title": "Mars Incorporated Employee Benefits | Benefit Overview Summary - YouTube"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://ravio.com/blog/employee-benefits-benchmarking-tools",
+      "title": "Top 7 employee benefits benchmarking tools in 2026 (and how to compare them) | Ravio"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://tracxn.com/d/acquisitions/acquisitions-by-mars/__2U1vsPi3DNRi4ALxBFlZMvzFLQJHF5Vg1a1VP-rxd00",
+      "title": "List of 28 Acquisitions by Mars (Oct 2026) - Tracxn | Tracxn"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.plunkettresearch.com/company-profile/mars-incorporated/",
+      "title": "Mars Incorporated Private Profile-Financials-Revenues-Growth-Market-Description | Plunkettresearch"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.powderbulksolids.com/food-beverage/mars-ceo-to-retire",
+      "title": "Mars CEO to Retire | Powderbulksolids"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Mars/reviews?ftopic=culture",
+      "title": "Working at Mars: 370 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Mars-work-life-balance-Reviews-EI_IE2886.0,4_KH5,22.htm",
+      "title": "Mars \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Mars-DEI-E2886.htm",
+      "title": "Mars: Diversity, Equity & Inclusion | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.glassdoor.com/Reviews/Employee-Review-Mars-E2886-RVW865143.htm",
+      "title": "Mars - Great career development opportunity, people care and very prefessional of human resourses management | Glassdoor"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.glassdoor.com/FAQ/Mars-Question-FAQ200042-E2886.htm",
+      "title": "Mars Q&A: Does Mars offer tuition reimbursement? | Glassdoor"
+    }
+  ]
+}

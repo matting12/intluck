@@ -1,0 +1,118 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.lw.com/",
+      "title": "Latham & Watkins LLP | Global Law Firm"
+    },
+    {
+      "slot": "social",
+      "url": "https://id.linkedin.com/company/latham-&-watkins",
+      "title": "Latham & Watkins | LinkedIn"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=Eq2om43Aglw",
+      "title": "The LathamTECH Podcast: The Rise of Energy Tech | Youtube"
+    },
+    {
+      "slot": "investor",
+      "url": "https://www.lw.com/en/news/2026/01/latham-watkins-advises-5e-advanced-materials-on-upsized-oversubscribed-public-offering-common-stock",
+      "title": "Latham & Watkins Advises 5E Advanced Materials on US$36 Million Upsized and Oversubscribed Public Offering of Common Stock | Lw"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.lw.com/en/about-us",
+      "title": "About Us | Lw"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.lw.com/en/news/2026/07/latham-watkins-advises-on-booz-allen-hamilton-senior-notes-offering",
+      "title": "Latham & Watkins Advises on Booz Allen Hamilton’s US$1.2 Billion Senior Notes Offering | Lw"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.lw.com/en/news/2026/08/latham-watkins-advises-kard-financial-on-acquisition-by-citi",
+      "title": "Latham & Watkins Advises Kard Financial on Acquisition by Citi | Lw"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://www.lw.com/en/practices/executive-compensation-employment-and-benefits",
+      "title": "Executive Compensation, Employment & Benefits Lawyers | Latham & Watkins LLP | Global Law Firm"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/latham-and-watkins/salaries/legal",
+      "title": "Latham & Watkins Legal Salary | $225K-$310K+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/Latham-and-Watkins-Associate-Attorney-Salaries-E3263_D_KO19,37.htm",
+      "title": "Latham & Watkins Associate Attorney Salaries (48 Salaries submitted) | Glassdoor"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.larsonmaddox.com/en-us/industry-insights/career-advice/how-to-negotiate-a-salary-you-deserve",
+      "title": "How to Negotiate Your Salary as a Lawyer | Larson Maddox"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.bcgsearch.com/article/900054316/Sealing-the-Deal-How-to-Ace-a-Legal-Job-Offer-Negotiation/",
+      "title": "Sealing the Deal: How to Ace a Legal Job Offer Negotiation | BCGSearch.com"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Reviews/Latham-and-Watkins-Reviews-E3263.htm",
+      "title": "Latham & Watkins Reviews (830): Pros & Cons of Working At Latham & Watkins | Glassdoor"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Latham-&-Watkins-LLP/reviews",
+      "title": "Working at Latham & Watkins LLP: 155 Reviews | Indeed.com"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.indeed.com/companies/compare/Kirkland-&-Ellis-7-vs-Latham-&-Watkins-LLP-f54f1f9502a2af14-b2779bfc5e9f976c",
+      "title": "Compare working at Kirkland & Ellis vs Latham & Watkins LLP | Indeed.com"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://www.lw.com/en/practices/mergers-and-acquisitions",
+      "title": "Mergers & Acquisitions Lawyers | Latham & Watkins LLP | Global Law Firm"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.statista.com/statistics/877883/latham-and-watkins-gross-revenue/",
+      "title": "Latham & Watkins revenue 2025| Statista | Statista"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://ir.lathampool.com/news-releases/news-release-details/latham-group-appoints-sean-gadd-chief-executive-officer",
+      "title": "Latham Group Appoints Sean Gadd as Chief Executive Officer | Latham Group, Inc."
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Latham-&-Watkins-LLP/reviews?ftopic=culture",
+      "title": "Working at Latham & Watkins LLP: Employee Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Latham-and-Watkins-work-life-balance-Reviews-EI_IE3263.0,18_KH19,36.htm",
+      "title": "Latham & Watkins \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.reddit.com/r/LawSchool/comments/1jkog4o/latham_cancels_pathways_diversity_summit_last/",
+      "title": "r/LawSchool on Reddit: Latham cancels Pathways Diversity Summit last minute | Reddit"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Latham-&-Watkins-LLP/reviews?ftopic=jobsecadv",
+      "title": "Working at Latham & Watkins LLP: Employee Reviews about Job Security & Advancement | Indeed.com"
+    }
+  ]
+}

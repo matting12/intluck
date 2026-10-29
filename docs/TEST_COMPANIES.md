@@ -1,7 +1,9 @@
 # Regression Test Companies
 
 The 40 companies below are the fixed set to check whenever link selection changes
-(boxes 1–4), so a fix for one company doesn't quietly break another.
+(boxes 1–4), so a fix for one company doesn't quietly break another. They're listed in
+code in `tests/regression/companies.py`, and checked by the snapshot tests in
+`tests/regression/run.py` (see CLAUDE.md).
 
 Source: the [company sheet](https://docs.google.com/spreadsheets/d/1M-vJvilBPx0sHrCg2h_iC3MDS7C6QyLj/edit)
 (tabs: `Fortune 1000`, `Law Firms`, `Defense`). Names below are spelled exactly as in the
@@ -27,9 +29,10 @@ before turning it into a test assertion.
 
 ## Private: top 10 by revenue (Forbes America's Largest Private Companies)
 
-Private companies have no earnings reports or investor-relations pages. The box 4
-"Financial Performance" slot and the box 2 investor slot should be **empty**, not filled
-with another company's data.
+Private companies have no quarterly earnings or investor-relations pages, though a few
+(e.g. Cargill) publish annual results. The box 4 "Financial Performance" slot and the
+box 2 investor slot should show the company's own results or nothing, never another
+company's data.
 
 | # | Company | Expected domain | Why it's a useful test |
 |---|---|---|---|

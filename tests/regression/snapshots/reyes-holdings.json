@@ -1,0 +1,128 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://reyesbeveragegroup.com/about",
+      "title": "Reyes Beverage Group - About | Reyesbeveragegroup"
+    },
+    {
+      "slot": "social",
+      "url": "https://www.linkedin.com/company/reyes-media-group",
+      "title": "Reyes Media Group | LinkedIn"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=U7lO9jmYlGk",
+      "title": "Reyes Fleet Management: Day in the Life | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "http://www.reyesbeveragegroup.com/newsroom/reyes-beverage-group-2025-corporate-social-responsibility-report",
+      "title": "Reyes Beverage Group 2025 Corporate Social Responsibility Report | Reyesbeveragegroup"
+    },
+    {
+      "slot": "news",
+      "url": "https://reyesbeveragegroup.com/newsroom",
+      "title": "Reyes Beverage Group - Newsroom | Reyesbeveragegroup"
+    },
+    {
+      "slot": "additional",
+      "url": "https://reyesbeveragegroup.com/",
+      "title": "Reyes Beverage Group - Home | Reyesbeveragegroup"
+    },
+    {
+      "slot": "additional",
+      "url": "https://reyesbeveragegroup.com/newsroom/cheers-to-50-years-a-timeline-of-milestones-that-built-todays-business",
+      "title": "Cheers to 50 Years: A Timeline of Milestones that Built Today’s Business | Reyesbeveragegroup"
+    },
+    {
+      "slot": "additional",
+      "url": "https://reyesbeveragegroup.com/newsroom/rbg-closes-acquisition-of-cherokee-distributing-companys-southern-middle-territory-in-tennessee",
+      "title": "RBG Closes Acquisition of Cherokee Distributing Company’s Southern Middle Territory in Tennessee | Reyesbeveragegroup"
+    },
+    {
+      "slot": "additional",
+      "url": "https://reyesbeveragegroup.com/newsroom/atomic-brands-chooses-reyes-beverage-group-and-other-key-distributors-as-illinois-and-indiana-partners",
+      "title": "Atomic Brands Chooses Reyes Beverage Group and Other Key Distributors as Illinois and Indiana Partners | Reyesbeveragegroup"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://reyesbeveragegroup.com/careers",
+      "title": "Reyes Beverage Group - Careers | Reyesbeveragegroup"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.comparably.com/companies/reyes-holdings/salaries/senior-software-engineer",
+      "title": "Reyes Holdings Senior Software Engineer Salary | Comparably"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/Reyes-Holdings-Rosemont-Salaries-EI_IE13349.0,14_IL.15,23_IC1158097.htm",
+      "title": "Reyes Holdings Salaries in Rosemont | Glassdoor"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.hellointerview.com/learn/salary-negotiation/introduction",
+      "title": "Software Engineer Salary Negotiation | Salary Negotiation"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Reyes-Holdings/reviews?ftopic=paybenefits",
+      "title": "Working at Reyes Holdings: Employee Reviews about Pay and benefits | Indeed.com"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.comparably.com/companies/reyes-holdings/perks-and-benefits",
+      "title": "Reyes Holdings Benefits | Comparably"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.linkedin.com/posts/reyes-holdings_our-employee-benefits-activity-7239271447943168000-L4Dv",
+      "title": "Reyes Holdings - Our Employee Benefits | LinkedIn"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.benefitspro.org/reports/5890-compare-reyes-holdings-employee-health-insurance-and-benefits",
+      "title": "Compare REYES HOLDINGS' Employee Health Insurance and Benefits - benefitsPRO.org | Benefitspro"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://app.fundz.net/acquisitions/acquires-021a",
+      "title": "Reyes Holdings acquires Republic National Distributing Company (April 2026) | Fundz"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.recorderonline.com/news/reyes-is-new-chamber-ceo/article_6501a798-ec60-11e7-9950-3732f7189ab6.html",
+      "title": "Reyes is new Chamber CEO | News | recorderonline.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Reyes-Holdings-culture-Reviews-EI_IE13349.0,14_KH15,22.htm",
+      "title": "Reyes Holdings \"culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Reyes-Holdings/reviews?ftopic=wlbalance",
+      "title": "Working at Reyes Holdings: Employee Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Reyes-Holdings-DEI-E13349.htm",
+      "title": "Diversity, Equity & Inclusion (DEI) at Reyes Holdings | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Reyes-Holdings",
+      "title": "Reyes Holdings Careers and Employment | Indeed.com"
+    }
+  ]
+}

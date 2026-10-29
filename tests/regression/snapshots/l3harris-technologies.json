@@ -1,0 +1,133 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.l3harris.com/",
+      "title": "L3Harris® Fast. Forward. | L3Harris"
+    },
+    {
+      "slot": "about",
+      "url": "https://www.l3harris.com/about-us",
+      "title": "About Us | L3Harris® Fast. Forward."
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=LbheDpiQrJA",
+      "title": "Building America’s Arsenal | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.l3harris.com/newsroom/editorial/2023/03/connecting-our-people-our-values-and-community",
+      "title": "Connecting Our People to Our Values and Community | L3Harris® Fast. Forward."
+    },
+    {
+      "slot": "news",
+      "url": "https://www.l3harris.com/newsroom",
+      "title": "Newsroom | L3Harris® Fast. Forward."
+    },
+    {
+      "slot": "investor",
+      "url": "https://investors.l3harris.com/overview/default.aspx",
+      "title": "L3Harris Technologies, Inc. - Investor Relations | L3Harris"
+    },
+    {
+      "slot": "additional",
+      "url": "https://careers.l3harris.com/en",
+      "title": "Working at L3Harris Technologies | L3Harris"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.l3harris.com/newsroom/press-release/2026/10/l3harris-receives-contract-develop-long-range-drone-interceptor",
+      "title": "L3Harris Receives Contract to Develop Long-Range Drone Interceptor | L3Harris® Fast. Forward."
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.l3harris.com/newsroom/press-release/2026/01/l3harris-technologies-reports-strong-full-year-and-fourth-quarter",
+      "title": "L3Harris Technologies Reports Strong Full Year and Fourth Quarter 2025 Results, Initiates 2026 Guidance | L3Harris® Fast. Forward."
+    }
+  ],
+  "box3": [
+    {
+      "slot": "salary",
+      "url": "https://www.indeed.com/cmp/L3harris/salaries/Systems-Engineer-Remote-Access",
+      "title": "Systems Engineer Remote Access Salaries in the United States for L3Harris | Indeed.com"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/l3harris/salaries",
+      "title": "L3Harris Salaries in 2026 | Levels.fyi"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.reddit.com/r/L3Harris/comments/1i7rk0j/i_need_advice_negotiating_salary/",
+      "title": "I need advice negotiating salary : r/L3Harris | Reddit"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.hellointerview.com/learn/salary-negotiation/introduction",
+      "title": "Software Engineer Salary Negotiation | Salary Negotiation"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.comparably.com/companies/l3-technologies/reviews",
+      "title": "L3Harris Technologies Employee Reviews | Comparably"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/L3harris/reviews",
+      "title": "L3Harris Employee Reviews | Indeed"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.youtube.com/watch?v=fX9zezYGtXE",
+      "title": "L3Harris Technologies Inc Employee Benefits | Benefit Overview Summary - YouTube"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.salary.com/research/company/l3-harris-technologies-salary",
+      "title": "L3 Harris Technologies Average Salary, Pay Ranges & Benefits | Salary.com"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://www.l3harris.com/newsroom/press-release/2026/01/l3harris-announces-reorganization-its-businesses",
+      "title": "L3Harris Announces Reorganization of Its Businesses | L3Harris® Fast. Forward."
+    },
+    {
+      "slot": "financials",
+      "url": "https://investors.l3harris.com/news/news-details/2026/L3Harris-Technologies-Reports-Strong-First-Quarter-2026-Results/default.aspx",
+      "title": "L3Harris Technologies, Inc. - L3Harris Technologies Reports Strong First Quarter 2026 Results | L3Harris"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://trinityschooloffrederick.org/article/l3harris-ceo-steps-down-what-happened",
+      "title": "L3Harris CEO Steps Down: What Happened? (2026) | Trinityschooloffrederick"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/l3-technologies",
+      "title": "L3Harris Technologies Culture | Comparably"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/l3-technologies/work-life-balance",
+      "title": "L3Harris Technologies Work Life Balance | Comparably"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/L3Harris-DEI-E2898734.htm",
+      "title": "Diversity, Equity & Inclusion (DEI) at L3Harris | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/L3harris/reviews?ftopic=jobsecadv&ftext=division",
+      "title": "Working at L3Harris: Employee Reviews about Job Security & Advancement | Indeed.com"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.glassdoor.com/FAQ/L3Harris-Question-FAQ200042-E2898734.htm",
+      "title": "L3Harris Q&A: Does L3Harris offer tuition reimbursement? | Glassdoor"
+    }
+  ]
+}

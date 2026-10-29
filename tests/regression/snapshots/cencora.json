@@ -1,0 +1,133 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.cencora.com/",
+      "title": "Creating healthier futures | Cencora"
+    },
+    {
+      "slot": "about",
+      "url": "https://esg.cencora.com/our-approach-to-corporate-responsibility/about-us",
+      "title": "About Us - Corporate Responsibility | Cencora"
+    },
+    {
+      "slot": "social",
+      "url": "https://www.facebook.com/Cencora/",
+      "title": "Cencora | Conshohocken PA | Facebook"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=PXoUDqTa5rk",
+      "title": "Helping biopharma breakthroughs break through | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.cencora.com/our-impact/corporate-responsibility",
+      "title": "Corporate Responsibility | Cencora"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.cencora.com/newsroom",
+      "title": "Newsroom: Press Releases, Company News and Insights | Cencora"
+    },
+    {
+      "slot": "investor",
+      "url": "https://investor.cencora.com/financials/quarterly-results/default.aspx",
+      "title": "Cencora, Inc. - Financials - Quarterly Results | Cencora"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.cencora.com/about/leadership",
+      "title": "Meet Our Leadership Team | Cencora"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.cencora.com/about/history",
+      "title": "History | A legacy in innovation | Cencora"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://careers.cencora.com/us/en/total-rewards",
+      "title": "Total Rewards | Cencora Careers"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.comparably.com/companies/cencora/salaries/software-engineer",
+      "title": "Cencora Software Engineer Salary | Comparably"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/Cencora-Software-Engineer-Salaries-E2703_D_KO8,25.htm",
+      "title": "Cencora Software Engineer Salaries (18 Salaries submitted) | Glassdoor"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.hellointerview.com/learn/salary-negotiation/introduction",
+      "title": "Software Engineer Salary Negotiation | Salary Negotiation"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Reviews/Cencora-Reviews-E2703.htm",
+      "title": "Cencora Reviews (3,363): Pros & Cons of Working At Cencora | Glassdoor"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.comparably.com/companies/cencora/reviews",
+      "title": "Cencora Employee Reviews | Comparably"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://ravio.com/blog/employee-benefits-benchmarking-tools",
+      "title": "Top 7 employee benefits benchmarking tools in 2026 (and how to compare them) | Ravio"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://tracxn.com/d/acquisitions/acquisitions-by-cencora/___MlZHoYx61WK8x96tXN4Pclqvjx8V-c57jjdkOYIOA0",
+      "title": "List of 5 Acquisitions by Cencora (Oct 2026) - Tracxn | Tracxn"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.businesswire.com/news/home/20260804421646/en/Cencora-Reports-Fiscal-2026-Third-Quarter-Results",
+      "title": "Cencora Reports Fiscal 2026 Third Quarter Results | Businesswire"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://creately.com/org-chart/fortune-500/cencora/",
+      "title": "Cencora Org Chart: Functional Leadership Structure | Creately"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Cencora-corporate-culture-Reviews-EI_IE2703.0,7_KH8,25.htm",
+      "title": "Cencora \"corporate culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Cencora-work-life-balance-Reviews-EI_IE2703.0,7_KH8,25.htm",
+      "title": "Cencora \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Cencora-DEI-E2703.htm",
+      "title": "Cencora: Diversity, Equity & Inclusion | Glassdoor | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Cencora/reviews?fcountry=ALL&ftopic=jobsecadv",
+      "title": "Working at Cencora: 924 Reviews about Job security and advancement | Indeed.com"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.glassdoor.com/Benefits/Cencora-Tuition-Assistance-US-BNFT41_E2703_N1.htm",
+      "title": "Cencora Employee Benefit: Tuition Assistance | Glassdoor"
+    }
+  ]
+}

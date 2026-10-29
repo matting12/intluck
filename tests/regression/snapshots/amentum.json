@@ -1,0 +1,128 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.amentum.com/",
+      "title": "Amentum | Global Government & Private-Sector Critical Solutions"
+    },
+    {
+      "slot": "about",
+      "url": "https://www.amentum.com/culture-and-values/mission-vision-values/",
+      "title": "Our Mission, Vision and Core Values | Amentum"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=7Uf8vvGxllw",
+      "title": "Amentum's Nuclear Resurgence Panel | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.amentum.com/culture-and-values/corporate-social-responsibility-csr/",
+      "title": "Corporate Social Responsibility | Amentum"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.amentum.com/news/",
+      "title": "News | Amentum"
+    },
+    {
+      "slot": "investor",
+      "url": "https://ir.amentum.com/financials/sec-filings/default.aspx",
+      "title": "Amentum - Financials - SEC Filings | Amentum"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.amentum.com/key-locations/",
+      "title": "Global Locations | Amentum"
+    },
+    {
+      "slot": "additional",
+      "url": "https://ir.amentum.com/overview/default.aspx",
+      "title": "Amentum - Investor Relations | Amentum"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.amentum.com/contact-us/",
+      "title": "Contact Us | Amentum"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://www.amentum.com/employees/",
+      "title": "Employee Resources and Support | Amentum"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/amentum/salaries/software-engineer",
+      "title": "Amentum Software Engineer Salary | $70K-$85K+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/Amentum-Salaries-E3250764.htm",
+      "title": "How Much Does Amentum Pay in 2026? (2,930 Salaries) | Glassdoor"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.hellointerview.com/learn/salary-negotiation/introduction",
+      "title": "Software Engineer Salary Negotiation | Salary Negotiation"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.comparably.com/companies/amentum/reviews",
+      "title": "Amentum Employee Reviews | Comparably"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Amentum/reviews",
+      "title": "Amentum Employee Reviews | Indeed"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.salary.com/research/company/amentum-salary",
+      "title": "Amentum Average Salary and Pay Ranges | Salary.com"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://www.bizjournals.com/atlanta/news/2026/09/08/amentum-layoffs-fort-gordon.html",
+      "title": "Engineering firm Amentum cuts jobs at Georgia military base after losing contract - Atlanta Business Chronicle | Bizjournals"
+    },
+    {
+      "slot": "financials",
+      "url": "https://ir.amentum.com/news/news-details/2026/Amentum-Reports-Third-Quarter-Fiscal-Year-2026-Results/default.aspx",
+      "title": "Amentum - Amentum Reports Third Quarter Fiscal Year 2026 Results | Amentum"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://builtin.com/company/amentum/faq/leadership-management",
+      "title": "Leadership at Amentum: How Are the Managers at Amentum? 2026 | Built In"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/amentum",
+      "title": "Amentum Culture | Comparably"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.ambitionbox.com/reviews/amentum-work-life-balance-reviews-835015",
+      "title": "Amentum Work Life Balance Reviews by 6 Employees | AmbitionBox"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Amentum/reviews?ftopic=jobsecadv",
+      "title": "Working at Amentum: 927 Reviews about Job security and advancement | Indeed.com"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.glassdoor.com/FAQ/Amentum-Question-FAQ200042-E3250764.htm",
+      "title": "Amentum Q&A: Does Amentum offer tuition reimbursement?<!-- --> | Glassdoor"
+    }
+  ]
+}

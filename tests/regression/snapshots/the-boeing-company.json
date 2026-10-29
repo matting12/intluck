@@ -1,0 +1,108 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.boeing.com/",
+      "title": "The Boeing Company Official Website | Boeing"
+    },
+    {
+      "slot": "social",
+      "url": "https://m.facebook.com/BootCoffee/videos/stay-connected-to-our-social-media-channels-and-know-the-dates-of-our-upcoming-w/479215566728314/?__so__=permalink&__rv__=related_videos&locale=hi_IN",
+      "title": "Stay connected to our social media channels and know the ... | Facebook"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=Z18UyOyDEQQ",
+      "title": "Trailer | Youtube"
+    },
+    {
+      "slot": "investor",
+      "url": "https://investors.boeing.com/investors/investor-resources/?section=IRcontact",
+      "title": "Frequently Asked Questions - Investors - The Boeing Company | Boeing"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.boeing.com/company",
+      "title": "Company | Boeing"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.boeing.com/company/general-info",
+      "title": "General Information | Boeing"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.boeing.com/content/theboeingcompany/us/en/company.html",
+      "title": "Our Company | Boeing"
+    },
+    {
+      "slot": "additional",
+      "url": "https://jobs.boeing.com/",
+      "title": "Explore new horizons with Boeing | Boeing"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.boeing.com/global",
+      "title": "Global | Boeing"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/boeing/salaries/systems-engineer",
+      "title": "Boeing Systems Engineer Salary | $99.4K-$153K+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.payscale.com/research/US/Job=Software_Engineer/Salary/12fb0376/The-Boeing-Company",
+      "title": "Software Engineer Salary at The Boeing Company in 2026 | PayScale"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.hellointerview.com/learn/salary-negotiation/introduction",
+      "title": "Software Engineer Salary Negotiation | Salary Negotiation"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Reviews/The-Boeing-Company-Reviews-E8885232.htm",
+      "title": "The Boeing Company Reviews (73): Pros & Cons of Working At The Boeing Company | Glassdoor"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.reddit.com/r/boeing/comments/1axk72q/opinions_on_the_medical_plans/",
+      "title": "r/boeing on Reddit: Opinions on the medical plans? | Reddit"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.youtube.com/watch?v=7SyF49epAJA",
+      "title": "Unleashing the Power of Total Rewards & Benefits - YouTube | Youtube"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.indeed.com/companies/compare/Airbus-e4b213b1-vs-Boeing-542cd993303a0af1-7d0822004dfb5491",
+      "title": "Compare working at Airbus vs Boeing | Indeed.com"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "financials",
+      "url": "https://vectorshift.ai/research/companies/boeing-co/financials",
+      "title": "The Boeing Company financials — revenue, margin & EBITDA · VectorShift Research | Vectorshift"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.unifygtm.com/insights/executives/boeing-ceo",
+      "title": "Who is the CEO of Boeing in 2026? Kelly Ortberg | Unify"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.gpstrategies.com/news/gp-strategies-launches-global-tuition-assistance-program-management-solution-for-the-boeing-company/",
+      "title": "GP Strategies Launches Global Tuition Assistance Program Management Solution For The Boeing Company - GP Strategies | Gpstrategies"
+    }
+  ]
+}

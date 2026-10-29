@@ -1,0 +1,123 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.ropesgray.com/en",
+      "title": "Ropes & Gray LLP | Ropesgray"
+    },
+    {
+      "slot": "about",
+      "url": "https://www.ropesgray.com/en/services/practices/charitable-foundations/charitable-foundations-fulfilling-your-philanthropic-mission",
+      "title": "Charitable Foundations: Fulfilling Your Philanthropic Mission | Services & Industries | Ropes & Gray LLP"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=qc_BbNJZNq4",
+      "title": "Learning the Ropes: Hamza Chaudhry | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.ropesgray.com/en/services/practices/esg-csr-and-business-and-human-rights",
+      "title": "ESG, CSR and Business and Human Rights | Services & Industries | Ropes & Gray LLP"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.ropesgray.com/en/newsroom/news.aspx?ni=750",
+      "title": "News | Ropes & Gray LLP"
+    },
+    {
+      "slot": "investor",
+      "url": "https://www.ropesgray.com/en/news-and-events/news/2026/05/ropes-gray-client-alert-cited-investing-com-and-yahoo-finance",
+      "title": "Ropes & Gray Client Alert Cited in Investing.com and Yahoo Finance Coverage of SEC Semi-Annual Reporting Proposal | News & Events | Ropes & Gray LLP"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.ropesgray.com/en/locations",
+      "title": "Locations | Ropes & Gray LLP"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.ropesgray.com/en/people",
+      "title": "People | Ropes & Gray LLP"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.ropesgray.com/en/about",
+      "title": "Practice with Purpose | About Ropes & Gray LLP"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://www.ropesgray.com/en/services/practices/executive-compensation-employee-benefits",
+      "title": "Executive Compensation & Employee Benefits | Services & Industries | Ropes & Gray LLP"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/Ropes-and-Gray-Salaries-E3355.htm",
+      "title": "How Much Does Ropes & Gray Pay in 2026? (1,195 Salaries) | Glassdoor"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.indeed.com/cmp/Ropes-&-Gray-LLP/salaries/Associate",
+      "title": "Associate Salaries in the United States for Ropes & Gray LLP | Indeed.com"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.larsonmaddox.com/en-us/industry-insights/career-advice/how-to-negotiate-a-salary-you-deserve",
+      "title": "How to Negotiate Your Salary as a Lawyer | Larson Maddox"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.bcgsearch.com/article/900054316/Sealing-the-Deal-How-to-Ace-a-Legal-Job-Offer-Negotiation/",
+      "title": "Sealing the Deal: How to Ace a Legal Job Offer Negotiation | BCGSearch.com"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Ropes-&-Gray-LLP/reviews?ftopic=paybenefits",
+      "title": "Working at Ropes & Gray LLP: Employee Reviews about Pay and benefits | Indeed.com"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Benefits/Ropes-and-Gray-US-Benefits-EI_IE3355.0,14_IL.15,17_IN1.htm",
+      "title": "Ropes & Gray: Employee Benefits and Perks | Glassdoor"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.benefitspro.org/reports/5937-compare-ropes-gray-s-employee-health-insurance-and-benefits",
+      "title": "Compare ROPES & GRAY's Employee Health Insurance and Benefits - benefitsPRO.org | Benefitspro"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://www.ropesgray.com/en/news-and-events/news/2026/02/ropes-gray-takes-restructuring-practice-to-the-next-level",
+      "title": "Ropes & Gray Takes Restructuring Practice to the Next Level with Addition of Rachel Strickland and Team of Three Partners | News & Events | Ropes & Gray LLP"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.ropesgray.com/en/news-and-events/news/2025/12/ropes-gray-names-new-leadership-team-for-corporate-practices",
+      "title": "Ropes & Gray Names New Leadership Team for Corporate Practices to Accelerate Opportunity and Outcomes for Clients | News & Events | Ropes & Gray LLP"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Ropes-and-Gray-culture-Reviews-EI_IE3355.0,14_KH15,22.htm",
+      "title": "Ropes & Gray \"culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Ropes-and-Gray-work-life-balance-Reviews-EI_IE3355.0,14_KH15,32.htm",
+      "title": "Ropes & Gray \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://media2.vault.com/14346609/ropes-_-gray-diversity-report-w_ad.pdf",
+      "title": "At Ropes & Gray, we view our individual differences as assets | Vault"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Ropes-&-Gray-LLP",
+      "title": "Ropes & Gray LLP Careers and Employment | Indeed.com"
+    }
+  ]
+}

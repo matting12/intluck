@@ -1,0 +1,128 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.kirkland.com/",
+      "title": "Home | Kirkland & Ellis LLP"
+    },
+    {
+      "slot": "about",
+      "url": "https://ukgraduate.kirkland.com/about-us/",
+      "title": "About Us – Kirkland & Ellis International LLP | Kirkland"
+    },
+    {
+      "slot": "social",
+      "url": "https://www.linkedin.com/company/kirkland-&-ellis-llp",
+      "title": "Kirkland & Ellis | LinkedIn"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=QZqlqg6yRGs",
+      "title": "Kirkland Pro Bono: We Show Up | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.kirkland.com/-/media/social-commitment/charitable-giving/foundation-books/review-of-foundation-contributions-2009.pdf",
+      "title": "KIRKLAND & ELLIS LLP REVIEW OF FOUNDATION CONTRIBUTIONS 2009 | Kirkland"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.kirkland.com/news/press-release/2026/03/kirkland-advises-sabre-on-strategic-governance-agreement-with-constellation-software",
+      "title": "Kirkland Advises Sabre on Strategic Governance Agreement with Constellation Software | News | Kirkland & Ellis LLP"
+    },
+    {
+      "slot": "investor",
+      "url": "https://www.kirkland.com/publications/kirkland-alert/2021/08/cfius-latest-annual-report",
+      "title": "Seven Highlights from CFIUS’ Latest Annual Report | Publications | Kirkland & Ellis LLP"
+    },
+    {
+      "slot": "role_specific",
+      "url": "https://www.kirkland.com/news/award/2026/05/orbie-awards",
+      "title": "CMO Maria Black Recognized Among C-Suite Leaders at ORBIE Awards | News | Kirkland & Ellis LLP"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.kirkland.com/content/about-kirkland",
+      "title": "About Kirkland | Kirkland & Ellis LLP"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://staffjobsus.kirkland.com/pages/benefits",
+      "title": "Benefits - Kirkland & Ellis Careers - Jobs in Chicago, IL | Kirkland"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/Kirkland-and-Ellis-Associate-Attorney-Salaries-E3255_D_KO19,37.htm",
+      "title": "Kirkland & Ellis Associate Attorney Salaries (107 Salaries submitted) | Glassdoor"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.indeed.com/cmp/Kirkland-&-Ellis-7/salaries/Associate-Attorney",
+      "title": "Associate Attorney Salaries in the United States for Kirkland & Ellis | Indeed.com"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.larsonmaddox.com/en-us/industry-insights/career-advice/how-to-negotiate-a-salary-you-deserve",
+      "title": "How to Negotiate Your Salary as a Lawyer | Larson Maddox"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.bcgsearch.com/article/900054316/Sealing-the-Deal-How-to-Ace-a-Legal-Job-Offer-Negotiation/",
+      "title": "Sealing the Deal: How to Ace a Legal Job Offer Negotiation | BCGSearch.com"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Reviews/Kirkland-and-Ellis-Reviews-E3255.htm",
+      "title": "Kirkland & Ellis Reviews (944): Pros & Cons of Working At Kirkland & Ellis | Glassdoor"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Kirkland-&-Ellis-7/reviews",
+      "title": "Working at Kirkland & Ellis: 152 Reviews | Indeed.com"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.benefitspro.org/reports/4388-compare-kirkland-ellis-llp-s-employee-health-insurance-and-benefits",
+      "title": "Compare KIRKLAND & ELLIS LLP's Employee Health Insurance and Benefits - benefitsPRO.org | Benefitspro"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://builtin.com/company/kirkland-ellis/faq/stability-growth",
+      "title": "Kirkland & Ellis Company Growth, Stability & Outlook 2026 | Built In"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.globallegalpost.com/news/kirklands-revenue-jumps-20-to-top-10bn-689385338",
+      "title": "Kirkland’s revenue jumps 20% to top $10bn - The Global Legal Post | Globallegalpost"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://builtin.com/company/kirkland-ellis/faq/leadership-management",
+      "title": "Leadership at Kirkland & Ellis: How Are the Managers at Kirkland & Ellis? 2026 | Built In"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Kirkland-&-Ellis-7/reviews?fcountry=US&floc=Chicago%2C+IL&ftopic=culture",
+      "title": "Working at Kirkland & Ellis in Chicago, IL: Employee Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Kirkland-and-Ellis-work-life-balance-Reviews-EI_IE3255.0,18_KH19,36.htm",
+      "title": "Kirkland & Ellis \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Kirkland-and-Ellis-DEI-E3255.htm",
+      "title": "Diversity, Equity & Inclusion (DEI) at Kirkland & Ellis | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Kirkland-&-Ellis-7/topics/professional-development",
+      "title": "Professional development and promotions at Kirkland & Ellis | Indeed.com"
+    }
+  ]
+}

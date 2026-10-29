@@ -1,0 +1,133 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.unitedhealthgroup.com/",
+      "title": "Helping People Live Healthier Lives - UnitedHealth Group | Unitedhealthgroup"
+    },
+    {
+      "slot": "about",
+      "url": "https://www.unitedhealthgroup.com/uhg/mission-values.html",
+      "title": "Mission & Values - UnitedHealth Group | Unitedhealthgroup"
+    },
+    {
+      "slot": "social",
+      "url": "https://www.linkedin.com/company/unitedhealth-group",
+      "title": "UnitedHealth Group | LinkedIn"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=c9SuUCaYfOo",
+      "title": "Built for Better Health | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.unitedhealthgroup.com/content/ma/template/en/connecting-to-culture/social-responsibility.html",
+      "title": "Social Responsibility - UnitedHealth Group | Unitedhealthgroup"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.unitedhealthgroup.com/newsroom.html",
+      "title": "Newsroom - UnitedHealth Group | Unitedhealthgroup"
+    },
+    {
+      "slot": "investor",
+      "url": "https://www.unitedhealthgroup.com/investors/financial-reports.html",
+      "title": "Financial & Earnings Reports - UnitedHealth Group | Unitedhealthgroup"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.unitedhealthgroup.com/uhg/businesses.html",
+      "title": "Our Businesses - UnitedHealth Group | Unitedhealthgroup"
+    },
+    {
+      "slot": "additional",
+      "url": "https://careers.unitedhealthgroup.com/search-jobs",
+      "title": "Search our Job Opportunities at UnitedHealth Group | Unitedhealthgroup"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://www.unitedhealthgroup.com/newsroom/2023/2023-02-08-uhc-introduces-rewards-program-well-being.html",
+      "title": "UnitedHealthcare Introduces New Rewards Program With a Modern Approach to Well-Being - UnitedHealth Group | Unitedhealthgroup"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/unitedhealth-group/salaries/software-engineer",
+      "title": "UnitedHealth Group Software Engineer Salary | $97.7K-$239K+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.indeed.com/cmp/UnitedHealth-Group/salaries/Software-Engineer",
+      "title": "Software Engineer Salaries in the United States for UnitedHealth Group | Indeed.com"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.reddit.com/r/unitedhealthgroup/comments/1mpfodb/negotiating_pay/",
+      "title": "r/unitedhealthgroup on Reddit: Negotiating pay | Reddit"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.glassdoor.com/Reviews/Employee-Review-UnitedHealth-Group-E1991-RVW3306069.htm",
+      "title": "UnitedHealth Group - Negotiate your pay BEFORE you start | Glassdoor"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/UnitedHealth-Group/reviews",
+      "title": "UnitedHealth Group Employee Reviews | Indeed"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.comparably.com/companies/unitedhealth-group/reviews",
+      "title": "UnitedHealth Group Employee Reviews | Comparably"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.indeed.com/companies/compare/Unitedhealthcare-vs-UnitedHealth-Group-d9c503f05a5b47ed-dffe3742b8f927df",
+      "title": "Compare working at UnitedHealthcare vs UnitedHealth Group | Indeed.com"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://finance.yahoo.com/news/unitedhealth-limits-salary-increases-2-121458744.html",
+      "title": "UnitedHealth limits salary increases to 2% during restructuring – report | Yahoo"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.unitedhealthgroup.com/investors/financial-reports.html",
+      "title": "Financial & Earnings Reports - UnitedHealth Group | Unitedhealthgroup"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.pharmaceuticalcommerce.com/view/unitedhealth-group-ceo-departs",
+      "title": "UnitedHealth Group CEO Departs | Pharmaceutical Commerce"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/UnitedHealth-Group/reviews?ftopic=culture",
+      "title": "Working at UnitedHealth Group: 3,689 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/UnitedHealth-Group/reviews?ftopic=wlbalance",
+      "title": "Working at UnitedHealth Group: 5,508 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/UnitedHealth-Group-DEI-E1991.htm",
+      "title": "Diversity, Equity & Inclusion (DEI) at UnitedHealth Group | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/UnitedHealth-Group/reviews?fcountry=ALL&ftopic=jobsecadv",
+      "title": "Working at UnitedHealth Group: 8,204 Reviews about Job security and advancement | Indeed.com"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.collegetransitions.com/blog/unitedhealth-group-tuition-reimbursement/",
+      "title": "UnitedHealth Group Tuition Reimbursement: Online Degrees for UHG Employees in 2026 - College Transitions | Collegetransitions"
+    }
+  ]
+}

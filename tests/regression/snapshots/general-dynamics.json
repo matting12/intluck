@@ -1,0 +1,138 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.gd.com/",
+      "title": "General Dynamics | Home"
+    },
+    {
+      "slot": "about",
+      "url": "https://www.gd.com/our-business/information-systems-technology/mission-systems",
+      "title": "General Dynamics Mission Systems | Gd"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=tY6v4cN3Ia4",
+      "title": "MUM-T at Army Warfighting Experimentation 2019 | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.gd.com/Articles/2013/07/08/general-dynamics-launches-online-community-match-advanced-technical",
+      "title": "General Dynamics Launches Online Community to Match Advanced Technical Capabilities with Evolving Customer Requirements | General Dynamics - General Dynamics"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.gd.com/news",
+      "title": "News | General Dynamics"
+    },
+    {
+      "slot": "investor",
+      "url": "https://investorrelations.gd.com/financial-reports/sec-filings/default.aspx",
+      "title": "General Dynamics - Financial Reports - SEC Filings | Gd"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.gd.com/about-gd",
+      "title": "About GD | General Dynamics"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.gd.com/about-gd/our-history",
+      "title": "Our History | General Dynamics"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.gd.com/our-businesses",
+      "title": "Our Businesses | General Dynamics"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://www.gd.com/careers/benefits",
+      "title": "Benefits | General Dynamics"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/general-dynamics-mission-systems/salaries/software-engineer",
+      "title": "General Dynamics Mission Systems Software Engineer Salary | $91.3K-$190K+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/General-Dynamics-Salaries-E276.htm",
+      "title": "How Much Does General Dynamics Pay in 2026? (1,186 Salaries) | Glassdoor"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.hellointerview.com/learn/salary-negotiation/introduction",
+      "title": "Software Engineer Salary Negotiation | Salary Negotiation"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.comparably.com/companies/general-dynamics/reviews",
+      "title": "General Dynamics Employee Reviews | Comparably"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Reviews/General-Dynamics-Reviews-E276.htm",
+      "title": "General Dynamics Reviews (835): Pros & Cons of Working At General Dynamics | Glassdoor"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.youtube.com/watch?v=ZadV3GAFXME",
+      "title": "General Dynamics Employee Benefits Via Benefits General Dynamics my.viabenefits.com/generaldynamics - YouTube | Youtube"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://ravio.com/blog/employee-benefits-benchmarking-tools",
+      "title": "Top 7 employee benefits benchmarking tools in 2026 (and how to compare them) | Ravio"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://www.bizjournals.com/washington/news/2026/04/02/gdit-layoffs-rockville-bethesda.html",
+      "title": "General Dynamics IT plans to cut nearly 100 Maryland jobs - Washington Business Journal | Bizjournals"
+    },
+    {
+      "slot": "financials",
+      "url": "https://investorrelations.gd.com/financial-reports/quarterly-financial-results/default.aspx",
+      "title": "General Dynamics - Financial Reports - Quarterly Financial Results | Gd"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://breakingdefense.com/2026/10/general-dynamics-ceo-phebe-novakovic-to-step-down-in-2027/",
+      "title": "General Dynamics CEO Phebe Novakovic to step down in 2027 - Breaking Defense | Breakingdefense"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/general-dynamics",
+      "title": "General Dynamics Culture | Comparably"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/General-Dynamics-work-life-balance-Reviews-EI_IE276.0,16_KH17,34.htm",
+      "title": "General Dynamics \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/General-Dynamics-DEI-E276.htm",
+      "title": "General-Dynamics: Diversity, Equity & Inclusion | Glassdoor | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.glassdoor.com/Reviews/Employee-Review-General-Dynamics-Information-Technology-E18661-RVW96422912.htm",
+      "title": "General Dynamics Information Technology - Internal Mobility Experience career growth and development | Glassdoor"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.glassdoor.com/Benefits/General-Dynamics-Information-Technology-Tuition-Assistance-US-BNFT41_E18661_N1.htm",
+      "title": "General Dynamics Information Technology Employee Benefit: Tuition Assistance | Glassdoor"
+    }
+  ]
+}

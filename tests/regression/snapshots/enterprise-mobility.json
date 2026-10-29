@@ -1,0 +1,133 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.enterprisemobility.com/",
+      "title": "Introducing Enterprise Mobility | Enterprisemobility"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=H0nQwVyHfsE",
+      "title": "Strengthening Communities Across the Globe | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.enterprisemobility.com/en/careers/our-culture/community-impact.html",
+      "title": "Community Impact | Enterprise Mobility Careers"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.enterprisemobility.com/en/index.html",
+      "title": "Total mobility solutions, powered by our | Enterprisemobility"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.enterprisemobility.com/en/brands-services.html",
+      "title": "Brands & Services | Enterprisemobility"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.enterprisemobility.com/en/careers.html",
+      "title": "Home | Enterprise Mobility Careers"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.enterprisemobility.com/en/about.html",
+      "title": "About Us | Enterprisemobility"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.enterprisemobility.com/en/careers/our-story/our-brands.html",
+      "title": "The Enterprise Mobility Brands | Enterprise Mobility Careers"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.enterprisemobility.com/en/contact-us.html",
+      "title": "Contact Us | Enterprisemobility"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://www.enterprisemobility.com/en/careers/working-here/benefits-and-rewards.html",
+      "title": "Benefits and Rewards | Enterprise Mobility Careers"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/Enterprise-Mobility-Software-Engineer-Salaries-E354335_D_KO20,37.htm",
+      "title": "Enterprise Mobility Software Engineer Salaries (90 Salaries submitted) | Glassdoor"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.indeed.com/cmp/Enterprise-Mobility-2/salaries/Software-Engineer",
+      "title": "Software Engineer Salaries in the United States for Enterprise Mobility | Indeed.com"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.indeed.com/cmp/Enterprise-Mobility-2/faq/as-a-management-trainee-what-are-some-questions-i-can-expect-to-answer-during-the-phone-and-in-house-interviews-is-salary-a-negotiation-or-not?quid=1c1akpojeakgiejf",
+      "title": "As a Management Trainee, what are some questions I can expect to answer during the phone and in-house interviews? Is salary a negotiation or not? | Enterprise Mobility | Indeed.com"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.reddit.com/r/EnterpriseCarRental/comments/1onyjzw/does_enterprise_negotiate_salary/",
+      "title": "r/EnterpriseCarRental on Reddit: Does Enterprise negotiate salary? | Reddit"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Benefits/Enterprise-Mobility-US-Benefits-EI_IE354335.0,19_IL.20,22_IN1.htm",
+      "title": "Enterprise Mobility: Employee Benefits and Perks | Glassdoor"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Enterprise-Mobility-2/reviews",
+      "title": "Enterprise Mobility Employee Reviews | Indeed"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://ravio.com/blog/employee-benefits-benchmarking-tools",
+      "title": "Top 7 employee benefits benchmarking tools in 2026 (and how to compare them) | Ravio"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://www.automotive-fleet.com/news/enterprise-mobility-announced-acquisition-with-hogan",
+      "title": "Enterprise Mobility Announced Acquisition with Hogan | Automotive Fleet"
+    },
+    {
+      "slot": "financials",
+      "url": "https://investor.enterprisebank.com/news/news-details/2026/Enterprise-Financial-Services-Corp-Reports-Second-Quarter-2026-Results/default.aspx",
+      "title": "Enterprise Financial Services Corp, Enterprise Financial Services Corp Reports Second Quarter 2026 Results | Enterprisebank"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://builtin.com/company/enterprise-mobility/faq/leadership-management",
+      "title": "Leadership at Enterprise Mobility: How Are the Managers at Enterprise Mobility? 2026 | Built In"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Enterprise-Holdings/reviews?ftopic=culture&start=20",
+      "title": "Working at Enterprise Mobility: 3,431 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Enterprise-Mobility-work-life-balance-Reviews-EI_IE354335.0,19_KH20,37.htm",
+      "title": "Enterprise Mobility \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Enterprise-Mobility-DEI-E354335.htm",
+      "title": "Diversity, Equity & Inclusion (DEI) at Enterprise Mobility | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Enterprise-Mobility-2/reviews?ftext=work+from+home",
+      "title": "Working at Enterprise Mobility: 361 Reviews | Indeed.com"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.indeed.com/cmp/Enterprise-Mobility-2/faq/does-this-company-offer-tuition-reimbursement?quid=1iclegispg6q8800",
+      "title": "Does this company offer tuition reimbursement? | Enterprise Mobility | Indeed.com"
+    }
+  ]
+}

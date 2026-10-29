@@ -1,0 +1,128 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.leidos.com/",
+      "title": "Leidos: Innovative Solutions through Information Technology, Engineering and Science | Leidos"
+    },
+    {
+      "slot": "about",
+      "url": "https://www.leidos.com/company/who-we-are",
+      "title": "Who We Are | Leidos"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=fk_QAJ2hldo",
+      "title": "Outcomes Unlocked Episode 2: Charting the Unknown | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.leidos.com/company/responsibility-and-sustainability/community",
+      "title": "Community | Leidos"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.leidos.com/newsroom",
+      "title": "Newsroom | Leidos"
+    },
+    {
+      "slot": "investor",
+      "url": "https://investors.leidos.com/",
+      "title": "Investor Relations | Leidos"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.leidos.com/company",
+      "title": "Company | Leidos"
+    },
+    {
+      "slot": "additional",
+      "url": "https://careers.leidos.com/search/jobs",
+      "title": "Job Search Results | Leidos"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.leidos.com/insights/what-does-leidos-do",
+      "title": "What does Leidos do? | Leidos"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://www.leidos.com/careers/pay-benefits",
+      "title": "Pay & Benefits | Leidos"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/leidos/salaries/software-engineer",
+      "title": "Leidos Software Engineer Salary | $84.4K-$209K+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.payscale.com/research/US/Employer=Leidos/Salary",
+      "title": "Average Leidos Salary in 2026 | PayScale"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.glassdoor.com.au/Community/salaries-in-stem/655ebefa96d0b9678dffa20a",
+      "title": "Had an interview with Leidos today, can confidently say that I aced it! I’m expecting them to call next week with an offer. On that note, what would be a good salary to negotiate for? On the pre-screening questions they sent prior to the interview I put 90K but was wondering if I should try to push for a bit more, like maybe 95K. I have 2YOE, the position is remote and the office I will be reporting to is in the Midwest but I live in the Southwest. Thoughts? | Glassdoor Forum"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.hellointerview.com/learn/salary-negotiation/introduction",
+      "title": "Software Engineer Salary Negotiation | Salary Negotiation"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Leidos/reviews",
+      "title": "Leidos Employee Reviews | Indeed"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Reviews/Leidos-Reviews-E730545.htm",
+      "title": "Leidos Reviews (5,228): Pros & Cons of Working At Leidos | Glassdoor"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.indeed.com/companies/compare/Leidos-vs-Northrop-Grumman-b22d7c64826ad037-3e8562386cf03d35",
+      "title": "Compare working at Leidos vs Northrop Grumman | Indeed.com"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "financials",
+      "url": "https://investors.leidos.com/news-releases/news-release-details/leidos-delivers-strong-second-quarter-and-enhances-full-year",
+      "title": "Leidos Delivers Strong Second Quarter and Enhances Full-Year Guidance | Leidos"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://creately.com/org-chart/fortune-500/leidos-holdings/",
+      "title": "Leidos Holdings Org Chart: Sector Presidents and Leadership | Creately"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Leidos-culture-Reviews-EI_IE730545.0,6_KH7,14.htm",
+      "title": "Leidos \"culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Leidos-work-life-balance-Reviews-EI_IE730545.0,6_KH7,24.htm",
+      "title": "Leidos \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Leidos-DEI-E730545.htm",
+      "title": "Diversity, Equity & Inclusion (DEI) at Leidos | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Leidos/reviews?ftopic=jobsecadv",
+      "title": "Working at Leidos: 913 Reviews about Job security and advancement | Indeed.com"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://learn.org/financial-aid/leidos-tuition-reimbursement",
+      "title": "Leidos Tuition Reimbursement & Educational Benefits 2026 | Learn"
+    }
+  ]
+}

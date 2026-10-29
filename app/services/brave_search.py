@@ -58,7 +58,7 @@ def is_english_domain(url: str) -> bool:
     return True
 
 
-async def brave_search(query: str, api_key: str, category: str = None):
+async def brave_search(query: str, api_key: str, category: str = None, freshness: str = None):
     """
     Performs a Brave search and returns results.
     Filters to English-only content from English-speaking domains.
@@ -67,6 +67,7 @@ async def brave_search(query: str, api_key: str, category: str = None):
         query: Search query string
         api_key: Brave API key
         category: Optional category hint (e.g., "social" to filter social media URLs)
+        freshness: Optional Brave freshness filter (e.g., "py" = past year)
 
     Returns:
         List of dicts with url, title, description keys
@@ -85,6 +86,8 @@ async def brave_search(query: str, api_key: str, category: str = None):
         "country": "us",          # Country preference
         "result_filter": "web"
     }
+    if freshness:
+        params["freshness"] = freshness
 
     try:
         async with httpx.AsyncClient() as client:

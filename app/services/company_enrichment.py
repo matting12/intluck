@@ -326,3 +326,13 @@ def sync_enrich_and_save_company(company_name: str):
         logger.error(f"Error in background enrichment for '{company_name}': {e}")
         import traceback
         traceback.print_exc()
+
+
+def get_known_industry(company_name: str) -> str:
+    """Industry from company_info.json, or "" if unknown."""
+    company_lower = company_name.lower().strip()
+    for known, info in _load_company_info().items():
+        if known.lower() == company_lower:
+            industry = info.get("industry", "")
+            return "" if industry == "Unknown" else industry
+    return ""

@@ -9,7 +9,7 @@ import logging
 
 from app.services.domain_identifier import identify_company_domain
 from app.services.brave_search import brave_search, brave_search_videos
-from app.services.company_enrichment import is_known_company, sync_enrich_and_save_company, get_known_domain
+from app.services.company_enrichment import is_known_company, sync_enrich_and_save_company, get_known_domain, get_known_industry
 from app.services.precomputed_results import get_precomputed_company_info
 from app.models.company_info import CompanyInfoResult
 from app.utils.link_formatting import format_link_for_display
@@ -21,7 +21,7 @@ from app.utils.company_link_selection import select_top_link_per_category, order
 from app.utils.youtube_resolver import resolve_youtube_channel_to_video
 from app.utils.domain_overrides import get_domain_override
 from app.utils.salary_queries import build_salary_benefits_queries
-from app.utils.salary_link_selection import select_top_salary_link_per_category, order_salary_by_priority, select_additional_salary_links
+from app.utils.salary_link_selection import select_salary_links
 from app.utils.link_checker import filter_dead_links
 
 
@@ -764,7 +764,6 @@ async def get_salary_benefits(
     state: str = None,
     city: str = None,
     zipcode: str = None,
-    max_links: int = 9,
     no_cache: bool = False
 ):
     """
@@ -843,7 +842,7 @@ async def get_salary_benefits(
     logger.info(f"Using location: {city_state}, state: {state_abbr}")
     
     # PASS 3: Build category-specific queries
-    queries = build_salary_benefits_queries(company, domain, job_title, city_state, state_abbr)
+    queries = build_salary_benefits_queries(company, domain, job_title, city_state, state_abbr, get_known_industry(company))
     logger.info(f"Built {len(queries)} salary/benefits queries")
     
     # PASS 4: Execute searches in parallel
@@ -870,22 +869,9 @@ async def get_salary_benefits(
     
     logger.info(f"Got results for {len([c for c, r in search_results.items() if r])} categories")
     
-    # PASS 6: Select top link per category (no GPT needed)
-    # Filter to only links with company name in title for higher relevance
-    categorized_links = select_top_salary_link_per_category(search_results, company_name=company)
-    logger.info(f"Selected {len(categorized_links)} links (1 per category, filtered by company name in title)")
-    
-    # PASS 7: Order by priority
-    ordered_links = order_salary_by_priority(categorized_links)
-
-    # PASS 7.1: Remaining slots - fill remaining room (up to max_links) with more benefits/perks reviews
-    remaining_slots = max(0, max_links - len(ordered_links))
-    additional_links = select_additional_salary_links(
-        search_results, categorized_links,
-        company_name=company, max_links=remaining_slots
-    )
-    ordered_links.extend(additional_links)
-    logger.info(f"Added {len(additional_links)} additional benefits review links")
+    # PASS 6: Fill box 3 slots in priority order (no GPT needed)
+    ordered_links = select_salary_links(search_results, company_name=company)
+    logger.info(f"Selected {len(ordered_links)} salary/benefits links")
 
     # PASS 8: Deduplicate by URL
     seen_urls = set()

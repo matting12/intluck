@@ -16,6 +16,7 @@ output isn't deterministic.
 """
 
 import asyncio
+import functools
 import json
 import logging
 import re
@@ -49,9 +50,11 @@ def slug(company: str) -> str:
     return re.sub(r'[^a-z0-9]+', '-', company.lower()).strip('-')
 
 
-# The real external calls, captured before any patching
+# The real external calls, captured before any patching — plus box 4's selection,
+# which compares news dates against today (replays use the recording's date instead)
 REAL = (routes.brave_search, routes.identify_company_domain,
-        routes.filter_dead_links, company_selection.resolve_youtube_channel_to_video)
+        routes.filter_dead_links, company_selection.resolve_youtube_channel_to_video,
+        routes.select_review_links)
 
 
 def _brave_key(query, category, freshness):
@@ -63,6 +66,7 @@ class Recorder:
 
     def __init__(self):
         self.data = {'brave': {}, 'domains': {}, 'dead_urls': [], 'youtube': {}}
+        self.today = date.today()
 
     async def brave_search(self, query, api_key, category=None, freshness=None):
         for attempt in range(3):
@@ -99,6 +103,7 @@ class Replayer:
     def __init__(self, data):
         self.data = data
         self.misses = []
+        self.today = date.fromisoformat(data['recorded_on'])
 
     async def brave_search(self, query, api_key, category=None, freshness=None):
         key = _brave_key(query, category, freshness)
@@ -155,7 +160,8 @@ class Filler(Replayer):
         return self.data['youtube'][link.get('url', '')]
 
 
-def _patch(brave_search, identify_company_domain, filter_dead_links, resolve_youtube):
+def _patch(brave_search, identify_company_domain, filter_dead_links, resolve_youtube, select_review_links):
+    routes.select_review_links = select_review_links
     routes.brave_search = brave_search
     routes.identify_company_domain = identify_company_domain
     routes.filter_dead_links = filter_dead_links
@@ -163,7 +169,8 @@ def _patch(brave_search, identify_company_domain, filter_dead_links, resolve_you
 
 
 def _patch_fake(fake):
-    _patch(fake.brave_search, fake.identify_company_domain, fake.filter_dead_links, fake.resolve_youtube)
+    _patch(fake.brave_search, fake.identify_company_domain, fake.filter_dead_links, fake.resolve_youtube,
+           functools.partial(REAL[4], today=fake.today))
 
 
 async def run_boxes(company: str, job_title: str) -> dict:

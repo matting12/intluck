@@ -1,0 +1,133 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.cvshealth.com/",
+      "title": "Leading Health Solutions Company | CVS Health"
+    },
+    {
+      "slot": "about",
+      "url": "https://jobs.cvshealth.com/us/en/who-we-are",
+      "title": "Who We Are at CVS Health | Our Mission & Impact"
+    },
+    {
+      "slot": "social",
+      "url": "https://www.linkedin.com/company/cvshealth",
+      "title": "CVS Health | LinkedIn"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=4ENl2A0rhtQ",
+      "title": "Meet the CVS Pharmacist Bringing Care Across Rural Vermont | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.cvshealth.com/news/community/cvs-health-launches-transform-health-2030-csr-strategy.html",
+      "title": "CVS Health launches ‘Transform Health 2030’ corporate social responsibility strategy with its 13th annual CSR report | Cvshealth"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.cvshealth.com/news/press-releases.html",
+      "title": "Press Releases | CVS Health"
+    },
+    {
+      "slot": "investor",
+      "url": "https://investors.cvshealth.com/overview/default.aspx",
+      "title": "CVS Health | Investor Relations"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.cvshealth.com/news.html",
+      "title": "Health News & Insights | CVS Health"
+    },
+    {
+      "slot": "additional",
+      "url": "https://jobs.cvshealth.com/us/en/home",
+      "title": "CVS Health Careers | Cvshealth"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://jobs.cvshealth.com/us/en/benefits",
+      "title": "CVS Health Careers Benefits | Wellness & Rewards"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/cvs-health/salaries/software-engineer",
+      "title": "CVS Health Software Engineer Salary | $112K-$254K+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/CVS-Health-Software-Engineer-Salaries-E437_D_KO11,28.htm",
+      "title": "CVS Health Software Engineer Salaries (218 Salaries submitted) | Glassdoor"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.reddit.com/r/CVS/comments/13sktn5/negotiate_pay_for_job_offer/",
+      "title": "Negotiate pay for job offer? : r/CVS | Reddit"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://forums.studentdoctor.net/threads/can-you-negotiate-your-offer-from-cvs.788019/",
+      "title": "Can you negotiate your offer from CVS? | Student Doctor Network Forums"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.comparably.com/companies/cvs-health/reviews",
+      "title": "CVS Health Employee Reviews | Comparably"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/CVS-Health/reviews",
+      "title": "CVS Health Employee Reviews | Indeed"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.youtube.com/watch?v=dsrVrjqbzOg",
+      "title": "CVS Health Offering Employee Bonuses, Added Benefits During Pandemic - YouTube | Youtube"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.benefitspro.org/reports/2871-compare-cvs-health-s-employee-health-insurance-and-benefits",
+      "title": "Compare CVS HEALTH's Employee Health Insurance and Benefits - benefitsPRO.org | Benefitspro"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "financials",
+      "url": "https://investors.cvshealth.com/news/news-details/2026/CVS-HEALTH-CORPORATION-REPORTS-FOURTH-QUARTER-AND-FULL-YEAR-2025-RESULTS/default.aspx",
+      "title": "CVS Health | CVS HEALTH CORPORATION REPORTS FOURTH QUARTER AND FULL-YEAR 2025 RESULTS"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.digitalcommerce360.com/2024/10/21/cvs-names-new-ceo-as-karen-lynch-steps-down/",
+      "title": "CVS names new CEO as Karen Lynch steps down | Digitalcommerce360"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/COMPANIES/CVS-HEALTH?linkId=115419970",
+      "title": "CVS Health Culture | Comparably"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/CVS-Health-work-life-balance-Reviews-EI_IE437.0,10_KH11,28.htm",
+      "title": "CVS Health \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/CVS-Health-DEI-E437.htm",
+      "title": "CVS-Health: Diversity, Equity & Inclusion | Glassdoor | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/CVS-Health/reviews?ftopic=jobsecadv",
+      "title": "Working at CVS Health: 13,471 Reviews about Job security and advancement | Indeed.com"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://learn.org/financial-aid/cvs-tuition-reimbursement",
+      "title": "CVS Tuition Reimbursement & Scholarships 2027 - Learn.org | Learn"
+    }
+  ]
+}

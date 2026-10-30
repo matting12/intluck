@@ -1,0 +1,138 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.fidelity.com/",
+      "title": "Fidelity Investments: Invest, Trade, Plan for Retirement &amp; Build Wealth | Fidelity"
+    },
+    {
+      "slot": "social",
+      "url": "https://www.facebook.com/fidelityinvestments/",
+      "title": "Fidelity Investments (@fidelityinvestments) | Facebook"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=n83rrMIsMS0",
+      "title": "Are Oil Prices A Recession Indicator? | Quant & Colleagues | Fidelity Investments"
+    },
+    {
+      "slot": "community",
+      "url": "https://jobs.fidelity.com/social-responsibility/",
+      "title": "Social Responsibility & Sustainability at Fidelity | Fidelity Jobs"
+    },
+    {
+      "slot": "news",
+      "url": "https://newsroom.fidelity.com/pressreleases",
+      "title": "Press releases - Fidelity Newsroom | Fidelity"
+    },
+    {
+      "slot": "investor",
+      "url": "https://institutional.fidelity.com/app/literature/annual-report/705632/fidelity.html",
+      "title": "Fidelity Annual Report | Fidelity"
+    },
+    {
+      "slot": "additional",
+      "url": "https://newsroom.fidelity.com/pressreleases?pressreleases=research",
+      "title": "Press releases - Fidelity Newsroom | Fidelity"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.fidelity.com/bin-public/060_www_fidelity_com/documents/about-fidelity/2023-Fidelity-Investments-Annual-Report.pdf",
+      "title": "2023 Fidelity Investments Annual Report | Fidelity"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.fidelity.com/bin-public/060_www_fidelity_com/documents/about-fidelity/2024-Fidelity-Investments-Annual-Report.pdf",
+      "title": "Annual Report 2024 | Fidelity"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://nb.fidelity.com/public/nbpreloginnav/spa/fidelitywork/core/choosing-benefits",
+      "title": "Choosing the Right Workplace Benefits | Fidelity NetBenefits"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/fidelity-investments/salaries/software-engineer",
+      "title": "Fidelity Investments Software Engineer Salary | $92.2K-$426K+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/Fidelity-Investments-Software-Engineer-Salaries-E2786_D_KO21,38.htm",
+      "title": "Fidelity Investments Software Engineer Salaries (831 Salaries submitted) | Glassdoor"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.reddit.com/r/Fidelity/comments/1fdiyv3/pay_negotiation/",
+      "title": "r/Fidelity on Reddit: Pay negotiation? | Reddit"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Fidelity-Investments/reviews",
+      "title": "Fidelity Investments Employee Reviews | Indeed"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Reviews/Fidelity-Investments-Reviews-E2786.htm",
+      "title": "Fidelity Investments Reviews (18,813): Pros & Cons of Working At Fidelity Investments | Glassdoor"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.youtube.com/watch?v=yzWh7ImltP0",
+      "title": "Working At Fidelity Investments - Everything You Need To Know! - YouTube | Youtube"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.indeed.com/companies/compare/Fidelity-Investments-vs-Fisher-Investments-bb0a5ccacf72f367-3134b2d1b42e1d48",
+      "title": "Compare working at Fidelity Investments vs Fisher Investments | Indeed.com"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://www.bizjournals.com/cincinnati/news/2026/05/28/fidelity-layoffs-hit-covington-but-growth-on-tap.html",
+      "title": "Fidelity Investments cuts jobs in Covington but plans expansion - Cincinnati Business Courier | Bizjournals"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.bostonglobe.com/2026/03/02/business/fidelity-investments-record-revenue-2025/",
+      "title": "Fidelity Investments sees record revenue in 2025 - The Boston Globe | Bostonglobe"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://thefinancialtechnologyreport.com/fidelity-investments-appoints-former-mastercard-cto-george-maddaloni-as-cloud-cio/",
+      "title": "Fidelity Investments Appoints Former Mastercard CTO George Maddaloni As Cloud CIO | The Financial Technology Report."
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Fidelity-Investments-work-culture-Reviews-EI_IE2786.0,20_KH21,33.htm",
+      "title": "Fidelity Investments \"work culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Fidelity-Investments-work-life-balance-Reviews-EI_IE2786.0,20_KH21,38.htm",
+      "title": "Fidelity Investments \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Fidelity-Investments-DEI-E2786.htm",
+      "title": "Fidelity Investments: Diversity, Equity & Inclusion | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Fidelity-Investments/reviews?fcountry=ALL&ftopic=jobsecadv",
+      "title": "Working at Fidelity Investments: 2,779 Reviews about Job security and advancement | Indeed.com"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.glassdoor.com/Benefits/Fidelity-Investments-Tuition-Assistance-US-BNFT41_E2786_N1.htm",
+      "title": "Fidelity Investments Employee Benefit: Tuition Assistance | Glassdoor"
+    }
+  ]
+}

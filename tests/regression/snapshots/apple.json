@@ -1,0 +1,133 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.apple.com/",
+      "title": "Apple | Apple"
+    },
+    {
+      "slot": "about",
+      "url": "https://investor.apple.com/our_values/default.aspx",
+      "title": "Our Values - Apple | Apple"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=hnZI5uUSdEo",
+      "title": "New MacBook Pro with PROLED XDR Display: The first-ever Mac with Touch | Youtube"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.apple.com/newsroom/",
+      "title": "Newsroom - Apple | Apple"
+    },
+    {
+      "slot": "investor",
+      "url": "https://investor.apple.com/investor-relations/default.aspx",
+      "title": "Investor Relations - Apple | Apple"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.apple.com/careers/us/life-at-apple/shared-values.html",
+      "title": "Careers at Apple: Read our people’s Shared Values stories. | Apple"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.apple.com/careers/us/life-at-apple.html",
+      "title": "Life at Apple: Culture, Values and Growth - Careers at Apple | Apple"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.apple.com/in/legal/more-resources/csr-report/",
+      "title": "Annual Report on Corporate Social Responsibility (CSR) ... | Apple"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.apple.com/legal/more-resources/docs/India-CSR-2018-19-AnnualReport.pdf",
+      "title": "Corporate Social Responsibility Annual Report | Apple"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://www.apple.com/careers/us/life-at-apple/benefits.html",
+      "title": "Careers at Apple: Explore benefits that make a difference. | Apple"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/apple/salaries/software-engineer",
+      "title": "Apple Software Engineer Salary | $174K-$1.48M+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/Apple-Software-Engineer-Remote-Salaries-EJI_IE1138.0,5_KO6,23_IL.24,30_IS11047.htm",
+      "title": "Apple Software Engineer Salaries in Remote | Glassdoor"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://fearlesssalarynegotiation.com/apple-salary-negotiation/",
+      "title": "How to negotiate your Apple job offer | Fearlesssalarynegotiation"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://igotanoffer.com/en/advice/apple-salary-offer-negotiation",
+      "title": "Apple Job Offer Negotiation: 4 Steps to a $50k+ Increase - IGotAnOffer | Igotanoffer"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.comparably.com/companies/apple/reviews",
+      "title": "Apple Employee Reviews | Comparably"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Apple/reviews",
+      "title": "Apple Employee Reviews | Indeed"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.youtube.com/watch?v=uCxQlJOChnw",
+      "title": "Apple Store Employee Benefits - YouTube | Youtube"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://www.firstpost.com/tech/apple-restructures-hardware-team-under-john-ternus-to-streamline-operations-and-cut-management-layers-report-14055230.html",
+      "title": "Apple restructures hardware team under John Ternus to streamline operations and cut management layers: Report | Firstpost"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/",
+      "title": "Apple reports third quarter results - Apple | Apple"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://abcnews.com/US/apple-ceo-tim-cook-stepping-john-ternus-set/story?id=132217743",
+      "title": "Apple CEO Tim Cook is stepping down, John Ternus set to replace him - ABC News | Abcnews"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Apple/reviews?ftopic=culture",
+      "title": "Working at Apple: 3,368 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Apple-work-life-balance-Reviews-EI_IE1138.0,5_KH6,23.htm",
+      "title": "Apple \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Apple-DEI-E1138.htm",
+      "title": "Diversity, Equity & Inclusion (DEI) at Apple | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.comparably.com/companies/apple/studies/career-advancement",
+      "title": "Career Advancement at Apple | Comparably"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://scholarships360.org/financial-aid/apple-tuition-reimbursement/",
+      "title": "How to Get Apple Tuition Reimbursement - Scholarships360 | Scholarships360"
+    }
+  ]
+}

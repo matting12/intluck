@@ -1,0 +1,103 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.lw.com/",
+      "title": "Latham & Watkins LLP | Global Law Firm"
+    },
+    {
+      "slot": "social",
+      "url": "https://id.linkedin.com/company/latham-&-watkins",
+      "title": "Latham & Watkins | LinkedIn"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=Eq2om43Aglw",
+      "title": "The LathamTECH Podcast: The Rise of Energy Tech | Youtube"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.lw.com/en/about-us",
+      "title": "About Us | Lw"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.lw.com/en/public-company-board-insights/about-us",
+      "title": "Public Company & Board Insights — About Us | Lw"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.lw.com/en/global-citizenship/pro-bono-and-community-service",
+      "title": "Pro Bono & Community Service | Lw"
+    },
+    {
+      "slot": "additional",
+      "url": "https://es.linkedin.com/company/latham-&-watkins?trk=ppro_cprof",
+      "title": "Latham & Watkins | LinkedIn"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/latham-and-watkins/salaries/legal",
+      "title": "Latham & Watkins Legal Salary | $225K-$310K+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/Latham-and-Watkins-Associate-Attorney-Salaries-E3263_D_KO19,37.htm",
+      "title": "Latham & Watkins Associate Attorney Salaries (48 Salaries submitted) | Glassdoor"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.larsonmaddox.com/en-us/industry-insights/career-advice/how-to-negotiate-a-salary-you-deserve",
+      "title": "How to Negotiate Your Salary as a Lawyer | Larson Maddox"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.bcgsearch.com/article/900054316/Sealing-the-Deal-How-to-Ace-a-Legal-Job-Offer-Negotiation/",
+      "title": "Sealing the Deal: How to Ace a Legal Job Offer Negotiation | BCGSearch.com"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Reviews/Latham-and-Watkins-Reviews-E3263.htm",
+      "title": "Latham & Watkins Reviews (830): Pros & Cons of Working At Latham & Watkins | Glassdoor"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Latham-&-Watkins-LLP/reviews",
+      "title": "Working at Latham & Watkins LLP: 155 Reviews | Indeed.com"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.indeed.com/companies/compare/Kirkland-&-Ellis-7-vs-Latham-&-Watkins-LLP-f54f1f9502a2af14-b2779bfc5e9f976c",
+      "title": "Compare working at Kirkland & Ellis vs Latham & Watkins LLP | Indeed.com"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "financials",
+      "url": "https://www.statista.com/statistics/877883/latham-and-watkins-gross-revenue/",
+      "title": "Latham & Watkins revenue 2025| Statista | Statista"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.lw.com/en/news/2026/10/latham-watkins-names-new-partners-2026",
+      "title": "Latham Watkins Names New Partners 2026 | Lw"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Latham-&-Watkins-LLP/reviews?ftopic=culture",
+      "title": "Working at Latham & Watkins LLP: Employee Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Latham-and-Watkins-work-life-balance-Reviews-EI_IE3263.0,18_KH19,36.htm",
+      "title": "Latham & Watkins \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Latham-&-Watkins-LLP/reviews?ftopic=jobsecadv",
+      "title": "Working at Latham & Watkins LLP: Employee Reviews about Job Security & Advancement | Indeed.com"
+    }
+  ]
+}

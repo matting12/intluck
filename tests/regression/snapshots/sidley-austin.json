@@ -1,0 +1,113 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.sidley.com/en",
+      "title": "Sidley Austin LLP | Global Law Firm | Sidley Austin LLP"
+    },
+    {
+      "slot": "about",
+      "url": "https://www.sidley.com/en/us/ourstory/mission-statement/",
+      "title": "Who We Are | Sidley Austin LLP"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=XCRxxwvYFsw",
+      "title": "Sidley’s Kai Liekefett Debates Opposing Activist-Side Lawyer from Olshan on Bloomberg TV | Youtube"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.sidley.com/en/newslanding",
+      "title": "News | Sidley Austin LLP"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.sidley.com/en/newslanding/newpressreleases/2026/03/sidley-moves-to-recently-completed-23springs-tower-in-uptown-dallas",
+      "title": "Sidley Moves to Recently Completed 23Springs Tower in Uptown Dallas | News | Sidley Austin LLP"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.sidley.com/en/newslanding/newpressreleases/2026/02/sidley-moves-to-new-52755-sf-office-in-iconic-san-francisco-tower-at-101-california-street",
+      "title": "Sidley Moves to New 52,755 s/f Office in Iconic San Francisco Tower at 101 California Street | News | Sidley Austin LLP"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.sidley.com/en/us/social-responsibility/",
+      "title": "Social Responsibility | Sidley Austin LLP"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.sidley.com/en/eu/ourstory/ourstorieslanding/",
+      "title": "Our Story | Sidley"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.sidley.com/en/careers/business-professionals-north-america",
+      "title": "North America | Careers | Sidley Austin LLP"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/sidley-austin/salaries/legal",
+      "title": "Sidley Austin Legal Salary | $200K-$235K+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/Sidley-Austin-Salaries-E3375.htm",
+      "title": "How Much Does Sidley Austin Pay in 2026? (1,514 Salaries) | Glassdoor"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.larsonmaddox.com/en-us/industry-insights/career-advice/how-to-negotiate-a-salary-you-deserve",
+      "title": "How to Negotiate Your Salary as a Lawyer | Larson Maddox"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.bcgsearch.com/article/900054316/Sealing-the-Deal-How-to-Ace-a-Legal-Job-Offer-Negotiation/",
+      "title": "Sealing the Deal: How to Ace a Legal Job Offer Negotiation | BCGSearch.com"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Sidley-Austin/reviews",
+      "title": "Sidley Austin Employee Reviews | Indeed"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Reviews/Sidley-Austin-Reviews-E3375.htm",
+      "title": "Sidley Austin Reviews (693): Pros & Cons of Working At Sidley Austin | Glassdoor"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.benefitspro.org/reports/6201-compare-sidley-austin-llp-s-employee-health-insurance-and-benefits",
+      "title": "Compare SIDLEY AUSTIN LLP's Employee Health Insurance and Benefits - benefitsPRO.org | Benefitspro"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://www.sidley.com/en/newslanding/newsannouncements/2026/10/introducing-sidleycatalyst-built-to-accelerate-growth",
+      "title": "Introducing SidleyCatalyst: Built to Accelerate Growth | News | Sidley Austin LLP"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Sidley-Austin/reviews?fcountry=ALL&ftopic=culture",
+      "title": "Working at Sidley Austin: 53 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Sidley-Austin-work-life-balance-Reviews-EI_IE3375.0,13_KH14,31.htm",
+      "title": "Sidley Austin \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://media2.vault.com/14346631/sidley-austin-llp-diversity-report-edit.pdf",
+      "title": "Sidley Austin LLP 2021 Vault Law Firm Diversity Survey LEADERSHIP Head of Firm | Vault"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Sidley-Austin-LLP/reviews?fcountry=ALL&ftopic=jobsecadv",
+      "title": "Working at Sidley Austin LLP: Employee Reviews about Job Security & Advancement | Indeed.com"
+    }
+  ]
+}

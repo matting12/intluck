@@ -1,0 +1,133 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.aboutamazon.com/",
+      "title": "Amazon News: Breaking news about Amazon and latest company updates | Aboutamazon"
+    },
+    {
+      "slot": "about",
+      "url": "https://www.aboutamazon.com/about-us",
+      "title": "About Amazon: Mission, businesses, and innovation | Aboutamazon"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=hHipVzPlVk4",
+      "title": "Holiday hosting just got a whole lot easier🎄#amazonfinds | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.aboutamazon.com/impact/community",
+      "title": "Amazon community impact: Housing, education, food, volunteering, and disaster relief | Aboutamazon"
+    },
+    {
+      "slot": "news",
+      "url": "https://press.aboutamazon.com/press-release-archive",
+      "title": "Press Center - Amazon's Press Releases - Amazon News | Aboutamazon"
+    },
+    {
+      "slot": "investor",
+      "url": "https://ir.aboutamazon.com/quarterly-results/default.aspx",
+      "title": "Amazon.com, Inc. - Quarterly results | Aboutamazon"
+    },
+    {
+      "slot": "role_specific",
+      "url": "https://www.aboutamazon.com/news/aws/werner-vogels-amazon-cto-predictions-2026",
+      "title": "Amazon CTO Werner Vogels predicts the renaissance developer era | Aboutamazon"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.aboutamazon.com/news",
+      "title": "Amazon News | Aboutamazon"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.aboutamazon.com/amazon-news-today",
+      "title": "Amazon news: Latest company news and announcements. | Aboutamazon"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://www.aboutamazon.com/workplace/employee-benefits",
+      "title": "Amazon Employee Benefits | Aboutamazon"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/amazon/salaries/software-engineer",
+      "title": "Amazon Software Engineer Salary | $181K-$1.66M+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/Amazon-Software-Engineer-Remote-Salaries-EJI_IE6036.0,6_KO7,24_IL.25,31_IS11047.htm",
+      "title": "Amazon Software Engineer Salaries in Remote | Glassdoor"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://igotanoffer.com/en/advice/Amazon-job-offer-negotiation",
+      "title": "Amazon Salary Negotiation (expert tips to get a $50k+ increase) - IGotAnOffer | Igotanoffer"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-your-amazon-job-offer",
+      "title": "Amazon Salary Negotiation - How To Negotiate an Amazon Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Reviews/Amazon-Reviews-E6036.htm",
+      "title": "Amazon Reviews (212,567): Pros & Cons of Working At Amazon | Glassdoor"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Amazon.com/reviews",
+      "title": "Amazon.com Employee Reviews | Indeed"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.youtube.com/watch?v=a_Z0YrbNCEo",
+      "title": "2024 Amazon Employee Benefits | Youtube"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://www.reuters.com/legal/litigation/amazon-cuts-16000-jobs-globally-broader-restructuring-2026-01-28/",
+      "title": "Amazon axes 16,000 jobs as it pushes AI and efficiency | Reuters"
+    },
+    {
+      "slot": "financials",
+      "url": "https://sterlingcharts.com/companies/amzn",
+      "title": "Amazon (AMZN) Revenue, Financials & KPIs | Sterling"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://tucson.com/news/national/jeff-bezos-is-stepping-down-as-amazon-ceo/article_89a370b2-0800-51eb-b203-b4fe68bbb504.html",
+      "title": "Jeff Bezos is stepping down as Amazon CEO | Tucson"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Amazon.com/reviews?ftopic=culture",
+      "title": "Working at Amazon.com: 7,471 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Amazon.com/reviews?ftopic=wlbalance",
+      "title": "Working at Amazon.com: 14,813 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Amazon-DEI-E6036.htm",
+      "title": "Diversity, Equity & Inclusion (DEI) at Amazon | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.ambitionbox.com/reviews/amazon-career-growth-reviews-114",
+      "title": "Amazon Career Growth Reviews by 1600+ Employees | AmbitionBox"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://hiring.amazon.com/why-amazon/career-advancement/higher-education-support",
+      "title": "Amazon Career Choice - Tuition Reimbursement & Education Support | Amazon"
+    }
+  ]
+}

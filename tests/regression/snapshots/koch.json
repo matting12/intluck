@@ -1,0 +1,123 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.kochinc.com/",
+      "title": "Koch | Creating a world of opportunities"
+    },
+    {
+      "slot": "about",
+      "url": "https://www.kochinc.com/about",
+      "title": "About Us | Company Overview | Koch"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/c/kochindustries",
+      "title": "Koch | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.kochinc.com/stewardship/social-stewardship/community-involvement-philanthropy",
+      "title": "Community, Philanthropy & Pro Bono | Koch"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.kochinc.com/news",
+      "title": "News | Latest Company Updates and Stories | Koch"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.kochinc.com/companies/koch-investment-companies",
+      "title": "Koch Investment Companies Careers | Jobs and Opportunities | Koch"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.kochinc.com/kochict",
+      "title": "Our Presence in Wichita | Community & Careers | Koch"
+    },
+    {
+      "slot": "additional",
+      "url": "https://news.kochinc.com/collections/community-involvement-philanthropy",
+      "title": "Community Involvement and Philanthropy | Koch News"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/koch-industries/salaries/software-engineer",
+      "title": "Koch Industries Software Engineer Salary | $80K-$150K+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/Koch-Software-Engineer-Salaries-E2864_D_KO5,22.htm",
+      "title": "Total salary range for Koch Software Engineer | Glassdoor"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.hellointerview.com/learn/salary-negotiation/introduction",
+      "title": "Software Engineer Salary Negotiation | Salary Negotiation"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Reviews/Koch-Reviews-E2864.htm",
+      "title": "Koch Reviews (1,857): Pros & Cons of Working At Koch | Glassdoor"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Koch/reviews",
+      "title": "Working at Koch: 881 Reviews | Indeed.com"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.youtube.com/watch?v=92umRoYtIYU",
+      "title": "Koch Industries Employee Benefits | Benefit Overview Summary - YouTube"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.benefitspro.org/?id=4407:compare-koch-industries-employee-health-insurance-and-benefits",
+      "title": "Compare KOCH INDUSTRIES' Employee Health Insurance and Benefits - benefitsPRO.org | Benefitspro"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://www.ccjdigital.com/business/mergers-acquisitions/article/15814472/koch-strengthens-retail-fulfillment-strategy-with-sos-acquisition",
+      "title": "Koch Strengthens Retail Fulfillment Strategy with SOS Acquisition | Commercial Carrier Journal"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://theshelbyreport.com/2026/07/15/kauffman-named-to-succeed-koch-in-cfo-role-at-awg/",
+      "title": "Kauffman Named To Succeed Koch As CFO At AWG | Theshelbyreport"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Koch-corporate-culture-Reviews-EI_IE2864.0,4_KH5,22.htm",
+      "title": "Koch \"corporate culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Koch-work-life-balance-Reviews-EI_IE2864.0,4_KH5,22.htm",
+      "title": "Koch \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Charles-Koch-Foundation-DEI-E446388.htm",
+      "title": "Charles-Koch-Foundation: Diversity, Equity & Inclusion | Glassdoor | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.glassdoor.com/FAQ/Koch-Question-FAQ200054-E2864.htm",
+      "title": "Koch Q&A: How are career development opportunities at Koch? <!-- --> | Glassdoor"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.jobzmall.com/koch-industries/faqs/does-koch-industries-offer-any-kind-of-tuition-reimbursement-for-employees",
+      "title": "Does Koch Industries offer any kind of tuition reimbursement for employees? | Koch Industries FAQs | JobzMall"
+    }
+  ]
+}

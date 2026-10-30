@@ -1,0 +1,118 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://abc.xyz/",
+      "title": "Alphabet Investor Relations - Home | Abc"
+    },
+    {
+      "slot": "social",
+      "url": "https://ca.linkedin.com/company/alphabet",
+      "title": "Alphabet | LinkedIn"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=X9mmCagxJTo",
+      "title": "Alphabet 2026 Q3 Earnings Call | Youtube"
+    },
+    {
+      "slot": "news",
+      "url": "https://abc.xyz/investor/news/default.aspx",
+      "title": "Alphabet Investor Relations - Investors - News | Abc"
+    },
+    {
+      "slot": "investor",
+      "url": "https://abc.xyz/investor/",
+      "title": "Alphabet Investor Relations - Investors | Abc"
+    },
+    {
+      "slot": "additional",
+      "url": "https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Date-of-Third-Quarter-2026-Financial-Results-Conference-Call-2026-8tpGZsLS6v/default.aspx",
+      "title": "Alphabet Investor Relations - Alphabet Announces Date of Third Quarter 2026 Financial Results Conference Call | Abc"
+    },
+    {
+      "slot": "additional",
+      "url": "https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Third-Quarter-2026-Results-2026-FCcqxfIfmh/default.aspx",
+      "title": "Alphabet Investor Relations - Alphabet Announces Third Quarter 2026 Results | Abc"
+    },
+    {
+      "slot": "additional",
+      "url": "https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Date-of-Second-Quarter-2026-Financial-Results-Conference-Call-2026-2h_R0kzZHY/default.aspx",
+      "title": "Alphabet Investor Relations - Alphabet Announces Date of Second Quarter 2026 Financial Results Conference Call | Abc"
+    },
+    {
+      "slot": "additional",
+      "url": "https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Fourth-Quarter-2025-and-Fiscal-Year-Results-2026-KEvZIMKBLS/default.aspx",
+      "title": "Alphabet Investor Relations - Alphabet Announces Fourth Quarter 2025 and Fiscal Year Results | Abc"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/google/salaries/software-engineer",
+      "title": "Google Software Engineer Salary | $212K-$2.13M+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.comparably.com/companies/alphabet-inc/salaries",
+      "title": "Alphabet Inc Salaries | Comparably"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.hellointerview.com/learn/salary-negotiation/introduction",
+      "title": "Software Engineer Salary Negotiation | Salary Negotiation"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Reviews/Alphabet-GB-Reviews-E764177.htm",
+      "title": "Alphabet (GB) Reviews (63): Pros & Cons of Working At Alphabet (GB) | Glassdoor"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.comparably.com/companies/alphabet-inc/perks-and-benefits",
+      "title": "Alphabet Inc Benefits | Comparably"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.benefitspro.org/reports/1651-compare-alphabet-s-employee-health-insurance-and-benefits",
+      "title": "Compare ALPHABET's Employee Health Insurance and Benefits - benefitsPRO.org | Benefitspro"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://www.businessinsider.com/chart-shows-google-alphabet-head-count-growth-2026-7",
+      "title": "The AI Boom Didn't Stop Google From Hiring Nearly 12,000 People - Business Insider | Businessinsider"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+      "title": "Alphabet Announces Second Quarter 2026 Results | Sec"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.qsstechnosoft.com/blog/news-54/sundar-pichai-alphabet-ceo-google-167",
+      "title": "Sundar Pichai Named as Alphabet's CEO- Google’s Parent Firm | Qsstechnosoft"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/alphabet-inc",
+      "title": "Alphabet Inc Culture | Comparably"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/alphabet-inc/work-life-balance",
+      "title": "Alphabet Inc Work Life Balance | Comparably"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.ambitionbox.com/reviews/alphabet-mobility-reviews",
+      "title": "Alphabet Mobility Reviews by 7 Employees | Rated 3.1/5 | AmbitionBox"
+    }
+  ]
+}

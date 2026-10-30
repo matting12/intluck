@@ -1,0 +1,138 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.mckesson.com/",
+      "title": "McKesson | Medical Supplies, Pharmaceuticals Healthcare Solutions"
+    },
+    {
+      "slot": "about",
+      "url": "https://biologics.mckesson.com/about-us/",
+      "title": "About Us |Biologics by McKesson | Mckesson"
+    },
+    {
+      "slot": "social",
+      "url": "https://www.linkedin.com/company/mckesson",
+      "title": "McKesson | LinkedIn"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=NjRohELeZwc",
+      "title": "McKesson | Powering Care Locally"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.mckesson.com/commitments/our-impact/",
+      "title": "McKesson: Our Impact & Corporate Responsibility | Mckesson"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.mckesson.com/about-us/newsroom/",
+      "title": "McKesson Newsroom: Latest Updates & Announcements | Mckesson"
+    },
+    {
+      "slot": "investor",
+      "url": "https://investor.mckesson.com/overview/default.aspx",
+      "title": "McKesson Corporation - Investor Relations | Mckesson"
+    },
+    {
+      "slot": "role_specific",
+      "url": "https://www.mckesson.com/about-us/leadership/francisco-fraga/",
+      "title": "Francisco Fraga - Executive Vice President, Chief Information Officer and Chief Technology Officer | McKesson"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.mckesson.com/about-us/",
+      "title": "McKesson: Careers, Solutions & Insights | Mckesson"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://careers.mckesson.com/en/benefits",
+      "title": "Benefits & Perks | Working at McKesson"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/mckesson/salaries/software-engineer",
+      "title": "McKesson Software Engineer Salary | $93.2K-$201K+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/McKesson-Software-Engineer-Salaries-E434_D_KO9,26.htm",
+      "title": "McKesson Software Engineer Salaries (204 Salaries submitted) | Glassdoor"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.hellointerview.com/learn/salary-negotiation/introduction",
+      "title": "Software Engineer Salary Negotiation | Salary Negotiation"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Mckesson/reviews",
+      "title": "McKesson Employee Reviews | Indeed"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Reviews/McKesson-Reviews-E434.htm",
+      "title": "McKesson Reviews (6,103): Pros & Cons of Working At McKesson | Glassdoor"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.youtube.com/watch?v=_yMD17Q-kCQ",
+      "title": "McKesson Employee Benefits | Benefit Overview Summary"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.benefitspro.org/reports/4714-compare-mckesson-s-employee-health-insurance-and-benefits",
+      "title": "Compare MCKESSON's Employee Health Insurance and Benefits - benefitsPRO.org | Benefitspro"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://www.bizjournals.com/kansascity/news/2026/08/03/rx-savings-2026-layoffs-mckesson.html",
+      "title": "McKesson lays off dozens at Rx Savings Solutions amid restructuring - Kansas City Business Journal | Bizjournals"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.mckesson.com/about-us/newsroom/press-releases/2026/mckesson-reports-fiscal-2027-first-quarter-results-and-raises-full-year-adjusted-eps-guidance/",
+      "title": "McKesson Reports Fiscal 2027 First Quarter Results and Raises Full Year Adjusted EPS Guidance | Mckesson"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.stocktitan.net/sec-filings/MCK/8-k-mckesson-corp-reports-material-event-e94262cc87ec.html",
+      "title": "McKesson names new chief strategy officer | MCK 8-K Filing"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/McKesson-culture-Reviews-EI_IE434.0,8_KH9,16.htm",
+      "title": "McKesson \"culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/McKesson-work-life-balance-Reviews-EI_IE434.0,8_KH9,26.htm",
+      "title": "McKesson \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.comparably.com/companies/mckesson/diversity",
+      "title": "Diversity at McKesson | Comparably"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Mckesson/reviews?fcountry=US&ftopic=jobsecadv&ftext=friday",
+      "title": "Working at McKesson: Employee Reviews about Job security and advancement | Indeed.com"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.glassdoor.com/Benefits/McKesson-Tuition-Assistance-US-BNFT41_E434_N1.htm",
+      "title": "McKesson Employee Benefit: Tuition Assistance | Glassdoor"
+    }
+  ]
+}

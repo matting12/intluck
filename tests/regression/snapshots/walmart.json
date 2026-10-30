@@ -1,0 +1,138 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.walmart.com/",
+      "title": "Walmart | Save Money. Live better."
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=-W_xaf2VbM4",
+      "title": "Walmart Interns vs. Executives Softball Game 2025 | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://corporate.walmart.com/news/2019/06/06/walmart-deepens-commitment-to-community-engagement-and-giving-through-new-walmart-rise-initiative",
+      "title": "Walmart Deepens Commitment to Community Engagement and Giving Through New Walmart Rise Initiative | Walmart"
+    },
+    {
+      "slot": "news",
+      "url": "https://corporate.walmart.com/",
+      "title": "Walmart Corporate News, Purpose & Leadership | Walmart"
+    },
+    {
+      "slot": "investor",
+      "url": "https://stock.walmart.com/financial-information/annual-reports",
+      "title": "Annual Reports :: Walmart Inc. (WMT) | Walmart"
+    },
+    {
+      "slot": "role_specific",
+      "url": "https://corporate.walmart.com/about/leadership/suresh-kumar",
+      "title": "Suresh Kumar, Executive VP, Global CTO and CDO, Walmart Inc. | Walmart"
+    },
+    {
+      "slot": "additional",
+      "url": "https://careers.walmart.com/",
+      "title": "Walmart Careers | Walmart"
+    },
+    {
+      "slot": "additional",
+      "url": "https://corporate.walmart.com/about/newhomeoffice/guiding-principles/who-we-are",
+      "title": "Staying True to Who We Are | Walmart"
+    },
+    {
+      "slot": "additional",
+      "url": "https://corporate.walmart.com/about/newhomeoffice/our-approach/roots-and-community",
+      "title": "Roots and Community | Walmart"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://corporate.walmart.com/about/working-at-walmart/benefits",
+      "title": "Benefits | Walmart"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/walmart/salaries/software-engineer",
+      "title": "Walmart Software Engineer Salary | $121K-$633K+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/Walmart-Software-Engineer-Salaries-E715_D_KO8,25.htm",
+      "title": "Walmart Software Engineer Salaries (804 Salaries submitted) | Glassdoor"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/walmart-salary-negotiation",
+      "title": "Walmart Salary Negotiation - How to Negotiate a Walmart Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.teamrora.com/companies/walmart-salary-negotiation",
+      "title": "Walmart Salary Negotiation Advice Based on Dozens of Negotiations | Teamrora"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.comparably.com/companies/walmart/reviews",
+      "title": "Walmart Employee Reviews | Comparably"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Walmart/reviews",
+      "title": "Walmart Employee Reviews | Indeed"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.youtube.com/watch?v=Y3lhLCIJjEA",
+      "title": "TOP 9 HIDDEN PERKS OF WORKING AT WALMART❤️ | MUST WATCH TO KNOW HOW FORTUNE 1 TREATS ITS EMPLOYEES 😍 - YouTube"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.indeed.com/companies/compare/Target-vs-Walmart-28180c7753e507ab-eacc908d242186c8",
+      "title": "Compare working at Target vs Walmart | Indeed.com"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://www.foxbusiness.com/markets/walmart-cutting-relocating-roughly-1000-corporate-jobs",
+      "title": "Walmart reportedly cutting around 1,000 jobs in corporate restructuring | Fox Business"
+    },
+    {
+      "slot": "financials",
+      "url": "https://corporate.walmart.com/news/2026/08/20/walmart-releases-q2-fy27-earnings",
+      "title": "Walmart Releases Q2 FY27 Earnings | Walmart"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.retaildive.com/news/walmart-us-chief-operating-officer-depart/825549/",
+      "title": "Walmart US chief operating officer to depart | Retail Dive"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Walmart/reviews?ftopic=culture",
+      "title": "Working at Walmart: 42,441 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Walmart/reviews?ftopic=wlbalance",
+      "title": "Working at Walmart: 62,221 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Walmart-DEI-E715.htm",
+      "title": "Walmart: Diversity, Equity & Inclusion | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.ambitionbox.com/reviews/walmart-career-growth-reviews-13122",
+      "title": "Walmart Career Growth Reviews by 100+ Employees | AmbitionBox"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://scholarships360.org/financial-aid/walmart-college-tuition/",
+      "title": "How to Get Tuition Reimbursement by Working at Walmart - Scholarships360 | Scholarships360"
+    }
+  ]
+}

@@ -97,6 +97,15 @@ def get_known_domain(company_name: str) -> Optional[str]:
     return None
 
 
+def get_known_aliases(company_name: str) -> list:
+    """Other names a known company goes by ("ExxonMobil", "CVS"), from company_info.json."""
+    company_lower = company_name.lower().strip()
+    for known, info in _load_company_info().items():
+        if known.lower() == company_lower:
+            return info.get("also_known_as") or []
+    return []
+
+
 async def enrich_company_via_search(company_name: str) -> Optional[dict]:
     """
     Fallback: Use Brave Search to get basic company info.

@@ -13,7 +13,9 @@ __all__ = ['select_salary_links']
 
 import logging
 import re
+from functools import lru_cache
 from urllib.parse import urlparse
+from app.services.company_enrichment import get_known_aliases
 from app.utils.salary_queries import format_salary_category_name
 
 logger = logging.getLogger(__name__)
@@ -39,20 +41,40 @@ SLOTS = [
     ('industry_comparison', ['industry_comparison'], 1, True),
 ]
 
-# Buckets about the job title / industry, not the company — skip the company-name check
-NO_COMPANY_FILTER = {'negotiation_role', 'industry_comparison'}
+# Buckets about the job title, not the company — skip the company-name check
+NO_COMPANY_FILTER = {'negotiation_role'}
+
+# Open-web buckets need the specific company name, not just its first word — otherwise
+# "Morgan Lewis" pulls in JP Morgan and "Cox Enterprises" pulls in SMU's Cox School.
+# Review-site buckets stay lenient: their pages are company-scoped and often use the
+# short name ("Working at Publix").
+STRICT_NAME_BUCKETS = {'negotiation_company', 'benefits_videos', 'industry_comparison'}
 
 # Title must show the page is actually on-topic (search engines drift to generic salary/perks pages)
 NEGOTIATION_TITLE = re.compile(r'(?=.*negotiat)(?=.*\b(salary|pay|offer|compensation|raise)\b)', re.I)
 TITLE_MUST_MATCH = {
+    'benefits_landing': re.compile(r'benefit|total rewards|perks|well-?being', re.I),
     'negotiation_company': NEGOTIATION_TITLE,
     'negotiation_role': NEGOTIATION_TITLE,
     # Whole words only — "compar" alone would match the site name "Comparably"
     'industry_comparison': re.compile(
-        r'(?=.*\b(compare[sd]?|comparing|comparison|vs|versus|benchmarks?|industry|average|survey)\b)'
+        r'(?=.*\b(compare[sd]?|comparing|comparison|vs|versus|benchmarks?|industry)\b)'
         r'(?=.*\b(benefits?|perks?|compensation|pay|working|rewards)\b)', re.I),
     # Employee benefits, not customer loyalty perks (e.g. airline status, membership rewards)
     'benefits_videos': re.compile(r'employee|\bwork|\bjobs?\b|career|total rewards|401k|staff|hiring', re.I),
+}
+
+# Off-topic pages that still mention benefits: law firms' employee-benefits legal
+# practice, job postings, and customer/client reward programs
+TITLE_MUST_NOT_MATCH = {
+    'benefits_landing': re.compile(
+        r'\blaw\b|lawyers?|practice|executive compensation|job details|\banalyst\b|\bclients?\b|\bcard\b', re.I),
+}
+# ...and the same by URL: articles, law-firm practice and lawyer-bio pages, job
+# postings, and documents
+URL_MUST_NOT_MATCH = {
+    'benefits_landing': re.compile(
+        r'/(practices?|services|people|insights?|news|publications?|job|jobs)\b|/news-|\.(pdf|ashx)\b', re.I),
 }
 
 # Individual video/post URLs only — not channel, profile, or tag/discover pages
@@ -88,18 +110,20 @@ def _company_name_in_title(title: str, company_name: str) -> bool:
         return False
 
     title_lower = title.lower()
-    company_lower = company_name.lower()
+    # "The Boeing Company" is written "Boeing" in most titles, and a bare "the"
+    # would otherwise become the first-word fallback below and match anything.
+    company_lower = re.sub(r'^the\s+', '', company_name.lower().strip())
+    company_lower = re.sub(r'[\s,]+(company|co\.?|inc\.?|corp\.?|corporation|llc|ltd\.?)$', '', company_lower)
 
-    # Word-boundary match: "adp" must not be immediately followed by a letter/digit
-    # Prevents "ADP" matching inside "ADPI", "ADPList", etc.
-    pattern = re.escape(company_lower) + r'(?![a-zA-Z0-9])'
+    # Whole-word match: "adp" must not match inside "ADPI", "ADPList", etc.
+    pattern = r'(?<![a-z0-9])' + re.escape(company_lower) + r'(?![a-z0-9])'
     if re.search(pattern, title_lower):
         return True
 
     # For multi-word names, check the first significant word with same boundary rule
     company_words = [w for w in company_lower.split() if len(w) > 2]
     if len(company_words) > 1:
-        word_pattern = re.escape(company_words[0]) + r'(?![a-zA-Z0-9])'
+        word_pattern = r'(?<![a-z0-9])' + re.escape(company_words[0]) + r'(?![a-z0-9])'
         return bool(re.search(word_pattern, title_lower))
 
     return False
@@ -118,9 +142,56 @@ def _company_name_in_url(url: str, company_name: str) -> bool:
         return False
 
 
-def _should_include_link(link: dict, company_name: str) -> bool:
+def _normalize(text: str) -> str:
+    """Lowercase, drop apostrophes/hyphens/periods ("H-E-B" -> "heb"), other punctuation -> space."""
+    text = re.sub(r"[’'.-]", '', text.lower())
+    return ' '.join(re.sub(r'[^a-z0-9]+', ' ', text).split())
+
+
+@lru_cache(maxsize=None)
+def _strict_name_forms(company_name: str) -> frozenset:
+    """
+    Forms of the name specific enough to rule out other companies: the full name
+    (minus a leading "The" and a corporate suffix), known aliases, and for names of
+    3+ words their first two words — law firms go by "Gibson Dunn", "Paul Weiss".
+    """
+    name = re.sub(r'^the ', '', _normalize(company_name))
+    name = re.sub(r' (company|co|inc|corp|corporation|llc|llp|ltd|plc|technologies|group)$', '', name)
+    forms = {name}
+    words = [w for w in name.split() if len(w) > 2]
+    if len(words) >= 3:
+        forms.add(' '.join(words[:2]))
+    forms |= {_normalize(alias) for alias in get_known_aliases(company_name)}
+    return frozenset(f for f in forms if f)
+
+
+def _company_name_strict(title: str, company_name: str) -> bool:
+    text = _normalize(title)
+    joined = text.replace(' ', '')
+    for form in _strict_name_forms(company_name):
+        if re.search(r'(?<![a-z0-9])' + re.escape(form) + r'(?![a-z0-9])', text):
+            return True
+        # "Exxon Mobil" written as "ExxonMobil"
+        if ' ' in form and len(form) >= 8 and form.replace(' ', '') in joined:
+            return True
+    return False
+
+
+def _company_subreddit(url: str, company_name: str) -> bool:
+    """reddit.com/r/<company>/ — e.g. r/publix, r/delta — is about the company itself."""
+    match = re.search(r'reddit\.com/r/([^/]+)', url, re.I)
+    if not match:
+        return False
+    words = _normalize(company_name).split()
+    return match.group(1).lower() in {''.join(words), words[0] if words else ''}
+
+
+def _should_include_link(link: dict, company_name: str, strict: bool = False) -> bool:
     """Check if link belongs to the right company — name must appear in title or URL path."""
-    if _company_name_in_title(link.get('title', ''), company_name):
+    in_title = _company_name_strict if strict else _company_name_in_title
+    if in_title(link.get('title', ''), company_name):
+        return True
+    if strict and _company_subreddit(link.get('url', ''), company_name):
         return True
     if _company_name_in_url(link.get('url', ''), company_name):
         return True
@@ -128,14 +199,24 @@ def _should_include_link(link: dict, company_name: str) -> bool:
 
 
 def _qualifies(link: dict, bucket: str, company_name: str) -> bool:
+    title = link.get('title', '')
     pattern = TITLE_MUST_MATCH.get(bucket)
-    if pattern and not pattern.search(link.get('title', '')):
+    url = urlparse(link.get('url', ''))
+    # Benefits pages are often titled just "Careers"; the URL says ".../employee-benefits"
+    subject = f"{title} {url.path} {url.query}" if bucket == 'benefits_landing' else title
+    if pattern and not pattern.search(subject):
+        return False
+    exclude = TITLE_MUST_NOT_MATCH.get(bucket)
+    if exclude and exclude.search(title):
+        return False
+    exclude_url = URL_MUST_NOT_MATCH.get(bucket)
+    if exclude_url and exclude_url.search(url.path):
         return False
     if bucket == 'benefits_videos' and not VIDEO_URL.search(link.get('url', '')):
         return False
     if not company_name or bucket in NO_COMPANY_FILTER:
         return True
-    if _should_include_link(link, company_name):
+    if _should_include_link(link, company_name, strict=bucket in STRICT_NAME_BUCKETS):
         return True
     # Salary aggregators often title pages by job, not company
     return bucket == 'salary' and _is_trusted_domain(link.get('url', ''))
@@ -187,7 +268,7 @@ def _demo():
             {'url': 'https://www.levels.fyi/x', 'title': 'Pilot pay'},           # trusted, no company name -> ok
         ],
         'negotiation_company': [{'url': 'https://www.glassdoor.com/q', 'title': 'Delta: how would you negotiate with a vendor'},
-                                {'url': 'https://blog.example.com/delta', 'title': 'Negotiating your Delta offer'}],
+                                {'url': 'https://blog.example.com/delta', 'title': 'Negotiating your Delta Air Lines offer'}],
         'negotiation_role': [
             {'url': 'https://www.levels.fyi/p', 'title': 'Pilot Salaries'},  # not about negotiating
             {'url': 'https://www.reddit.com/r/pilots/1', 'title': 'How to negotiate pilot salary'},
@@ -204,7 +285,8 @@ def _demo():
                             {'url': 'https://www.youtube.com/watch?v=def', 'title': 'Delta 401k for employees'}],  # over cap
         'industry_comparison': [{'url': 'https://www.comparably.com/delta/perks', 'title': 'Delta Airlines Benefits | Comparably'},
                                 {'url': 'https://example.com/fin', 'title': 'Delta financial benchmarks'},  # not about benefits
-                                {'url': 'https://www.shrm.org/airline', 'title': 'Airline benefits benchmark'}],
+                                {'url': 'https://example.com/generic', 'title': 'Airline benefits benchmark'},  # no company
+                                {'url': 'https://www.shrm.org/airline', 'title': 'Delta Air Lines vs United: benefits benchmark'}],
     }
     links = select_salary_links(results, company_name=company)
     keys = [l['category_key'] for l in links]

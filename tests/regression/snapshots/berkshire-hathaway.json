@@ -1,0 +1,123 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.berkshirehathaway.com/",
+      "title": "BERKSHIRE HATHAWAY INC. | Berkshirehathaway"
+    },
+    {
+      "slot": "social",
+      "url": "https://x.com/berkshire",
+      "title": "Berkshire Hathaway (@berkshire) on X | X"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.berkshirehathaway.com/news/aug0225.pdf",
+      "title": "BERKSHIRE HATHAWAY INC. NEWS RELEASE FOR IMMEDIATE RELEASE August 2, 2025 | Berkshirehathaway"
+    },
+    {
+      "slot": "investor",
+      "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
+      "title": "BERKSHIRE HATHAWAY INC. 2025 ANNUAL REPORT | Berkshirehathaway"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.berkshirehathaway.com/news/may0525.pdf",
+      "title": "1 BERKSHIRE HATHAWAY INC. NEWS RELEASE FOR IMMEDIATE RELEASE May 5, 2025 | Berkshirehathaway"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.berkshirehathaway.com/news/2026news.html",
+      "title": "2026 News Releases | Berkshirehathaway"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.berkshirehathaway.com/2017ar/2017ar.pdf",
+      "title": "BERKSHIRE HATHAWAY INC. 2017 ANNUAL REPORT | Berkshirehathaway"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.berkshirehathaway.com/news/2025news.html",
+      "title": "2025 News Releases | Berkshirehathaway"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.berkshirehathaway.com/2023ar/2023ar.pdf",
+      "title": "BERKSHIRE HATHAWAY INC. 2023 ANNUAL REPORT | Berkshirehathaway"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/berkshire-hathaway/salaries/software-engineer",
+      "title": "Berkshire Hathaway Software Engineer Salary | $60K-$100K+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/Berkshire-Hathaway-Software-Engineer-Salaries-E805672_D_KO19,36.htm",
+      "title": "Berkshire Hathaway Software Engineer Salaries (11 Salaries submitted) | Glassdoor"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.hellointerview.com/learn/salary-negotiation/introduction",
+      "title": "Software Engineer Salary Negotiation | Salary Negotiation"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.comparably.com/companies/berkshire-hathaway/reviews",
+      "title": "Berkshire Hathaway Employee Reviews | Comparably"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Reviews/Berkshire-Hathaway-Reviews-E805672.htm",
+      "title": "Berkshire Hathaway Reviews (822): Pros & Cons of Working At Berkshire Hathaway | Glassdoor"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://vectorshift.ai/research/companies/berkshire-hathaway/acquisition-history",
+      "title": "Berkshire Hathaway M&A: Every Major Acquisition, Price & Rationale · VectorShift Research | Vectorshift"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.wallstreetzen.com/stocks/us/nyse/brk.b/revenue",
+      "title": "(BRK.B) Berkshire Hathaway Revenue: 1991-2026 Annual Revenue | WallStreetZen"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.fool.com/investing/2026/09/20/warren-buffett-steps-down-as-chair-of-berkshire-ha/",
+      "title": "Warren Buffett Steps Down as Chairman of Berkshire Hathaway. 3 Predictions for What Comes Next Under CEO Greg Abel. | The Motley Fool"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Berkshire-Hathaway/reviews?ftopic=culture",
+      "title": "Working at Berkshire Hathaway: 55 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/berkshire-hathaway/work-life-balance",
+      "title": "Berkshire Hathaway Work Life Balance | Comparably"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Berkshire-Hathaway-DEI-E805672.htm",
+      "title": "Diversity, Equity & Inclusion (DEI) at Berkshire Hathaway | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Berkshire-Hathaway/topics/professional-development",
+      "title": "Professional development and promotions at Berkshire Hathaway | Indeed.com"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.glassdoor.com/Reviews/Berkshire-Hathaway-Homestate-Companies-tuition-reimbursement-Reviews-EI_IE108757.0,38_KH39,60.htm",
+      "title": "Berkshire Hathaway Homestate Companies \"tuition reimbursement\" Reviews | Glassdoor"
+    }
+  ]
+}

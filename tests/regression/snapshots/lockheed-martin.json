@@ -1,0 +1,138 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.lockheedmartin.com/",
+      "title": "Leading Aerospace and Defense | Lockheed Martin"
+    },
+    {
+      "slot": "about",
+      "url": "https://www.lockheedmartin.com/en-us/who-we-are.html",
+      "title": "About Us | Lockheed Martin"
+    },
+    {
+      "slot": "social",
+      "url": "https://x.com/LockheedMartin?lang=en",
+      "title": "Lockheed Martin (@LockheedMartin) / Posts / X | X"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=HjMvk1sxgJ0",
+      "title": "This is What the Future Sounds Like | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.lockheedmartin.com/en-us/who-we-are/communities.html",
+      "title": "Our Social Impact | Lockheed Martin"
+    },
+    {
+      "slot": "news",
+      "url": "https://lockheedmartin.com/en-us/news.html",
+      "title": "Lockheed Martin News and Events | Lockheed Martin"
+    },
+    {
+      "slot": "investor",
+      "url": "https://investors.lockheedmartin.com/financial-information/sec-filings",
+      "title": "SEC Filings | Lockheed Martin Corp"
+    },
+    {
+      "slot": "role_specific",
+      "url": "https://www.lockheedmartin.com/en-us/careers/career-areas/engineering-technology.html",
+      "title": "Engineering Careers | Lockheed Martin"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.lockheedmartin.com/en-us/news/features/history.html",
+      "title": "Lockheed Martin: Our History | Lockheed Martin"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://www.lockheedmartin.com/en-us/careers/why-lm/LM_Benefits.html",
+      "title": "Benefits | Lockheed Martin"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/lockheed-martin/salaries/software-engineer",
+      "title": "Lockheed Martin Software Engineer Salary | $90.7K-$288K+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/Lockheed-Martin-Systems-Engineer-Salaries-E404_D_KO16,32.htm",
+      "title": "Lockheed Martin Systems Engineer Salaries (91 Salaries submitted) | Glassdoor"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.glassdoor.com/Community/salaries-in-stem/648a36ef8239830034f7d2d7",
+      "title": "Hi I just received an offer from Lockheed martin at lvl 2 and it’s a good bit lower than other offers I am receiving. Is it a bad call to try and negotiate my salary? | Glassdoor Forum"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.reddit.com/r/Lockheed/comments/1ndwc5e/salary_negotiation/",
+      "title": "r/Lockheed on Reddit: Salary Negotiation | Reddit"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.comparably.com/companies/lockheed-martin/reviews",
+      "title": "Lockheed Martin Employee Reviews | Comparably"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Lockheed-Martin/reviews",
+      "title": "Lockheed Martin Employee Reviews | Indeed"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.youtube.com/watch?v=-xyHb-hhwg4",
+      "title": "Lockheed Martin Employee Benefits | Benefit Overview ..."
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.indeed.com/companies/compare/Lockheed-Martin-vs-Northrop-Grumman-ce4d979bf9c3c5f3-3e8562386cf03d35",
+      "title": "Compare working at Lockheed Martin vs Northrop Grumman | Indeed.com"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://news.lockheedmartin.com/2026-10-26-Lockheed-Martin-Closes-Ultra-Maritime-Acquisition",
+      "title": "Lockheed Martin Closes Ultra Maritime Acquisition | Lockheedmartin"
+    },
+    {
+      "slot": "financials",
+      "url": "https://investors.lockheedmartin.com/news-releases/news-release-details/lockheed-martin-reports-third-quarter-2026-financial-results",
+      "title": "Lockheed Martin Reports Third Quarter 2026 Financial Results | Lockheed Martin Corp"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.washingtonpost.com/business/2020/03/16/lockheed-martin-ceo-will-step-down/",
+      "title": "Lockheed Martin CEO Marillyn Hewson to step down; Jim Taiclet appointed chief - The Washington Post | Washingtonpost"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/lockheed-martin",
+      "title": "Lockheed Martin Culture | Comparably"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Lockheed-Martin/reviews?fcountry=ALL&ftopic=wlbalance",
+      "title": "Working at Lockheed Martin: 3,876 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Lockheed-Martin-DEI-E404.htm",
+      "title": "Lockheed Martin: Diversity, Equity & Inclusion | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Lockheed-Martin/reviews?ftopic=jobsecadv",
+      "title": "Working at Lockheed Martin: 4,703 Reviews about Job security and advancement | Indeed.com"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.glassdoor.com/Benefits/Lockheed-Martin-Tuition-Assistance-US-BNFT41_E404_N1.htm",
+      "title": "Lockheed Martin Employee Benefit: Tuition Assistance | Glassdoor"
+    }
+  ]
+}

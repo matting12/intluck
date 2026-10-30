@@ -1,0 +1,123 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.coxenterprises.com/",
+      "title": "Empower to Build - Cox Enterprises | Coxenterprises"
+    },
+    {
+      "slot": "about",
+      "url": "https://www.coxenterprises.com/about-us/our-purpose",
+      "title": "Mission and Vision - Cox Enterprises | Coxenterprises"
+    },
+    {
+      "slot": "social",
+      "url": "https://x.com/coxenterprises?lang=en",
+      "title": "Cox Enterprises (@CoxEnterprises) on X | X"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=mfwGj3jRMVU",
+      "title": "FNN x Georgia Forestry Commission | Cox Cleantech Accelerator"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.coxenterprises.com/our-impact/our-collective-impact-report/caring-for-people",
+      "title": "Cox Corporate Responsibility Program | Cox Enterprises"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.coxenterprises.com/press-releases",
+      "title": "Press Releases Archive - Cox Enterprises | Coxenterprises"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.coxenterprises.com/about-us",
+      "title": "Mission and Vision - Cox Enterprises | Coxenterprises"
+    },
+    {
+      "slot": "additional",
+      "url": "https://jobs.coxenterprises.com/en/learn-about-us/businesses/",
+      "title": "Explore Our Family of Businesses - Cox Careers | Coxenterprises"
+    },
+    {
+      "slot": "additional",
+      "url": "https://jobs.coxenterprises.com/en/",
+      "title": "Cox Careers - Cox Enterprises | Coxenterprises"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://jobs.coxenterprises.com/en/learn-about-us/benefits/",
+      "title": "Employee Benefits & Wellness | Cox Careers"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/cox-enterprises/salaries/software-engineer",
+      "title": "Cox Enterprises Software Engineer Salary | $98K-$158K+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.comparably.com/companies/cox-enterprises/salaries/software-engineer",
+      "title": "Cox Enterprises Software Engineer Salary | Comparably"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.hellointerview.com/learn/salary-negotiation/introduction",
+      "title": "Software Engineer Salary Negotiation | Salary Negotiation"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Cox-Enterprises/reviews",
+      "title": "Cox Enterprises Employee Reviews | Indeed"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.comparably.com/companies/cox-enterprises/reviews",
+      "title": "Cox Enterprises Employee Reviews | Comparably"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.tiktok.com/@coxenterprises/video/7210497177519541546",
+      "title": "What does \"Life at Cox\" mean to you?  Here, @coxenterprises employee Katie Ramirez, explains that for her, #LifeAtCox means having the flexibility to decide when and where she works. 😎 . #culture #worklifebalance #flexibility #benefits #purposeatcox | TikTok"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.indeed.com/companies/compare/Cox-Automotive-vs-Cox-Enterprises-a2b6f899cd966cd6-7ff6d858b3dabcd9",
+      "title": "Compare working at Cox Automotive vs Cox Enterprises | Indeed.com"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "leadership",
+      "url": "https://www.coxenterprises.com/press-releases/cox-enterprises-announces-executive-leadership-changes",
+      "title": "Cox Enterprises Announces Executive Leadership Changes - Cox Enterprises | Coxenterprises"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Cox-Enterprises-company-culture-Reviews-EI_IE2755.0,15_KH16,31.htm",
+      "title": "Cox Enterprises \"company culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Cox-Enterprises-work-life-balance-Reviews-EI_IE2755.0,15_KH16,33.htm",
+      "title": "Cox Enterprises \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Cox-Enterprises-DEI-E2755.htm",
+      "title": "Diversity, Equity & Inclusion (DEI) at Cox Enterprises | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Cox-Enterprises",
+      "title": "Cox Enterprises Careers and Employment | Indeed.com"
+    }
+  ]
+}

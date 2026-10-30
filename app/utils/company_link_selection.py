@@ -30,6 +30,7 @@ import logging
 import re
 from urllib.parse import urlparse
 from app.utils.company_queries import format_category_name, get_category_keywords
+from app.utils.salary_link_selection import _company_name_strict, _normalize, _strict_name_forms
 from app.utils.youtube_resolver import parse_channel_url, resolve_youtube_channel_to_video
 
 logger = logging.getLogger(__name__)
@@ -37,6 +38,42 @@ logger = logging.getLogger(__name__)
 SOCIAL_DOMAINS = {'facebook.com', 'instagram.com', 'x.com', 'twitter.com', 'tiktok.com', 'linkedin.com'}
 
 PRIORITY_ORDER = ['home', 'about', 'social', 'youtube', 'community', 'news', 'investor', 'role_specific']
+
+# What an official account may add after the company name: @WalmartCorporate,
+# @RTXCorporation, c/HIIYouTube, @alphabetir, linkedin.com/company/kirkland-&-ellis-llp
+HANDLE_SUFFIXES = {'', 'inc', 'corp', 'corporation', 'corporate', 'co', 'company', 'group', 'technologies',
+                   'llp', 'llc', 'ltd', 'official', 'global', 'hq', 'us', 'usa', 'youtube', 'ir'}
+
+# A channel *named* the company, give or take a legal suffix ("Mars, Incorporated")
+CHANNEL_NAME_SUFFIX = re.compile(r' (incorporated|inc|corporation|corp|company|co|llp|llc|official)$')
+
+# The title must say the page is about this topic — the domain match alone lets in
+# subsidiaries ("General Dynamics Mission Systems") and products ("Chicken Stock")
+SLOT_TITLE_MUST_MATCH = {
+    'about': re.compile(r'about|who we are|our story|overview|our mission|mission statement|mission\s*(&|and)'
+                        r'|our goals|our vision|our values|purpose|at a glance', re.I),
+    'investor': re.compile(r'investor|financial|annual report|quarterly|sec filings?|earnings|stockholder'
+                           r'|shareholder|10-k|results', re.I),
+}
+
+# On-domain pages that aren't about the company itself: law firms' client insights,
+# alerts, practice pages and events; blog tag pages; customer support forums
+SLOT_URL_EXCLUDE = re.compile(
+    r'/insight|/publication|/pubs/|/practices?/|/services/|/events/|client-alert|client-news|/tag/'
+    r'|//(support|discussions|forums?)\.|/support/|/thread/', re.I)
+
+# Topics an overflow ("additional") page on the company's domain must be about —
+# the same terms that define the priority slots ('stock' alone would match products)
+ADDITIONAL_TOPICS = [kw for cat in ('about', 'community', 'news', 'investor', 'landing_pages')
+                     for kw in get_category_keywords()[cat] if kw != 'stock']
+
+# Overflow ("additional") links: skip pages that are about a place, a person or a
+# product rather than the company — office locations, lawyer bios, contact pages,
+# law-firm insights and practices, store/shopping pages
+ADDITIONAL_EXCLUDE = re.compile(
+    r'contact|/locations?/|/offices?/|/people/|/professionals?/|/lawyers?/|/practices?/|/insights?\b'
+    r'|new arrivals|new releases|/shop|/store|/browse|/product|/gp/|log ?in|sign ?in', re.I)
+SLOT_URL_EXCLUDE_DOCS = re.compile(r'\.pdf\b', re.I)  # about/community: a PDF is rarely the page itself
 
 
 def _extract_domain(url: str) -> str:
@@ -108,27 +145,66 @@ def _matches_any_keyword(text: str, keywords: list) -> bool:
     return False
 
 
-def _company_handle_in_url(url: str, company_name: str) -> bool:
+def _account_handle(url: str) -> str:
     """
-    Check the social profile's own handle/path segment for an exact match to the
-    company name — much stronger evidence of an official account than the page
-    title, which can collide with unrelated people/pages sharing a short or
-    common company name (e.g. "Baird" matching a person named "Noah Baird").
+    The account name in a social or YouTube profile URL — facebook.com/<h>,
+    linkedin.com/company/<h>, tiktok.com/@<h>, youtube.com/@<h> /user/<h> /c/<h> —
+    lowercased with punctuation and trailing digits removed. '' if there is none
+    (e.g. an opaque youtube.com/channel/UC... id).
     """
-    if not url or not company_name:
-        return False
     try:
-        path = urlparse(url).path.lower()
-        name = company_name.lower().replace(' ', '').replace('&', '').replace('.', '')
-        segments = [s for s in path.replace('-', '/').split('/') if s]
-        if name in segments:
-            return True
-        company_words = [w for w in company_name.lower().split() if len(w) > 2]
-        if len(company_words) > 1 and company_words[0] in segments:
-            return True
-        return False
+        parts = [p for p in urlparse(url).path.split('/') if p]
     except Exception:
+        return ''
+    if not parts:
+        return ''
+    first = parts[0].lower()
+    if first == 'channel':
+        return ''
+    if first in ('company', 'user', 'c', 'school', 'showcase') and len(parts) > 1:
+        first = parts[1].lower()
+    return re.sub(r'\d+$', '', re.sub(r'[^a-z0-9]', '', first))
+
+
+def _company_handle_in_url(url: str, company_name: str, title: str = '') -> bool:
+    """
+    The profile's own handle is the company — the name, optionally plus a
+    corporate suffix (@WalmartCorporate, kirkland-&-ellis-llp). Merely
+    *containing* the name isn't enough: koch-media, walmart-connect and
+    booz-&-company are other companies sharing a word.
+    """
+    handle = _account_handle(url)
+    if not handle or not company_name:
         return False
+    # The bare first word with nothing added (instagram.com/delta) — but only when the
+    # profile itself names the company in full ("Delta Air Lines (@delta)"): @gibson is
+    # Gibson Guitars, not Gibson Dunn
+    words = _normalize(re.sub(r'^the\s+', '', company_name, flags=re.I)).split()
+    if words and handle == words[0]:
+        return len(words) == 1 or _company_name_strict(title, company_name)
+    for form in _strict_name_forms(company_name):
+        base = form.replace(' ', '')
+        if handle.startswith(base) and handle[len(base):] in HANDLE_SUFFIXES:
+            return True
+    return False
+
+
+def _company_channel_name(title: str, company_name: str) -> bool:
+    """The YouTube channel is named the company ("Mars, Incorporated - YouTube"),
+    not something that merely contains it ("Michael Cargill", "RTX Clan")."""
+    name = _normalize(re.sub(r'\s*[-|]\s*youtube\s*$', '', title or '', flags=re.I))
+    return CHANNEL_NAME_SUFFIX.sub('', name) in _strict_name_forms(company_name)
+
+
+def _passes_slot_filters(category: str, url: str, title: str) -> bool:
+    pattern = SLOT_TITLE_MUST_MATCH.get(category)
+    if pattern and not pattern.search(title):
+        return False
+    if category in ('about', 'community', 'investor') and SLOT_URL_EXCLUDE.search(url):
+        return False
+    if category in ('about', 'community') and SLOT_URL_EXCLUDE_DOCS.search(url):
+        return False
+    return True
 
 
 async def select_top_link_per_category(search_results: dict, company_name: str = None, company_domain: str = None, job_title: str = None) -> dict:
@@ -174,7 +250,7 @@ async def select_top_link_per_category(search_results: dict, company_name: str =
             if not selected_link:
                 for link in links:
                     url = link.get('url', '')
-                    if _is_social_url(url) and _company_handle_in_url(url, company_name):
+                    if _is_social_url(url) and _company_handle_in_url(url, company_name, link.get('title', '')):
                         selected_link = link.copy()
                         break
 
@@ -186,11 +262,14 @@ async def select_top_link_per_category(search_results: dict, company_name: str =
             # check, in the resolver) before it can fill the slot; a candidate that
             # fails verification is skipped in favor of the next one, rather than
             # left in place as a wrong result.
-            for link in links:
-                url = link.get('url', '')
-                if not (_is_youtube_url(url) and parse_channel_url(url) is not None
-                        and _company_name_in_title(link.get('title', ''), company_name)):
-                    continue
+            # Channels whose handle is the company (@Cargill) are tried before those whose
+            # display name is (UC... ids have no handle) — names are easier to squat.
+            channels = [l for l in links if _is_youtube_url(l.get('url', ''))
+                        and parse_channel_url(l.get('url', '')) is not None]
+            handle_match = [l for l in channels if _company_handle_in_url(l['url'], company_name, l.get('title', ''))]
+            candidates = handle_match + [l for l in channels if l not in handle_match
+                                         and _company_channel_name(l.get('title', ''), company_name)]
+            for link in candidates:
                 resolved = await resolve_youtube_channel_to_video(link.copy(), company_name=company_name)
                 if resolved is None:
                     logger.info(f"[youtube] Candidate rejected, trying next: {link.get('title', '')[:60]}")
@@ -208,7 +287,7 @@ async def select_top_link_per_category(search_results: dict, company_name: str =
                     social_url = social_link.get('url', '')
                     if (social_url and social_url != primary_social_url
                             and _is_social_url(social_url)
-                            and _company_handle_in_url(social_url, company_name)):
+                            and _company_handle_in_url(social_url, company_name, social_link.get('title', ''))):
                         selected_link = social_link.copy()
                         selected_link['category'] = 'Official Social Media'
                         break
@@ -224,7 +303,8 @@ async def select_top_link_per_category(search_results: dict, company_name: str =
                 url = link.get('url', '')
                 title = link.get('title', '')
                 if (_on_company_domain(url, company_domain) and _company_name_in_title(title, company_name)
-                        and _matches_any_keyword(title, keywords)):
+                        and _matches_any_keyword(title, keywords)
+                        and _passes_slot_filters(category, url, title)):
                     selected_link = link.copy()
                     break
 
@@ -253,10 +333,11 @@ def select_additional_links(
     max_links: int = 5
 ) -> list:
     """
-    Fill remaining room with leftover official-source links only: on the
-    company domain, a verified social profile, or the official YouTube channel
-    — never a generic third-party result. Draws on the 'landing_pages' results
-    (careers, benefits, history, podcast, expansions) among others.
+    Fill remaining room with leftover official-source links only: a page on the
+    company domain that's about the company (careers, history, newsroom...), or a
+    verified social profile — never a generic third-party result. Draws on the
+    'landing_pages' results (careers, benefits, history, podcast, expansions)
+    among others.
     """
     if max_links <= 0:
         return []
@@ -274,12 +355,18 @@ def select_additional_links(
                 continue
 
             title = link.get('title', '')
+            # An on-domain page must also be *about the company* (careers, history,
+            # newsroom...) — otherwise any office, product or legal page qualifies
+            on_domain_topic = (_on_company_domain(url, company_domain)
+                               and _matches_any_keyword(title, ADDITIONAL_TOPICS))
+            # (No YouTube here: a video can't be verified as official, and the YouTube
+            # slot already shows the official channel.)
             is_official = (
-                _on_company_domain(url, company_domain) or
-                (_is_social_url(url) and _company_handle_in_url(url, company_name)) or
-                (_is_youtube_url(url) and _company_name_in_title(title, company_name))
+                on_domain_topic or
+                (_is_social_url(url) and _company_handle_in_url(url, company_name, title))
             )
-            if not is_official:
+            if (not is_official or ADDITIONAL_EXCLUDE.search(f"{title} {url}")
+                    or SLOT_URL_EXCLUDE.search(url)):
                 continue
 
             seen_urls.add(url)
@@ -325,6 +412,16 @@ async def _demo():
     assert categorized_no_yt['youtube']['category'] == 'Official Social Media'
     assert 'type' not in categorized_no_yt['youtube']
     print("ok: youtube falls back to alt social profile")
+
+    # An account is the company's only if its handle IS the company (plus a corporate
+    # suffix at most) — not if it merely contains a word of the name
+    assert _company_handle_in_url('https://www.youtube.com/@RTXCorporation', 'RTX')
+    assert _company_handle_in_url('https://www.linkedin.com/company/kirkland-&-ellis-llp', 'Kirkland & Ellis')
+    assert not _company_handle_in_url('https://linkedin.com/company/koch-media-', 'Koch')
+    assert not _company_handle_in_url('https://www.youtube.com/@michaeldcargill', 'Cargill')
+    assert _company_channel_name('Mars, Incorporated - YouTube', 'Mars')
+    assert not _company_channel_name('RTX Clan - YouTube', 'RTX')
+    print("ok: social/YouTube accounts must be the company, not share a word with it")
 
 
 if __name__ == "__main__":

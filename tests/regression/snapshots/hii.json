@@ -1,0 +1,118 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.hii.com/",
+      "title": "HII | America's Seapower Company"
+    },
+    {
+      "slot": "about",
+      "url": "https://www.hii.com/company-overview",
+      "title": "Company Overview - America's Largest Shipbuilder | HII"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=NzAL3C9_-Bs",
+      "title": "HII: Building the Future Fleet - Integrated Naval Power in Action | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.hii.com/news/ingalls-shipbuilding-awards-20000-in-community-partner-grants",
+      "title": "Ingalls Shipbuilding Awards $20,000 in Community Partner Grants | HII Newsroom"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.hii.com/newsroom",
+      "title": "Newsroom — News & Press Releases | HII"
+    },
+    {
+      "slot": "investor",
+      "url": "https://ir.hii.com/financials/annual-reports/default.aspx",
+      "title": "HII | Financials - Annual Reports"
+    },
+    {
+      "slot": "role_specific",
+      "url": "https://www.hii.com/leadership/john-bell",
+      "title": "John Bell, Chief Technology Officer | HII Leadership"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.hii.com/careers/how-we-hire",
+      "title": "HII Careers | Hii"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.hii.com/news/hii-reports-second-quarter-2026-results",
+      "title": "HII Reports Second Quarter 2026 Results | HII Newsroom"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "salary",
+      "url": "https://www.salary.com/research/company/hii-corp/system-engineer-salary?cjid=15148451",
+      "title": "Hii Corp Salary for System Engineer | Salary.com | Salary.com"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/HII-Systems-Engineer-Salaries-E398616_D_KO4,20.htm",
+      "title": "Total Salary Range for HII Systems Engineer | Glassdoor"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.hellointerview.com/learn/salary-negotiation/introduction",
+      "title": "Software Engineer Salary Negotiation | Salary Negotiation"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Benefits/HII-US-Benefits-EI_IE398616.0,3_IL.4,6_IN1.htm",
+      "title": "HII: Employee Benefits and Perks | Glassdoor"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Hii-9/reviews",
+      "title": "HII Employee Reviews | Indeed"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.youtube.com/watch?v=C3Or8A0DfNE",
+      "title": "Huntington Ingalls Industries Employee Benefits Login | Via Benefits HII | my.viabenefits.com/hii - YouTube"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "financials",
+      "url": "https://www.quiverquant.com/news/HII+Reports+Q1+2026+Financial+Results+and+Reaffirms+Fiscal+Guidance",
+      "title": "HII Reports Q1 2026 Financial Results and Reaffirms Fiscal Guidance | Quiver Quantitative"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.hii.com/news/former-hii-ceo-mike-petters-joins-board-of-directors",
+      "title": "Former HII CEO Mike Petters Joins Board of Directors | HII Newsroom"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Hii-9/reviews?ftopic=culture",
+      "title": "Working at HII: 500 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Hii-9/reviews?fcountry=US&floc=Ballston+Spa,+NY&ftopic=wlbalance",
+      "title": "Working at HII in Ballston Spa, NY: Employee Reviews about Work-Life Balance | Indeed.com"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Hii-9",
+      "title": "HII Careers and Employment | Indeed.com"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://ingallsconnect.goodbarber.app/tuition-reimbursement",
+      "title": "IngallsConnect | The official app of Ingalls Shipbuilding, a division of HII"
+    }
+  ]
+}

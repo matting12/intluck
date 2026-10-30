@@ -1,0 +1,93 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.paulweiss.com/",
+      "title": "Home | Paul, Weiss"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.paulweiss.com/insights/firm-news",
+      "title": "Firm News | Paul, Weiss"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://www.paulweiss.com/careers/summer-program/benefits",
+      "title": "Benefits | Paul, Weiss"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/Paul-Weiss-Rifkind-Wharton-and-Garrison-Salaries-E3320.htm",
+      "title": "How Much Does Paul, Weiss, Rifkind, Wharton & Garrison Pay in 2026? (916 Salaries) | Glassdoor"
+    },
+    {
+      "slot": "salary",
+      "url": "https://h1bdata.info/index.php?city=new+york&em=paul+weiss+rifkind+wharton+&+garrison+llp=&job=&year=all+years",
+      "title": "Paul Weiss Rifkind Wharton & Garrison Llp ... | H1Bdata"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.larsonmaddox.com/en-us/industry-insights/career-advice/how-to-negotiate-a-salary-you-deserve",
+      "title": "How to Negotiate Your Salary as a Lawyer | Larson Maddox"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.bcgsearch.com/article/900054316/Sealing-the-Deal-How-to-Ace-a-Legal-Job-Offer-Negotiation/",
+      "title": "Sealing the Deal: How to Ace a Legal Job Offer Negotiation | BCGSearch.com"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Reviews/Paul-Weiss-Rifkind-Wharton-and-Garrison-benefit-Reviews-EI_IE3320.0,39_KH40,47.htm",
+      "title": "Paul, Weiss, Rifkind, Wharton & Garrison \"benefit\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Paul,-Weiss,-Rifkind,-Wharton-&-Garrison-LLP/reviews?ftopic=paybenefits",
+      "title": "Working at Paul, Weiss, Rifkind, Wharton & Garrison LLP: Employee Reviews about Pay and benefits | Indeed.com"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.benefitspro.org/reports/5462-compare-paul-weiss-rifkind-wharton-garrison-s-employee-health-insurance-and-benefits",
+      "title": "Compare PAUL WEISS RIFKIND WHARTON & GARRISON's Employee Health Insurance and Benefits - benefitsPRO.org | Benefitspro"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://mitchellake.com/intelligence/wire/paul-weiss-rifkind-wharton-garrison-llp-geographic-expansion-2026-07-14",
+      "title": "Paul, Weiss, Rifkind, Wharton & Garrison LLP — Geographic Expansion: The Leadership Read | MitchelLake Intelligence | Mitchel Lake"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.law360.co.uk/articles/2303710",
+      "title": "Paul Weiss Revenue Grows By More Than 30% - Law360 | Law360"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://davidlat.substack.com/p/brad-karp-resigns-as-chair-of-paul-weiss",
+      "title": "Brad Karp Steps Down As Chairman Of Paul Weiss | Substack"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Paul-Weiss-Rifkind-Wharton-and-Garrison-culture-Reviews-EI_IE3320.0,39_KH40,47.htm",
+      "title": "Paul, Weiss, Rifkind, Wharton & Garrison \"culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Paul-Weiss-Rifkind-Wharton-and-Garrison-work-life-balance-Reviews-EI_IE3320.0,39_KH40,57.htm",
+      "title": "Paul, Weiss, Rifkind, Wharton & Garrison \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.vault.com/company-profiles/law/paul-weiss-rifkind-wharton-garrison-llp/initiatives",
+      "title": "Paul, Weiss, Rifkind, Wharton & Garrison LLP | Diversity | Vault.com"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Paul,-Weiss,-Rifkind,-Wharton-&-Garrison-LLP/reviews?fcountry=US&floc=New+York,+NY&ftopic=jobsecadv",
+      "title": "Working at Paul, Weiss, Rifkind, Wharton & Garrison LLP in New York, NY: Employee Reviews about Job security and advancement | Indeed.com"
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.rtx.com/",
+      "title": "Home | RTX"
+    },
+    {
+      "slot": "about",
+      "url": "https://www.rtx.com/who-we-are/our-values",
+      "title": "Our Values | RTX"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=mfbo_vG0EFA",
+      "title": "We Are RTX | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.rtx.com/our-responsibility/corporate-responsibility",
+      "title": "Corporate Social Responsibility | RTX"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.rtx.com/news/news-center",
+      "title": "News Center | RTX"
+    },
+    {
+      "slot": "investor",
+      "url": "https://investors.rtx.com/",
+      "title": "Investor Relations | RTX"
+    },
+    {
+      "slot": "role_specific",
+      "url": "https://www.rtx.com/news/2023/12/19/chief-technology-officer-mark-russell-to-retire-after-a-distinguished-career-with-rtx",
+      "title": "News | RTX Chief Technology Officer Mark Russell retiring after distinguished career | RTX"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.rtx.com/news/news-center/2026/10/20/rtx-reports-q3-2026-results",
+      "title": "News | RTX Reports Q3 2026 Results | RTX"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.rtx.com/news",
+      "title": "News | RTX"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/RTX-Salaries-E561.htm",
+      "title": "How Much Does RTX Pay in 2026? (17,730 Salaries) | Glassdoor"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.comparably.com/companies/rtx/salaries",
+      "title": "RTX Salaries | Comparably"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.hellointerview.com/learn/salary-negotiation/introduction",
+      "title": "Software Engineer Salary Negotiation | Salary Negotiation"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.glassdoor.com/Reviews/RTX-Reviews-E561.htm",
+      "title": "RTX Reviews (7,838): Pros & Cons of Working At RTX | Glassdoor"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Rtx-4/reviews",
+      "title": "Working at RTX: Employee Reviews | Indeed.com"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "financials",
+      "url": "https://www.marketbeat.com/instant-alerts/earnings-rtx-nyse-rtx-posts-quarterly-earnings-results-beats-expectations-by-048-eps-2026-10-20/",
+      "title": "RTX (NYSE:RTX) Posts Quarterly Earnings Results, Beats Expectations By $0.48 EPS | Marketbeat"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.stocktitan.net/sec-filings/RTX/8-k-rtx-corp-reports-material-event-ac3bc2655b61.html",
+      "title": "RTX names Jill Albertelli Pratt & Whitney chief | RTX 8-K Filing"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/RTX-culture-Reviews-EI_IE561.0,3_KH4,11.htm",
+      "title": "RTX \"culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/RTX-work-life-balance-Reviews-EI_IE561.0,3_KH4,21.htm",
+      "title": "RTX \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/RTX-DEI-E561.htm",
+      "title": "Diversity, Equity & Inclusion (DEI) at RTX | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.glassdoor.com/Reviews/Raytheon-Technologies-career-advancement-Reviews-EI_IE561.0,21_KH22,40.htm",
+      "title": "RTX \"career advancement\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://learn.org/financial-aid/raytheon-tuition-reimbursement-scholarships",
+      "title": "RTX Tuition Reimbursement & Employee Scholar Program 2027 | Learn"
+    }
+  ]
+}

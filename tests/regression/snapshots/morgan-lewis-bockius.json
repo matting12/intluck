@@ -1,0 +1,118 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.morganlewis.com/",
+      "title": "Morgan Lewis - Global Law Firm & Lawyers | Morganlewis"
+    },
+    {
+      "slot": "social",
+      "url": "https://www.linkedin.com/company/morgan-lewis-&-bockius-llp/",
+      "title": "Morgan, Lewis & Bockius LLP | LinkedIn"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/@morganlewisbockiusllp9116",
+      "title": "Morgan, Lewis & Bockius LLP - YouTube | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.morganlewis.com/news/human-rights-campaign-foundation-again-awards-morgan-lewis-100-rating-on-corporate-equality-index",
+      "title": "Human Rights Campaign Foundation Again Awards Morgan Lewis 100% Rating on Corporate Equality Index | Morganlewis"
+    },
+    {
+      "slot": "news",
+      "url": "https://www.morganlewis.com/news/2025/10/morgan-lewis-promotes-29-lawyers-to-partner",
+      "title": "Morgan Lewis Promotes 29 Lawyers to Partner – News | Morganlewis"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.morganlewis.com/news/2026/05/litigation-departments-general-litigation-award-finalist-morgan-lewis-and-bockius",
+      "title": "Litigation Departments, General Litigation Award Finalist: Morgan, Lewis & Bockius, The Legal Intelligencer – News | Morganlewis"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.morganlewis.com/news/2024/01/employment-group-of-the-year-morgan-lewis-bockius-llp",
+      "title": "Employment Group of the Year: Morgan, Lewis & Bockius LLP, Law360 – News | Morganlewis"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.morganlewis.com/news/2022/03/innovative-operations-team-of-the-year-law-firm-morgan-lewis-bockius-legaltech-news",
+      "title": "Innovative Operations Team of the Year, Law Firm: Morgan, Lewis & Bockius, Legaltech News – News | Morganlewis"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.morganlewis.com/news/2024/05/2024-law-firm-innovators-morgan-lewis-bockius-and-thomson-reuters-ai-collaboration-the-legal-intelligencer",
+      "title": "2024 Law Firm Innovators: Morgan, Lewis & Bockius and Thomson Reuters AI Collaboration, The Legal Intelligencer – News | Morganlewis"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salaries/associate-morgan-lewis-bockius-llp-salary-SRCH_KO0,9_KE10,34.htm",
+      "title": "Salary: Morgan Lewis Bockius Llp Associate 2026 | Glassdoor"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.comparably.com/companies/morgan-lewis-bockius-llp/salaries",
+      "title": "Morgan, Lewis & Bockius LLP Salaries | Comparably"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.larsonmaddox.com/en-us/industry-insights/career-advice/how-to-negotiate-a-salary-you-deserve",
+      "title": "How to Negotiate Your Salary as a Lawyer | Larson Maddox"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.bcgsearch.com/article/900054316/Sealing-the-Deal-How-to-Ace-a-Legal-Job-Offer-Negotiation/",
+      "title": "Sealing the Deal: How to Ace a Legal Job Offer Negotiation | BCGSearch.com"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Morgan,-Lewis-&-Bockius-LLP/reviews?ftopic=paybenefits",
+      "title": "Working at Morgan Lewis: Employee Reviews about Pay and benefits | Indeed.com"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://legacy.vault.com/company-profiles/law/morgan-lewis-bockius-llp/company-associate-reviews",
+      "title": "Morgan, Lewis & Bockius LLP | Company Reviews | Vault.com"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.youtube.com/watch?v=GIaMfLC1t1I",
+      "title": "Working at Morgan, Lewis & Bockius LLP - May 2018 - YouTube | Youtube"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "financials",
+      "url": "https://www.statista.com/statistics/877924/morgan-lewis-gross-revenue/",
+      "title": "Legal services: gross revenue Morgan Lewis 2022 | Statista"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.law.com/americanlawyer/2026/03/23/morgan-lewis-names-new-chair-as-mckeon-closes-out-12-year-tenure/",
+      "title": "Morgan Lewis Names New Chair as McKeon Closes Out 12-Year Tenure | Law.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Morgan,-Lewis-&-Bockius-LLP/reviews?ftopic=culture",
+      "title": "Working at Morgan Lewis: Employee Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/morgan-lewis-bockius-llp/work-life-balance",
+      "title": "Morgan, Lewis & Bockius LLP Work Life Balance | Comparably"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://legacy.vault.com/company-profiles/law/morgan-lewis-bockius-llp/initiatives",
+      "title": "Morgan, Lewis & Bockius LLP | Diversity | Vault.com"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Morgan,-Lewis-&-Bockius-LLP",
+      "title": "Morgan, Lewis & Bockius LLP Careers & Employment - Working at Morgan, Lewis & Bockius LLP | Indeed.com"
+    }
+  ]
+}

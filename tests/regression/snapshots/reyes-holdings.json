@@ -1,0 +1,108 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://reyesbeveragegroup.com/about",
+      "title": "Reyes Beverage Group - About | Reyesbeveragegroup"
+    },
+    {
+      "slot": "community",
+      "url": "http://www.reyesbeveragegroup.com/newsroom/reyes-beverage-group-2025-corporate-social-responsibility-report",
+      "title": "Reyes Beverage Group 2025 Corporate Social Responsibility Report | Reyesbeveragegroup"
+    },
+    {
+      "slot": "news",
+      "url": "https://reyesbeveragegroup.com/newsroom",
+      "title": "Reyes Beverage Group - Newsroom | Reyesbeveragegroup"
+    },
+    {
+      "slot": "additional",
+      "url": "https://reyesbeveragegroup.com/newsroom/reyes-beverage-group-2024-corporate-social-responsibility-report",
+      "title": "Reyes Beverage Group 2024 Corporate Social Responsibility Report | Reyesbeveragegroup"
+    },
+    {
+      "slot": "additional",
+      "url": "https://reyesbeveragegroup.com/newsroom/reyes-beverage-group-2023-corporate-social-responsibility-report",
+      "title": "Reyes Beverage Group 2023 Corporate Social Responsibility Report | Reyesbeveragegroup"
+    },
+    {
+      "slot": "additional",
+      "url": "https://jobportal.reyesbeveragegroup.com/rbg/jobs/28797?lang=en-us",
+      "title": "Beer Merchandiser in Newport News, Virginia | Reyes Beverage Group"
+    },
+    {
+      "slot": "additional",
+      "url": "https://jobs.reyesbeveragegroup.com/job-search-results",
+      "title": "Reyes Beverage Group - Careers | Reyesbeveragegroup"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "salary",
+      "url": "https://www.comparably.com/companies/reyes-holdings/salaries/senior-software-engineer",
+      "title": "Reyes Holdings Senior Software Engineer Salary | Comparably"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/Reyes-Holdings-Rosemont-Salaries-EI_IE13349.0,14_IL.15,23_IC1158097.htm",
+      "title": "Reyes Holdings Salaries in Rosemont | Glassdoor"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.hellointerview.com/learn/salary-negotiation/introduction",
+      "title": "Software Engineer Salary Negotiation | Salary Negotiation"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Reyes-Holdings/reviews?ftopic=paybenefits",
+      "title": "Working at Reyes Holdings: Employee Reviews about Pay and benefits | Indeed.com"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.comparably.com/companies/reyes-holdings/perks-and-benefits",
+      "title": "Reyes Holdings Benefits | Comparably"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.linkedin.com/posts/reyes-holdings_our-employee-benefits-activity-7239271447943168000-L4Dv",
+      "title": "Reyes Holdings - Our Employee Benefits | LinkedIn"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.benefitspro.org/reports/5890-compare-reyes-holdings-employee-health-insurance-and-benefits",
+      "title": "Compare REYES HOLDINGS' Employee Health Insurance and Benefits - benefitsPRO.org | Benefitspro"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://app.fundz.net/acquisitions/acquires-021a",
+      "title": "Reyes Holdings acquires Republic National Distributing Company (April 2026) | Fundz"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Reyes-Holdings-culture-Reviews-EI_IE13349.0,14_KH15,22.htm",
+      "title": "Reyes Holdings \"culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Reyes-Holdings/reviews?ftopic=wlbalance",
+      "title": "Working at Reyes Holdings: Employee Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Reyes-Holdings-DEI-E13349.htm",
+      "title": "Diversity, Equity & Inclusion (DEI) at Reyes Holdings | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Reyes-Holdings",
+      "title": "Reyes Holdings Careers and Employment | Indeed.com"
+    }
+  ]
+}

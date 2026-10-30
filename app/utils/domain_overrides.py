@@ -6,8 +6,9 @@ __all__ = ['get_domain_override']
 
 DOMAIN_OVERRIDES = {
     'microsoft': 'microsoft.com',
-    'amazon': 'amazon.com',
+    'amazon': 'aboutamazon.com',  # amazon.com is the store; company pages live here
     'google': 'about.google',
+    'alphabet': 'abc.xyz',  # alphabet.com is BMW's leasing business
     'meta': 'meta.com',
     'facebook': 'meta.com',
     'apple': 'apple.com',

@@ -1,0 +1,103 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.heb.com/",
+      "title": "H-E-B | Curbside Pickup & Grocery Delivery | HEB.com"
+    },
+    {
+      "slot": "social",
+      "url": "https://x.com/HEB",
+      "title": "H-E-B (@HEB) / X | X"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=O8v92M_sHBg",
+      "title": "H-E-B NOW | Game Day Favorites Delivered"
+    },
+    {
+      "slot": "community",
+      "url": "https://newsroom.heb.com/community/",
+      "title": "H-E-B | Community Support"
+    },
+    {
+      "slot": "news",
+      "url": "https://newsroom.heb.com/",
+      "title": "H-E-B Newsroom | Company News, Community Info & Media"
+    },
+    {
+      "slot": "additional",
+      "url": "https://newsroom.heb.com/dfw/",
+      "title": "H-E-B enters the DFW Metroplex - H-E-B Newsroom | Heb"
+    },
+    {
+      "slot": "additional",
+      "url": "https://careers.heb.com/here-everyone-belongs/",
+      "title": "H-E-B Careers | View Texas Jobs & Apply Online"
+    },
+    {
+      "slot": "additional",
+      "url": "https://careers.heb.com/blog/the-secret-to-high-morale?lang=en-US",
+      "title": "H-E-B Careers Blog | Here, Everyone Belongs"
+    },
+    {
+      "slot": "additional",
+      "url": "https://newsroom.heb.com/community/apply-for-support/",
+      "title": "Community Investment Programs | Heb"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://www.heb.com/discover/H-E-B-partner-perks?int=curbside-discover-mod.H-E-B-partner-perks",
+      "title": "https://www.heb.com/discover/H-E-B-partner-perks?i... | Heb"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/h-e-b/salaries/software-engineer",
+      "title": "H-E-B Software Engineer Salary | $97K-$214K+ | Levels.fyi"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/H-E-B-Salaries-E2824.htm",
+      "title": "How Much Does H E B Pay in 2026? (21,196 Salaries) | Glassdoor"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.hellointerview.com/learn/salary-negotiation/introduction",
+      "title": "Software Engineer Salary Negotiation | Salary Negotiation"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.youtube.com/watch?v=tq0JyQxqY6Q",
+      "title": "Your H-E-B Benefits & Career: Financial Planning for Employees and Executives - YouTube | Youtube"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://www.mysanantonio.com/business/article/factory-closure-mass-layoffs-san-antonio-22377724.php",
+      "title": "H-E-B supplier suddenly shuts down, cuts 166 San Antonio jobs | Mysanantonio"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.plunkettresearch.com/company-profile/h-e-b-grocery-company-lp/",
+      "title": "H-E-B Grocery Company LP Private Profile-Financials-Revenues-Growth-Market-Description | Plunkettresearch"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/H-E-B-DEI-E2824.htm",
+      "title": "H-E-B: Diversity, Equity & Inclusion | Glassdoor | Glassdoor"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.jobzmall.com/h-e-b/faqs/does-h-e-b-offer-tuition-reimbursement",
+      "title": "Does H-E-B offer tuition reimbursement? | H-E-B FAQs | JobzMall"
+    }
+  ]
+}

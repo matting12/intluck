@@ -11,11 +11,6 @@
       "title": "Berkshire Hathaway (@berkshire) on X | X"
     },
     {
-      "slot": "youtube",
-      "url": "https://www.youtube.com/watch?v=GpFrMp_8JwI",
-      "title": "Open House - 2026 Brand Campaign - Berkshire Hathaway HomeServices | Youtube"
-    },
-    {
       "slot": "news",
       "url": "https://www.berkshirehathaway.com/news/aug0225.pdf",
       "title": "BERKSHIRE HATHAWAY INC. NEWS RELEASE FOR IMMEDIATE RELEASE August 2, 2025 | Berkshirehathaway"
@@ -27,23 +22,28 @@
     },
     {
       "slot": "additional",
-      "url": "https://www.berkshirehathaway.com/reports.html",
-      "title": "BERKSHIRE HATHAWAY ANNUAL & INTERIM REPORTS | Berkshirehathaway"
-    },
-    {
-      "slot": "additional",
-      "url": "https://www.berkshirehathaway.com/subs/sublinks.html",
-      "title": "LINKS TO BERKSHIRE HATHAWAY SUB. COMPANIES | Berkshirehathaway"
-    },
-    {
-      "slot": "additional",
-      "url": "https://www.berkshirehathaway.com/letters/letters.html",
-      "title": "Shareholder Letters | Berkshirehathaway"
-    },
-    {
-      "slot": "additional",
       "url": "https://www.berkshirehathaway.com/news/may0525.pdf",
       "title": "1 BERKSHIRE HATHAWAY INC. NEWS RELEASE FOR IMMEDIATE RELEASE May 5, 2025 | Berkshirehathaway"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.berkshirehathaway.com/news/2026news.html",
+      "title": "2026 News Releases | Berkshirehathaway"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.berkshirehathaway.com/2017ar/2017ar.pdf",
+      "title": "BERKSHIRE HATHAWAY INC. 2017 ANNUAL REPORT | Berkshirehathaway"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.berkshirehathaway.com/news/2025news.html",
+      "title": "2025 News Releases | Berkshirehathaway"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.berkshirehathaway.com/2023ar/2023ar.pdf",
+      "title": "BERKSHIRE HATHAWAY INC. 2023 ANNUAL REPORT | Berkshirehathaway"
     }
   ],
   "box3": [

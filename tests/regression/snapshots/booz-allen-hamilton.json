@@ -11,11 +11,6 @@
       "title": "Living Our Values The Booz Allen Code of Business Ethics and Conduct | Boozallen"
     },
     {
-      "slot": "social",
-      "url": "https://www.linkedin.com/company/booz-&-company.",
-      "title": "Booz & Company. | LinkedIn"
-    },
-    {
       "slot": "youtube",
       "url": "https://www.youtube.com/watch?v=2ssxpjCLdBw",
       "title": "Vellox™: Booz Allen's AI-Native Cyber Product Suite | Youtube"
@@ -44,6 +39,11 @@
       "slot": "additional",
       "url": "https://newsroom.boozallen.com/press-releases",
       "title": "Press Releases | Booz Allen Hamilton Inc."
+    },
+    {
+      "slot": "additional",
+      "url": "https://investors.boozallen.com/press-releases",
+      "title": "INVESTOR NEWS | Booz Allen Hamilton"
     }
   ],
   "box3": [

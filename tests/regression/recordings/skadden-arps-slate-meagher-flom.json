@@ -1972,6 +1972,15 @@
       "type": "video",
       "category": "YouTube",
       "category_key": "youtube"
+    },
+    "https://www.youtube.com/@skadden1948": {
+      "url": "https://www.youtube.com/watch?v=l0uXSKo-hOU",
+      "title": "First 24 Hours of an AI Agent Attack: Response and Governance — With Commvault's Danielle Sheer",
+      "description": "On this episode of \"Decrypted,\" hosts David Simon and William Ridgway take a company through the first 24 hours of an AI agent attack. In a hypothetical scenario with no ransom note and no human adversary, they cover containment decisions in the first two hours; what evidence to preserve; when to en",
+      "thumbnail": "https://i.ytimg.com/vi/l0uXSKo-hOU/maxresdefault.jpg",
+      "type": "video",
+      "category": "YouTube",
+      "category_key": "youtube"
     }
   }
 }

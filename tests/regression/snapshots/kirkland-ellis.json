@@ -22,18 +22,13 @@
     },
     {
       "slot": "community",
-      "url": "https://www.kirkland.com/-/media/social-commitment/charitable-giving/foundation-books/review-of-foundation-contributions-2009.pdf",
-      "title": "KIRKLAND & ELLIS LLP REVIEW OF FOUNDATION CONTRIBUTIONS 2009 | Kirkland"
+      "url": "https://www.kirkland.com/news/award/2021/04/outstanding-social-responsibility-of-the-year-2021",
+      "title": "Outstanding Social Responsibility of the Year 2021 | News | Kirkland & Ellis LLP"
     },
     {
       "slot": "news",
       "url": "https://www.kirkland.com/news/press-release/2026/03/kirkland-advises-sabre-on-strategic-governance-agreement-with-constellation-software",
       "title": "Kirkland Advises Sabre on Strategic Governance Agreement with Constellation Software | News | Kirkland & Ellis LLP"
-    },
-    {
-      "slot": "investor",
-      "url": "https://www.kirkland.com/publications/kirkland-alert/2021/08/cfius-latest-annual-report",
-      "title": "Seven Highlights from CFIUS’ Latest Annual Report | Publications | Kirkland & Ellis LLP"
     },
     {
       "slot": "role_specific",
@@ -42,8 +37,13 @@
     },
     {
       "slot": "additional",
-      "url": "https://www.kirkland.com/content/about-kirkland",
-      "title": "About Kirkland | Kirkland & Ellis LLP"
+      "url": "https://staffjobsus.kirkland.com/pages/offices",
+      "title": "Offices - Kirkland & Ellis Careers - Jobs in Chicago, IL | Kirkland"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.kirkland.com/news/press-release/2026/02/kirkland-ellis-expanding-with-new-office-in-nashville",
+      "title": "Kirkland & Ellis Expanding with New Office in Nashville | News | Kirkland & Ellis LLP"
     }
   ],
   "box3": [

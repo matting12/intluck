@@ -12,8 +12,8 @@
     },
     {
       "slot": "youtube",
-      "url": "https://www.youtube.com/watch?v=5CnzpapVjQg",
-      "title": "D-MARS Adventure | Youtube"
+      "url": "https://www.youtube.com/watch?v=wpmSoF3uG_A",
+      "title": "About Mars | Youtube"
     },
     {
       "slot": "community",
@@ -32,18 +32,18 @@
     },
     {
       "slot": "additional",
-      "url": "https://www.mars.com/our-brands/all-brands",
-      "title": "Mars Brands: A-Z | Mars Global"
+      "url": "https://www.mars.com/news-and-stories",
+      "title": "News & Stories | Mars Global"
     },
     {
       "slot": "additional",
-      "url": "https://www.mars.com/about",
-      "title": "All About Mars | Mars Global"
+      "url": "https://www.mars.com/about/mars-impact-fund",
+      "title": "Mars Impact Fund: Philanthropy & Social Impact Initiatives | Mars"
     },
     {
       "slot": "additional",
-      "url": "https://www.mars.com/our-brands/mars-snacking",
-      "title": "Mars Snacking: Inspiring Happiness with Better Snacks for Better Days | Mars, Incorporated"
+      "url": "https://www.mars.com/news-and-stories/articles/2021-community-engagement-summary",
+      "title": "Our Community Engagement Summary: giving in record numbers | Mars"
     }
   ],
   "box3": [

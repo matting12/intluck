@@ -12,8 +12,8 @@
     },
     {
       "slot": "youtube",
-      "url": "https://www.youtube.com/watch?v=mstbjehP0i8",
-      "title": "Global Gun News | Youtube"
+      "url": "https://www.youtube.com/watch?v=ueiAtTj_bdg",
+      "title": "How Cargill Helps Feed the World | Inside the Global Food System"
     },
     {
       "slot": "community",
@@ -32,18 +32,18 @@
     },
     {
       "slot": "additional",
-      "url": "https://www.cargill.com/about",
-      "title": "About our purpose, employees, history and culture | Cargill"
+      "url": "https://cargill.com/about/company-overview",
+      "title": "Company overview of global supply chain partner | Cargill"
     },
     {
       "slot": "additional",
-      "url": "https://www.cargill.com/foodservice",
-      "title": "Cargill Foodservice – North America | Cargill"
+      "url": "https://www.cargill.com/news/in-the-news",
+      "title": "Cargill featured in the news | Cargill"
     },
     {
       "slot": "additional",
-      "url": "https://www.cargill.com/foodservice/our-products",
-      "title": "Our Products | Cargill"
+      "url": "https://www.cargill.com/food-beverage/cocoa-chocolate/our-vision",
+      "title": "Our vision | Cargill Cocoa & Chocolate | Cargill"
     }
   ],
   "box3": [

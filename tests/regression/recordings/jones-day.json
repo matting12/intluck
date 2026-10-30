@@ -2488,6 +2488,15 @@
       "type": "video",
       "category": "YouTube",
       "category_key": "youtube"
+    },
+    "https://www.youtube.com/@jonesday": {
+      "url": "https://www.youtube.com/watch?v=bXhd4InAi2Y",
+      "title": "In Our Own Words: One Firm Worldwide®",
+      "description": "Jones Day is a global law firm with more than 2,400 lawyers in 40 offices across five continents. The Firm is distinguished by: a singular tradition of client service; the mutual commitment to, and the seamless collaboration of, a true partnership; formidable legal talent across multiple disciplines",
+      "thumbnail": "https://i.ytimg.com/vi/bXhd4InAi2Y/maxresdefault.jpg",
+      "type": "video",
+      "category": "YouTube",
+      "category_key": "youtube"
     }
   }
 }

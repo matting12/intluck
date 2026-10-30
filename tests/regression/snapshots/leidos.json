@@ -32,18 +32,18 @@
     },
     {
       "slot": "additional",
-      "url": "https://www.leidos.com/company",
-      "title": "Company | Leidos"
+      "url": "https://investors.leidos.com/news-events/news-releases",
+      "title": "News Releases | Leidos"
     },
     {
       "slot": "additional",
-      "url": "https://careers.leidos.com/search/jobs",
-      "title": "Job Search Results | Leidos"
+      "url": "https://careers.leidos.com/pages/about-us",
+      "title": "About us | Leidos"
     },
     {
       "slot": "additional",
-      "url": "https://www.leidos.com/insights/what-does-leidos-do",
-      "title": "What does Leidos do? | Leidos"
+      "url": "https://investors.leidos.com/investor-relations/",
+      "title": "Investor Relations | Leidos"
     }
   ],
   "box3": [

@@ -2393,6 +2393,15 @@
       "type": "video",
       "category": "YouTube",
       "category_key": "youtube"
+    },
+    "https://www.youtube.com/user/Boeing": {
+      "url": "https://www.youtube.com/watch?v=IyyIlzn-d-M",
+      "title": "Boeing 737-10 Certified by the Federal Aviation Administration",
+      "description": "Certified: 🔟\n\nThe 737-10 has received FAA certification, marking a major milestone for Boeing and for the development team that brought the final member of the 737 MAX family to this point.\n\n✈️Strong fuel efficiency for denser markets\n✈️Greater flexibility for airlines serving high-demand routes\n✈️C",
+      "thumbnail": "https://i.ytimg.com/vi/IyyIlzn-d-M/maxresdefault.jpg",
+      "type": "video",
+      "category": "YouTube",
+      "category_key": "youtube"
     }
   }
 }

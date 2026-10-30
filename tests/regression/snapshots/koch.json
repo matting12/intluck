@@ -11,14 +11,9 @@
       "title": "About Us | Company Overview | Koch"
     },
     {
-      "slot": "social",
-      "url": "https://uk.linkedin.com/company/koch-media-",
-      "title": "Koch Media GmbH | LinkedIn"
-    },
-    {
       "slot": "youtube",
-      "url": "https://www.youtube.com/watch?v=eLfudx2STLs",
-      "title": "Nick Miles meets Rodeo Rosinen - Amarillo Nights Munich | Youtube"
+      "url": "https://www.youtube.com/c/kochindustries",
+      "title": "Koch | Youtube"
     },
     {
       "slot": "community",
@@ -27,18 +22,23 @@
     },
     {
       "slot": "additional",
-      "url": "https://www.kochinc.com/companies",
-      "title": "Companies | Subsidiaries, Products and Jobs | Koch"
+      "url": "https://www.kochinc.com/news",
+      "title": "News | Latest Company Updates and Stories | Koch"
     },
     {
       "slot": "additional",
-      "url": "https://www.kochinc.com/leadership/charles-koch",
-      "title": "Charles Koch | Chairman and Co-CEO | Koch"
+      "url": "https://www.kochinc.com/companies/koch-investment-companies",
+      "title": "Koch Investment Companies Careers | Jobs and Opportunities | Koch"
     },
     {
       "slot": "additional",
-      "url": "https://www.kochinc.com/connect-with-koch",
-      "title": "Connect with Us | Koch"
+      "url": "https://www.kochinc.com/kochict",
+      "title": "Our Presence in Wichita | Community & Careers | Koch"
+    },
+    {
+      "slot": "additional",
+      "url": "https://news.kochinc.com/collections/community-involvement-philanthropy",
+      "title": "Community Involvement and Philanthropy | Koch News"
     }
   ],
   "box3": [

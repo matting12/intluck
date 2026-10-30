@@ -2258,6 +2258,15 @@
       "type": "video",
       "category": "YouTube",
       "category_key": "youtube"
+    },
+    "https://www.youtube.com/user/mars": {
+      "url": "https://www.youtube.com/watch?v=wpmSoF3uG_A",
+      "title": "About Mars",
+      "description": "",
+      "thumbnail": "https://i.ytimg.com/vi/wpmSoF3uG_A/maxresdefault.jpg",
+      "type": "video",
+      "category": "YouTube",
+      "category_key": "youtube"
     }
   }
 }

@@ -2303,6 +2303,15 @@
       "type": "video",
       "category": "YouTube",
       "category_key": "youtube"
+    },
+    "https://www.youtube.com/@GeneralDynamicsOfficial": {
+      "url": "https://www.youtube.com/watch?v=rgcsZVewYmE",
+      "title": "General Dynamics - Creepin' In",
+      "description": "Our second album is available for pre-order now. The 12\" ships out April / May. This video contains flashing images.",
+      "thumbnail": "https://i.ytimg.com/vi/rgcsZVewYmE/maxresdefault.jpg",
+      "type": "video",
+      "category": "YouTube",
+      "category_key": "youtube"
     }
   }
 }

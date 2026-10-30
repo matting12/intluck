@@ -12,8 +12,8 @@
     },
     {
       "slot": "youtube",
-      "url": "https://www.youtube.com/watch?v=FwKIBQ0POwU",
-      "title": "Introducing RTX Gaming Clan #shorts | Youtube"
+      "url": "https://www.youtube.com/watch?v=mfbo_vG0EFA",
+      "title": "We Are RTX | Youtube"
     },
     {
       "slot": "community",
@@ -37,13 +37,13 @@
     },
     {
       "slot": "additional",
-      "url": "https://www.rtx.com/raytheon",
-      "title": "Home | Raytheon"
+      "url": "https://www.rtx.com/news/news-center/2026/10/20/rtx-reports-q3-2026-results",
+      "title": "News | RTX Reports Q3 2026 Results | RTX"
     },
     {
       "slot": "additional",
-      "url": "https://www.rtx.com/news/news-center/2026/10/20/rtx-reports-q3-2026-results",
-      "title": "News | RTX Reports Q3 2026 Results | RTX"
+      "url": "https://www.rtx.com/news",
+      "title": "News | RTX"
     }
   ],
   "box3": [

@@ -6,19 +6,14 @@
       "title": "Ropes & Gray LLP | Ropesgray"
     },
     {
-      "slot": "about",
-      "url": "https://www.ropesgray.com/en/services/practices/charitable-foundations/charitable-foundations-fulfilling-your-philanthropic-mission",
-      "title": "Charitable Foundations: Fulfilling Your Philanthropic Mission | Services & Industries | Ropes & Gray LLP"
-    },
-    {
       "slot": "youtube",
       "url": "https://www.youtube.com/watch?v=qc_BbNJZNq4",
       "title": "Learning the Ropes: Hamza Chaudhry | Youtube"
     },
     {
       "slot": "community",
-      "url": "https://www.ropesgray.com/en/services/practices/esg-csr-and-business-and-human-rights",
-      "title": "ESG, CSR and Business and Human Rights | Services & Industries | Ropes & Gray LLP"
+      "url": "https://www.ropesgray.com/en/news-and-events/rankings-and-awards/2022/10/ropes-gray-named-esg-community-impact-leader-the-national-law-journal",
+      "title": "Ropes & Gray Named an “ESG and Community Impact Leader” by The National Law Journal | News & Events | Ropes & Gray LLP"
     },
     {
       "slot": "news",
@@ -26,24 +21,29 @@
       "title": "News | Ropes & Gray LLP"
     },
     {
-      "slot": "investor",
-      "url": "https://www.ropesgray.com/en/news-and-events/news/2026/05/ropes-gray-client-alert-cited-investing-com-and-yahoo-finance",
-      "title": "Ropes & Gray Client Alert Cited in Investing.com and Yahoo Finance Coverage of SEC Semi-Annual Reporting Proposal | News & Events | Ropes & Gray LLP"
+      "slot": "additional",
+      "url": "https://www.ropesgray.com/en/news-and-events/news/2025/10/ropes-gray-names-20-new-partners",
+      "title": "Ropes & Gray Names 20 New Partners | News & Events | Ropes & Gray LLP"
     },
     {
       "slot": "additional",
-      "url": "https://www.ropesgray.com/en/locations",
-      "title": "Locations | Ropes & Gray LLP"
+      "url": "https://www.ropesgray.com/en/news-and-events/news/2026/10/ropes-gray-names-26-new-partners",
+      "title": "Ropes & Gray Names 26 New Partners | News & Events | Ropes & Gray LLP"
     },
     {
       "slot": "additional",
-      "url": "https://www.ropesgray.com/en/people",
-      "title": "People | Ropes & Gray LLP"
+      "url": "https://www.ropesgray.com/en/news-and-events",
+      "title": "News & Events | Ropes & Gray LLP"
     },
     {
       "slot": "additional",
-      "url": "https://www.ropesgray.com/en/about",
-      "title": "Practice with Purpose | About Ropes & Gray LLP"
+      "url": "https://www.ropesgray.com/en/news-and-events/news/2026/02/ropes-gray-takes-restructuring-practice-to-the-next-level",
+      "title": "Ropes & Gray Takes Restructuring Practice to the Next Level with Addition of Rachel Strickland and Team of Three Partners | News & Events | Ropes & Gray LLP"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.ropesgray.com/en/newsroom/alerts/2018/03/Corporate-Social-Responsibility-Compliance-in-2018-and-Beyond-An-Overview-for-In-House-Legal-Counsel",
+      "title": "Corporate Social Responsibility Compliance in 2018, and Beyond – An Overview for In-House Legal Counsel | Insights | Ropes & Gray LLP"
     }
   ],
   "box3": [

@@ -2203,6 +2203,15 @@
       "type": "video",
       "category": "YouTube",
       "category_key": "youtube"
+    },
+    "https://www.youtube.com/@gibson": {
+      "url": "https://www.youtube.com/watch?v=1mPGZnLcSMc",
+      "title": "The secret to Gibson guitar tone starts here",
+      "description": "Join Dinesh Lekhraj on the Gibson Gear Guide for Handcrafted in Nashville, TN, Chapter 1: Wood\n\n▶ Learn more: https://bit.ly/3T89bTR\n▶ Shop Gibson electric guitars here: https://bit.ly/4cg4k9x\nFeatured guitars: \n▶ Gibson Custom 1959 Les Paul Standard Reissue demo: https://bit.ly/3TsCb8U\n▶ Gibson Cus",
+      "thumbnail": "https://i.ytimg.com/vi/1mPGZnLcSMc/maxresdefault.jpg",
+      "type": "video",
+      "category": "YouTube",
+      "category_key": "youtube"
     }
   }
 }

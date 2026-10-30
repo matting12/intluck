@@ -7,6 +7,7 @@ offline, so the same recording always gives the same links. A changed snapshot
 therefore means the code changed, not the search results.
 
     python -m tests.regression.run record [company ...]   # live: hits Brave/YouTube/OpenAI
+    python -m tests.regression.run fill   [company ...]   # live, but only for calls not yet recorded
     python -m tests.regression.run check  [company ...]   # offline: compare against snapshots
     python -m tests.regression.run approve [company ...]  # offline: accept current output
 
@@ -123,6 +124,37 @@ class Replayer:
         return self.data['youtube'][url]
 
 
+class Filler(Replayer):
+    """
+    Replays the recording, but makes (and records) any call it doesn't have yet —
+    e.g. a YouTube channel a code change now considers. Everything already recorded
+    stays as it was, so the resulting diff shows the code change, not search drift.
+    """
+
+    def __init__(self, data):
+        super().__init__(data)
+        self.live = Recorder()
+        self.live.data = data  # live calls are saved straight into this recording
+
+    async def brave_search(self, query, api_key, category=None, freshness=None):
+        if _brave_key(query, category, freshness) not in self.data['brave']:
+            self.misses.append('search')
+            return await self.live.brave_search(query, api_key, category, freshness=freshness)
+        return await super().brave_search(query, api_key, category, freshness)
+
+    async def identify_company_domain(self, company, api_key):
+        if company not in self.data['domains']:
+            self.misses.append('domain')
+            return await self.live.identify_company_domain(company, api_key)
+        return self.data['domains'][company]
+
+    async def resolve_youtube(self, link, company_name=None):
+        if link.get('url', '') not in self.data['youtube']:
+            self.misses.append('youtube')
+            return await self.live.resolve_youtube(link, company_name=company_name)
+        return self.data['youtube'][link.get('url', '')]
+
+
 def _patch(brave_search, identify_company_domain, filter_dead_links, resolve_youtube):
     routes.brave_search = brave_search
     routes.identify_company_domain = identify_company_domain
@@ -203,6 +235,22 @@ async def record(company, group):
     print(f'recorded {company}: ' + ', '.join(f'{b} {len(l)} links' for b, l in boxes.items()))
 
 
+async def fill(company, group):
+    path = RECORDINGS / f'{slug(company)}.json'
+    if not path.exists():
+        return await record(company, group)
+    data = _read(path)
+    filler = Filler(data)
+    _patch_fake(filler)
+    try:
+        await run_boxes(company, JOB_TITLES[group])
+    finally:
+        _patch(*REAL)
+    if filler.misses:
+        _write(path, data)
+    print(f'filled {company}: {len(filler.misses)} new call(s) recorded')
+
+
 async def replay(company, group):
     """Returns (boxes, problems)."""
     path = RECORDINGS / f'{slug(company)}.json'
@@ -214,7 +262,7 @@ async def replay(company, group):
     problems = invariant_errors(boxes)
     if replayer.misses:
         problems.append(f'{len(replayer.misses)} external call(s) not in the recording (queries changed?) — '
-                        f're-record this company. First: {replayer.misses[0]}')
+                        f'run: python -m tests.regression.run fill "{company}". First: {replayer.misses[0]}')
     return boxes, problems
 
 
@@ -226,9 +274,9 @@ async def main(cmd, names):
     if unknown:
         sys.exit(f'Unknown company: {", ".join(unknown)}. See tests/regression/companies.py')
 
-    if cmd == 'record':
+    if cmd in ('record', 'fill'):
         for company, group in companies:
-            await record(company, group)
+            await (record if cmd == 'record' else fill)(company, group)
         return
 
     failed = 0
@@ -258,6 +306,6 @@ async def main(cmd, names):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2 or sys.argv[1] not in ('record', 'check', 'approve'):
+    if len(sys.argv) < 2 or sys.argv[1] not in ('record', 'fill', 'check', 'approve'):
         sys.exit(__doc__)
     asyncio.run(main(sys.argv[1], sys.argv[2:]))

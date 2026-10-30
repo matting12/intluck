@@ -6,14 +6,14 @@
       "title": "General Dynamics | Home"
     },
     {
-      "slot": "about",
-      "url": "https://www.gd.com/our-business/information-systems-technology/mission-systems",
-      "title": "General Dynamics Mission Systems | Gd"
+      "slot": "social",
+      "url": "https://www.facebook.com/GeneralDynamicsOfficial/",
+      "title": "General Dynamics (@GeneralDynamicsOfficial) | Facebook"
     },
     {
       "slot": "youtube",
-      "url": "https://www.youtube.com/watch?v=tY6v4cN3Ia4",
-      "title": "MUM-T at Army Warfighting Experimentation 2019 | Youtube"
+      "url": "https://www.youtube.com/watch?v=rgcsZVewYmE",
+      "title": "General Dynamics - Creepin' In | Youtube"
     },
     {
       "slot": "community",
@@ -32,18 +32,18 @@
     },
     {
       "slot": "additional",
-      "url": "https://www.gd.com/about-gd",
-      "title": "About GD | General Dynamics"
-    },
-    {
-      "slot": "additional",
       "url": "https://www.gd.com/about-gd/our-history",
       "title": "Our History | General Dynamics"
     },
     {
       "slot": "additional",
-      "url": "https://www.gd.com/our-businesses",
-      "title": "Our Businesses | General Dynamics"
+      "url": "https://www.gd.com/news/news-feed",
+      "title": "News Feed | General Dynamics"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.gd.com/our-business/information-systems-technology/mission-systems",
+      "title": "General Dynamics Mission Systems | Gd"
     }
   ],
   "box3": [

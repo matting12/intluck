@@ -17,16 +17,6 @@
     },
     {
       "slot": "additional",
-      "url": "https://www.enterprisemobility.com/en/index.html",
-      "title": "Total mobility solutions, powered by our | Enterprisemobility"
-    },
-    {
-      "slot": "additional",
-      "url": "https://www.enterprisemobility.com/en/brands-services.html",
-      "title": "Brands & Services | Enterprisemobility"
-    },
-    {
-      "slot": "additional",
       "url": "https://www.enterprisemobility.com/en/careers.html",
       "title": "Home | Enterprise Mobility Careers"
     },
@@ -42,8 +32,18 @@
     },
     {
       "slot": "additional",
-      "url": "https://www.enterprisemobility.com/en/contact-us.html",
-      "title": "Contact Us | Enterprisemobility"
+      "url": "https://www.enterprisemobility.com/en/careers/job-search-results.html",
+      "title": "Job Search Results | Enterprise Mobility Careers"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.enterprisemobility.com/en/news-stories.html",
+      "title": "Mobility News & Stories | Enterprisemobility"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.enterprisemobility.com/en/careers/working-here/training-and-development.html",
+      "title": "Training and Development | Enterprise Mobility Careers"
     }
   ],
   "box3": [

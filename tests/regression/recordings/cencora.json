@@ -2263,6 +2263,15 @@
       "type": "video",
       "category": "YouTube",
       "category_key": "youtube"
+    },
+    "https://www.youtube.com/@CencoraGlobal": {
+      "url": "https://www.youtube.com/watch?v=PXoUDqTa5rk",
+      "title": "Helping biopharma breakthroughs break through",
+      "description": "Cencora has been guiding biopharma companies from molecule to marketplace for more than 25 years — through proven strategies and insights from 1,500+ brand launches. By partnering with Cencora, you can avoid costly mistakes, remove barriers to access, and reach your product’s full potential.",
+      "thumbnail": "https://i.ytimg.com/vi/PXoUDqTa5rk/maxresdefault.jpg",
+      "type": "video",
+      "category": "YouTube",
+      "category_key": "youtube"
     }
   }
 }

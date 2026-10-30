@@ -7,13 +7,13 @@
     },
     {
       "slot": "social",
-      "url": "https://m.facebook.com/BootCoffee/videos/stay-connected-to-our-social-media-channels-and-know-the-dates-of-our-upcoming-w/479215566728314/?__so__=permalink&__rv__=related_videos&locale=hi_IN",
-      "title": "Stay connected to our social media channels and know the ... | Facebook"
+      "url": "https://x.com/Boeing?lang=en",
+      "title": "The Boeing Company (@Boeing) on X | X"
     },
     {
       "slot": "youtube",
-      "url": "https://www.youtube.com/watch?v=Z18UyOyDEQQ",
-      "title": "Trailer | Youtube"
+      "url": "https://www.youtube.com/watch?v=IyyIlzn-d-M",
+      "title": "Boeing 737-10 Certified by the Federal Aviation Administration | Youtube"
     },
     {
       "slot": "investor",
@@ -22,28 +22,28 @@
     },
     {
       "slot": "additional",
-      "url": "https://www.boeing.com/company",
-      "title": "Company | Boeing"
+      "url": "https://services.boeing.com/about",
+      "title": "About us | Boeing"
     },
     {
       "slot": "additional",
-      "url": "https://www.boeing.com/company/general-info",
-      "title": "General Information | Boeing"
+      "url": "https://investors.boeing.com/investors/overview/default.aspx",
+      "title": "Boeing Company - Investors - Overview | Boeing"
     },
     {
       "slot": "additional",
-      "url": "https://www.boeing.com/content/theboeingcompany/us/en/company.html",
-      "title": "Our Company | Boeing"
+      "url": "https://www.boeing.com/company/community-engagement",
+      "title": "Community Engagement | Boeing"
     },
     {
       "slot": "additional",
-      "url": "https://jobs.boeing.com/",
-      "title": "Explore new horizons with Boeing | Boeing"
+      "url": "https://www.boeing.com/content/dam/boeing/boeingdotcom/principles/community-engagement/pdf/2023-global-engagement-portfolio.pdf",
+      "title": "2023 Community Impact Portfolio Boeing Global Engagement | Boeing"
     },
     {
       "slot": "additional",
-      "url": "https://www.boeing.com/global",
-      "title": "Global | Boeing"
+      "url": "https://www-prd-13.exi.boeing.com/principles/community-engagement.page",
+      "title": "Community Investment In People & Employee Engagement | Boeing"
     }
   ],
   "box3": [

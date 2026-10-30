@@ -27,23 +27,23 @@
     },
     {
       "slot": "additional",
-      "url": "https://www.southernglazers.com/our-products",
-      "title": "Our Products | Southern Glazer's Wine & Spirits"
-    },
-    {
-      "slot": "additional",
-      "url": "https://supplierbilling.southernglazers.com/",
-      "title": "SGWS services | Southernglazers"
-    },
-    {
-      "slot": "additional",
       "url": "https://www.southernglazers.com/who-we-are",
       "title": "Who we are | Southernglazers"
     },
     {
       "slot": "additional",
-      "url": "https://newsroom.southernglazers.com/media-resources/fact-sheets/details/2026/Company-Fact-Sheet/default.aspx",
-      "title": "Company Fact Sheet | Southern Glazer's Wine & Spirits"
+      "url": "https://www.southernglazers.com/who-we-are/our-history",
+      "title": "Our history | Southernglazers"
+    },
+    {
+      "slot": "additional",
+      "url": "https://newsroom.southernglazers.com/site-map/default.aspx",
+      "title": "Site Map - Newsroom | Southern Glazer's Wine & Spirits"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.southernglazers.com/content/dam/web/photos/sg-corp-site-live/home/documents/2024-SGWS-CSR-Report_Final.pdf",
+      "title": "WIN WITH HEART CORPORATE SOCIAL RESPONSIBILITY REPORT | Southernglazers"
     }
   ],
   "box3": [

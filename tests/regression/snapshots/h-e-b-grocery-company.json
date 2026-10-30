@@ -6,6 +6,11 @@
       "title": "H-E-B | Curbside Pickup & Grocery Delivery | HEB.com"
     },
     {
+      "slot": "social",
+      "url": "https://x.com/HEB",
+      "title": "H-E-B (@HEB) / X | X"
+    },
+    {
       "slot": "youtube",
       "url": "https://www.youtube.com/watch?v=O8v92M_sHBg",
       "title": "H-E-B NOW | Game Day Favorites Delivered"
@@ -21,29 +26,24 @@
       "title": "H-E-B Newsroom | Company News, Community Info & Media"
     },
     {
-      "slot": "investor",
-      "url": "https://www.heb.com/product-detail/h-e-b-organics-chicken-stock/1728287",
-      "title": "H-E-B Organics Chicken Stock - Shop Broth & bouillon at H-E-B | Heb"
+      "slot": "additional",
+      "url": "https://newsroom.heb.com/dfw/",
+      "title": "H-E-B enters the DFW Metroplex - H-E-B Newsroom | Heb"
     },
     {
       "slot": "additional",
-      "url": "https://www.heb.com/static-page/company/about-us",
-      "title": "About the HEB Grocery Company | Heb"
+      "url": "https://careers.heb.com/here-everyone-belongs/",
+      "title": "H-E-B Careers | View Texas Jobs & Apply Online"
     },
     {
       "slot": "additional",
-      "url": "https://www.heb.com/static-page/about-ushttps:/www.heb.com/static-page/about-us",
-      "title": "About H-E-B | Here, Everyone Belongs"
+      "url": "https://careers.heb.com/blog/the-secret-to-high-morale?lang=en-US",
+      "title": "H-E-B Careers Blog | Here, Everyone Belongs"
     },
     {
       "slot": "additional",
-      "url": "https://www.heb.com/browse/shop",
-      "title": "H-E-B Departments | Browse Products by Department"
-    },
-    {
-      "slot": "additional",
-      "url": "https://www.heb.com/store-locations",
-      "title": "H-E-B Store Locator | Texas H-E-B Grocery Stores Near Me | HEB.com"
+      "url": "https://newsroom.heb.com/community/apply-for-support/",
+      "title": "Community Investment Programs | Heb"
     }
   ],
   "box3": [

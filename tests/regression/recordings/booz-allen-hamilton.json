@@ -2376,6 +2376,15 @@
       "type": "video",
       "category": "YouTube",
       "category_key": "youtube"
+    },
+    "https://m.youtube.com/@boozallenhamilton971/videos?view=0&sort=dd&shelf_id=1": {
+      "url": "https://www.youtube.com/watch?v=2ssxpjCLdBw",
+      "title": "Vellox™: Booz Allen's AI-Native Cyber Product Suite",
+      "description": "Booz Allen’s AI-native suite of cyber products, Vellox, is built to fight AI with AI. Vellox products outpace attackers by pairing machine-speed automation with models trained by elite cyber operators.\n\nhttps://boozallen.co/41k2Sge",
+      "thumbnail": "https://i.ytimg.com/vi/2ssxpjCLdBw/maxresdefault.jpg",
+      "type": "video",
+      "category": "YouTube",
+      "category_key": "youtube"
     }
   }
 }

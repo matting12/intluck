@@ -11,14 +11,9 @@
       "title": "Company Overview - America's Largest Shipbuilder | HII"
     },
     {
-      "slot": "social",
-      "url": "https://uk.linkedin.com/company/hii-communications-limited",
-      "title": "Hii Communications Limited | LinkedIn"
-    },
-    {
       "slot": "youtube",
-      "url": "https://www.youtube.com/watch?v=wz6QQlwrA7Q",
-      "title": "Shoooot Day | Youtube"
+      "url": "https://www.youtube.com/watch?v=NzAL3C9_-Bs",
+      "title": "HII: Building the Future Fleet - Integrated Naval Power in Action | Youtube"
     },
     {
       "slot": "community",
@@ -44,6 +39,11 @@
       "slot": "additional",
       "url": "https://www.hii.com/careers/how-we-hire",
       "title": "HII Careers | Hii"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.hii.com/news/hii-reports-second-quarter-2026-results",
+      "title": "HII Reports Second Quarter 2026 Results | HII Newsroom"
     }
   ],
   "box3": [

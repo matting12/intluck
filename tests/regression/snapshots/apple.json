@@ -16,11 +16,6 @@
       "title": "New MacBook Pro with PROLED XDR Display: The first-ever Mac with Touch | Youtube"
     },
     {
-      "slot": "community",
-      "url": "https://support.apple.com/community-plus",
-      "title": "Apple Community+ Program - Apple Community | Apple"
-    },
-    {
       "slot": "news",
       "url": "https://www.apple.com/newsroom/",
       "title": "Newsroom - Apple | Apple"
@@ -32,18 +27,23 @@
     },
     {
       "slot": "additional",
-      "url": "https://www.apple.com/store",
-      "title": "Apple Store Online - Apple | Apple"
+      "url": "https://www.apple.com/careers/us/life-at-apple/shared-values.html",
+      "title": "Careers at Apple: Read our people’s Shared Values stories. | Apple"
     },
     {
       "slot": "additional",
-      "url": "https://apps.apple.com/us/app/apple-store/id375380948",
-      "title": "Apple Store App - App Store | Apple"
+      "url": "https://www.apple.com/careers/us/life-at-apple.html",
+      "title": "Life at Apple: Culture, Values and Growth - Careers at Apple | Apple"
     },
     {
       "slot": "additional",
-      "url": "https://www.apple.com/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/",
-      "title": "Open up to new possibilities with iPhone Duo - Apple | Apple"
+      "url": "https://www.apple.com/in/legal/more-resources/csr-report/",
+      "title": "Annual Report on Corporate Social Responsibility (CSR) ... | Apple"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.apple.com/legal/more-resources/docs/India-CSR-2018-19-AnnualReport.pdf",
+      "title": "Corporate Social Responsibility Annual Report | Apple"
     }
   ],
   "box3": [

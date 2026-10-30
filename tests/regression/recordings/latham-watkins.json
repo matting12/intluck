@@ -2341,6 +2341,15 @@
       "type": "video",
       "category": "YouTube",
       "category_key": "youtube"
+    },
+    "https://www.youtube.com/@lathamwatkinsglobal/about": {
+      "url": "https://www.youtube.com/watch?v=Eq2om43Aglw",
+      "title": "The LathamTECH Podcast: The Rise of Energy Tech",
+      "description": "The explosive demand for AI and data center capacity has unleashed a wave of innovation and investment across energy technology. From fuel cells and geothermal energy to small modular nuclear reactors, a range of technologies seeks to power the next generation of digital infrastructure. At the same ",
+      "thumbnail": "https://i.ytimg.com/vi/Eq2om43Aglw/maxresdefault.jpg",
+      "type": "video",
+      "category": "YouTube",
+      "category_key": "youtube"
     }
   }
 }

@@ -2413,6 +2413,15 @@
       "type": "video",
       "category": "YouTube",
       "category_key": "youtube"
+    },
+    "https://www.youtube.com/user/Publix/channels?disable_polymer=1": {
+      "url": "https://www.youtube.com/watch?v=pTCEQc-3Jqs",
+      "title": "The Publix name means quality.",
+      "description": "From everyday favorites to something new. It’s all here, from the brand you can trust.\n\nPublix is the largest employee-owned supermarket chain in the United States, and we just keep growing. As part of our mission to be the premier quality food retailer in the world, we always aim to provide excepti",
+      "thumbnail": "https://i.ytimg.com/vi/pTCEQc-3Jqs/maxresdefault.jpg",
+      "type": "video",
+      "category": "YouTube",
+      "category_key": "youtube"
     }
   }
 }

@@ -2208,6 +2208,15 @@
       "type": "video",
       "category": "YouTube",
       "category_key": "youtube"
+    },
+    "https://www.youtube.com/c/HIIYouTube": {
+      "url": "https://www.youtube.com/watch?v=NzAL3C9_-Bs",
+      "title": "HII: Building the Future Fleet - Integrated Naval Power in Action",
+      "description": "This video showcases how HII, America's Seapower Company,  is building a next-generation fleet where crewed platforms, autonomous systems, and advanced technologies operate together in real time across every domain. From AI-enabled decision tools to unmanned systems operating at the tactical edge, e",
+      "thumbnail": "https://i.ytimg.com/vi/NzAL3C9_-Bs/maxresdefault.jpg",
+      "type": "video",
+      "category": "YouTube",
+      "category_key": "youtube"
     }
   }
 }

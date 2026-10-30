@@ -2,13 +2,13 @@
   "box2": [
     {
       "slot": "home",
-      "url": "https://www.amazon.com/",
-      "title": "Amazon.com. Spend less. Smile more. | Amazon"
+      "url": "https://www.aboutamazon.com/",
+      "title": "Amazon News: Breaking news about Amazon and latest company updates | Aboutamazon"
     },
     {
       "slot": "about",
-      "url": "https://www.amazon.com/Mission-Statement/s?k=Mission+Statement",
-      "title": "Amazon.com: Mission Statement | Amazon"
+      "url": "https://www.aboutamazon.com/about-us",
+      "title": "About Amazon: Mission, businesses, and innovation | Aboutamazon"
     },
     {
       "slot": "youtube",
@@ -17,40 +17,40 @@
     },
     {
       "slot": "community",
-      "url": "https://aws.amazon.com/blogs/industries/tag/corporate-social-responsibility-csr/",
-      "title": "Corporate Social Responsibility (CSR) - AWS - Amazon.com | Amazon"
+      "url": "https://www.aboutamazon.com/impact/community",
+      "title": "Amazon community impact: Housing, education, food, volunteering, and disaster relief | Aboutamazon"
     },
     {
       "slot": "news",
-      "url": "https://advertising.amazon.com/library/newsroom",
-      "title": "Newsroom: Product and Event Announcements | Amazon Ads"
+      "url": "https://press.aboutamazon.com/press-release-archive",
+      "title": "Press Center - Amazon's Press Releases - Amazon News | Aboutamazon"
     },
     {
       "slot": "investor",
-      "url": "https://www.amazon.com/Investor-relations/s?k=Investor+relations",
-      "title": "Amazon.com: Investor Relations | Amazon"
+      "url": "https://ir.aboutamazon.com/quarterly-results/default.aspx",
+      "title": "Amazon.com, Inc. - Quarterly results | Aboutamazon"
     },
     {
       "slot": "role_specific",
-      "url": "https://www.amazon.com/Head-Engineering-Leadership-Engineers-Professionals/dp/B0C1J2N3VD",
-      "title": "Amazon.com: Head of Engineering: A Handbook on Engineering Leadership for Engineers, Engineering Managers, Tech Leaders, VP, CTO, Startup business owners and Other Engineering Professionals: 9798390807804: Nidagundi, Padmaraj: Books | Amazon"
+      "url": "https://www.aboutamazon.com/news/aws/werner-vogels-amazon-cto-predictions-2026",
+      "title": "Amazon CTO Werner Vogels predicts the renaissance developer era | Aboutamazon"
     },
     {
       "slot": "additional",
-      "url": "https://hiring.amazon.com/",
-      "title": "Amazon Jobs: Competitive Pay, Paid Time Off & Benefits | Amazon"
+      "url": "https://www.aboutamazon.com/news",
+      "title": "Amazon News | Aboutamazon"
     },
     {
       "slot": "additional",
-      "url": "https://www.amazon.com/gp/new-releases",
-      "title": "Amazon.com New Releases: The best-selling new & future releases on Amazon | Amazon"
+      "url": "https://www.aboutamazon.com/amazon-news-today",
+      "title": "Amazon news: Latest company news and announcements. | Aboutamazon"
     }
   ],
   "box3": [
     {
       "slot": "benefits_landing",
-      "url": "https://hiring.amazon.com/why-amazon/benefits",
-      "title": "Benefits and perks for Amazon warehouse employees | Amazon"
+      "url": "https://www.aboutamazon.com/workplace/employee-benefits",
+      "title": "Amazon Employee Benefits | Aboutamazon"
     },
     {
       "slot": "salary",

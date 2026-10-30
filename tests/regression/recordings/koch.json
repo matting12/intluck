@@ -2345,6 +2345,14 @@
       "type": "video",
       "category": "YouTube",
       "category_key": "youtube"
+    },
+    "https://www.youtube.com/c/kochindustries": {
+      "url": "https://www.youtube.com/c/kochindustries",
+      "title": "Koch",
+      "description": "AboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy &amp; SafetyHow YouTube worksTest new features · © 2026 Google LLC · Koch - YouTube",
+      "type": "video",
+      "category": "YouTube",
+      "category_key": "youtube"
     }
   }
 }

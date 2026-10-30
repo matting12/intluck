@@ -11,6 +11,11 @@
       "title": "Our Mission, Vision and Core Values | Amentum"
     },
     {
+      "slot": "social",
+      "url": "https://es.linkedin.com/company/amentumcorp",
+      "title": "Amentum | LinkedIn"
+    },
+    {
       "slot": "youtube",
       "url": "https://www.youtube.com/watch?v=7Uf8vvGxllw",
       "title": "Amentum's Nuclear Resurgence Panel | Youtube"
@@ -32,18 +37,13 @@
     },
     {
       "slot": "additional",
-      "url": "https://www.amentum.com/key-locations/",
-      "title": "Global Locations | Amentum"
-    },
-    {
-      "slot": "additional",
       "url": "https://ir.amentum.com/overview/default.aspx",
       "title": "Amentum - Investor Relations | Amentum"
     },
     {
       "slot": "additional",
-      "url": "https://www.amentum.com/contact-us/",
-      "title": "Contact Us | Amentum"
+      "url": "https://www.amentum.com/markets/space/",
+      "title": "Aerospace Capabilities and Space Mission Support | Amentum"
     }
   ],
   "box3": [

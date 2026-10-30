@@ -14,9 +14,11 @@ repeatedly fixed one company and broken another. Before shipping such a change:
    [docs/TEST_COMPANIES.md](docs/TEST_COMPANIES.md) through boxes 2–4 and diff each box's
    links against the approved snapshot.
    - A diff you intended: review it, then `python -m tests.regression.run approve`.
-   - "not in the recording": the change altered a search query, so re-record that company
-     (`python -m tests.regression.run record "<company>"`, which hits live APIs), then run
-     `check` again to see the diff before approving. Re-recording uses fresh search results,
-     so that diff mixes your change with search drift.
+   - "not in the recording": the change made a call that was never recorded (a changed
+     search query, or a YouTube channel now being considered). Run
+     `python -m tests.regression.run fill "<company>"`: it makes live calls only for what's
+     missing and keeps everything else, so the next `check` diff is your change alone.
+     (`record` re-records everything with fresh search results — use it to refresh a
+     company, not to test a change, since its diff mixes in search drift.)
 3. Box 1 (interview prep) isn't covered yet: it still uses GPT to pick links, so its
    output isn't deterministic.

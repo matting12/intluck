@@ -2408,6 +2408,15 @@
       "type": "video",
       "category": "YouTube",
       "category_key": "youtube"
+    },
+    "https://www.youtube.com/@CoxEnterprisesInc": {
+      "url": "https://www.youtube.com/watch?v=mfwGj3jRMVU",
+      "title": "FNN x Georgia Forestry Commission | Cox Cleantech Accelerator",
+      "description": "Innovation thrives through meaningful partnerships. 🌿 \n\nThe Cox Cleantech Accelerator connects startups with commercial opportunities inside and outside of Cox, helping transform bold ideas into real world impact. \n\nSee how program alum FNN partnered with the Georgia Forestry Commission to install i",
+      "thumbnail": "https://i.ytimg.com/vi/mfwGj3jRMVU/maxresdefault.jpg",
+      "type": "video",
+      "category": "YouTube",
+      "category_key": "youtube"
     }
   }
 }

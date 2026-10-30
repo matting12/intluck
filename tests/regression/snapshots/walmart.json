@@ -6,11 +6,6 @@
       "title": "Walmart | Save Money. Live better."
     },
     {
-      "slot": "social",
-      "url": "https://www.linkedin.com/company/walmart-connect",
-      "title": "Walmart Connect | LinkedIn"
-    },
-    {
       "slot": "youtube",
       "url": "https://www.youtube.com/watch?v=-W_xaf2VbM4",
       "title": "Walmart Interns vs. Executives Softball Game 2025 | Youtube"
@@ -37,13 +32,18 @@
     },
     {
       "slot": "additional",
-      "url": "https://www.walmart.com/store-directory",
-      "title": "US Store Directory | Walmart Stores"
+      "url": "https://careers.walmart.com/",
+      "title": "Walmart Careers | Walmart"
     },
     {
       "slot": "additional",
-      "url": "https://www.walmart.com/c/brand/walmart",
-      "title": "Walmart | Walmart"
+      "url": "https://corporate.walmart.com/about/newhomeoffice/guiding-principles/who-we-are",
+      "title": "Staying True to Who We Are | Walmart"
+    },
+    {
+      "slot": "additional",
+      "url": "https://corporate.walmart.com/about/newhomeoffice/our-approach/roots-and-community",
+      "title": "Roots and Community | Walmart"
     }
   ],
   "box3": [

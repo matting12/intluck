@@ -2363,6 +2363,15 @@
       "type": "video",
       "category": "YouTube",
       "category_key": "youtube"
+    },
+    "https://www.youtube.com/@RTXCorporation": {
+      "url": "https://www.youtube.com/watch?v=mfbo_vG0EFA",
+      "title": "We Are RTX",
+      "description": "At RTX, we're a team of explorers united in our goal to push the boundaries of known science – and solve the world's most complex problems.\n\nWe design. We engineer. We code. We research. We patent. We test. We learn. We iterate. We manufacture. We produce.\n\nWe are advancing aviation, building smarte",
+      "thumbnail": "https://i.ytimg.com/vi/mfbo_vG0EFA/maxresdefault.jpg",
+      "type": "video",
+      "category": "YouTube",
+      "category_key": "youtube"
     }
   }
 }

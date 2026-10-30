@@ -48,11 +48,6 @@
   ],
   "box3": [
     {
-      "slot": "benefits_landing",
-      "url": "https://www.sidley.com/en/services/employee-benefits",
-      "title": "Employee Benefits and Executive Compensation Law | Sidley Austin LLP"
-    },
-    {
       "slot": "salary",
       "url": "https://www.levels.fyi/companies/sidley-austin/salaries/legal",
       "title": "Sidley Austin Legal Salary | $200K-$235K+ | Levels.fyi"
@@ -91,18 +86,8 @@
   "box4": [
     {
       "slot": "news_business",
-      "url": "https://www.9fin.com/insights/sidley-austin-restructuring-hires-slaughter-and-may-clifford-chance",
-      "title": "Sidley Austin pushes restructuring expansion with hires from Slaughter and May and Clifford Chance | 9Fin"
-    },
-    {
-      "slot": "financials",
-      "url": "https://www.law360.com/articles/2464673/sidley-posts-more-than-30-surge-in-london-revenue",
-      "title": "Sidley Posts More Than 30% Surge In London Revenue - Law360 | Law360"
-    },
-    {
-      "slot": "leadership",
-      "url": "https://www.law.com/americanlawyer/2026/01/22/longtime-sidley-austin-executive-committee-chair-lands-at-ai-native-firm-norm-law-/",
-      "title": "Longtime Sidley Austin Executive Committee Chair Lands at AI-Native Firm Norm Law | Law.com"
+      "url": "https://www.sidley.com/en/newslanding/newsannouncements/2026/10/introducing-sidleycatalyst-built-to-accelerate-growth",
+      "title": "Introducing SidleyCatalyst: Built to Accelerate Growth | News | Sidley Austin LLP"
     },
     {
       "slot": "culture",

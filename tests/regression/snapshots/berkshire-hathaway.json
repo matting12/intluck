@@ -48,11 +48,6 @@
   ],
   "box3": [
     {
-      "slot": "benefits_landing",
-      "url": "https://www.berkshirehathaway.com/2025ar/2025ar.pdf",
-      "title": "BERKSHIRE HATHAWAY INC. 2025 ANNUAL REPORT | Berkshirehathaway"
-    },
-    {
       "slot": "salary",
       "url": "https://www.levels.fyi/companies/berkshire-hathaway/salaries/software-engineer",
       "title": "Berkshire Hathaway Software Engineer Salary | $60K-$100K+ | Levels.fyi"
@@ -81,11 +76,6 @@
       "slot": "benefits_reviews",
       "url": "https://www.glassdoor.com/Reviews/Berkshire-Hathaway-Reviews-E805672.htm",
       "title": "Berkshire Hathaway Reviews (822): Pros & Cons of Working At Berkshire Hathaway | Glassdoor"
-    },
-    {
-      "slot": "industry_comparison",
-      "url": "https://www.salary.com/research/company/berkshire-hathaway-salary",
-      "title": "Berkshire Hathaway Average Salary and Pay Ranges | Salary.com"
     }
   ],
   "box4": [
@@ -96,8 +86,8 @@
     },
     {
       "slot": "financials",
-      "url": "https://www.cnbc.com/2026/08/08/berkshire-hathaway-earnings-q2-2026.html",
-      "title": "Berkshire earnings rose last quarter and CEO Greg Abel is starting to deploy Buffett's massive cash hoard | Cnbc"
+      "url": "https://www.wallstreetzen.com/stocks/us/nyse/brk.b/revenue",
+      "title": "(BRK.B) Berkshire Hathaway Revenue: 1991-2026 Annual Revenue | WallStreetZen"
     },
     {
       "slot": "leadership",

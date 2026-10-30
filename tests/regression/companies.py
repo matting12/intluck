@@ -5,6 +5,7 @@ JOB_TITLES = {
     'private': 'Software Engineer',
     'law': 'Associate Attorney',
     'defense': 'Systems Engineer',
+    'past_bugs': 'Software Engineer',
 }
 
 COMPANIES = {
@@ -17,6 +18,8 @@ COMPANIES = {
             'Paul Weiss Rifkind Wharton & Garrison'],
     'defense': ['Lockheed Martin', 'RTX', 'Northrop Grumman', 'General Dynamics', 'The Boeing Company',
                 'L3Harris Technologies', 'Leidos', 'HII', 'Amentum', 'Booz Allen Hamilton'],
+    # Companies that broke in production before — keep them covered
+    'past_bugs': ['Delta Air Lines'],
 }
 
 ALL = [(name, group) for group, names in COMPANIES.items() for name in names]

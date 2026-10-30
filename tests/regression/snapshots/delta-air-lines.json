@@ -1,0 +1,138 @@
+{
+  "box2": [
+    {
+      "slot": "home",
+      "url": "https://www.delta.com/",
+      "title": "Delta Air Lines | Flights & Plane Tickets + Hotels & Cars"
+    },
+    {
+      "slot": "about",
+      "url": "https://www.delta.com/us/en/about-delta/overview",
+      "title": "About Us | Delta Air Lines"
+    },
+    {
+      "slot": "youtube",
+      "url": "https://www.youtube.com/watch?v=Zz65xkPeVHU",
+      "title": "Looking To Book Flights Or Hotels | Youtube"
+    },
+    {
+      "slot": "community",
+      "url": "https://www.delta.com/us/en/about-delta/community-engagement/overview",
+      "title": "Community Engagement | Delta Air Lines"
+    },
+    {
+      "slot": "news",
+      "url": "https://news.delta.com/",
+      "title": "Delta News Hub | Delta News Hub"
+    },
+    {
+      "slot": "investor",
+      "url": "https://ir.delta.com/financials/sec-filings/sec-filings-details/default.aspx?FilingId=15558958",
+      "title": "Delta Air Lines, Inc. - Financials - SEC Filings - SEC Filings Details | Delta"
+    },
+    {
+      "slot": "role_specific",
+      "url": "https://news.delta.com/narayanan-kk-krishnakumar-chief-technology-officer",
+      "title": "Narayanan (KK) Krishnakumar, Chief Technology Officer | Delta News Hub"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.delta.com/us/en/about-delta/corporate-information",
+      "title": "Corporate Information | Delta Air Lines"
+    },
+    {
+      "slot": "additional",
+      "url": "https://www.delta.com/us/en/booking-information/online-booking/overview",
+      "title": "Online Booking | Delta Air Lines"
+    }
+  ],
+  "box3": [
+    {
+      "slot": "benefits_landing",
+      "url": "https://www.delta.com/us/en/careers/benefits",
+      "title": "Career Benefits & Total Rewards | Delta Air Lines"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.glassdoor.com/Salary/Delta-Air-Lines-Software-Engineer-Salaries-E197_D_KO16,33.htm",
+      "title": "Delta Air Lines Software Engineer Salaries (53 Salaries submitted) | Glassdoor"
+    },
+    {
+      "slot": "salary",
+      "url": "https://www.levels.fyi/companies/delta-air-lines/salaries/software-engineer/locations/united-states",
+      "title": "Delta Air Lines Software Engineer Salary in United States | $103K-$143K+ | Levels.fyi"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.reddit.com/r/delta/comments/11m952i/negotiating_salary_for_senior_data_analyst_role/",
+      "title": "r/delta on Reddit: Negotiating Salary for Senior Data Analyst Role | Reddit"
+    },
+    {
+      "slot": "negotiation",
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.comparably.com/companies/delta-air-lines/reviews",
+      "title": "Delta Air Lines Employee Reviews | Comparably"
+    },
+    {
+      "slot": "benefits_reviews",
+      "url": "https://www.indeed.com/cmp/Delta-Air-Lines/reviews",
+      "title": "Delta Air Lines Employee Reviews | Indeed"
+    },
+    {
+      "slot": "benefits_videos",
+      "url": "https://www.youtube.com/watch?v=SYzZwYVHP7g",
+      "title": "Delta Air Lines Employee Benefits | Benefit Overview Summary - YouTube"
+    },
+    {
+      "slot": "industry_comparison",
+      "url": "https://www.indeed.com/companies/compare/American-Airlines-vs-Delta-Air-Lines-1a7417cbcd7e0e0d-f12b1abe0054ed02",
+      "title": "Compare working at American Airlines vs Delta Air Lines | Indeed.com"
+    }
+  ],
+  "box4": [
+    {
+      "slot": "news_business",
+      "url": "https://liveandletsfly.com/delta-air-lines-layoffs/",
+      "title": "Delta Air Lines Addresses Rumors Amid Reports Of Broader Corporate Cuts - Live and Let's Fly | Liveandletsfly"
+    },
+    {
+      "slot": "financials",
+      "url": "https://ir.delta.com/news/news-details/2026/Delta-Air-Lines-Announces-September-Quarter-2026-Financial-Results/default.aspx",
+      "title": "Delta Air Lines, Inc. - Delta Air Lines Announces September Quarter 2026 Financial Results | Delta"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://ir.delta.com/news/news-details/2026/Delta-Announces-Leadership-Changes-as-John-Laughter-Concludes-Distinguished-30-Year-Career/default.aspx",
+      "title": "Delta Air Lines, Inc. - Delta Announces Leadership Changes as John Laughter Concludes Distinguished 30-Year Career | Delta"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Delta-Air-Lines-company-culture-Reviews-EI_IE197.0,15_KH16,31.htm",
+      "title": "Delta Air Lines \"company culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/delta-air-lines/work-life-balance",
+      "title": "Delta Air Lines Work Life Balance | Comparably"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Delta-Air-Lines-DEI-E197.htm",
+      "title": "Delta-Air-Lines: Diversity, Equity & Inclusion | Glassdoor | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.glassdoor.com/FAQ/Delta-Air-Lines-Question-FAQ200054-E197.htm",
+      "title": "Delta Air Lines Q&A: How are career development opportunities at Delta Air Lines? | Glassdoor"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.collegetransitions.com/blog/delta-air-lines-tuition-reimbursement-online-degrees/",
+      "title": "Delta Air Lines Tuition Reimbursement: Online Degrees for Delta Employees - College Transitions | Collegetransitions"
+    }
+  ]
+}

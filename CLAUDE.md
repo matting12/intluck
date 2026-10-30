@@ -10,7 +10,7 @@ repeatedly fixed one company and broken another. Before shipping such a change:
    `python -m app.utils.salary_link_selection`.
 2. Run the snapshot regression tests (offline, a few seconds):
    `python -m tests.regression.run check`
-   They replay recorded search results for the 40 companies in
+   They replay recorded search results for the 41 companies in
    [docs/TEST_COMPANIES.md](docs/TEST_COMPANIES.md) through boxes 2–4 and diff each box's
    links against the approved snapshot.
    - A diff you intended: review it, then `python -m tests.regression.run approve`.

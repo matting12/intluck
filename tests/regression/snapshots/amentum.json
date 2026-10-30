@@ -48,11 +48,6 @@
   ],
   "box3": [
     {
-      "slot": "benefits_landing",
-      "url": "https://www.amentum.com/employees/",
-      "title": "Employee Resources and Support | Amentum"
-    },
-    {
       "slot": "salary",
       "url": "https://www.levels.fyi/companies/amentum/salaries/software-engineer",
       "title": "Amentum Software Engineer Salary | $70K-$85K+ | Levels.fyi"
@@ -81,11 +76,6 @@
       "slot": "benefits_reviews",
       "url": "https://www.indeed.com/cmp/Amentum/reviews",
       "title": "Amentum Employee Reviews | Indeed"
-    },
-    {
-      "slot": "industry_comparison",
-      "url": "https://www.salary.com/research/company/amentum-salary",
-      "title": "Amentum Average Salary and Pay Ranges | Salary.com"
     }
   ],
   "box4": [
@@ -101,8 +91,8 @@
     },
     {
       "slot": "leadership",
-      "url": "https://builtin.com/company/amentum/faq/leadership-management",
-      "title": "Leadership at Amentum: How Are the Managers at Amentum? 2026 | Built In"
+      "url": "https://www.amentum.com/news/amentum-appoints-darren-burton-as-chief-people-officer/",
+      "title": "Amentum Appoints Darren Burton as Chief People Officer | Amentum"
     },
     {
       "slot": "culture",

@@ -43,11 +43,6 @@
   ],
   "box3": [
     {
-      "slot": "benefits_landing",
-      "url": "https://www.kochinc.com/life-at-koch",
-      "title": "Careers | Jobs and Growth Opportunities | Koch"
-    },
-    {
       "slot": "salary",
       "url": "https://www.levels.fyi/companies/koch-industries/salaries/software-engineer",
       "title": "Koch Industries Software Engineer Salary | $80K-$150K+ | Levels.fyi"
@@ -91,8 +86,8 @@
   "box4": [
     {
       "slot": "news_business",
-      "url": "https://tracxn.com/d/acquisitions/acquisitions-by-koch-industries/__QlZYJOPga4LdVT8rcDxeciMZOXxENqvQuFTySVoiemw",
-      "title": "List of 8 Acquisitions by Koch Industries (Oct 2026) - Tracxn | Tracxn"
+      "url": "https://www.ccjdigital.com/business/mergers-acquisitions/article/15814472/koch-strengthens-retail-fulfillment-strategy-with-sos-acquisition",
+      "title": "Koch Strengthens Retail Fulfillment Strategy with SOS Acquisition | Commercial Carrier Journal"
     },
     {
       "slot": "leadership",

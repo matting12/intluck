@@ -49,8 +49,8 @@
   "box3": [
     {
       "slot": "benefits_landing",
-      "url": "https://corporate.walmart.com/content/dam/corporate/documents/about/working-at-walmart/benefits.pdf",
-      "title": "Looking for ways to live better? Check out these benefits and | Walmart"
+      "url": "https://corporate.walmart.com/about/working-at-walmart/benefits",
+      "title": "Benefits | Walmart"
     },
     {
       "slot": "salary",
@@ -89,8 +89,8 @@
     },
     {
       "slot": "industry_comparison",
-      "url": "https://www.salary.com/research/company/walmart-salary",
-      "title": "Walmart Average Salary, Pay Ranges & Benefits | Salary.com"
+      "url": "https://www.indeed.com/companies/compare/Target-vs-Walmart-28180c7753e507ab-eacc908d242186c8",
+      "title": "Compare working at Target vs Walmart | Indeed.com"
     }
   ],
   "box4": [

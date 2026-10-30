@@ -95,19 +95,14 @@
   ],
   "box4": [
     {
-      "slot": "news_business",
-      "url": "https://tracxn.com/d/acquisitions/acquisitions-by-northrop-grumman/__R1N4PGLwXOY0XOXsDuYabz8XE8w1UGcSy8eGpHdf5xo",
-      "title": "List of 9 Acquisitions by Northrop Grumman (Jul 2026) - Tracxn | Tracxn"
-    },
-    {
       "slot": "financials",
       "url": "https://bullfincher.io/companies/northrop-grumman-corporation/revenue",
       "title": "Northrop Grumman Corporation Revenue 2016-2025 | Bullfincher"
     },
     {
       "slot": "leadership",
-      "url": "https://www.northropgrumman.com/who-we-are/leadership",
-      "title": "Company Leadership | Northrop Grumman"
+      "url": "https://investor.northropgrumman.com/news-releases/news-release-details/northrop-grumman-announces-cfo-transition-0",
+      "title": "Northrop Grumman Announces CFO Transition - Northrop Grumman | Northropgrumman"
     },
     {
       "slot": "culture",

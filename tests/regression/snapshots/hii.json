@@ -48,11 +48,6 @@
   ],
   "box3": [
     {
-      "slot": "benefits_landing",
-      "url": "https://www.hii.com/careers/life-at-hii",
-      "title": "HII Careers | Hii"
-    },
-    {
       "slot": "salary",
       "url": "https://www.salary.com/research/company/hii-corp/system-engineer-salary?cjid=15148451",
       "title": "Hii Corp Salary for System Engineer | Salary.com | Salary.com"
@@ -86,11 +81,6 @@
       "slot": "benefits_videos",
       "url": "https://www.youtube.com/watch?v=C3Or8A0DfNE",
       "title": "Huntington Ingalls Industries Employee Benefits Login | Via Benefits HII | my.viabenefits.com/hii - YouTube"
-    },
-    {
-      "slot": "industry_comparison",
-      "url": "https://www.washingtonhealthinsuranceagency.com/employee-benefits-benchmarking-guide",
-      "title": "How to Benchmark Health Benefits vs. Competitors · WHIA | Washingtonhealthinsuranceagency"
     }
   ],
   "box4": [

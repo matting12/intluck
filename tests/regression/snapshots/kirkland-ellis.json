@@ -90,19 +90,14 @@
   ],
   "box4": [
     {
-      "slot": "news_business",
-      "url": "https://builtin.com/company/kirkland-ellis/faq/stability-growth",
-      "title": "Kirkland & Ellis Company Growth, Stability & Outlook 2026 | Built In"
-    },
-    {
       "slot": "financials",
-      "url": "https://www.globallegalpost.com/news/kirklands-revenue-jumps-20-to-top-10bn-689385338",
-      "title": "Kirkland’s revenue jumps 20% to top $10bn - The Global Legal Post | Globallegalpost"
+      "url": "https://www.lawfuel.com/kirkland-ellis-crushes-it-again-hitting-mind-blowing-8-8b-revenue/",
+      "title": "Kirkland & Ellis Crushes It Again, Hitting Mind-Blowing $8.8B Revenue | Lawfuel"
     },
     {
       "slot": "leadership",
-      "url": "https://builtin.com/company/kirkland-ellis/faq/leadership-management",
-      "title": "Leadership at Kirkland & Ellis: How Are the Managers at Kirkland & Ellis? 2026 | Built In"
+      "url": "https://www.law360.com/illinois/articles/1109433/kirkland-ellis-chairman-to-retire-successor-named",
+      "title": "Kirkland & Ellis Chairman To Retire, Successor Named - Law360 | Law360"
     },
     {
       "slot": "culture",

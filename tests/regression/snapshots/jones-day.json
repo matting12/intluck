@@ -81,24 +81,9 @@
       "slot": "benefits_reviews",
       "url": "https://www.glassdoor.com/Reviews/Jones-Day-Reviews-E3244.htm",
       "title": "Jones Day Reviews (439): Pros & Cons of Working At Jones Day | Glassdoor"
-    },
-    {
-      "slot": "industry_comparison",
-      "url": "https://www.salary.com/research/company/jones-day-salary",
-      "title": "Jones Day Average Salary and Pay Ranges | Salary.com"
     }
   ],
   "box4": [
-    {
-      "slot": "news_business",
-      "url": "https://www.mediapost.com/publications/article/415579/dow-jones-is-cutting-staff-as-it-merges-two-units.html?edition=142844",
-      "title": "Around the Net In Media: Dow Jones Is Cutting Staff As It Merges Two Units, Union Charges | Mediapost"
-    },
-    {
-      "slot": "financials",
-      "url": "https://www.thecerbatgem.com/2026/10/28/jones-lang-lasalle-nysejll-announces-quarterly-earnings-results-beats-estimates-by-0-61-eps.html",
-      "title": "Jones Lang LaSalle (NYSE:JLL) Announces Quarterly Earnings Results, Beats Estimates By $0.61 EPS - The Cerbat Gem | Thecerbatgem"
-    },
     {
       "slot": "leadership",
       "url": "https://secure.businesswire.com/news/home/20251217325164/en/Jones-Day-Names-33-New-Partners",
@@ -116,8 +101,8 @@
     },
     {
       "slot": "diversity",
-      "url": "https://www.glassdoor.com/Culture/McConnell-and-Jones-DEI-E710149.htm",
-      "title": "McConnell & Jones: Diversity, Equity & Inclusion | Glassdoor"
+      "url": "https://media2.vault.com/14346567/jones-day-diversity-report-w_ad.pdf",
+      "title": "2500 LAWYERS. 42 LOCATIONS. 5 CONTINENTS. ONE FIRM WORLDWIDE®. JONESDAY.COM | Vault"
     },
     {
       "slot": "career",

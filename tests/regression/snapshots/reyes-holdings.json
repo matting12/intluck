@@ -48,11 +48,6 @@
   ],
   "box3": [
     {
-      "slot": "benefits_landing",
-      "url": "https://reyesbeveragegroup.com/careers",
-      "title": "Reyes Beverage Group - Careers | Reyesbeveragegroup"
-    },
-    {
       "slot": "salary",
       "url": "https://www.comparably.com/companies/reyes-holdings/salaries/senior-software-engineer",
       "title": "Reyes Holdings Senior Software Engineer Salary | Comparably"
@@ -98,11 +93,6 @@
       "slot": "news_business",
       "url": "https://app.fundz.net/acquisitions/acquires-021a",
       "title": "Reyes Holdings acquires Republic National Distributing Company (April 2026) | Fundz"
-    },
-    {
-      "slot": "leadership",
-      "url": "https://www.recorderonline.com/news/reyes-is-new-chamber-ceo/article_6501a798-ec60-11e7-9950-3732f7189ab6.html",
-      "title": "Reyes is new Chamber CEO | News | recorderonline.com"
     },
     {
       "slot": "culture",

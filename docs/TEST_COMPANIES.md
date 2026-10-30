@@ -1,6 +1,6 @@
 # Regression Test Companies
 
-The 40 companies below are the fixed set to check whenever link selection changes
+The 41 companies below are the fixed set to check whenever link selection changes
 (boxes 1–4), so a fix for one company doesn't quietly break another. They're listed in
 code in `tests/regression/companies.py`, and checked by the snapshot tests in
 `tests/regression/run.py` (see CLAUDE.md).
@@ -90,3 +90,11 @@ Above the Law rather than Glassdoor.
   the Forbes private list (Cargill onward, about 200 rows), then about 100 extra public mid-caps.
 - The `Law Firms` tab has 407 rows but only 145 unique firms, so it contains duplicates.
 - The `ISD` tab is empty.
+
+## Past production bugs
+
+Companies that broke in production before. Keep them covered so the same bug can't return.
+
+| Company | Expected domain | What broke |
+|---|---|---|
+| Delta Air Lines | delta.com | Domain detection drifted to a booking/service page; "Delta" alone is ambiguous (Delta Dental, Delta Faucet); box 4 ordering |

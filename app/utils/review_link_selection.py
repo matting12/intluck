@@ -17,13 +17,33 @@ logger = logging.getLogger(__name__)
 SLOTS = [
     ('news_business', r'layoff|job cuts|cuts? jobs|restructur|reorganiz|growth|grow|expan|merger|merge|acqui|buys|deal'),
     ('financials', r'earnings|revenue|results|quarter|\bq[1-4]\b|fiscal|profit|sales|guidance'),
-    ('leadership', r'\bceo\b|chief|executive|president|leadership|appoint|names|steps? down|successor|succeed|hires'),
+    # A leadership *change* (role + verb), not an org chart or "meet our leaders" page
+    ('leadership', r'(?=.*(\bceo\b|chief|executive|president|chair|\bc[fot]o\b|partners?|leader))'
+                   r'(?=.*(appoint|\bnames?\b|named|steps? down|stepping down|depart|retir|succe|\bhires?\b|hired'
+                   r'|joins|resign|promot|transition|leadership changes))'),
     ('culture', r'culture'),
     ('work_life', r'work[\s/-]*life|balance'),
     ('diversity', r'diversity|\bdei\b|inclusion|equity|\bd&i\b'),
     ('career', r'career|promotion|advancement|mobility|development|growth opportunit'),
     ('tuition', r'tuition|education assistance|education reimbursement'),
 ]
+
+# Pages that match the topic but aren't news: acquisition directories ("List of 16
+# Acquisitions by ..."), company profile / "growth & outlook" pages, and law firms' M&A /
+# restructuring practice pages and client publications
+EXCLUDE = {
+    'news_business': re.compile(r'^list of|\bprofile\b|outlook|stability|\blawyers?\b|\bpractice\b|bulletin', re.I),
+    'financials': re.compile(r'ranking|league table', re.I),
+    'leadership': re.compile(r'\bprofile\b|org chart', re.I),
+}
+EXCLUDE_URL = {
+    'news_business': re.compile(r'/(insights?|publications?|practices?)/|client-memos', re.I),
+}
+
+# Open-web slots need the specific company name, not just its first word — otherwise
+# "Jones Day" pulls in Dow Jones and "Fidelity Investments" pulls in FIS. Review-site
+# slots stay lenient: those pages are company-scoped and often use the short name.
+STRICT_NAME_SLOTS = {'news_business', 'financials', 'leadership', 'diversity', 'tuition'}
 
 
 def select_review_links(search_results: dict, company_name: str) -> list:
@@ -38,7 +58,11 @@ def select_review_links(search_results: dict, company_name: str) -> list:
                 continue
             if not topic.search(f"{link.get('title', '')} {url}"):
                 continue
-            if not _should_include_link(link, company_name):
+            if category_key in EXCLUDE and EXCLUDE[category_key].search(link.get('title', '')):
+                continue
+            if category_key in EXCLUDE_URL and EXCLUDE_URL[category_key].search(url):
+                continue
+            if not _should_include_link(link, company_name, strict=category_key in STRICT_NAME_SLOTS):
                 continue
             used_urls.add(url)
             ordered.append({**link,
@@ -68,6 +92,16 @@ def _demo():
     keys = [l['category_key'] for l in links]
     assert keys == ['news_business', 'financials', 'leadership', 'culture', 'diversity', 'career', 'tuition'], keys
     assert links[0]['url'] == 'https://reuters.com/b' and links[2]['url'] == 'https://ir.delta.com/e'
+
+    # News slots need the specific name; directories and org charts aren't news
+    jones = select_review_links({
+        'news_business': [{'url': 'https://t.com/1', 'title': 'List of 5 Acquisitions by Jones Day'},
+                          {'url': 'https://m.com/2', 'title': 'Dow Jones is cutting staff in restructuring'},
+                          {'url': 'https://law.com/3', 'title': 'Jones Day restructures London office'}],
+        'leadership': [{'url': 'https://c.com/4', 'title': 'Jones Day Org Chart: Leadership Team'},
+                       {'url': 'https://b.com/5', 'title': 'Jones Day Names 33 New Partners'}],
+    }, 'Jones Day')
+    assert [l['url'] for l in jones] == ['https://law.com/3', 'https://b.com/5'], jones
     print("ok:", keys)
 
 

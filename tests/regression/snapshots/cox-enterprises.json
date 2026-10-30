@@ -64,13 +64,13 @@
     },
     {
       "slot": "negotiation",
-      "url": "https://smudailycampus.com/1034112/news/cox-hosts-salary-negotiation-workshop-for-students/",
-      "title": "Cox hosts salary negotiation workshop for students – The Daily Campus | Smudailycampus"
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
     },
     {
       "slot": "negotiation",
-      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
-      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+      "url": "https://www.hellointerview.com/learn/salary-negotiation/introduction",
+      "title": "Software Engineer Salary Negotiation | Salary Negotiation"
     },
     {
       "slot": "benefits_reviews",
@@ -84,26 +84,16 @@
     },
     {
       "slot": "benefits_videos",
-      "url": "https://www.youtube.com/watch?v=ezTfwocu0_A",
-      "title": "Spotlight on Cox Benefits: Flexible PTO, Employee Relief Fund, Employee Discounts - YouTube | Youtube"
+      "url": "https://www.tiktok.com/@coxenterprises/video/7210497177519541546",
+      "title": "What does \"Life at Cox\" mean to you?  Here, @coxenterprises employee Katie Ramirez, explains that for her, #LifeAtCox means having the flexibility to decide when and where she works. 😎 . #culture #worklifebalance #flexibility #benefits #purposeatcox | TikTok"
     },
     {
       "slot": "industry_comparison",
-      "url": "https://www.salary.com/research/company/cox-salary",
-      "title": "Cox Average Salary and Pay Ranges | Salary.com"
+      "url": "https://www.indeed.com/companies/compare/Cox-Automotive-vs-Cox-Enterprises-a2b6f899cd966cd6-7ff6d858b3dabcd9",
+      "title": "Compare working at Cox Automotive vs Cox Enterprises | Indeed.com"
     }
   ],
   "box4": [
-    {
-      "slot": "news_business",
-      "url": "https://www.ajc.com/business/2026/08/heres-what-the-cox-charter-merger-could-mean-for-you/",
-      "title": "Here's what the Cox-Charter merger could mean for you. | Ajc"
-    },
-    {
-      "slot": "financials",
-      "url": "https://grupocox.com/en/cox-increases-its-revenues-by-62-to-1140-million-euros-and-obtains-a-record-ebitda-of-225-million-euros-in-2025/",
-      "title": "Cox increases its revenues by 62% to 1,140 million euros and obtains a record EBITDA of 225 million euros in 2025 - Cox | Grupocox"
-    },
     {
       "slot": "leadership",
       "url": "https://www.coxenterprises.com/press-releases/cox-enterprises-announces-executive-leadership-changes",
@@ -128,11 +118,6 @@
       "slot": "career",
       "url": "https://www.indeed.com/cmp/Cox-Enterprises",
       "title": "Cox Enterprises Careers and Employment | Indeed.com"
-    },
-    {
-      "slot": "tuition",
-      "url": "https://www.glassdoor.com/Benefits/Cox-Automotive-Tuition-Assistance-US-BNFT41_E981845_N1.htm",
-      "title": "Cox Automotive Employee Benefit: Tuition Assistance | Glassdoor"
     }
   ]
 }

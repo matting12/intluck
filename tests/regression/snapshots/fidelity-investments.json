@@ -49,8 +49,8 @@
   "box3": [
     {
       "slot": "benefits_landing",
-      "url": "https://www.fidelity.com/rewards/overview",
-      "title": "Exclusive program benefits for Wealth Management Clients | Fidelity Rewards+ | Fidelity"
+      "url": "https://nb.fidelity.com/public/nbpreloginnav/spa/fidelitywork/core/choosing-benefits",
+      "title": "Choosing the Right Workplace Benefits | Fidelity NetBenefits"
     },
     {
       "slot": "salary",
@@ -84,13 +84,13 @@
     },
     {
       "slot": "benefits_videos",
-      "url": "https://www.youtube.com/watch?v=vTt-S9H8Zsc",
-      "title": "Working at Fidelity: Great People, Opportunities, Benefits & More - YouTube | Youtube"
+      "url": "https://www.youtube.com/watch?v=yzWh7ImltP0",
+      "title": "Working At Fidelity Investments - Everything You Need To Know! - YouTube | Youtube"
     },
     {
       "slot": "industry_comparison",
-      "url": "https://www.salary.com/research/company/fidelity-investments-salary",
-      "title": "Fidelity Investments Average Salary and Pay Ranges | Salary.com"
+      "url": "https://www.indeed.com/companies/compare/Fidelity-Investments-vs-Fisher-Investments-bb0a5ccacf72f367-3134b2d1b42e1d48",
+      "title": "Compare working at Fidelity Investments vs Fisher Investments | Indeed.com"
     }
   ],
   "box4": [
@@ -101,13 +101,13 @@
     },
     {
       "slot": "financials",
-      "url": "https://quartr.com/companies/fidelity-national-information-services-inc_6041",
-      "title": "Fidelity National Information Services (FIS) Investor Relations, Earnings Summary & Outlook | Quartr"
+      "url": "https://www.bostonglobe.com/2026/03/02/business/fidelity-investments-record-revenue-2025/",
+      "title": "Fidelity Investments sees record revenue in 2025 - The Boston Globe | Bostonglobe"
     },
     {
       "slot": "leadership",
-      "url": "https://www.investmentnews.com/ria-news/fidelitys-head-of-ria-client-growth-to-step-down/263238",
-      "title": "Fidelity's head of RIA client growth to step down - InvestmentNews | Investmentnews"
+      "url": "https://thefinancialtechnologyreport.com/fidelity-investments-appoints-former-mastercard-cto-george-maddaloni-as-cloud-cio/",
+      "title": "Fidelity Investments Appoints Former Mastercard CTO George Maddaloni As Cloud CIO | The Financial Technology Report."
     },
     {
       "slot": "culture",
@@ -131,8 +131,8 @@
     },
     {
       "slot": "tuition",
-      "url": "https://learn.org/financial-aid/fidelity-tuition-reimbursement",
-      "title": "Fidelity Tuition Reimbursement & Student Debt Program 2026 | Learn"
+      "url": "https://www.glassdoor.com/Benefits/Fidelity-Investments-Tuition-Assistance-US-BNFT41_E2786_N1.htm",
+      "title": "Fidelity Investments Employee Benefit: Tuition Assistance | Glassdoor"
     }
   ]
 }

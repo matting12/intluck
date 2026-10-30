@@ -2,8 +2,8 @@
   "box2": [
     {
       "slot": "home",
-      "url": "https://app.alphabet.com/",
-      "title": "Alphabet - My Lease - Apps on Google Play | Alphabet"
+      "url": "https://abc.xyz/",
+      "title": "Alphabet Investor Relations - Home | Abc"
     },
     {
       "slot": "social",
@@ -12,35 +12,45 @@
     },
     {
       "slot": "youtube",
-      "url": "https://www.youtube.com/watch?v=mAviadjqGuw",
-      "title": "ALPHAFRIENDS Pilot (Opening Day) - Premiere (@engma13k) | Youtube"
+      "url": "https://www.youtube.com/watch?v=V-ZH2_WsVMM",
+      "title": "ALHS - 1 Episode - Trailer - Cartoon For Everyone | Youtube"
+    },
+    {
+      "slot": "news",
+      "url": "https://abc.xyz/investor/news/default.aspx",
+      "title": "Alphabet Investor Relations - Investors - News | Abc"
+    },
+    {
+      "slot": "investor",
+      "url": "https://abc.xyz/investor/",
+      "title": "Alphabet Investor Relations - Investors | Abc"
     },
     {
       "slot": "additional",
-      "url": "https://www.alphabet.com/en-ww.html",
-      "title": "Alphabet Homepage | Alphabet.com"
+      "url": "https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Date-of-Third-Quarter-2026-Financial-Results-Conference-Call-2026-8tpGZsLS6v/default.aspx",
+      "title": "Alphabet Investor Relations - Alphabet Announces Date of Third Quarter 2026 Financial Results Conference Call | Abc"
     },
     {
       "slot": "additional",
-      "url": "https://www.alphabet.com/en-ww/about-us.html",
-      "title": "What We Are All About | Alphabet.com"
+      "url": "https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Third-Quarter-2026-Results-2026-FCcqxfIfmh/default.aspx",
+      "title": "Alphabet Investor Relations - Alphabet Announces Third Quarter 2026 Results | Abc"
     },
     {
       "slot": "additional",
-      "url": "https://www.alphabet.com/en-ww/about-us/latest-news-press.html",
-      "title": "Alphabet News And Press | Alphabet.com"
+      "url": "https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Date-of-Second-Quarter-2026-Financial-Results-Conference-Call-2026-2h_R0kzZHY/default.aspx",
+      "title": "Alphabet Investor Relations - Alphabet Announces Date of Second Quarter 2026 Financial Results Conference Call | Abc"
     },
     {
       "slot": "additional",
-      "url": "https://www.alphabet.com/en-ww/company-careers",
-      "title": "Career | Alphabet.com"
+      "url": "https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Fourth-Quarter-2025-and-Fiscal-Year-Results-2026-KEvZIMKBLS/default.aspx",
+      "title": "Alphabet Investor Relations - Alphabet Announces Fourth Quarter 2025 and Fiscal Year Results | Abc"
     }
   ],
   "box3": [
     {
       "slot": "salary",
       "url": "https://www.levels.fyi/companies/google/salaries/software-engineer",
-      "title": "Google Software Engineer Salary | $213K-$2.13M+ | Levels.fyi"
+      "title": "Google Software Engineer Salary | $212K-$2.13M+ | Levels.fyi"
     },
     {
       "slot": "salary",
@@ -59,13 +69,13 @@
     },
     {
       "slot": "benefits_reviews",
-      "url": "https://www.comparably.com/companies/alphabet-inc/perks-and-benefits",
-      "title": "Alphabet Inc Benefits | Comparably"
+      "url": "https://www.glassdoor.com/Reviews/Alphabet-GB-Reviews-E764177.htm",
+      "title": "Alphabet (GB) Reviews (63): Pros & Cons of Working At Alphabet (GB) | Glassdoor"
     },
     {
       "slot": "benefits_reviews",
-      "url": "https://www.glassdoor.com/Reviews/Alphabet-GB-Reviews-E764177.htm",
-      "title": "Alphabet (GB) Reviews (63): Pros & Cons of Working At Alphabet (GB) | Glassdoor"
+      "url": "https://www.comparably.com/companies/alphabet-inc/perks-and-benefits",
+      "title": "Alphabet Inc Benefits | Comparably"
     },
     {
       "slot": "industry_comparison",
@@ -86,8 +96,8 @@
     },
     {
       "slot": "leadership",
-      "url": "https://derrick-app.com/company/google/executives",
-      "title": "Alphabet (Google) Leadership Team: 11 Executives (2026) | Derrick App"
+      "url": "https://www.qsstechnosoft.com/blog/news-54/sundar-pichai-alphabet-ceo-google-167",
+      "title": "Sundar Pichai Named as Alphabet's CEO- Google’s Parent Firm | Qsstechnosoft"
     },
     {
       "slot": "culture",

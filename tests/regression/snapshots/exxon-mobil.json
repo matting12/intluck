@@ -78,6 +78,11 @@
       "title": "ExxonMobil Employee Reviews | Indeed"
     },
     {
+      "slot": "benefits_videos",
+      "url": "https://www.youtube.com/watch?v=2bRyYb-z6cI",
+      "title": "Q&A for ExxonMobil Employees: Tax Benefits of IRA Donations | Youtube"
+    },
+    {
       "slot": "industry_comparison",
       "url": "https://www.indeed.com/companies/compare/Exxonmobil-vs-Marathon-Petroleum-19210402632eee9f-64a356f86b3314eb",
       "title": "Compare working at ExxonMobil vs Marathon Petroleum | Indeed.com"
@@ -96,8 +101,8 @@
     },
     {
       "slot": "leadership",
-      "url": "https://creately.com/org-chart/fortune-500/exxonmobil/",
-      "title": "ExxonMobil Org Chart: Functional Leadership Structure | Creately"
+      "url": "https://corporate.exxonmobil.com/news/news-releases/2025/0402_exxonmobil-announces-leadership-changes",
+      "title": "ExxonMobil Announces Leadership Changes: Karen McKee retires, Matt Crocker appointed | ExxonMobil"
     },
     {
       "slot": "culture",

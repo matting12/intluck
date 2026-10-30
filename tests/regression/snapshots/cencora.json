@@ -81,18 +81,13 @@
       "slot": "benefits_reviews",
       "url": "https://www.comparably.com/companies/cencora/reviews",
       "title": "Cencora Employee Reviews | Comparably"
-    },
-    {
-      "slot": "industry_comparison",
-      "url": "https://ravio.com/blog/employee-benefits-benchmarking-tools",
-      "title": "Top 7 employee benefits benchmarking tools in 2026 (and how to compare them) | Ravio"
     }
   ],
   "box4": [
     {
       "slot": "news_business",
-      "url": "https://tracxn.com/d/acquisitions/acquisitions-by-cencora/___MlZHoYx61WK8x96tXN4Pclqvjx8V-c57jjdkOYIOA0",
-      "title": "List of 5 Acquisitions by Cencora (Oct 2026) - Tracxn | Tracxn"
+      "url": "https://investor.cencora.com/news/news-details/2026/Cencora-to-Acquire-American-Oncology-Network-to-Strengthen-Support-of-Community-Oncology/default.aspx",
+      "title": "Cencora, Inc. - Cencora to Acquire American Oncology Network to Strengthen Support of Community Oncology | Cencora"
     },
     {
       "slot": "financials",
@@ -101,8 +96,8 @@
     },
     {
       "slot": "leadership",
-      "url": "https://creately.com/org-chart/fortune-500/cencora/",
-      "title": "Cencora Org Chart: Functional Leadership Structure | Creately"
+      "url": "https://www.cencora.com/newsroom/cencora-announces-financial-leadership-transition",
+      "title": "Cencora announces financial leadership transition | Cencora"
     },
     {
       "slot": "culture",

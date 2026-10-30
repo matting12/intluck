@@ -48,11 +48,6 @@
   ],
   "box3": [
     {
-      "slot": "benefits_landing",
-      "url": "https://www.gibsondunn.com/practice/executive-compensation-employee-benefits/",
-      "title": "Executive Compensation and Employee Benefits - Gibson Dunn | Gibsondunn"
-    },
-    {
       "slot": "salary",
       "url": "https://www.glassdoor.com/Salary/Gibson-Dunn-and-Crutcher-Associate-Attorney-Salaries-E3198_D_KO25,43.htm",
       "title": "Gibson Dunn & Crutcher Associate Attorney Salaries (177 Salaries submitted) | Glassdoor"
@@ -106,8 +101,8 @@
     },
     {
       "slot": "leadership",
-      "url": "https://www.billboard.com/lists/executive-turntable-cesar-gueikian-steps-down-gibson-ceo/",
-      "title": "Executive Turntable: Cesar Gueikian Steps Down as Gibson President & CEO, Anne Rohesy Steps in As Interim | Billboard"
+      "url": "https://www.law360.com/internationalarbitration/articles/2280439/gibson-dunn-appoints-new-leaders-of-london-office",
+      "title": "Gibson Dunn Appoints New Leaders Of London Office - Law360 | Law360"
     },
     {
       "slot": "culture",
@@ -128,11 +123,6 @@
       "slot": "career",
       "url": "https://www.glassdoor.com/Reviews/Employee-Review-Gibson-Dunn-and-Crutcher-E3198-RVW9124975.htm",
       "title": "Gibson Dunn & Crutcher - Business Development & Marketing Manager | Glassdoor"
-    },
-    {
-      "slot": "tuition",
-      "url": "https://fortgibsontigers.org/employer-tuition-assistance-for-hig",
-      "title": "Fort Gibson Public Schools - Employer Tuition Assistance for Higher Education | Fortgibsontigers"
     }
   ]
 }

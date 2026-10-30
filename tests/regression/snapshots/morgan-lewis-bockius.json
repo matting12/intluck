@@ -48,11 +48,6 @@
   ],
   "box3": [
     {
-      "slot": "benefits_landing",
-      "url": "https://www.morganlewis.com/careers/professionals",
-      "title": "Professional Staff Careers | Morgan Lewis"
-    },
-    {
       "slot": "salary",
       "url": "https://www.glassdoor.com/Salaries/associate-morgan-lewis-bockius-llp-salary-SRCH_KO0,9_KE10,34.htm",
       "title": "Salary: Morgan Lewis Bockius Llp Associate 2026 | Glassdoor"
@@ -64,13 +59,13 @@
     },
     {
       "slot": "negotiation",
-      "url": "https://www.teamrora.com/companies/jp-morgan",
-      "title": "JP Morgan Salary Negotiation Advice Based on Dozens of Negotiations | Teamrora"
+      "url": "https://www.larsonmaddox.com/en-us/industry-insights/career-advice/how-to-negotiate-a-salary-you-deserve",
+      "title": "How to Negotiate Your Salary as a Lawyer | Larson Maddox"
     },
     {
       "slot": "negotiation",
-      "url": "https://www.larsonmaddox.com/en-us/industry-insights/career-advice/how-to-negotiate-a-salary-you-deserve",
-      "title": "How to Negotiate Your Salary as a Lawyer | Larson Maddox"
+      "url": "https://www.bcgsearch.com/article/900054316/Sealing-the-Deal-How-to-Ace-a-Legal-Job-Offer-Negotiation/",
+      "title": "Sealing the Deal: How to Ace a Legal Job Offer Negotiation | BCGSearch.com"
     },
     {
       "slot": "benefits_reviews",
@@ -84,13 +79,8 @@
     },
     {
       "slot": "benefits_videos",
-      "url": "https://www.youtube.com/watch?v=E9jEav4i0OQ",
-      "title": "Perks of working in Morgan Stanley | Benefits of working in Morgan Stanley | #shorts #viralshorts - YouTube"
-    },
-    {
-      "slot": "industry_comparison",
-      "url": "https://www.salary.com/research/company/morgan-lewis-bockius-salary",
-      "title": "Morgan, Lewis & Bockius Average Salary and Pay Ranges | Salary.com"
+      "url": "https://www.youtube.com/watch?v=GIaMfLC1t1I",
+      "title": "Working at Morgan, Lewis & Bockius LLP - May 2018 - YouTube | Youtube"
     }
   ],
   "box4": [
@@ -123,11 +113,6 @@
       "slot": "career",
       "url": "https://www.indeed.com/cmp/Morgan,-Lewis-&-Bockius-LLP",
       "title": "Morgan, Lewis & Bockius LLP Careers & Employment - Working at Morgan, Lewis & Bockius LLP | Indeed.com"
-    },
-    {
-      "slot": "tuition",
-      "url": "https://www.glassdoor.com/Benefits/J-P-Morgan-Tuition-Assistance-US-BNFT41_E145_N1.htm",
-      "title": "J.P. Morgan Employee Benefit: Tuition Assistance | Glassdoor"
     }
   ]
 }

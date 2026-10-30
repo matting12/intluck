@@ -38,11 +38,6 @@
   ],
   "box3": [
     {
-      "slot": "benefits_landing",
-      "url": "https://www.lw.com/en/practices/executive-compensation-employment-and-benefits",
-      "title": "Executive Compensation, Employment & Benefits Lawyers | Latham & Watkins LLP | Global Law Firm"
-    },
-    {
       "slot": "salary",
       "url": "https://www.levels.fyi/companies/latham-and-watkins/salaries/legal",
       "title": "Latham & Watkins Legal Salary | $225K-$310K+ | Levels.fyi"
@@ -80,19 +75,14 @@
   ],
   "box4": [
     {
-      "slot": "news_business",
-      "url": "https://www.lw.com/en/practices/mergers-and-acquisitions",
-      "title": "Mergers & Acquisitions Lawyers | Latham & Watkins LLP | Global Law Firm"
-    },
-    {
       "slot": "financials",
       "url": "https://www.statista.com/statistics/877883/latham-and-watkins-gross-revenue/",
       "title": "Latham & Watkins revenue 2025| Statista | Statista"
     },
     {
       "slot": "leadership",
-      "url": "https://ir.lathampool.com/news-releases/news-release-details/latham-group-appoints-sean-gadd-chief-executive-officer",
-      "title": "Latham Group Appoints Sean Gadd as Chief Executive Officer | Latham Group, Inc."
+      "url": "https://www.lw.com/en/news/2026/10/latham-watkins-names-new-partners-2026",
+      "title": "Latham Watkins Names New Partners 2026 | Lw"
     },
     {
       "slot": "culture",
@@ -103,11 +93,6 @@
       "slot": "work_life",
       "url": "https://www.glassdoor.com/Reviews/Latham-and-Watkins-work-life-balance-Reviews-EI_IE3263.0,18_KH19,36.htm",
       "title": "Latham & Watkins \"work life balance\" Reviews | Glassdoor"
-    },
-    {
-      "slot": "diversity",
-      "url": "https://www.reddit.com/r/LawSchool/comments/1jkog4o/latham_cancels_pathways_diversity_summit_last/",
-      "title": "r/LawSchool on Reddit: Latham cancels Pathways Diversity Summit last minute | Reddit"
     },
     {
       "slot": "career",

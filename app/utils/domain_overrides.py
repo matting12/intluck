@@ -8,6 +8,7 @@ DOMAIN_OVERRIDES = {
     'microsoft': 'microsoft.com',
     'amazon': 'amazon.com',
     'google': 'about.google',
+    'alphabet': 'abc.xyz',  # alphabet.com is BMW's leasing business
     'meta': 'meta.com',
     'facebook': 'meta.com',
     'apple': 'apple.com',

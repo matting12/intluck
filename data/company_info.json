@@ -8019,7 +8019,10 @@
   },
   "Publix Super Markets": {
     "full_name": "Publix Super Markets",
-    "description": "Fortune 1000 company"
+    "description": "Fortune 1000 company",
+    "also_known_as": [
+      "Publix"
+    ]
   },
   "RTX": {
     "full_name": "RTX",
@@ -8639,7 +8642,11 @@
   },
   "H-E-B Grocery Company": {
     "full_name": "H-E-B Grocery Company",
-    "description": "Grocery and food retail"
+    "description": "Grocery and food retail",
+    "also_known_as": [
+      "H-E-B",
+      "HEB"
+    ]
   },
   "Reyes Holdings": {
     "full_name": "Reyes Holdings",

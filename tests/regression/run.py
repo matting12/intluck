@@ -167,9 +167,12 @@ def diff(expected: dict, actual: dict) -> list:
         new = [(l['slot'], l['url']) for l in actual.get(box, [])]
         if old == new:
             continue
+        titles = {l['url']: l['title'] for l in expected.get(box, []) + actual.get(box, [])}
         lines.append(f'  {box}:')
-        lines += [f'    - {s:<20} {u}' for s, u in old if (s, u) not in new]
-        lines += [f'    + {s:<20} {u}' for s, u in new if (s, u) not in old]
+        for sign, links, other in (('-', old, new), ('+', new, old)):
+            for s, u in links:
+                if (s, u) not in other:
+                    lines += [f'    {sign} {s:<20} {titles[u][:75]}', f'      {"":<20} {u}']
         if sorted(old) == sorted(new):
             lines.append('    (same links, different order)')
     return lines

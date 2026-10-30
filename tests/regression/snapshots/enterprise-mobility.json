@@ -69,8 +69,8 @@
     },
     {
       "slot": "negotiation",
-      "url": "https://www.reddit.com/r/EnterpriseCarRental/comments/1onyjzw/does_enterprise_negotiate_salary/",
-      "title": "r/EnterpriseCarRental on Reddit: Does Enterprise negotiate salary? | Reddit"
+      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
+      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
     },
     {
       "slot": "benefits_reviews",
@@ -81,11 +81,6 @@
       "slot": "benefits_reviews",
       "url": "https://www.indeed.com/cmp/Enterprise-Mobility-2/reviews",
       "title": "Enterprise Mobility Employee Reviews | Indeed"
-    },
-    {
-      "slot": "industry_comparison",
-      "url": "https://ravio.com/blog/employee-benefits-benchmarking-tools",
-      "title": "Top 7 employee benefits benchmarking tools in 2026 (and how to compare them) | Ravio"
     }
   ],
   "box4": [
@@ -93,16 +88,6 @@
       "slot": "news_business",
       "url": "https://www.automotive-fleet.com/news/enterprise-mobility-announced-acquisition-with-hogan",
       "title": "Enterprise Mobility Announced Acquisition with Hogan | Automotive Fleet"
-    },
-    {
-      "slot": "financials",
-      "url": "https://investor.enterprisebank.com/news/news-details/2026/Enterprise-Financial-Services-Corp-Reports-Second-Quarter-2026-Results/default.aspx",
-      "title": "Enterprise Financial Services Corp, Enterprise Financial Services Corp Reports Second Quarter 2026 Results | Enterprisebank"
-    },
-    {
-      "slot": "leadership",
-      "url": "https://builtin.com/company/enterprise-mobility/faq/leadership-management",
-      "title": "Leadership at Enterprise Mobility: How Are the Managers at Enterprise Mobility? 2026 | Built In"
     },
     {
       "slot": "culture",

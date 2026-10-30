@@ -48,11 +48,6 @@
   ],
   "box3": [
     {
-      "slot": "benefits_landing",
-      "url": "https://careers.rtx.com/global/en/lifeatrtx",
-      "title": "Life at RTX | Rtx"
-    },
-    {
       "slot": "salary",
       "url": "https://www.glassdoor.com/Salary/RTX-Salaries-E561.htm",
       "title": "How Much Does RTX Pay in 2026? (17,730 Salaries) | Glassdoor"
@@ -81,19 +76,9 @@
       "slot": "benefits_reviews",
       "url": "https://www.indeed.com/cmp/Rtx-4/reviews",
       "title": "Working at RTX: Employee Reviews | Indeed.com"
-    },
-    {
-      "slot": "industry_comparison",
-      "url": "https://ravio.com/blog/employee-benefits-benchmarking-tools",
-      "title": "Top 7 employee benefits benchmarking tools in 2026 (and how to compare them) | Ravio"
     }
   ],
   "box4": [
-    {
-      "slot": "news_business",
-      "url": "https://tracxn.com/d/acquisitions/acquisitions-by-rtx/__FYOxiiFohjgSI1ZS8VNW0GDf7P7fnD8p5sj850mfgvY",
-      "title": "List of 3 Acquisitions by RTX (Sep 2025) - Tracxn | Tracxn"
-    },
     {
       "slot": "financials",
       "url": "https://www.marketbeat.com/instant-alerts/earnings-rtx-nyse-rtx-posts-quarterly-earnings-results-beats-expectations-by-048-eps-2026-10-20/",

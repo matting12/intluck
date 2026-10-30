@@ -81,18 +81,13 @@
       "slot": "benefits_reviews",
       "url": "https://www.indeed.com/cmp/White-&-Case/reviews?fcountry=ALL",
       "title": "White & Case Employee Reviews | Indeed"
-    },
-    {
-      "slot": "industry_comparison",
-      "url": "https://www.salary.com/research/company/white-case-llp-salary",
-      "title": "White & Case Llp Average Salary and Pay Ranges | Salary.com"
     }
   ],
   "box4": [
     {
       "slot": "news_business",
-      "url": "https://www.whitecase.com/law/practices/mergers-acquisitions",
-      "title": "Mergers & Acquisitions | White & Case LLP"
+      "url": "https://news.bloomberglaw.com/business-and-practice/white-case-targets-5-billion-revenue-in-ambitious-growth-plan",
+      "title": "White & Case Targets $5 Billion Revenue in Ambitious Growth Plan | Bloomberglaw"
     },
     {
       "slot": "financials",
@@ -101,8 +96,8 @@
     },
     {
       "slot": "leadership",
-      "url": "https://history.whitecase.com/senior-leadership-chronology",
-      "title": "Senior Leadership Chronology - White & Case LLP | Whitecase"
+      "url": "https://www.globallegalpost.com/news/white-case-names-new-executive-partner-in-london-1096596844",
+      "title": "White & Case names new executive partner in London - The Global Legal Post | Globallegalpost"
     },
     {
       "slot": "culture",

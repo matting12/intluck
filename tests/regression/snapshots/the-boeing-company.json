@@ -48,6 +48,11 @@
   ],
   "box3": [
     {
+      "slot": "benefits_landing",
+      "url": "https://jobs.boeing.com/benefits",
+      "title": "Enjoy Total Rewards and Benefits in a Job and Career at Boeing | Boeing"
+    },
+    {
       "slot": "salary",
       "url": "https://www.levels.fyi/companies/boeing/salaries/systems-engineer",
       "title": "Boeing Systems Engineer Salary | $99.4K-$153K+ | Levels.fyi"
@@ -59,28 +64,28 @@
     },
     {
       "slot": "negotiation",
-      "url": "https://www.hellointerview.com/learn/salary-negotiation/introduction",
-      "title": "Software Engineer Salary Negotiation | Salary Negotiation"
+      "url": "https://www.reddit.com/r/boeing/comments/1tym8sx/salary_negotiations_what_to_expect/",
+      "title": "r/boeing on Reddit: Salary Negotiations - What To Expect | Reddit"
     },
     {
       "slot": "negotiation",
-      "url": "https://www.thesalarynegotiator.com/resource-center/how-to-negotiate-a-software-engineer-job-offer",
-      "title": "Software Engineer Salary Negotiation - How to Negotiate a Software Engineer Job Offer — The Salary Negotiator | Thesalarynegotiator"
+      "url": "https://www.teamblind.com/post/Negotiating-Higher-Salary-at-Boeing-with-other-offer-aceWNBUd",
+      "title": "Negotiating Higher Salary at Boeing with other offer? | Teamblind"
     },
     {
       "slot": "benefits_reviews",
-      "url": "https://www.glassdoor.com/Reviews/The-Boeing-Company-Reviews-E8885232.htm",
-      "title": "The Boeing Company Reviews (73): Pros & Cons of Working At The Boeing Company | Glassdoor"
+      "url": "https://www.comparably.com/companies/boeing/reviews",
+      "title": "Boeing Employee Reviews | Comparably"
     },
     {
       "slot": "benefits_reviews",
-      "url": "https://www.reddit.com/r/boeing/comments/1axk72q/opinions_on_the_medical_plans/",
-      "title": "r/boeing on Reddit: Opinions on the medical plans? | Reddit"
+      "url": "https://www.indeed.com/cmp/Boeing/reviews",
+      "title": "Boeing Employee Reviews | Indeed"
     },
     {
       "slot": "benefits_videos",
-      "url": "https://www.youtube.com/watch?v=7SyF49epAJA",
-      "title": "Unleashing the Power of Total Rewards & Benefits - YouTube | Youtube"
+      "url": "https://www.linkedin.com/posts/meganfinck13_total-rewards-partner-lead-or-senior-at-activity-7174121342613528576-34vX",
+      "title": "Total Rewards Partner (Lead or Senior) at Boeing | LinkedIn"
     },
     {
       "slot": "industry_comparison",
@@ -90,19 +95,44 @@
   ],
   "box4": [
     {
+      "slot": "news_business",
+      "url": "https://www.hrkatha.com/news/boeing-to-cut-17000-jobs-as-part-of-major-restructuring/",
+      "title": "Boeing to cut 17,000 jobs as part of major restructuring | Hrkatha"
+    },
+    {
       "slot": "financials",
-      "url": "https://vectorshift.ai/research/companies/boeing-co/financials",
-      "title": "The Boeing Company financials — revenue, margin & EBITDA · VectorShift Research | Vectorshift"
+      "url": "https://www.themarketsdaily.com/2026/10/28/boeing-nyseba-issues-quarterly-earnings-results.html",
+      "title": "Boeing (NYSE:BA) Issues Quarterly Earnings Results - Markets Daily | Themarketsdaily"
     },
     {
       "slot": "leadership",
-      "url": "https://www.unifygtm.com/insights/executives/boeing-ceo",
-      "title": "Who is the CEO of Boeing in 2026? Kelly Ortberg | Unify"
+      "url": "https://www.satellitetoday.com/people/2024/03/25/boeing-ceo-david-calhoun-to-step-down-amid-commercial-woes/",
+      "title": "Boeing CEO David Calhoun to Step Down Amid Commercial Woes - Via Satellite | Satellitetoday"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Boeing-culture-Reviews-EI_IE102.0,6_KH7,14.htm",
+      "title": "Boeing \"culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Boeing/reviews?ftopic=wlbalance",
+      "title": "Working at Boeing: 4,430 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Boeing-DEI-E102.htm",
+      "title": "Diversity, Equity & Inclusion (DEI) at Boeing | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Boeing/reviews?ftopic=jobsecadv",
+      "title": "Working at Boeing: 4,970 Reviews about Job security and advancement | Indeed.com"
     },
     {
       "slot": "tuition",
-      "url": "https://www.gpstrategies.com/news/gp-strategies-launches-global-tuition-assistance-program-management-solution-for-the-boeing-company/",
-      "title": "GP Strategies Launches Global Tuition Assistance Program Management Solution For The Boeing Company - GP Strategies | Gpstrategies"
+      "url": "https://learn.org/financial-aid/beoing-tuition-assistance",
+      "title": "Boeing Tuition Assistance & Educational Benefits 2027 | Learn"
     }
   ]
 }

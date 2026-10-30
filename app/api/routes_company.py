@@ -374,9 +374,10 @@ def fallback_selection(all_links: list[dict], max_links: int) -> list[dict]:
     return [{**link, "category": "Company Information"} for _, link in scored[:max_links]]
 
 
-_CULTURE_DOMAINS = {'glassdoor.com', 'indeed.com', 'comparably.com', 'blind.com',
-                    'teamblind.com', 'fishbowlapp.com', 'fairygodboss.com', 'inhersight.com'}
-_CAREER_DOMAINS  = {'levels.fyi', 'vault.com', 'themuse.com', 'builtinnyc.com', 'builtin.com'}
+_INTERVIEW_DOMAINS    = {'glassdoor.com', 'blind.com', 'teamblind.com', 'reddit.com', 'interviewquery.com'}
+_TECH_STACK_DOMAINS    = {'stackshare.io', 'github.com'}
+_TECH_STACK_INDICATORS = ['tech-stack', 'engineering', 'tech.', 'developer']
+_TECH_SKILLS_DOMAINS  = {'leetcode.com', 'hackerrank.com', 'codinginterview.com', 'neetcode.io'}
 
 def _rule_based_interview_category(url: str, title: str) -> str:
     url_l, title_l = url.lower(), title.lower()

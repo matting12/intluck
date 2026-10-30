@@ -6,7 +6,8 @@ and have an on-topic title or URL; slots with no qualifying link are dropped.
 
 import logging
 import re
-from app.utils.review_queries import format_review_category_name
+from datetime import date, timedelta
+from app.utils.review_queries import NEWS_CATEGORIES, format_review_category_name
 from app.utils.salary_link_selection import _should_include_link
 
 __all__ = ['select_review_links']
@@ -45,9 +46,29 @@ EXCLUDE_URL = {
 # slots stay lenient: those pages are company-scoped and often use the short name.
 STRICT_NAME_SLOTS = {'news_business', 'financials', 'leadership', 'diversity', 'tuition'}
 
+# News older than this is dropped. Brave's past-year freshness filter still lets old
+# articles through ("Sundar Pichai named CEO" from 2019, Bezos stepping down in 2021).
+MAX_NEWS_AGE = timedelta(days=548)  # ~18 months
+URL_DATE = re.compile(r'/(20\d\d)/(?:(\d\d)(?=[/_-]|\d\d))?')  # /2020/03/16/, /2025/0402_, /2026/
+TITLE_YEARS = re.compile(r'\b(20\d\d)\b')
 
-def select_review_links(search_results: dict, company_name: str) -> list:
+
+def _published(link: dict):
+    """
+    Best guess at when a page was published: the date in its URL, else the latest
+    year in its title ("Revenue 1991-2026"). None if unknown. (Brave's page_age is
+    no use here: it's the last crawl/modify date, so a 2024 article reads as 2026.)
+    """
+    m = URL_DATE.search(link.get('url', ''))
+    if m:
+        return date(int(m[1]), int(m[2] or 1), 1)
+    years = TITLE_YEARS.findall(link.get('title', ''))
+    return date(int(max(years)), 12, 31) if years else None
+
+
+def select_review_links(search_results: dict, company_name: str, today: date = None) -> list:
     """Fill SLOTS in order, one link each. A URL is used at most once."""
+    oldest = (today or date.today()) - MAX_NEWS_AGE
     used_urls = set()
     ordered = []
     for category_key, pattern in SLOTS:
@@ -63,6 +84,9 @@ def select_review_links(search_results: dict, company_name: str) -> list:
             if category_key in EXCLUDE_URL and EXCLUDE_URL[category_key].search(url):
                 continue
             if not _should_include_link(link, company_name, strict=category_key in STRICT_NAME_SLOTS):
+                continue
+            published = _published(link) if category_key in NEWS_CATEGORIES else None
+            if published and published < oldest:
                 continue
             used_urls.add(url)
             ordered.append({**link,
@@ -102,6 +126,16 @@ def _demo():
                        {'url': 'https://b.com/5', 'title': 'Jones Day Names 33 New Partners'}],
     }, 'Jones Day')
     assert [l['url'] for l in jones] == ['https://law.com/3', 'https://b.com/5'], jones
+
+    # Old news is skipped, whether dated by URL or title; undated news stays
+    stale = select_review_links({
+        'leadership': [{'url': 'https://wapo.com/business/2020/03/16/x', 'title': 'Delta CEO to step down'},
+                       {'url': 'https://e.com/news/2025/0402_x', 'title': 'Delta CEO steps down'},
+                       {'url': 'https://s.com/b', 'title': 'Delta names new CFO (2023)'},
+                       {'url': 'https://x.com/news/2026/c', 'title': 'Delta names new CFO'}],
+        'financials': [{'url': 'https://y.com/d', 'title': 'Delta revenue 1991-2026'}],
+    }, 'Delta', today=date(2026, 10, 30))
+    assert [l['url'] for l in stale] == ['https://y.com/d', 'https://x.com/news/2026/c'], stale
     print("ok:", keys)
 
 

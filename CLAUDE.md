@@ -22,3 +22,8 @@ repeatedly fixed one company and broken another. Before shipping such a change:
      company, not to test a change, since its diff mixes in search drift.)
 3. Box 1 (interview prep) isn't covered yet: it still uses GPT to pick links, so its
    output isn't deterministic.
+
+## Rebuild
+
+Work on the website rewrite (branch `MAJOR/website-rewrite`) follows
+[docs/REBUILD.md](docs/REBUILD.md); read it before changing the frontend, cache or stack.

@@ -100,9 +100,29 @@
       "title": "Publix Super Markets Geographic Expansion: The Leadership Read | MitchelLake"
     },
     {
+      "slot": "news_business",
+      "url": "https://www.wftv.com/news/local/publix-acquires-four-shopping-centers-central-florida/UUBYZJIJXVB55BDXCAIKSU5F4A/",
+      "title": "Publix Super Markets New Locations in Central Florida - WFTV | Wftv"
+    },
+    {
+      "slot": "news_business",
+      "url": "https://finance.yahoo.com/news/publix-acquires-four-shopping-centers-182920310.html",
+      "title": "Publix acquires four shopping centers in Central Florida | Yahoo"
+    },
+    {
       "slot": "financials",
       "url": "https://csimarket.com/stocks/PUSH-Income-Statement",
       "title": "Publix Super Markets Inc (PUSH) Quarterly Income Statement, Revenue, Operating Income & Net Income through Jun 27 2026 | CSIMarket"
+    },
+    {
+      "slot": "financials",
+      "url": "https://corporate.publix.com/newsroom/news-stories/05012026---publix-reports-first-quarter-2026-results-and-stock-price",
+      "title": "Publix reports first quarter 2026 results and stock price | Publix"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.news-journalonline.com/story/grocery/shopping/2026/08/11/aldi-competition-publix-reports-rising-sales-profit-supermarkets/91173682007/",
+      "title": "Despite competition from Aldi, Publix is still generating big revenue | News Journalonline"
     },
     {
       "slot": "leadership",
@@ -110,9 +130,24 @@
       "title": "Publix Executive Chairman Todd Jones to retire | Grocery Dive"
     },
     {
+      "slot": "leadership",
+      "url": "https://chainstoreage.com/publix-shuffles-executives-three-officers-retire",
+      "title": "Publix shuffles executives as three officers retire | Chain Store Age"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://massmarketretailers.com/publix-executive-chairman-todd-jones-to-retire-on-may-31-will-remain-board-chair/",
+      "title": "Publix Executive Chairman Todd Jones to retire on May 31, will remain board chair | Massmarketretailers"
+    },
+    {
       "slot": "culture",
       "url": "https://www.comparably.com/companies/publix-super-markets",
       "title": "Publix Super Markets Culture | Comparably"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Publix/reviews?fcountry=ALL&ftopic=culture",
+      "title": "Working at Publix: 5,686 Reviews about Culture | Indeed.com"
     },
     {
       "slot": "work_life",
@@ -120,19 +155,59 @@
       "title": "Publix Super Markets Work Life Balance | Comparably"
     },
     {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Publix/reviews?ftopic=wlbalance",
+      "title": "Working at Publix: 7,475 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Publix-work-life-balance-Reviews-EI_IE2945.0,6_KH7,24.htm",
+      "title": "Publix \"work life balance\" Reviews | Glassdoor"
+    },
+    {
       "slot": "diversity",
       "url": "https://www.glassdoor.com/Culture/Publix-DEI-E2945.htm",
       "title": "Diversity, Equity & Inclusion (DEI) at Publix | Glassdoor"
     },
     {
+      "slot": "diversity",
+      "url": "https://www.comparably.com/companies/publix-super-markets/diversity",
+      "title": "Diversity at Publix Super Markets | Comparably"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.reddit.com/r/publix/comments/1igf0b1/dei/",
+      "title": "r/publix on Reddit: DEI | Reddit"
+    },
+    {
       "slot": "career",
-      "url": "https://www.indeed.com/cmp/Publix",
-      "title": "Publix Careers and Employment | Indeed.com"
+      "url": "https://www.indeed.com/cmp/Publix/reviews?ftopic=jobsecadv",
+      "title": "Working at Publix: 7,787 Reviews about Job security and advancement | Indeed.com"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.glassdoor.com/FAQ/Publix-Question-FAQ200058-E2945.htm",
+      "title": "Publix Q&A: How are promotions handled at Publix? | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.comparably.com/companies/publix-super-markets/professional-development",
+      "title": "Publix Super Markets Professional Development Score | Comparably"
     },
     {
       "slot": "tuition",
       "url": "https://learn.org/articles/publix-tuition-reimbursement",
       "title": "How To Get Publix Tuition Reimbursement & Scholarships 2027 | Learn"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.jobzmall.com/publix-super-markets-1/faqs/does-publix-offer-tuition-reimbursement",
+      "title": "Does Publix offer tuition reimbursement? | Publix Super Markets FAQs | JobzMall"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.collegetransitions.com/blog/publix-tuition-reimbursement-online-degrees/",
+      "title": "Publix Tuition Reimbursement: Online Degrees for Publix Employees - College Transitions | Collegetransitions"
     }
   ]
 }

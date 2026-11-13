@@ -85,14 +85,19 @@
   ],
   "box4": [
     {
-      "slot": "news_business",
-      "url": "https://www.l3harris.com/newsroom/press-release/2026/01/l3harris-announces-reorganization-its-businesses",
-      "title": "L3Harris Announces Reorganization of Its Businesses | L3Harris® Fast. Forward."
-    },
-    {
       "slot": "financials",
       "url": "https://investors.l3harris.com/news/news-details/2026/L3Harris-Technologies-Reports-Strong-First-Quarter-2026-Results/default.aspx",
       "title": "L3Harris Technologies, Inc. - L3Harris Technologies Reports Strong First Quarter 2026 Results | L3Harris"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.wallstreetzen.com/stocks/us/nyse/lhx/revenue",
+      "title": "(LHX) L3harris Technologies Revenue: 1992-2026 Annual Revenue | WallStreetZen"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.thestockobserver.com/2026/10/23/l3harris-technologies-inc-nyselhx-announces-quarterly-dividend-of-1-25.html",
+      "title": "L3Harris Technologies Inc (NYSE:LHX) Announces Quarterly Dividend of $1.25 - Stock Observer | Thestockobserver"
     },
     {
       "slot": "leadership",
@@ -100,14 +105,44 @@
       "title": "L3Harris CEO Steps Down: What Happened? (2026) | Trinityschooloffrederick"
     },
     {
+      "slot": "leadership",
+      "url": "https://www.l3harris.com/newsroom/press-release/2026/08/l3harris-technologies-appoints-sam-mehta-proven-aerospace-and",
+      "title": "L3Harris Technologies Appoints Sam Mehta, Proven Aerospace and Defense Executive, as President and Chief Executive Officer | L3Harris® Fast. Forward."
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.washingtontechnology.com/companies/2026/08/l3harris-promotes-mehta-ceo-abrupt-leadership-change/415453/",
+      "title": "L3Harris promotes Mehta to CEO in abrupt leadership change - Washington Technology | Washingtontechnology"
+    },
+    {
       "slot": "culture",
       "url": "https://www.comparably.com/companies/l3-technologies",
       "title": "L3Harris Technologies Culture | Comparably"
     },
     {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/L3harris/reviews?ftopic=culture",
+      "title": "Working at L3Harris: 1,242 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Employee-Review-L3Harris-E2898734-RVW50256380.htm",
+      "title": "L3Harris - Worst work culture I've ever experienced | Glassdoor"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.comparably.com/companies/l3-technologies/work-life-balance",
       "title": "L3Harris Technologies Work Life Balance | Comparably"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/L3Harris-work-life-balance-Reviews-EI_IE2898734.0,8_KH9,26.htm",
+      "title": "L3Harris \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/L3harris/reviews?fcountry=ALL&ftopic=wlbalance",
+      "title": "Working at L3Harris: 2,217 Reviews about Work-life balance | Indeed.com"
     },
     {
       "slot": "diversity",
@@ -123,6 +158,16 @@
       "slot": "tuition",
       "url": "https://www.glassdoor.com/FAQ/L3Harris-Question-FAQ200042-E2898734.htm",
       "title": "L3Harris Q&A: Does L3Harris offer tuition reimbursement? | Glassdoor"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.reddit.com/r/L3Harris/comments/110hnzz/tuition_reimbursement/",
+      "title": "r/L3Harris on Reddit: Tuition Reimbursement? | Reddit"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.indeed.com/cmp/L3harris/faq/does-l3harris-have-tuition-reimbursement-or-educational-assistance-as-an-employee-benefit?quid=1gtedikuv209l000",
+      "title": "Does L3Harris have tuition reimbursement or educational assistance as an employee benefit? | L3Harris | Indeed.com"
     }
   ]
 }

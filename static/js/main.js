@@ -531,7 +531,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Show first 5 links in compact, all in detailed — the inspirational
         // story is appended after that cutoff so it's always the final link.
-        const displayLinks = isCompact ? baseLinks.slice(0, 5) : baseLinks;
+        // Box 4 is laid out as titled sections (up to 3 links each), so it shows everything.
+        const grouped = cardId === 'company-reviews';
+        const displayLinks = isCompact && !grouped ? baseLinks.slice(0, 5) : baseLinks;
         if (inspoLink) displayLinks.push(inspoLink);
 
         return `
@@ -546,7 +548,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 <!-- Links List -->
                 <div class="space-y-3 mb-4">
-                    ${displayLinks.map((link, index) => renderLink(link, viewMode, index)).join('')}
+                    ${grouped ? renderSections(displayLinks, viewMode)
+                              : displayLinks.map((link, index) => renderLink(link, viewMode, index)).join('')}
                 </div>
 
                 <!-- More Links Button -->
@@ -561,6 +564,34 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     }
 
+
+    // Links arrive ordered by section; each section is a collapsed dropdown (header +
+    // link count) so the card stays the size of the others. The per-link category
+    // badge is dropped since the header already says it.
+    function renderSections(links, viewMode) {
+        const sections = [];
+        links.forEach(link => {
+            const last = sections[sections.length - 1];
+            if (last && last.category === link.category) last.links.push(link);
+            else sections.push({ category: link.category, links: [link] });
+        });
+        return sections.map(({ category, links }) => `
+            <details class="group rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                <summary class="flex items-center justify-between cursor-pointer select-none ${viewMode === 'compact' ? 'p-3 text-sm' : 'p-4'} font-semibold text-gray-900 dark:text-white hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg list-none [&::-webkit-details-marker]:hidden">
+                    <h4>${category}</h4>
+                    <span class="flex items-center gap-2 text-xs font-normal text-gray-400">
+                        ${links.length}
+                        <svg class="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </span>
+                </summary>
+                <div class="space-y-2 px-2 pb-2">
+                    ${links.map((link, i) => renderLink({ ...link, category: null }, viewMode, i)).join('')}
+                </div>
+            </details>
+        `).join('');
+    }
 
     function renderLink(link, viewMode, linkIndex) {
         const { url, title, description, category, type, score } = link;

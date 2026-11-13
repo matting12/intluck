@@ -100,9 +100,29 @@
       "title": "Apple reports third quarter results - Apple | Apple"
     },
     {
+      "slot": "financials",
+      "url": "https://www.wallstreetzen.com/stocks/us/nasdaq/aapl/revenue",
+      "title": "(AAPL) Apple Revenue: 1992-2026 Annual Revenue | WallStreetZen"
+    },
+    {
+      "slot": "financials",
+      "url": "https://businessquant.com/metrics/aapl/revenue",
+      "title": "Apple (AAPL) Revenue (2009 - 2026) | Business Quant"
+    },
+    {
       "slot": "leadership",
-      "url": "https://abcnews.com/US/apple-ceo-tim-cook-stepping-john-ternus-set/story?id=132217743",
-      "title": "Apple CEO Tim Cook is stepping down, John Ternus set to replace him - ABC News | Abcnews"
+      "url": "https://www.theapplepost.com/2026/09/01/71252/tim-cook-officially-steps-down-as-apple-ceo-as-john-ternus-takes-over/",
+      "title": "Tim Cook officially steps down as Apple CEO as John Ternus takes over | The Apple Post"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://tech-insider.org/tim-cook-steps-down-apple-ceo-2026/",
+      "title": "Tim Cook Steps Down as Apple CEO After 15 Years [2026] | Tech Insider"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.aljazeera.com/economy/2026/9/1/john-ternus-succeeds-tim-cook-as-apple-ceo-after-15-years",
+      "title": "John Ternus succeeds Tim Cook as Apple CEO after 15 years | Technology News | Al Jazeera"
     },
     {
       "slot": "culture",
@@ -110,9 +130,29 @@
       "title": "Working at Apple: 3,368 Reviews about Culture | Indeed.com"
     },
     {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/apple",
+      "title": "Apple Culture | Comparably"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Apple-culture-Reviews-EI_IE1138.0,5_KH6,13.htm",
+      "title": "Apple \"culture\" Reviews | Glassdoor"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.glassdoor.com/Reviews/Apple-work-life-balance-Reviews-EI_IE1138.0,5_KH6,23.htm",
       "title": "Apple \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Apple/reviews?ftopic=wlbalance",
+      "title": "Working at Apple: 4,791 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/apple/work-life-balance",
+      "title": "Apple Work Life Balance | Comparably"
     },
     {
       "slot": "diversity",
@@ -120,14 +160,44 @@
       "title": "Diversity, Equity & Inclusion (DEI) at Apple | Glassdoor"
     },
     {
+      "slot": "diversity",
+      "url": "https://www.comparably.com/companies/apple/diversity",
+      "title": "Diversity at Apple | Comparably"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.reddit.com/r/KotakuInAction/comments/1hziwyk/the_myth_of_dei_at_apple/",
+      "title": "r/KotakuInAction on Reddit: The Myth of DEI at Apple | Reddit"
+    },
+    {
       "slot": "career",
       "url": "https://www.comparably.com/companies/apple/studies/career-advancement",
       "title": "Career Advancement at Apple | Comparably"
     },
     {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Apple/topics/professional-development",
+      "title": "Working at Apple: 11,156 Reviews | Indeed.com"
+    },
+    {
+      "slot": "career",
+      "url": "https://glassdoor.com/Reviews/Employee-Review-Apple-RVW4287678.htm",
+      "title": "Apple - Great Experience, little career advancement, monotonous daily activities | Glassdoor"
+    },
+    {
       "slot": "tuition",
       "url": "https://scholarships360.org/financial-aid/apple-tuition-reimbursement/",
       "title": "How to Get Apple Tuition Reimbursement - Scholarships360 | Scholarships360"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://learn.org/financial-aid/apple-tuition-reimbursement",
+      "title": "Apple Tuition Reimbursement & Scholarships 2027 | Learn"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.umassglobal.edu/sites/default/files/documents/partners/apple/apple_tuition_funding_steps_umass_global.pdf",
+      "title": "Apple Employees Direct Pay Tuition Funding is Available ... | Umassglobal"
     }
   ]
 }

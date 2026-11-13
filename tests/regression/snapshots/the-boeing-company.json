@@ -105,9 +105,29 @@
       "title": "Boeing (NYSE:BA) Issues Quarterly Earnings Results - Markets Daily | Themarketsdaily"
     },
     {
+      "slot": "financials",
+      "url": "https://investors.boeing.com/investors/news/press-release-details/2026/Boeing-Reports-Fourth-Quarter-Results/default.aspx",
+      "title": "Boeing Company - Boeing Reports Fourth Quarter Results | Boeing"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.sci-tech-today.com/news/boeing-q3-2026-earnings/",
+      "title": "Boeing Q3 2026 Earnings: Revenue Hits $24.19 Billion, Beats Estimates | Sci Tech Today"
+    },
+    {
       "slot": "leadership",
       "url": "https://www.koat.com/article/boeing-ceo-calhoun-to-step-down/60293702",
       "title": "After tumultuous 5 years for Boeing, CEO will depart as part of broader company leadership shakeup | Koat"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://sharecast.com/news/news-and-announcements/boeing-chief-executive-board-chair-both-stepping-down--16490876.html",
+      "title": "Boeing chief executive, board chair both stepping down - Sharecast.com | Sharecast"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.airdatanews.com/boeing-chairman-and-ceo-dave-calhoun-announces-resignation/",
+      "title": "Boeing Chairman and CEO Dave Calhoun announces resignation - Air Data News | Airdatanews"
     },
     {
       "slot": "culture",
@@ -115,9 +135,29 @@
       "title": "Boeing \"culture\" Reviews | Glassdoor"
     },
     {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Boeing/reviews?ftopic=culture",
+      "title": "Working at Boeing: 2,244 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/boeing",
+      "title": "Boeing Culture | Comparably"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.indeed.com/cmp/Boeing/reviews?ftopic=wlbalance",
       "title": "Working at Boeing: 4,430 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Boeing-work-life-balance-Reviews-EI_IE102.0,6_KH7,24.htm",
+      "title": "Boeing \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/boeing/work-life-balance",
+      "title": "Boeing Work Life Balance | Comparably"
     },
     {
       "slot": "diversity",
@@ -125,14 +165,39 @@
       "title": "Diversity, Equity & Inclusion (DEI) at Boeing | Glassdoor"
     },
     {
+      "slot": "diversity",
+      "url": "https://www.comparably.com/companies/boeing/diversity",
+      "title": "Diversity at Boeing | Comparably"
+    },
+    {
       "slot": "career",
       "url": "https://www.indeed.com/cmp/Boeing/reviews?ftopic=jobsecadv",
       "title": "Working at Boeing: 4,970 Reviews about Job security and advancement | Indeed.com"
     },
     {
+      "slot": "career",
+      "url": "https://www.glassdoor.com/Reviews/Employee-Review-Boeing-E102-RVW3392.htm",
+      "title": "Boeing - Boeing is a good place to work if you already work there and don't care about career advancement. | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.comparably.com/companies/boeing/studies/career-advancement",
+      "title": "Career Advancement at Boeing | Comparably"
+    },
+    {
       "slot": "tuition",
       "url": "https://learn.org/financial-aid/beoing-tuition-assistance",
       "title": "Boeing Tuition Assistance & Educational Benefits 2027 | Learn"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.reddit.com/r/boeing/comments/84t2rm/boeing_tuition_assistance/",
+      "title": "r/boeing on Reddit: Boeing Tuition Assistance | Reddit"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.glassdoor.com/Benefits/Boeing-Tuition-Assistance-US-BNFT41_E102_N1.htm",
+      "title": "Boeing Employee Benefit: Tuition Assistance | Glassdoor"
     }
   ]
 }

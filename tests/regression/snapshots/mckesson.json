@@ -100,9 +100,29 @@
       "title": "McKesson lays off dozens at Rx Savings Solutions amid restructuring - Kansas City Business Journal | Bizjournals"
     },
     {
+      "slot": "news_business",
+      "url": "https://www.mckesson.com/about-us/newsroom/press-releases/2026/mckesson-signs-agreement-to-acquire-precision-medicine-group-llc/",
+      "title": "McKesson Signs Agreement to Acquire Precision Medicine Group, LLC | Mckesson"
+    },
+    {
       "slot": "financials",
       "url": "https://www.mckesson.com/about-us/newsroom/press-releases/2026/mckesson-reports-fiscal-2027-first-quarter-results-and-raises-full-year-adjusted-eps-guidance/",
       "title": "McKesson Reports Fiscal 2027 First Quarter Results and Raises Full Year Adjusted EPS Guidance | Mckesson"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.stocktitan.net/financials/MCK/revenue/",
+      "title": "McKesson Corporation (MCK) Revenue 2026: $403.4B, up 12.4% | Annual & Quarterly"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.dailypolitical.com/2026/08/05/mckesson-nysemck-issues-quarterly-earnings-results.html",
+      "title": "McKesson (NYSE:MCK) Issues Quarterly Earnings Results - Daily Political | Dailypolitical"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://investor.mckesson.com/news/financial-news/2026/McKesson-Announces-Planned-CFO-Transition/default.aspx",
+      "title": "McKesson Corporation - McKesson Announces Planned CFO Transition | Mckesson"
     },
     {
       "slot": "leadership",
@@ -110,9 +130,24 @@
       "title": "McKesson names new chief strategy officer | MCK 8-K Filing"
     },
     {
+      "slot": "leadership",
+      "url": "https://www.gurufocus.com/news/8941160/mckesson-corporation-mck-announces-executive-leadership-transition",
+      "title": "McKesson Corporation (MCK) Announces Executive Leadership Transition | Gurufocus"
+    },
+    {
       "slot": "culture",
       "url": "https://www.glassdoor.com/Reviews/McKesson-culture-Reviews-EI_IE434.0,8_KH9,16.htm",
       "title": "McKesson \"culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Mckesson/reviews?ftopic=culture",
+      "title": "Working at McKesson: 1,439 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/mckesson",
+      "title": "McKesson Culture | Comparably"
     },
     {
       "slot": "work_life",
@@ -120,9 +155,24 @@
       "title": "McKesson \"work life balance\" Reviews | Glassdoor"
     },
     {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/mckesson/work-life-balance",
+      "title": "McKesson Work Life Balance | Comparably"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Mckesson/reviews?ftopic=wlbalance",
+      "title": "Working at McKesson: 2,572 Reviews about Work-life balance | Indeed.com"
+    },
+    {
       "slot": "diversity",
       "url": "https://www.comparably.com/companies/mckesson/diversity",
       "title": "Diversity at McKesson | Comparably"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/McKesson-DEI-E434.htm",
+      "title": "Diversity, Equity & Inclusion (DEI) at McKesson | Glassdoor"
     },
     {
       "slot": "career",
@@ -130,9 +180,24 @@
       "title": "Working at McKesson: Employee Reviews about Job security and advancement | Indeed.com"
     },
     {
+      "slot": "career",
+      "url": "https://www.glassdoor.com/Reviews/Employee-Review-McKesson-E434-RVW455615.htm",
+      "title": "McKesson - Good place to work - carve out your own career path and leverage educational perks | Glassdoor"
+    },
+    {
       "slot": "tuition",
       "url": "https://www.glassdoor.com/Benefits/McKesson-Tuition-Assistance-US-BNFT41_E434_N1.htm",
       "title": "McKesson Employee Benefit: Tuition Assistance | Glassdoor"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.jobzmall.com/mckesson-corporation/faqs/does-mckesson-corporation-offer-any-tuition-reimbursement-programs",
+      "title": "Does McKesson Corporation offer any tuition reimbursement programs? | McKesson Corporation FAQs | JobzMall"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.indeed.com/cmp/Mckesson/faq/does-mckesson-offer-education-benefits-such-as-tuition-reimbursement?quid=1hst5bbugih7n801",
+      "title": "Does McKesson offer education benefits such as tuition reimbursement? | McKesson | Indeed.com"
     }
   ]
 }

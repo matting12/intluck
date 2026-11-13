@@ -90,14 +90,44 @@
       "title": "Cencora, Inc. - Cencora to Acquire American Oncology Network to Strengthen Support of Community Oncology | Cencora"
     },
     {
+      "slot": "news_business",
+      "url": "https://www.bizjournals.com/philadelphia/news/2026/10/21/cencora-american-oncology-network-conshohocken.html",
+      "title": "Cencora making $2.4B acquisition as diversification push continues - Philadelphia Business Journal | Bizjournals"
+    },
+    {
+      "slot": "news_business",
+      "url": "https://www.gurufocus.com/news/8602569/cencora-inc-cor-announces-strategic-reorganization-of-business-segments?mobile=true",
+      "title": "Cencora, Inc. (COR) Announces Strategic Reorganization of Business Segments | Gurufocus"
+    },
+    {
       "slot": "financials",
       "url": "https://www.businesswire.com/news/home/20260804421646/en/Cencora-Reports-Fiscal-2026-Third-Quarter-Results",
       "title": "Cencora Reports Fiscal 2026 Third Quarter Results | Businesswire"
     },
     {
+      "slot": "financials",
+      "url": "https://investor.cencora.com/news/news-details/2026/Cencora-Reports-Fiscal-2026-Second-Quarter-Results/default.aspx",
+      "title": "Cencora, Inc. - Cencora Reports Fiscal 2026 Second Quarter Results | Cencora"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.biospace.com/press-releases/cencora-reports-fiscal-2026-third-quarter-results",
+      "title": "Cencora Reports Fiscal 2026 Third Quarter Results - BioSpace | Biospace"
+    },
+    {
       "slot": "leadership",
-      "url": "https://www.cencora.com/newsroom/cencora-announces-financial-leadership-transition",
-      "title": "Cencora announces financial leadership transition | Cencora"
+      "url": "https://investor.amerisourcebergen.com/news/news-details/2026/Cencora-Announces-Financial-Leadership-Transition/default.aspx",
+      "title": "Cencora, Inc. - Cencora Announces Financial Leadership Transition | Amerisourcebergen"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.stocktitan.net/news/COR/cencora-appoints-eva-boratto-as-executive-vice-president-and-chief-7qn6ge55t2fl.html",
+      "title": "Cencora names Eva Boratto CFO, reaffirms 2026 EPS | COR Stock News"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.marketscreener.com/news/cencora-inc-announces-executive-changes-ce7f5ddad98bff2d",
+      "title": "Cencora, Inc. Appoints Eva C. Boratto as Executive Vice President, Effective June 29, 2026 | MarketScreener"
     },
     {
       "slot": "culture",
@@ -105,9 +135,29 @@
       "title": "Cencora \"corporate culture\" Reviews | Glassdoor"
     },
     {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Cencora/reviews?ftopic=culture",
+      "title": "Working at Cencora: 513 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/cencora",
+      "title": "Cencora Culture | Comparably"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.glassdoor.com/Reviews/Cencora-work-life-balance-Reviews-EI_IE2703.0,7_KH8,25.htm",
       "title": "Cencora \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Cencora/reviews?ftopic=wlbalance",
+      "title": "Working at Cencora: 870 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.ambitionbox.com/reviews/cencora-work-life-balance-reviews-1676198",
+      "title": "Cencora Work Life Balance Reviews by 8 Employees | AmbitionBox"
     },
     {
       "slot": "diversity",
@@ -118,6 +168,11 @@
       "slot": "career",
       "url": "https://www.indeed.com/cmp/Cencora/reviews?fcountry=ALL&ftopic=jobsecadv",
       "title": "Working at Cencora: 924 Reviews about Job security and advancement | Indeed.com"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.glassdoor.com/Reviews/Cencora-career-advancement-Reviews-EI_IE2703.0,7_KH8,26.htm",
+      "title": "Cencora \"career advancement\" Reviews | Glassdoor"
     },
     {
       "slot": "tuition",

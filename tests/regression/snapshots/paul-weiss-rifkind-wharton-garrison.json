@@ -56,13 +56,33 @@
   "box4": [
     {
       "slot": "news_business",
+      "url": "https://www.jdjournal.com/2026/08/11/paul-weiss-recruits-two-veteran-ny-deal-partners/",
+      "title": "Paul Weiss Recruits Two Veteran NY Deal Partners - JDJournal Blog | Jdjournal"
+    },
+    {
+      "slot": "news_business",
       "url": "https://mitchellake.com/intelligence/wire/paul-weiss-rifkind-wharton-garrison-llp-geographic-expansion-2026-07-14",
       "title": "Paul, Weiss, Rifkind, Wharton & Garrison LLP — Geographic Expansion: The Leadership Read | MitchelLake Intelligence | Mitchel Lake"
+    },
+    {
+      "slot": "news_business",
+      "url": "https://www.law360.com/mergersacquisitions/articles/2539413",
+      "title": "Weil Hires Ex-Paul Weiss Antitrust Partner In NY - Law360 | Law360"
     },
     {
       "slot": "financials",
       "url": "https://www.law360.co.uk/articles/2303710",
       "title": "Paul Weiss Revenue Grows By More Than 30% - Law360 | Law360"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.nytimes.com/2026/04/23/business/paul-weiss-law-firm-departures.html",
+      "title": "Two Litigation Partners Depart Paul Weiss - The New York Times | New York Times"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://legalnewsfeed.com/2026/05/20/paul-weiss-llp-reshapes-focus-amid-leadership-changes-and-controversy/",
+      "title": "Paul Weiss LLP Reshapes Focus Amid Leadership Changes and Controversy – Legal News Feed | Legalnewsfeed"
     },
     {
       "slot": "leadership",
@@ -73,6 +93,11 @@
       "slot": "culture",
       "url": "https://www.glassdoor.com/Reviews/Paul-Weiss-Rifkind-Wharton-and-Garrison-culture-Reviews-EI_IE3320.0,39_KH40,47.htm",
       "title": "Paul, Weiss, Rifkind, Wharton & Garrison \"culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Paul,-Weiss,-Rifkind,-Wharton-&-Garrison-LLP/reviews?ftopic=culture",
+      "title": "Working at Paul, Weiss, Rifkind, Wharton & Garrison LLP: Employee Reviews about Culture | Indeed.com"
     },
     {
       "slot": "work_life",

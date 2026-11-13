@@ -20,16 +20,18 @@ __all__ = ['build_review_queries', 'format_review_category_name', 'NEWS_CATEGORI
 NEWS_CATEGORIES = {'news_business', 'financials', 'leadership'}
 
 
-def format_review_category_name(category_key: str) -> str:
+def format_review_category_name(category_key: str, company: str = '') -> str:
+    """Section heading for the box 4 layout; news headings lead with the company name."""
+    prefix = f'{company} ' if company else ''
     return {
-        'news_business': 'Company News',
-        'financials': 'Financial Performance',
-        'leadership': 'Leadership News',
-        'culture': 'Culture Reviews',
-        'work_life': 'Work-Life Balance Reviews',
-        'diversity': 'Diversity & Inclusion Reviews',
-        'career': 'Career Development Reviews',
-        'tuition': 'Tuition Reimbursement Reviews',
+        'news_business': f'{prefix}Recent News',
+        'financials': f'{prefix}Financial News',
+        'leadership': f'{prefix}Executive Leadership News',
+        'culture': 'Reviews on Company Culture',
+        'work_life': 'Reviews on Work Life Balance',
+        'diversity': 'Reviews on Diversity, Equity, and Inclusion',
+        'career': 'Reviews on Career Development and Internal Mobility',
+        'tuition': 'Reviews on Tuition Reimbursement',
     }.get(category_key, category_key.replace('_', ' ').title())
 
 

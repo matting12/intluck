@@ -90,14 +90,34 @@
       "title": "Jones Day Names 33 New Partners | Businesswire"
     },
     {
+      "slot": "leadership",
+      "url": "https://www.globallegalpost.com/news/appointments-steptoe-johnson-names-chief-diversity-officer-jones-day-builds-in-dubai-1900265216",
+      "title": "Appointments: Steptoe & Johnson names chief diversity officer, Jones Day builds in Dubai - The Global Legal Post | Globallegalpost"
+    },
+    {
       "slot": "culture",
       "url": "https://www.glassdoor.com/Reviews/Jones-Day-culture-Reviews-EI_IE3244.0,9_KH10,17.htm",
       "title": "Jones Day \"culture\" Reviews | Glassdoor"
     },
     {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Jones-Day/reviews?ftopic=culture",
+      "title": "Working at Jones Day: Employee Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/jones-day",
+      "title": "Jones Day Culture | Comparably"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.glassdoor.com/Reviews/Jones-Day-work-life-balance-Reviews-EI_IE3244.0,9_KH10,27.htm",
       "title": "Jones Day \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Jones-Day/reviews?fcountry=ALL&ftopic=wlbalance",
+      "title": "Working at Jones Day: 52 Reviews about Work-life balance | Indeed.com"
     },
     {
       "slot": "diversity",

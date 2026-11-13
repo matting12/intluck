@@ -95,9 +95,29 @@
       "title": "Alphabet Announces Second Quarter 2026 Results | Sec"
     },
     {
+      "slot": "financials",
+      "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2026/q3/2026q3-alphabet-earnings-release.pdf",
+      "title": "Alphabet Announces Third Quarter 2026 Results | Q4Cdn"
+    },
+    {
+      "slot": "financials",
+      "url": "https://sixsigmaresearch.com/p/alphabet-inc-earnings-update-fiscal",
+      "title": "Alphabet Inc Earnings Update: Fiscal Q1 2027 | Sixsigmaresearch"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://techstartups.com/2026/08/05/demis-hassabis-steps-down-as-google-deepmind-ceo-to-become-alphabet-chief-scientist-and-focus-on-agi/",
+      "title": "Demis Hassabis steps down as Google DeepMind CEO to become Alphabet chief scientist and focus on AGI - Tech Startups | Techstartups"
+    },
+    {
       "slot": "leadership",
       "url": "https://www.qsstechnosoft.com/blog/news-54/sundar-pichai-alphabet-ceo-google-167",
       "title": "Sundar Pichai Named as Alphabet's CEO- Google’s Parent Firm | Qsstechnosoft"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.datacenterdynamics.com/en/news/eric-schmidt-steps-down-as-chairman-of-google-parent-alphabet/",
+      "title": "Eric Schmidt steps down as chairman of Google parent Alphabet - DCD | Datacenterdynamics"
     },
     {
       "slot": "culture",
@@ -105,9 +125,24 @@
       "title": "Alphabet Inc Culture | Comparably"
     },
     {
+      "slot": "culture",
+      "url": "https://www.ambitionbox.com/overview/alphabet-overview",
+      "title": "Life at Alphabet: Culture, Salary, Reviews, Interviews & more | Ambitionbox"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.comparably.com/companies/alphabet-inc/work-life-balance",
       "title": "Alphabet Inc Work Life Balance | Comparably"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Alphabet-GB-work-life-balance-Reviews-EI_IE764177.0,11_KH12,29.htm",
+      "title": "Alphabet (GB) \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Alphabet-Soup/reviews?fcountry=ALL&ftopic=wlbalance",
+      "title": "Working at Alphabet Soup: Employee Reviews about Work-life balance | Indeed.com"
     },
     {
       "slot": "career",

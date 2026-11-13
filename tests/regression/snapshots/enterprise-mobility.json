@@ -90,14 +90,34 @@
       "title": "Enterprise Mobility Announced Acquisition with Hogan | Automotive Fleet"
     },
     {
+      "slot": "news_business",
+      "url": "https://www.prnewswire.com/news-releases/enterprise-mobility-announces-acquisition-expanding-mobility-portfolio-302635597.html",
+      "title": "Enterprise Mobility Announces Acquisition Expanding Mobility Portfolio | Prnewswire"
+    },
+    {
+      "slot": "news_business",
+      "url": "https://hogan1.com/enterprise-mobility-announces-acquisition-expanding-mobility-portfolio/",
+      "title": "Enterprise Mobility Announces Acquisition Expanding Mobility Portfolio | Hogan"
+    },
+    {
       "slot": "culture",
       "url": "https://www.indeed.com/cmp/Enterprise-Holdings/reviews?ftopic=culture&start=20",
       "title": "Working at Enterprise Mobility: 3,431 Reviews about Culture | Indeed.com"
     },
     {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Enterprise-Mobility-culture-Reviews-EI_IE4819293.0,19_KH20,27.htm",
+      "title": "Enterprise Mobility \"culture\" Reviews | Glassdoor"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.glassdoor.com/Reviews/Enterprise-Mobility-work-life-balance-Reviews-EI_IE354335.0,19_KH20,37.htm",
       "title": "Enterprise Mobility \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Enterprise-Mobility-2/reviews?fcountry=ALL&ftopic=wlbalance",
+      "title": "Working at Enterprise Mobility: 8,565 Reviews about Work-life balance | Indeed.com"
     },
     {
       "slot": "diversity",
@@ -108,6 +128,11 @@
       "slot": "career",
       "url": "https://www.indeed.com/cmp/Enterprise-Mobility-2/reviews?ftext=work+from+home",
       "title": "Working at Enterprise Mobility: 361 Reviews | Indeed.com"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.glassdoor.com/Reviews/Enterprise-Mobility-promote-from-within-Reviews-EI_IE354335.0,19_KH20,39.htm",
+      "title": "Enterprise Mobility \"promote from within\" Reviews | Glassdoor"
     },
     {
       "slot": "tuition",

@@ -100,9 +100,24 @@
       "title": "Cargill laying off 80 more employees at Minnesota headquarters | Startribune"
     },
     {
+      "slot": "news_business",
+      "url": "https://www.meatpoultry.com/articles/33883-cargill-sees-gains-from-restructuring-as-industry-shifts",
+      "title": "Cargill sees gains from restructuring as industry shifts | MEAT+POULTRY"
+    },
+    {
       "slot": "financials",
-      "url": "https://www.ttnews.com/articles/cargill-earnings-q1-2027",
-      "title": "Cargill profit undercut by cattle costs, cocoa losses - TT | Ttnews"
+      "url": "https://www.indexbox.io/blog/cargill-reports-fiscal-2026-revenue-of-164-billion-amid-ongoing-restructuring/",
+      "title": "Cargill Fiscal 2026 Revenue Hits $164B, AI and Portfolio Shifts Drive Growth - News and Statistics - IndexBox | Indexbox"
+    },
+    {
+      "slot": "financials",
+      "url": "https://x.com/JavierBlas/status/2089741554701193697",
+      "title": "Javier Blas on X: \"CHART OF THE DAY: Cargill, the agricultural trading giant, reported annual net profit in its fiscal year 2026 of ~$2.97 billion, down from $3.57 billion in FY2025, on the back of restructuring costs and several writedowns in Brazil, Europe and the US.\" / X | X"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.efeedlink.com/articles/cargill-posts-us164-billion-revenue-in-fiscal-2026-as-restructuring-narrows-business-groups-and-boosts-efficiency",
+      "title": "Cargill posts US$164 billion revenue in fiscal 2026 as restructuring narrows business groups and boosts efficiency | eFeedLink"
     },
     {
       "slot": "leadership",
@@ -110,9 +125,29 @@
       "title": "Cargill Appoints Brian Sikes as President, CEO | Cspdailynews"
     },
     {
+      "slot": "leadership",
+      "url": "https://www.worldfishing.net/news/feed-nutrition/cargill-appoints-new-chief/",
+      "title": "Cargill appoints new chief – World Fishing | Worldfishing"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.prnewswire.com/news-releases/cargill-chair-and-ceo-brian-sikes-joins-deere--companys-board-of-directors-302632700.html",
+      "title": "Cargill Chair and CEO Brian Sikes joins Deere & Company's Board of Directors | Prnewswire"
+    },
+    {
       "slot": "culture",
       "url": "https://www.comparably.com/companies/cargill",
       "title": "Cargill Culture | Comparably"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Cargill/reviews?ftopic=culture",
+      "title": "Working at Cargill: 902 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Cargill-culture-Reviews-EI_IE2739.0,7_KH8,15.htm",
+      "title": "Cargill \"culture\" Reviews | Glassdoor"
     },
     {
       "slot": "work_life",
@@ -120,9 +155,24 @@
       "title": "Cargill \"work life balance\" Reviews | Glassdoor"
     },
     {
+      "slot": "work_life",
+      "url": "https://www.ambitionbox.com/reviews/cargill-work-life-balance-reviews-577",
+      "title": "Cargill Work Life Balance Reviews by 200+ Employees | AmbitionBox"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Cargill/reviews?fcountry=US&ftopic=wlbalance&ftext=tech",
+      "title": "Working at Cargill: Employee Reviews about Work-life balance | Indeed.com"
+    },
+    {
       "slot": "diversity",
       "url": "https://www.glassdoor.com/Culture/Cargill-DEI-E2739.htm",
       "title": "Diversity, Equity & Inclusion (DEI) at Cargill | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.comparably.com/companies/cargill/diversity",
+      "title": "Diversity at Cargill | Comparably"
     },
     {
       "slot": "career",
@@ -130,9 +180,24 @@
       "title": "Cargill Q&A: How are promotions handled at Cargill? | Glassdoor"
     },
     {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Cargill/reviews?ftopic=jobsecadv&ftext=Wayzata",
+      "title": "Working at Cargill: Employee Reviews about Job security and advancement | Indeed.com"
+    },
+    {
       "slot": "tuition",
       "url": "https://www.cargill.com/page/my-health/mh-tuition-reimbursement",
       "title": "Tuition Reimbursement | Cargill"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.jobzmall.com/cargill/faqs/does-cargill-offer-any-tuition-reimbursement-programs",
+      "title": "Does Cargill offer any tuition reimbursement programs? | Cargill FAQs | JobzMall"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.glassdoor.com/Benefits/Cargill-Tuition-Assistance-US-BNFT41_E2739_N1.htm",
+      "title": "Cargill Employee Benefit: Tuition Assistance | Glassdoor"
     }
   ]
 }

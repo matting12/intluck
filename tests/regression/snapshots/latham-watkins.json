@@ -76,8 +76,8 @@
   "box4": [
     {
       "slot": "financials",
-      "url": "https://www.statista.com/statistics/877883/latham-and-watkins-gross-revenue/",
-      "title": "Latham & Watkins revenue 2025| Statista | Statista"
+      "url": "https://www.lawcareers.net/Explore/News/Latham-Watkins-breaks-1-billion-London-revenue-barrier-15042026",
+      "title": "Latham & Watkins breaks $1 billion London revenue barrier - News | Lawcareers"
     },
     {
       "slot": "leadership",
@@ -85,9 +85,24 @@
       "title": "Latham Watkins Names New Partners 2026 | Lw"
     },
     {
+      "slot": "leadership",
+      "url": "http://www.prnewswire.com/news-releases/latham--watkins-names-new-partners-302917425.html",
+      "title": "Latham & Watkins Names New Partners | Prnewswire"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://legaldesire.com/latham-watkins-names-new-partners/",
+      "title": "Latham & Watkins Names New Partners | Legaldesire"
+    },
+    {
       "slot": "culture",
       "url": "https://www.indeed.com/cmp/Latham-&-Watkins-LLP/reviews?ftopic=culture",
       "title": "Working at Latham & Watkins LLP: Employee Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Latham-and-Watkins-backstabbing-culture-Reviews-EI_IE3263.0,18_KH19,39.htm",
+      "title": "Latham & Watkins \"backstabbing culture\" Reviews | Glassdoor"
     },
     {
       "slot": "work_life",
@@ -95,9 +110,19 @@
       "title": "Latham & Watkins \"work life balance\" Reviews | Glassdoor"
     },
     {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Latham-&-Watkins-LLP/reviews?ftopic=wlbalance",
+      "title": "Working at Latham & Watkins LLP: 59 Reviews about Work-life balance | Indeed.com"
+    },
+    {
       "slot": "career",
       "url": "https://www.indeed.com/cmp/Latham-&-Watkins-LLP/reviews?ftopic=jobsecadv",
       "title": "Working at Latham & Watkins LLP: Employee Reviews about Job Security & Advancement | Indeed.com"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.glassdoor.com/Reviews/Latham-and-Watkins-LLP-Reviews-E3263.htm?filter.searchCategory=CAREER_DEVELOPMENT",
+      "title": "Latham & Watkins Reviews (109): Pros & Cons of Working At Latham & Watkins | Glassdoor"
     }
   ]
 }

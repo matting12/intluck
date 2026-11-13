@@ -86,8 +86,8 @@
   "box4": [
     {
       "slot": "leadership",
-      "url": "https://www.law.com/americanlawyer/2026/03/23/morgan-lewis-names-new-chair-as-mckeon-closes-out-12-year-tenure/",
-      "title": "Morgan Lewis Names New Chair as McKeon Closes Out 12-Year Tenure | Law.com"
+      "url": "https://www.globallegalpost.com/news/morgan-lewis-names-employment-chief-mcmanus-as-next-chair-614750781",
+      "title": "Morgan Lewis names employment chief McManus as next chair - The Global Legal Post | Globallegalpost"
     },
     {
       "slot": "culture",
@@ -95,14 +95,39 @@
       "title": "Working at Morgan Lewis: Employee Reviews about Culture | Indeed.com"
     },
     {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/morgan-lewis-bockius-llp",
+      "title": "Morgan, Lewis & Bockius LLP Culture | Comparably"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Morgan-Lewis-culture-Reviews-EI_IE3298.0,12_KH13,20.htm",
+      "title": "Morgan Lewis \"culture\" Reviews | Glassdoor"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.comparably.com/companies/morgan-lewis-bockius-llp/work-life-balance",
       "title": "Morgan, Lewis & Bockius LLP Work Life Balance | Comparably"
     },
     {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Morgan,-Lewis-&-Bockius-LLP/reviews?ftopic=wlbalance",
+      "title": "Working at Morgan Lewis: 57 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Morgan-Lewis-work-life-balance-Reviews-EI_IE3298.0,12_KH13,30.htm",
+      "title": "Morgan Lewis \"work life balance\" Reviews | Glassdoor"
+    },
+    {
       "slot": "diversity",
       "url": "https://legacy.vault.com/company-profiles/law/morgan-lewis-bockius-llp/initiatives",
       "title": "Morgan, Lewis & Bockius LLP | Diversity | Vault.com"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.glassdoor.com/Culture/Morgan-Lewis-DEI-E3298.htm",
+      "title": "Diversity, Equity & Inclusion (DEI) at Morgan Lewis | Glassdoor"
     },
     {
       "slot": "career",

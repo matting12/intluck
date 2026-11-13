@@ -86,6 +86,11 @@
   "box4": [
     {
       "slot": "news_business",
+      "url": "https://www.skadden.com/about/news-and-rankings/news/2026/09/john-marshall-bancorp-to-merge",
+      "title": "John Marshall Bancorp to Merge With Eagle Financial Services | News & Rankings | About | Skadden, Arps, Slate, Meagher & Flom LLP"
+    },
+    {
+      "slot": "news_business",
       "url": "https://iclg.com/firms/skadden-arps-slate-meagher-flom-uk-llp/",
       "title": "Skadden, Arps, Slate, Meagher & Flom (UK) LLP | Mergers & Acquisitions"
     },
@@ -95,19 +100,34 @@
       "title": "Skadden, Arps, Slate, Meagher & Flom Culture | Comparably"
     },
     {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Skadden-Arps-Slate-Meagher-and-Flom-culture-Reviews-EI_IE3381.0,35_KH36,43.htm",
+      "title": "Skadden, Arps, Slate, Meagher & Flom \"culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Skadden,-Arps,-Slate,-Meagher-&-Flom-LLP-&-Affiliates/reviews?fjobcat=legal&ftopic=culture",
+      "title": "Legal reviews about Culture at Skadden, Arps, Slate, Meagher & Flom LLP & Affiliates | Indeed.com"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.glassdoor.com/Reviews/Skadden-Arps-Slate-Meagher-and-Flom-work-life-balance-Reviews-EI_IE3381.0,35_KH36,53.htm",
       "title": "Skadden, Arps, Slate, Meagher & Flom \"work life balance\" Reviews | Glassdoor"
     },
     {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Skadden,-Arps,-Slate,-Meagher-&-Flom-LLP-&-Affiliates/reviews?ftopic=wlbalance",
+      "title": "Working at Skadden, Arps, Slate, Meagher & Flom LLP & Affiliates: 70 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/skadden-arps-slate-meagher-flom/work-life-balance",
+      "title": "Skadden, Arps, Slate, Meagher & Flom Work Life Balance | Comparably"
+    },
+    {
       "slot": "diversity",
       "url": "https://media2.vault.com/14346632/skadden-arps-slate-meagher-_-flom-llp-and-affiliates-diversity-report-edit.pdf",
       "title": "Skadden, Arps, Slate, Meagher & Flom LLP and Affiliates - Vault | Vault"
-    },
-    {
-      "slot": "career",
-      "url": "https://www.glassdoor.com/Reviews/Skadden-Arps-Slate-Meagher-and-Flom-Global-Business-Development-Reviews-EI_IE3381.0,35_KO36,63.htm",
-      "title": "Skadden, Arps, Slate, Meagher & Flom Global Business Development Reviews | Glassdoor"
     }
   ]
 }

@@ -95,9 +95,29 @@
       "title": "Southern Glazer's cuts jobs as US drinks distribution shifts | Thedrinksbusiness"
     },
     {
+      "slot": "news_business",
+      "url": "https://distributionstrategy.com/2026/07/southern-glazers-restructures-sales-organization-cuts-about-1-of-u-s-workforce/",
+      "title": "Southern Glazer's Restructures Sales Organization, Cuts About 1% of U.S. Workforce - Distribution Strategy Group | Distributionstrategy"
+    },
+    {
+      "slot": "news_business",
+      "url": "https://finance.yahoo.com/sectors/healthcare/articles/hundreds-jobs-lost-alcohol-distributor-195205688.html",
+      "title": "Hundreds of Jobs Lost as Alcohol Distributor Lays Off Workforce Following Southern Glazer’s Acquisition | Yahoo"
+    },
+    {
       "slot": "leadership",
       "url": "https://newsroom.southernglazers.com/press-releases/press-release-details/2026/Southern-Glazers-Wine--Spirits-Announces-Corporate-Strategy-Leadership-Transition/default.aspx",
       "title": "Southern Glazer’s Wine & Spirits Announces Corporate Strategy Leadership Transition | Southern Glazer's Wine & Spirits"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.businesswire.com/news/home/20260212760132/en/Southern-Glazers-Wine-Spirits-Announces-Supply-Chain-Leadership-Transition",
+      "title": "Southern Glazer’s Wine & Spirits Announces Supply Chain Leadership Transition | Businesswire"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.winebusiness.com/news/people/article/315295",
+      "title": "Southern Glazer's Wine & Spirits Announces Corporate Strategy Leadership Transition | Winebusiness"
     },
     {
       "slot": "culture",
@@ -105,9 +125,19 @@
       "title": "Working at Southern Glazer’s Wine & Spirits: 419 Reviews about Culture | Indeed.com"
     },
     {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/southern-glazer-s-wine-spirits",
+      "title": "Southern Glazer's Wine & Spirits Culture | Comparably"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.glassdoor.com/Reviews/Southern-Glazer-s-Wine-and-Spirits-work-life-balance-Reviews-EI_IE1366486.0,34_KH35,52.htm",
       "title": "Southern Glazer's Wine & Spirits \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Southern-Glazer-S-Wine-&-Spirits-1/reviews?ftopic=wlbalance",
+      "title": "Working at Southern Glazer’s Wine & Spirits: 757 Reviews about Work-life balance | Indeed.com"
     },
     {
       "slot": "career",

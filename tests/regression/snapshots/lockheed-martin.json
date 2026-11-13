@@ -96,8 +96,18 @@
   "box4": [
     {
       "slot": "news_business",
-      "url": "https://news.lockheedmartin.com/2026-10-26-Lockheed-Martin-Closes-Ultra-Maritime-Acquisition",
-      "title": "Lockheed Martin Closes Ultra Maritime Acquisition | Lockheedmartin"
+      "url": "https://www.cpr.org/2026/10/09/lockheed-martin-space-colorado-expansion/",
+      "title": "State officials tout expansion of Lockheed Martin Space investment in Colorado | Cpr"
+    },
+    {
+      "slot": "news_business",
+      "url": "https://www.bizjournals.com/denver/news/2026/10/09/lockheed-martin-space-colorado-denver-job-growth.html",
+      "title": "Lockheed Martin expands metro-Denver presence after landing job-growth tax incentives - Denver Business Journal | Bizjournals"
+    },
+    {
+      "slot": "news_business",
+      "url": "https://hoodline.com/2026/10/lockheed-martin-to-add-up-to-1-250-jobs-in-colorado-space-expansion/",
+      "title": "Lockheed Martin Colorado Expansion Adds Up to 1,250 Jobs | Hoodline"
     },
     {
       "slot": "financials",
@@ -105,9 +115,29 @@
       "title": "Lockheed Martin Reports Third Quarter 2026 Financial Results | Lockheed Martin Corp"
     },
     {
+      "slot": "financials",
+      "url": "https://news.alphastreet.com/lockheed-martin-releases-q3-2026-financial-results/amp/",
+      "title": "Lockheed Martin Releases Q3 2026 Financial Results - Alphastreet | Alphastreet"
+    },
+    {
+      "slot": "financials",
+      "url": "https://pulse2.com/lockheed-martin-q3-2026-revenue-of-20-7-billion-net-earnings-of-1-8-billion-and-record-292-billion-backlog/",
+      "title": "Lockheed Martin: Q3 2026 Revenue Of $20.7 Billion, Net Earnings Of $1.8 Billion, And Record $292 Billion Backlog | Pulse2"
+    },
+    {
       "slot": "leadership",
       "url": "https://news.lockheedmartin.com/2026-05-06-Lockheed-Martin-Aeronautics-President-Greg-Ulmer-to-Retire,-OJ-Sanchez-named-successor",
       "title": "Lockheed Martin Aeronautics' President Greg Ulmer to Retire, OJ Sanchez named successor - May 6, 2026 | Lockheedmartin"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://fortworthreport.org/2026/05/09/soaring-ahead-lockheed-martin-aeronautics-leadership-changes-announced/",
+      "title": "Soaring ahead: Lockheed Martin Aeronautics leadership changes announced | Fort Worth Report"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.geneonline.com/lockheed-martin-aeronautics-names-oj-sanchez-president-transition-set-for-july-15-2026/",
+      "title": "Lockheed Martin Aeronautics Names OJ Sanchez President, Transition Set for July 15, 2026 - GeneOnline News | Geneonline"
     },
     {
       "slot": "culture",
@@ -115,9 +145,29 @@
       "title": "Lockheed Martin Culture | Comparably"
     },
     {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Lockheed-Martin/reviews?ftopic=culture",
+      "title": "Working at Lockheed Martin: 2,070 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Lockheed-Martin-culture-Reviews-EI_IE404.0,15_KH16,23.htm",
+      "title": "Lockheed Martin \"culture\" Reviews | Glassdoor"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.indeed.com/cmp/Lockheed-Martin/reviews?fcountry=ALL&ftopic=wlbalance",
       "title": "Working at Lockheed Martin: 3,876 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Lockheed-Martin-work-life-balance-Reviews-EI_IE404.0,15_KH16,33.htm",
+      "title": "Lockheed Martin \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/lockheed-martin/work-life-balance",
+      "title": "Lockheed Martin Work Life Balance | Comparably"
     },
     {
       "slot": "diversity",
@@ -125,14 +175,39 @@
       "title": "Lockheed Martin: Diversity, Equity & Inclusion | Glassdoor"
     },
     {
+      "slot": "diversity",
+      "url": "https://www.comparably.com/companies/lockheed-martin/diversity",
+      "title": "Diversity at Lockheed Martin | Comparably"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.indeed.com/cmp/Lockheed-Martin/reviews?fjobtitle=Diversity+and+Inclusion+Manager",
+      "title": "Working as a Diversity and Inclusion Manager at Lockheed Martin: Employee Reviews | Indeed.com"
+    },
+    {
       "slot": "career",
       "url": "https://www.indeed.com/cmp/Lockheed-Martin/reviews?ftopic=jobsecadv",
       "title": "Working at Lockheed Martin: 4,703 Reviews about Job security and advancement | Indeed.com"
     },
     {
+      "slot": "career",
+      "url": "https://www.glassdoor.com/Reviews/Employee-Review-Lockheed-Martin-E404-RVW61121835.htm",
+      "title": "Lockheed Martin - Good stability, good career growth, good pay | Glassdoor"
+    },
+    {
       "slot": "tuition",
       "url": "https://www.glassdoor.com/Benefits/Lockheed-Martin-Tuition-Assistance-US-BNFT41_E404_N1.htm",
       "title": "Lockheed Martin Employee Benefit: Tuition Assistance | Glassdoor"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.collegetransitions.com/blog/lockheed-martin-tuition-assistance-benefits-stem-degrees/",
+      "title": "Lockheed Martin Tuition Assistance 2026: Benefits & STEM Degrees - College Transitions | Collegetransitions"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://learn.org/financial-aid/lockheed-martin-scholarships",
+      "title": "Lockheed Martin STEM Scholarships & Tuition Assistance 2026 | Learn"
     }
   ]
 }

@@ -576,12 +576,12 @@ document.addEventListener('DOMContentLoaded', function() {
             else sections.push({ category: link.category, links: [link] });
         });
         return sections.map(({ category, links }) => `
-            <details class="group rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+            <details class="group/section rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
                 <summary class="flex items-center justify-between cursor-pointer select-none ${viewMode === 'compact' ? 'p-3 text-sm' : 'p-4'} font-semibold text-gray-900 dark:text-white hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg list-none [&::-webkit-details-marker]:hidden">
                     <h4>${category}</h4>
                     <span class="flex items-center gap-2 text-xs font-normal text-gray-400">
                         ${links.length}
-                        <svg class="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 transition-transform group-open/section:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </span>

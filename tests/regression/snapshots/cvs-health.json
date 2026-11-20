@@ -100,9 +100,29 @@
       "title": "CVS Health | CVS HEALTH CORPORATION REPORTS FOURTH QUARTER AND FULL-YEAR 2025 RESULTS"
     },
     {
+      "slot": "financials",
+      "url": "https://www.wallstreetzen.com/stocks/us/nyse/cvs/revenue",
+      "title": "(CVS) Cvs Health Revenue: 1991-2026 Annual Revenue | WallStreetZen"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.cnbc.com/2026/05/06/cvs-health-cvs-earnings-q1-2026.html",
+      "title": "CVS Health (CVS) earnings Q1 2026 | Cnbc"
+    },
+    {
       "slot": "leadership",
       "url": "https://www.managedhealthcareexecutive.com/view/karen-lynch-steps-down-as-ceo-of-cvs-health",
       "title": "Karen Lynch Steps Down as CEO of CVS Health | Managed Healthcare Executive"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.medicaleconomics.com/view/cvs-health-names-new-president",
+      "title": "CVS Health names new president | Medical Economics"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.cvshealth.com/news/company-news/cvs-health-names-david-joyner-chair-of-the-board-of-directors.html",
+      "title": "CVS Health names David Joyner Chair of the Board of Directors | Cvshealth"
     },
     {
       "slot": "culture",
@@ -110,9 +130,29 @@
       "title": "CVS Health Culture | Comparably"
     },
     {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/CVS-Health/reviews?fcountry=US&floc=Remote&ftopic=culture",
+      "title": "Working at CVS Health in Remote: 134 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Employee-Review-CVS-Health-E437-RVW13275938.htm",
+      "title": "CVS Health - Overall Company Culture | Glassdoor"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.glassdoor.com/Reviews/CVS-Health-work-life-balance-Reviews-EI_IE437.0,10_KH11,28.htm",
       "title": "CVS Health \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/cvs-health/work-life-balance",
+      "title": "CVS Health Work Life Balance | Comparably"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/CVS-Health/reviews?ftopic=wlbalance",
+      "title": "Working at CVS Health: 12,293 Reviews about Work-life balance | Indeed.com"
     },
     {
       "slot": "diversity",
@@ -120,14 +160,34 @@
       "title": "CVS-Health: Diversity, Equity & Inclusion | Glassdoor | Glassdoor"
     },
     {
+      "slot": "diversity",
+      "url": "https://www.comparably.com/companies/cvs-health/diversity",
+      "title": "Diversity at CVS Health | Comparably"
+    },
+    {
       "slot": "career",
       "url": "https://www.indeed.com/cmp/CVS-Health/reviews?ftopic=jobsecadv",
       "title": "Working at CVS Health: 13,471 Reviews about Job security and advancement | Indeed.com"
     },
     {
+      "slot": "career",
+      "url": "https://www.glassdoor.com/FAQ/CVS-Health-Career-Development-Questions-EI_IE437.0,10_KC11,29.htm",
+      "title": "CVS Health Career Development Questions | Glassdoor"
+    },
+    {
       "slot": "tuition",
       "url": "https://learn.org/financial-aid/cvs-tuition-reimbursement",
       "title": "CVS Tuition Reimbursement & Scholarships 2027 - Learn.org | Learn"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://scholarships360.org/financial-aid/cvs-benefits/",
+      "title": "How to Get CVS Tuition Reimbursement - Scholarships360 | Scholarships360"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.cvshealth.com/news/pharmacy/cvs-health-expands-pharmacy-tuition-assistance-and-scholarship-programs.html",
+      "title": "CVS Health® expands pharmacy tuition assistance and scholarship programs | Cvshealth"
     }
   ]
 }

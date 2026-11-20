@@ -90,9 +90,29 @@
       "title": "HII Reports Q1 2026 Financial Results and Reaffirms Fiscal Guidance | Quiver Quantitative"
     },
     {
+      "slot": "financials",
+      "url": "https://www.hii.com/news/hii-reports-first-quarter-2026-earnings-results",
+      "title": "HII Reports First Quarter 2026 Earnings Results | HII Newsroom"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.globenewswire.com/news-release/2026/05/05/3287526/14858/en/hii-reports-first-quarter-2026-results.html",
+      "title": "HII Reports First Quarter 2026 Results | Globenewswire"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.manilatimes.net/2026/10/20/tmt-newswire/globenewswire/former-hii-ceo-mike-petters-joins-board-of-directors/2449557/amp",
+      "title": "Former HII CEO Mike Petters Joins Board of Directors | Manilatimes"
+    },
+    {
       "slot": "leadership",
       "url": "https://www.hii.com/news/former-hii-ceo-mike-petters-joins-board-of-directors",
       "title": "Former HII CEO Mike Petters Joins Board of Directors | HII Newsroom"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.investing.com/news/company-news/hii-appoints-former-ceo-mike-petters-to-board-of-directors-93CH-4959509",
+      "title": "HII appoints former CEO Mike Petters to board of directors By Investing.com | Investing"
     },
     {
       "slot": "culture",
@@ -100,14 +120,24 @@
       "title": "Working at HII: 500 Reviews about Culture | Indeed.com"
     },
     {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/hii-technologies",
+      "title": "HII Technologies Culture | Comparably"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.indeed.com/cmp/Hii-9/reviews?fcountry=US&floc=Ballston+Spa,+NY&ftopic=wlbalance",
       "title": "Working at HII in Ballston Spa, NY: Employee Reviews about Work-Life Balance | Indeed.com"
     },
     {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Employee-Review-HII-RVW67164415.htm",
+      "title": "HII - Good work life balance, bad everything else | Glassdoor"
+    },
+    {
       "slot": "career",
-      "url": "https://www.indeed.com/cmp/Hii-9",
-      "title": "HII Careers and Employment | Indeed.com"
+      "url": "https://www.indeed.com/cmp/Hii-9/reviews?fcountry=US&floc=Washington,+DC&ftopic=jobsecadv",
+      "title": "Working at HII in Washington, DC: Employee Reviews about Job security and advancement | Indeed.com"
     },
     {
       "slot": "tuition",

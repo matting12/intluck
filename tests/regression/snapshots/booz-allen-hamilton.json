@@ -100,9 +100,29 @@
       "title": "Booz Allen Hamilton Reshuffles Leadership to Enhance ... | Intellectia"
     },
     {
+      "slot": "news_business",
+      "url": "https://businesswire.com/news/home/20260824737561/en/Booz-Allen-Completes-Acquisition-of-Ultra-IC-Mission-Solutions-Business",
+      "title": "Booz Allen Completes Acquisition of Ultra I&C Mission ... | Businesswire"
+    },
+    {
       "slot": "financials",
       "url": "https://newsroom.boozallen.com/news-releases/news-release-details/booz-allen-hamilton-announces-first-quarter-fiscal-2027-results",
       "title": "Booz Allen Hamilton Announces First Quarter Fiscal 2027 Results | Booz Allen Hamilton Inc."
+    },
+    {
+      "slot": "financials",
+      "url": "https://news.alphastreet.com/booz-allen-hamilton-holding-releases-q2-2027-financial-results/amp/",
+      "title": "Booz Allen Hamilton Holding Releases Q2 2027 Financial Results - Alphastreet | Alphastreet"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.govconwire.com/articles/booz-allen-q3-fy2026-financial-results",
+      "title": "Booz Allen Hamilton Reports $2.6B Revenue, $38B in Backlog for Fiscal 2026 Q3 | Govconwire"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.stocktitan.net/sec-filings/BAH/8-k-booz-allen-hamilton-holding-corp-reports-material-event-18481edbcf21.html",
+      "title": "Booz Allen Hamilton (NYSE: BAH) CFO Matthew Calderone plans departure in 2026 | Stocktitan"
     },
     {
       "slot": "leadership",
@@ -110,9 +130,24 @@
       "title": "Booz Allen Hamilton Appoints Troy Lahr Chief Financial Officer; Names Kristine Martin Anderson President | Booz Allen Hamilton"
     },
     {
+      "slot": "leadership",
+      "url": "https://www.govconwire.com/articles/matthew-calderone-booz-allen-hamilton-sp-global",
+      "title": "Matthew Calderone Steps Down as Booz Allen’s CFO, Joins S&P Global Mobility | Govconwire"
+    },
+    {
       "slot": "culture",
       "url": "https://www.indeed.com/cmp/Booz-Allen-Hamilton/reviews?fcountry=ALL&ftopic=culture",
       "title": "Working at Booz Allen Hamilton: 757 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Booz-Allen-Hamilton-culture-Reviews-EI_IE2735.0,19_KH20,27.htm",
+      "title": "Booz Allen Hamilton \"culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/booz-allen-hamilton",
+      "title": "Booz Allen Hamilton Culture | Comparably"
     },
     {
       "slot": "work_life",
@@ -120,9 +155,24 @@
       "title": "Booz Allen Hamilton \"work life balance\" Reviews | Glassdoor"
     },
     {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Booz-Allen-Hamilton/reviews?fcountry=ALL&ftopic=wlbalance",
+      "title": "Working at Booz Allen Hamilton: 1,584 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/booz-allen-hamilton/work-life-balance",
+      "title": "Booz Allen Hamilton Work Life Balance | Comparably"
+    },
+    {
       "slot": "diversity",
       "url": "https://www.glassdoor.com/Culture/Booz-Allen-Hamilton-DEI-E2735.htm",
       "title": "Diversity, Equity & Inclusion (DEI) at Booz Allen Hamilton | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.comparably.com/companies/booz-allen-hamilton/diversity",
+      "title": "Diversity at Booz Allen Hamilton | Comparably"
     },
     {
       "slot": "career",
@@ -133,6 +183,11 @@
       "slot": "tuition",
       "url": "https://www.glassdoor.com/Benefits/Booz-Allen-Hamilton-Tuition-Assistance-US-BNFT41_E2735_N1.htm",
       "title": "Booz Allen Hamilton Employee Benefit: Tuition Assistance | Glassdoor"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.jobzmall.com/booz-allen-hamilton/faqs/does-booz-allen-hamilton-offer-tuition-reimbursement",
+      "title": "Does Booz Allen Hamilton offer tuition reimbursement? | Booz Allen Hamilton FAQs | JobzMall"
     }
   ]
 }

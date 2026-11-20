@@ -1,5 +1,7 @@
+import asyncio
 import httpx
 import logging
+import random
 from urllib.parse import urlparse
 
 from app.utils.social_utils import is_social_media_url
@@ -91,12 +93,19 @@ async def brave_search(query: str, api_key: str, category: str = None, freshness
 
     try:
         async with httpx.AsyncClient() as client:
-            response = await client.get(
-                "https://api.search.brave.com/res/v1/web/search",
-                headers=headers,
-                params=params,
-                timeout=10
-            )
+            # The plan allows 20 requests/second and a results page fires ~35 at once, so
+            # a 429 just means "wait for the next one-second window" (jittered so the
+            # retries don't all land in the same window).
+            for attempt in range(4):
+                response = await client.get(
+                    "https://api.search.brave.com/res/v1/web/search",
+                    headers=headers,
+                    params=params,
+                    timeout=10
+                )
+                if response.status_code != 429 or attempt == 3:
+                    break
+                await asyncio.sleep(1 + attempt + random.random())
             response.raise_for_status()
             data = response.json()
 

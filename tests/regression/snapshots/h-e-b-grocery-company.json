@@ -81,8 +81,23 @@
   "box4": [
     {
       "slot": "news_business",
+      "url": "https://www.bizjournals.com/sanantonio/news/2026/05/20/heb-supply-chain-investment-grocery-retailer.html",
+      "title": "H-E-B eyes $700M expansion at San Antonio facility, seeks tax abatement - San Antonio Business Journal | Bizjournals"
+    },
+    {
+      "slot": "news_business",
       "url": "https://www.mysanantonio.com/business/article/factory-closure-mass-layoffs-san-antonio-22377724.php",
       "title": "H-E-B supplier suddenly shuts down, cuts 166 San Antonio jobs | Mysanantonio"
+    },
+    {
+      "slot": "news_business",
+      "url": "https://www.grocerydive.com/news/heb-supply-chain-facility-san-antonio-grocery-supermarkets/820854/",
+      "title": "H-E-B to spend $700M on supply chain expansion | Grocery Dive"
+    },
+    {
+      "slot": "financials",
+      "url": "https://geo.sig.ai/brands/h-e-b",
+      "title": "H-E-B Revenue & Market Share 2026 $38B | E-commerce & Retail"
     },
     {
       "slot": "financials",
@@ -98,6 +113,16 @@
       "slot": "tuition",
       "url": "https://www.jobzmall.com/h-e-b/faqs/does-h-e-b-offer-tuition-reimbursement",
       "title": "Does H-E-B offer tuition reimbursement? | H-E-B FAQs | JobzMall"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.reddit.com/r/HEB/comments/1krhbz6/will_heb_pay_or_reimburse_for_tuition/",
+      "title": "r/HEB on Reddit: Will HEB pay or reimburse for tuition? | Reddit"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.tiktok.com/discover/how-does-heb-tuition-reinburtstment-work",
+      "title": "How Does Heb Tuition Reinburtstment Work | TikTok"
     }
   ]
 }

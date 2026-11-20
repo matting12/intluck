@@ -96,8 +96,18 @@
   "box4": [
     {
       "slot": "leadership",
-      "url": "https://www.coxenterprises.com/press-releases/cox-enterprises-announces-executive-leadership-changes",
-      "title": "Cox Enterprises Announces Executive Leadership Changes - Cox Enterprises | Coxenterprises"
+      "url": "https://metroatlantaceo.com/news/2026/05/cox-enterprises-announces-executive-leadership-changes/",
+      "title": "Cox Enterprises Announces Executive Leadership Changes - Metro Atlanta CEO | Metroatlantaceo"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://vcwire.tech/2026/05/28/cox-enterprises-announces-two-leadership-changes/",
+      "title": "Cox Enterprises Announces Two Leadership Changes | Vcwire"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.ajc.com/business/2026/05/cox-enterprises-promotes-two-leaders-to-key-c-suite-positions/",
+      "title": "Georgia-based Cox Enterprises promotes two leaders to key C-suite positions | Ajc"
     },
     {
       "slot": "culture",
@@ -105,9 +115,24 @@
       "title": "Cox Enterprises \"company culture\" Reviews | Glassdoor"
     },
     {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Cox-Enterprises/reviews?fcountry=US&floc=Atlanta,+GA&ftopic=culture",
+      "title": "Working at Cox Enterprises in Atlanta, GA: 50 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/cox-enterprises",
+      "title": "Cox Enterprises Culture | Comparably"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.glassdoor.com/Reviews/Cox-Enterprises-work-life-balance-Reviews-EI_IE2755.0,15_KH16,33.htm",
       "title": "Cox Enterprises \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Cox-Enterprises/reviews?ftopic=wlbalance",
+      "title": "Working at Cox Enterprises: 107 Reviews about Work-life balance | Indeed.com"
     },
     {
       "slot": "diversity",
@@ -116,8 +141,8 @@
     },
     {
       "slot": "career",
-      "url": "https://www.indeed.com/cmp/Cox-Enterprises",
-      "title": "Cox Enterprises Careers and Employment | Indeed.com"
+      "url": "https://www.indeed.com/cmp/Cox-Enterprises/reviews?ftopic=jobsecadv",
+      "title": "Working at Cox Enterprises: 107 Reviews about Job security and advancement | Indeed.com"
     }
   ]
 }

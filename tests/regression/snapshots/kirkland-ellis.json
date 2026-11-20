@@ -91,6 +91,11 @@
   "box4": [
     {
       "slot": "financials",
+      "url": "https://www.legalcheek.com/2026/10/kirkland-ellis-to-keep-mega-profits-under-wraps/",
+      "title": "Kirkland & Ellis to keep mega-profits under wraps - Legal Cheek | Legalcheek"
+    },
+    {
+      "slot": "financials",
       "url": "https://www.lawfuel.com/kirkland-ellis-crushes-it-again-hitting-mind-blowing-8-8b-revenue/",
       "title": "Kirkland & Ellis Crushes It Again, Hitting Mind-Blowing $8.8B Revenue | Lawfuel"
     },
@@ -105,14 +110,39 @@
       "title": "Working at Kirkland & Ellis in Chicago, IL: Employee Reviews about Culture | Indeed.com"
     },
     {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/kirkland-ellis",
+      "title": "Kirkland & Ellis Culture | Comparably"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Employee-Review-Kirkland-and-Ellis-E3255-RVW73870670.htm",
+      "title": "Kirkland & Ellis - Worst experience of my career- toxic culture with no no work/life balance | Glassdoor"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.glassdoor.com/Reviews/Kirkland-and-Ellis-work-life-balance-Reviews-EI_IE3255.0,18_KH19,36.htm",
       "title": "Kirkland & Ellis \"work life balance\" Reviews | Glassdoor"
     },
     {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Kirkland-&-Ellis-7/reviews?ftopic=wlbalance",
+      "title": "Working at Kirkland & Ellis: 55 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/kirkland-ellis/work-life-balance",
+      "title": "Kirkland & Ellis Work Life Balance | Comparably"
+    },
+    {
       "slot": "diversity",
       "url": "https://www.glassdoor.com/Culture/Kirkland-and-Ellis-DEI-E3255.htm",
       "title": "Diversity, Equity & Inclusion (DEI) at Kirkland & Ellis | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.comparably.com/companies/kirkland-ellis/diversity",
+      "title": "Diversity at Kirkland & Ellis | Comparably"
     },
     {
       "slot": "career",

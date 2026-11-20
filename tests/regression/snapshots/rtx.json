@@ -81,8 +81,23 @@
   "box4": [
     {
       "slot": "financials",
-      "url": "https://www.marketbeat.com/instant-alerts/earnings-rtx-nyse-rtx-posts-quarterly-earnings-results-beats-expectations-by-048-eps-2026-10-20/",
-      "title": "RTX (NYSE:RTX) Posts Quarterly Earnings Results, Beats Expectations By $0.48 EPS | Marketbeat"
+      "url": "https://www.wallstreetzen.com/stocks/us/nyse/rtx/revenue",
+      "title": "(RTX) Rtx Revenue: 1991-2026 Annual Revenue | WallStreetZen"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.rtx.com/news/news-center/2026/10/20/rtx-reports-q3-2026-results",
+      "title": "News | RTX Reports Q3 2026 Results | RTX"
+    },
+    {
+      "slot": "financials",
+      "url": "https://news.alphastreet.com/rtx-q3-2026-eps-tops-expectations-by-27-0-revenue-up-11/amp/",
+      "title": "Rtx Q3 2026 EPS Tops Expectations by 27.0%, Revenue Up 11% - Alphastreet | Alphastreet"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.rtx.com/news/news-center/2026/09/15/rtx-names-jill-albertelli-as-president-pratt-whitney",
+      "title": "News | RTX names Jill Albertelli as President, Pratt & Whitney | RTX"
     },
     {
       "slot": "leadership",
@@ -90,9 +105,24 @@
       "title": "RTX names Jill Albertelli Pratt & Whitney chief | RTX 8-K Filing"
     },
     {
+      "slot": "leadership",
+      "url": "https://defence-industry.eu/rtx-announces-leadership-transition-as-christopher-t-calio-becomes-chairman-of-the-board/",
+      "title": "RTX announces leadership transition as Christopher T. Calio becomes Chairman of the Board - Defence Industry Europe | Defence Industry"
+    },
+    {
       "slot": "culture",
       "url": "https://www.glassdoor.com/Reviews/RTX-culture-Reviews-EI_IE561.0,3_KH4,11.htm",
       "title": "RTX \"culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/rtx",
+      "title": "RTX Culture | Comparably"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Rtx-4/reviews?ftopic=culture",
+      "title": "Working at RTX: Employee Reviews about Culture | Indeed.com"
     },
     {
       "slot": "work_life",
@@ -113,6 +143,16 @@
       "slot": "tuition",
       "url": "https://learn.org/financial-aid/raytheon-tuition-reimbursement-scholarships",
       "title": "RTX Tuition Reimbursement & Employee Scholar Program 2027 | Learn"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.glassdoor.com/Benefits/RTX-Tuition-Assistance-US-BNFT41_E561_N1.htm",
+      "title": "RTX Employee Benefit: Tuition Assistance | Glassdoor"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.rtx.com/news/2022/09/30/employee-scholar-program",
+      "title": "News | Beyond tuition reimbursement: Inside our Employee Scholar Program | RTX"
     }
   ]
 }

@@ -91,8 +91,18 @@
   "box4": [
     {
       "slot": "financials",
-      "url": "https://investors.leidos.com/news-releases/news-release-details/leidos-delivers-strong-second-quarter-and-enhances-full-year",
-      "title": "Leidos Delivers Strong Second Quarter and Enhances Full-Year Guidance | Leidos"
+      "url": "https://www.tipranks.com/stocks/ldos/earnings/q1-2026-report",
+      "title": "Leidos Holdings Inc (LDOS) Q1 2026 Earnings Report - Results, Call & Slides - TipRanks.com | Tipranks"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.govconwire.com/articles/leidos-q2-2026-earnings-results",
+      "title": "Leidos Lifts 2026 Guidance After Q2 Revenue Climbs 7 Percent to $4.6B - GovCon Wire | Govconwire"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.stocktitan.net/news/LDOS/leidos-posts-strong-first-quarter-results-and-raises-full-year-pjfgql6a2918.html",
+      "title": "Leidos Q1 revenue rises 4%, lifts 2026 guidance | LDOS Stock News"
     },
     {
       "slot": "leadership",
@@ -100,9 +110,29 @@
       "title": "Leidos' investor relations chief will retire in March after a 42-year career | Stocktitan"
     },
     {
+      "slot": "leadership",
+      "url": "https://virginiabusiness.com/leidos-hires-new-svp-and-chief-product-officer/",
+      "title": "Leidos hires new SVP and chief product officer | Virginiabusiness"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.leidos.com/insights/leidos-appoints-att-coo-jeff-mcelfresh-board-directors",
+      "title": "Leidos appoints AT&T COO Jeff McElfresh to board of directors | Leidos"
+    },
+    {
       "slot": "culture",
       "url": "https://www.glassdoor.com/Reviews/Leidos-culture-Reviews-EI_IE730545.0,6_KH7,14.htm",
       "title": "Leidos \"culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/leidos",
+      "title": "Leidos Culture | Comparably"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Leidos/reviews?ftopic=culture",
+      "title": "Working at Leidos: 450 Reviews about Culture | Indeed.com"
     },
     {
       "slot": "work_life",
@@ -110,9 +140,24 @@
       "title": "Leidos \"work life balance\" Reviews | Glassdoor"
     },
     {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Leidos/reviews?ftopic=wlbalance",
+      "title": "Working at Leidos: 685 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/leidos/work-life-balance",
+      "title": "Leidos Work Life Balance | Comparably"
+    },
+    {
       "slot": "diversity",
       "url": "https://www.glassdoor.com/Culture/Leidos-DEI-E730545.htm",
       "title": "Diversity, Equity & Inclusion (DEI) at Leidos | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.comparably.com/companies/leidos/diversity",
+      "title": "Diversity at Leidos | Comparably"
     },
     {
       "slot": "career",
@@ -120,9 +165,24 @@
       "title": "Working at Leidos: 913 Reviews about Job security and advancement | Indeed.com"
     },
     {
+      "slot": "career",
+      "url": "https://www.glassdoor.com/Reviews/Employee-Review-Leidos-E730545-RVW103454453.htm",
+      "title": "Leidos - Grew up in career well thanks to culture and core values | Glassdoor"
+    },
+    {
       "slot": "tuition",
       "url": "https://learn.org/financial-aid/leidos-tuition-reimbursement",
       "title": "Leidos Tuition Reimbursement & Educational Benefits 2026 | Learn"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.jobzmall.com/leidos/faqs/does-leidos-provide-any-tuition-assistance-or-reimbursement",
+      "title": "Does Leidos provide any tuition assistance or reimbursement? | Leidos FAQs | JobzMall"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://leidos.uat.edcor.com/index.php?p=32",
+      "title": "Leidos — Tuition Reimbursement Program - Edcor | Edcor"
     }
   ]
 }

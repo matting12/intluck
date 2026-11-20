@@ -95,9 +95,34 @@
       "title": "Exxon Mobil Redomiciliation Merger Forms “ExxonMobil ... | Mirrorreview"
     },
     {
+      "slot": "news_business",
+      "url": "https://www.gurufocus.com/news/8941464/exxon-mobil-corporation-xom-completes-redomiciliation-merger",
+      "title": "Exxon Mobil Corporation (XOM) Completes Redomiciliation Merger | Gurufocus"
+    },
+    {
       "slot": "financials",
       "url": "https://investor.exxonmobil.com/company-information/press-releases/detail/1204/exxonmobil-announces-first-quarter-2026-results",
       "title": "ExxonMobil Announces First-Quarter 2026 Results :: ExxonMobil Holdings Corporation (XOM) | Exxonmobil"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.wallstreetzen.com/stocks/us/nyse/xom/revenue",
+      "title": "(XOM) Exxon Mobil Revenue: 1991-2026 Annual Revenue | WallStreetZen"
+    },
+    {
+      "slot": "financials",
+      "url": "https://energynow.com/2026/05/exxonmobil-announces-first-quarter-2026-results/",
+      "title": "ExxonMobil Announces First-Quarter 2026 Results - Energy News, Top Headlines, Commentaries, Features & Events - EnergyNow.com | Energynow"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.indexbox.io/blog/exxon-mobil-announces-2026-reorganization-to-centralize-operations/",
+      "title": "ExxonMobil Global Operations: 2026 Restructuring & Leadership Changes - News and Statistics - IndexBox | Indexbox"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://finance.yahoo.com/news/exxons-cfo-transition-higher-2030-031542280.html",
+      "title": "How Exxon's CFO Transition And Higher 2030 Financial Targets At Exxon Mobil (XOM) Has Changed Its Investment Story | Yahoo"
     },
     {
       "slot": "leadership",
@@ -110,9 +135,29 @@
       "title": "ExxonMobil \"company culture\" Reviews | Glassdoor"
     },
     {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Exxonmobil/reviews?fcountry=ALL&ftopic=culture",
+      "title": "Working at ExxonMobil: 1,554 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/exxonmobil",
+      "title": "ExxonMobil Culture | Comparably"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.glassdoor.com/Reviews/Exxon-Mobil-work-life-balance-Reviews-EI_IE5101671.0,11_KH12,29.htm",
       "title": "Exxon Mobil \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/exxonmobil/work-life-balance",
+      "title": "ExxonMobil Work Life Balance | Comparably"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Exxonmobil/reviews?ftopic=wlbalance",
+      "title": "Working at ExxonMobil: 1,398 Reviews about Work-life balance | Indeed.com"
     },
     {
       "slot": "diversity",
@@ -120,9 +165,19 @@
       "title": "Diversity, Equity & Inclusion (DEI) at ExxonMobil | Glassdoor"
     },
     {
+      "slot": "diversity",
+      "url": "https://www.comparably.com/companies/exxonmobil/diversity",
+      "title": "Diversity at ExxonMobil | Comparably"
+    },
+    {
       "slot": "career",
       "url": "https://www.glassdoor.com/Reviews/ExxonMobil-career-path-Reviews-EI_IE237.0,10_KH11,22.htm",
       "title": "ExxonMobil \"career path\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Exxonmobil/reviews?ftopic=jobsecadv",
+      "title": "Working at ExxonMobil: 1,402 Reviews about Job security and advancement | Indeed.com"
     },
     {
       "slot": "tuition",

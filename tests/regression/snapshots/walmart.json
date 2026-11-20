@@ -96,8 +96,18 @@
   "box4": [
     {
       "slot": "news_business",
+      "url": "https://www.metaintro.com/blog/walmart-layoffs-1000-corporate-roles-cut-ai-not-cited-2026",
+      "title": "Walmart Cuts 1,000 Tech Jobs in 2026, Skips… | Metaintro"
+    },
+    {
+      "slot": "news_business",
       "url": "https://www.foxbusiness.com/markets/walmart-cutting-relocating-roughly-1000-corporate-jobs",
       "title": "Walmart reportedly cutting around 1,000 jobs in corporate restructuring | Fox Business"
+    },
+    {
+      "slot": "news_business",
+      "url": "https://hrexecutive.com/walmart-cuts-1000-corporate-roles-as-ai-reorganization-reshapes-tech-teams/",
+      "title": "Walmart cuts 1,000 corporate roles as AI reorganization reshapes tech teams | Hrexecutive"
     },
     {
       "slot": "financials",
@@ -105,9 +115,29 @@
       "title": "Walmart Releases Q2 FY27 Earnings | Walmart"
     },
     {
+      "slot": "financials",
+      "url": "https://www.cnbc.com/2026/05/21/walmart-wmt-earnings-q1-2027.html",
+      "title": "Walmart (WMT) earnings Q1 2027 | Cnbc"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.wallstreetzen.com/stocks/us/nasdaq/wmt/revenue",
+      "title": "(WMT) Walmart Revenue: 1993-2026 Annual Revenue | WallStreetZen"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.cnbc.com/2026/05/22/walmart-executives-depart-under-ceo-john-furner.html",
+      "title": "Two top Walmart executives leave company under new CEO John Furner | Cnbc"
+    },
+    {
       "slot": "leadership",
       "url": "https://www.retaildive.com/news/walmart-us-chief-operating-officer-depart/825549/",
       "title": "Walmart US chief operating officer to depart | Retail Dive"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://massmarketretailers.com/walmart-announces-leadership-changes-2/",
+      "title": "Walmart announces leadership changes | Massmarketretailers"
     },
     {
       "slot": "culture",
@@ -115,9 +145,29 @@
       "title": "Working at Walmart: 42,441 Reviews about Culture | Indeed.com"
     },
     {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/walmart",
+      "title": "Walmart Culture | Comparably"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.ambitionbox.com/reviews/walmart-work-culture-reviews-13122",
+      "title": "Walmart Work Culture Reviews by 300+ Employees | AmbitionBox"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.indeed.com/cmp/Walmart/reviews?ftopic=wlbalance",
       "title": "Working at Walmart: 62,221 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Walmart-work-life-balance-Reviews-EI_IE715.0,7_KH8,25.htm",
+      "title": "Walmart \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/walmart/work-life-balance",
+      "title": "Walmart Work Life Balance | Comparably"
     },
     {
       "slot": "diversity",
@@ -125,14 +175,39 @@
       "title": "Walmart: Diversity, Equity & Inclusion | Glassdoor"
     },
     {
+      "slot": "diversity",
+      "url": "https://www.comparably.com/companies/walmart/diversity",
+      "title": "Diversity at Walmart | Comparably"
+    },
+    {
       "slot": "career",
       "url": "https://www.ambitionbox.com/reviews/walmart-career-growth-reviews-13122",
       "title": "Walmart Career Growth Reviews by 100+ Employees | AmbitionBox"
     },
     {
+      "slot": "career",
+      "url": "https://www.glassdoor.com/Reviews/Walmart-opportunities-for-advancement-Reviews-EI_IE715.0,7_KH8,37.htm",
+      "title": "Walmart \"opportunities for advancement\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.reddit.com/r/WalmartEmployees/comments/1ogc59l/do_you_think_walmart_has_a_false_sense_of_career/",
+      "title": "r/WalmartEmployees on Reddit: Do you think Walmart has a false sense of career advancement? | Reddit"
+    },
+    {
       "slot": "tuition",
       "url": "https://scholarships360.org/financial-aid/walmart-college-tuition/",
       "title": "How to Get Tuition Reimbursement by Working at Walmart - Scholarships360 | Scholarships360"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://learn.org/articles/walmart_tuition_reimbursement.html",
+      "title": "Walmart Tuition Reimbursement & Scholarships 2026 | Learn"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.scholarships.com/financial-aid/college-scholarships/walmart-college-tuition",
+      "title": "Walmart College Tuition - Scholarships.com | Scholarships"
     }
   ]
 }

@@ -96,8 +96,23 @@
   "box4": [
     {
       "slot": "financials",
-      "url": "https://bullfincher.io/companies/northrop-grumman-corporation/revenue",
-      "title": "Northrop Grumman Corporation Revenue 2016-2025 | Bullfincher"
+      "url": "https://www.investing.com/news/company-news/northrop-grumman-q3-2026-slides-record-backlog-raised-guidance-93CH-4960585",
+      "title": "Northrop Grumman Q3 2026 slides: record backlog, raised guidance By Investing.com | Investing"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.wallstreetzen.com/stocks/us/nyse/noc/revenue",
+      "title": "(NOC) Northrop Grumman Revenue: 1990-2026 Annual Revenue | WallStreetZen"
+    },
+    {
+      "slot": "financials",
+      "url": "https://grafa.com/en/news/united-states/northrop-grumman-q3-2026-earnings-beat-789-eps",
+      "title": "Northrop Grumman Q3 2026 EPS Beats Estimates at $7.89 | Grafa"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.quiverquant.com/news/Northrop+Grumman+Appoints+John+Greene+as+New+CFO,+Effective+January+2026",
+      "title": "Northrop Grumman Appoints John Greene as New CFO, Effective January 2026 | Quiver Quantitative"
     },
     {
       "slot": "leadership",
@@ -105,9 +120,24 @@
       "title": "Northrop Grumman Announces CFO Transition - Northrop Grumman | Northropgrumman"
     },
     {
+      "slot": "leadership",
+      "url": "https://www.stocktitan.net/sec-filings/NOC/8-k-northrop-grumman-corp-de-reports-material-event-16151ea5af3f.html",
+      "title": "Northrop Grumman names CFO; $955,000 salary, $2,000,000 sign-on | NOC 8-K Filing"
+    },
+    {
       "slot": "culture",
       "url": "https://www.indeed.com/cmp/Northrop-Grumman/reviews?fcountry=ALL&ftopic=culture",
       "title": "Working at Northrop Grumman: 1,762 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/northrop-grumman-corporation",
+      "title": "Northrop Grumman Corporation Culture | Comparably"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Employee-Review-Northrop-Grumman-E488-RVW14454821.htm",
+      "title": "Northrop Grumman - Company culture has changed for the better | Glassdoor"
     },
     {
       "slot": "work_life",
@@ -115,9 +145,24 @@
       "title": "Northrop Grumman \"work life balance\" Reviews | Glassdoor"
     },
     {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Northrop-Grumman/reviews?ftopic=wlbalance",
+      "title": "Working at Northrop Grumman: 2,971 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/northrop-grumman-corporation/work-life-balance",
+      "title": "Northrop Grumman Corporation Work Life Balance | Comparably"
+    },
+    {
       "slot": "diversity",
       "url": "https://www.glassdoor.com/Culture/Northrop-Grumman-DEI-E488.htm",
       "title": "Northrop-Grumman: Diversity, Equity & Inclusion | Glassdoor | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.comparably.com/companies/northrop-grumman-corporation/diversity",
+      "title": "Diversity at Northrop Grumman Corporation | Comparably"
     },
     {
       "slot": "career",
@@ -125,9 +170,29 @@
       "title": "Northrop Grumman - Great Place for Career Growth in Aerospace, but Work-Life Balance Can Vary | Glassdoor"
     },
     {
+      "slot": "career",
+      "url": "https://www.comparably.com/companies/northrop-grumman-corporation/studies/career-advancement",
+      "title": "Career Advancement at Northrop Grumman Corporation | Comparably"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Northrop-Grumman/reviews?ftopic=jobsecadv",
+      "title": "Working at Northrop Grumman: 3,700 Reviews about Job security and advancement | Indeed.com"
+    },
+    {
       "slot": "tuition",
       "url": "https://www.glassdoor.com/Benefits/Northrop-Grumman-Tuition-Assistance-US-BNFT41_E488_N1.htm",
       "title": "Northrop Grumman Employee Benefit: Tuition Assistance | Glassdoor"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.reddit.com/r/NorthropGrumman/comments/c8vbd3/tuition_reimbursement/",
+      "title": "r/NorthropGrumman on Reddit: Tuition Reimbursement | Reddit"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.teamblind.com/post/tuition-reimbursement-at-northrop-grumman-dkkdjpri",
+      "title": "Tuition Reimbursement at Northrop Grumman? | Teamblind"
     }
   ]
 }

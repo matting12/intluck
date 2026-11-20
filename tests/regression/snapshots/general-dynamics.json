@@ -100,9 +100,24 @@
       "title": "General Dynamics IT plans to cut nearly 100 Maryland jobs - Washington Business Journal | Bizjournals"
     },
     {
+      "slot": "news_business",
+      "url": "https://www.warntracker.com/layoff/general-dynamics-2026-08-08",
+      "title": "General Dynamics Lays Off 348 Workers — 2 locations WARN Notice August 2026 | Warntracker"
+    },
+    {
       "slot": "financials",
-      "url": "https://investorrelations.gd.com/financial-reports/quarterly-financial-results/default.aspx",
-      "title": "General Dynamics - Financial Reports - Quarterly Financial Results | Gd"
+      "url": "https://www.gd.com/Articles/2026/04/29/general-dynamics-reports-first-quarter-2026-financial-results",
+      "title": "General Dynamics Reports First-Quarter 2026 Financial Results | General Dynamics"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.wallstreetzen.com/stocks/us/nyse/gd/revenue",
+      "title": "(GD) General Dynamics Revenue: 1991-2026 Annual Revenue | WallStreetZen"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.prnewswire.com/news-releases/general-dynamics-reports-first-quarter-2026-financial-results-302756118.html",
+      "title": "General Dynamics Reports First-Quarter 2026 Financial Results | Prnewswire"
     },
     {
       "slot": "leadership",
@@ -110,9 +125,24 @@
       "title": "General Dynamics CEO Phebe Novakovic to step down in 2027 - Breaking Defense | Breakingdefense"
     },
     {
+      "slot": "leadership",
+      "url": "https://www.bizjournals.com/washington/news/2026/10/08/general-dynamics-phebe-novakovic-danny-deep.html",
+      "title": "Phebe Novakovic to leave CEO spot at General Dynamics; Danny Deep named next chief exec - Washington Business Journal | Bizjournals"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.gurufocus.com/news/9115103/general-dynamics-gd-announces-ceo-transition-danny-deep-to-succeed-phebe-novakovic-in-2027",
+      "title": "General Dynamics (GD) Announces CEO Transition: Danny Deep to Succeed Phebe Novakovic in 2027 | Gurufocus"
+    },
+    {
       "slot": "culture",
       "url": "https://www.comparably.com/companies/general-dynamics",
       "title": "General Dynamics Culture | Comparably"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/General-Dynamics-Information-Technology/reviews?fcountry=ALL&ftopic=culture",
+      "title": "Working at General Dynamics Information Technology: 1,000 Reviews about Culture | Indeed.com"
     },
     {
       "slot": "work_life",
@@ -120,9 +150,24 @@
       "title": "General Dynamics \"work life balance\" Reviews | Glassdoor"
     },
     {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/General-Dynamics/reviews?ftopic=wlbalance",
+      "title": "Working at General Dynamics: 585 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/general-dynamics-information-technology/work-life-balance",
+      "title": "General Dynamics Information Technology Work Life Balance | Comparably"
+    },
+    {
       "slot": "diversity",
       "url": "https://www.glassdoor.com/Culture/General-Dynamics-DEI-E276.htm",
       "title": "General-Dynamics: Diversity, Equity & Inclusion | Glassdoor | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.comparably.com/companies/general-dynamics/diversity",
+      "title": "Diversity at General Dynamics | Comparably"
     },
     {
       "slot": "career",
@@ -130,9 +175,24 @@
       "title": "General Dynamics Information Technology - Internal Mobility Experience career growth and development | Glassdoor"
     },
     {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/General-Dynamics/reviews?fcountry=US&floc=San+Diego%2C+CA&ftopic=jobsecadv",
+      "title": "Working at General Dynamics in San Diego, CA: Employee Reviews about Job security and advancement | Indeed.com"
+    },
+    {
       "slot": "tuition",
       "url": "https://www.glassdoor.com/Benefits/General-Dynamics-Information-Technology-Tuition-Assistance-US-BNFT41_E18661_N1.htm",
       "title": "General Dynamics Information Technology Employee Benefit: Tuition Assistance | Glassdoor"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.indeed.com/cmp/General-Dynamics-Information-Technology/faq/does-the-company-offer-any-kind-of-tuition-reimbursement-for-graduate-programs?quid=1b6pom01oakdjfg7",
+      "title": "Does the company offer any kind of tuition reimbursement for graduate programs? | General Dynamics Information Technology | Indeed.com"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.collegetransitions.com/blog/general-dynamics-tuition-assistance-online-degrees-for-general-dynamics-employees/",
+      "title": "General Dynamics Tuition Assistance: Online Degrees for ... | Collegetransitions"
     }
   ]
 }

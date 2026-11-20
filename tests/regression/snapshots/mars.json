@@ -100,9 +100,29 @@
       "title": "Mars cuts jobs as confectionery giant consolidates operations | Confectionerynews"
     },
     {
+      "slot": "news_business",
+      "url": "https://www.reddit.com/r/chicago/comments/1s3qu77/mars_snacking_to_invest_100_million_add_600_jobs/",
+      "title": "r/chicago on Reddit: Mars Snacking to invest $100 million, add 600 jobs through Chicago HQ expansion | Reddit"
+    },
+    {
+      "slot": "news_business",
+      "url": "https://www.fooddive.com/news/pringles-maker-mars-invests-100m-to-expand-chicago-headquarters/815997/",
+      "title": "Mars invests $100M to expand Chicago headquarters | Food Dive"
+    },
+    {
+      "slot": "financials",
+      "url": "https://expandedramblings.com/index.php/mars-statistics-and-facts/",
+      "title": "Mars Statistics (2026): Revenue, Employees, Countries & Key Facts | Expandedramblings"
+    },
+    {
       "slot": "financials",
       "url": "https://www.plunkettresearch.com/company-profile/mars-incorporated/",
       "title": "Mars Incorporated Private Profile-Financials-Revenues-Growth-Market-Description | Plunkettresearch"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.companieshistory.com/company/mars/earnings/",
+      "title": "Mars Earnings | Companieshistory"
     },
     {
       "slot": "leadership",
@@ -110,14 +130,39 @@
       "title": "Mars CEO to Retire | Powderbulksolids"
     },
     {
+      "slot": "leadership",
+      "url": "https://www.cspdailynews.com/snacks-candy/leadership-changes-mars-inc",
+      "title": "Leadership Changes at Mars Inc. | Cspdailynews"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.mars.com/news-and-stories/press-releases-statements/mars-appointment-global-leadership-team-mars-food-nutrition",
+      "title": "Mars announces appointment to Global Leadership Team for Mars Food & Nutrition | Mars Global"
+    },
+    {
       "slot": "culture",
       "url": "https://www.indeed.com/cmp/Mars/reviews?ftopic=culture",
       "title": "Working at Mars: 370 Reviews about Culture | Indeed.com"
     },
     {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Mars-great-company-culture-Reviews-EI_IE2886.0,4_KH5,26.htm",
+      "title": "Mars \"great company culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/mars",
+      "title": "Mars Culture | Comparably"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.glassdoor.com/Reviews/Mars-work-life-balance-Reviews-EI_IE2886.0,4_KH5,22.htm",
       "title": "Mars \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Mars/reviews?fcountry=ALL&ftopic=wlbalance",
+      "title": "Working at Mars: 1,102 Reviews about Work-life balance | Indeed.com"
     },
     {
       "slot": "diversity",
@@ -130,9 +175,24 @@
       "title": "Mars - Great career development opportunity, people care and very prefessional of human resourses management | Glassdoor"
     },
     {
+      "slot": "career",
+      "url": "https://ca.indeed.com/cmp/Mars/reviews?ftopic=jobsecadv",
+      "title": "Working at Mars: employee reviews about Job security and advancement | Indeed.com"
+    },
+    {
       "slot": "tuition",
       "url": "https://www.glassdoor.com/FAQ/Mars-Question-FAQ200042-E2886.htm",
       "title": "Mars Q&A: Does Mars offer tuition reimbursement? | Glassdoor"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.jobzmall.com/mars-incorporated/faqs/does-mars-incorporated-offer-tuition-reimbursement",
+      "title": "Does Mars Incorporated offer tuition reimbursement? | Mars Incorporated FAQs | JobzMall"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.marshill.edu/admissions/tuition/",
+      "title": "Tuition | Mars Hill Academy"
     }
   ]
 }

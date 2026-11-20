@@ -90,6 +90,16 @@
       "title": "Reyes Holdings \"culture\" Reviews | Glassdoor"
     },
     {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/reyes-holdings",
+      "title": "Reyes Holdings Culture | Comparably"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Reyes-Holdings/reviews?ftopic=culture",
+      "title": "Working at Reyes Holdings: Employee Reviews about Culture | Indeed.com"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.indeed.com/cmp/Reyes-Holdings/reviews?ftopic=wlbalance",
       "title": "Working at Reyes Holdings: Employee Reviews about Work-life balance | Indeed.com"
@@ -101,8 +111,8 @@
     },
     {
       "slot": "career",
-      "url": "https://www.indeed.com/cmp/Reyes-Holdings",
-      "title": "Reyes Holdings Careers and Employment | Indeed.com"
+      "url": "https://www.indeed.com/cmp/Reyes-Holdings/reviews?fcountry=US&floc=Rosemont,+IL&ftopic=jobsecadv",
+      "title": "Working at Reyes Holdings in Rosemont, IL: Employee Reviews about Job Security & Advancement | Indeed.com"
     }
   ]
 }

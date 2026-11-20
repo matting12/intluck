@@ -95,9 +95,29 @@
       "title": "Kirkland, Gibson Dunn Steer Merger Forming $50B Gas Co. - Law360 | Law360"
     },
     {
+      "slot": "news_business",
+      "url": "https://iclg.com/news/gibson-dunn-steers-biotech-company-acquisition/",
+      "title": "Gibson Dunn steers biotech company acquisition | ICLG"
+    },
+    {
+      "slot": "news_business",
+      "url": "https://www.gibsondunn.com/gibson-dunn-expands-private-equity-and-ma-offering-in-asia-with-leading-singapore-team/",
+      "title": "Gibson Dunn Expands Private Equity and M&A Offering in Asia With Leading Singapore Team - Gibson Dunn | Gibsondunn"
+    },
+    {
       "slot": "financials",
       "url": "https://www.law.com/americanlawyer/2026/04/08/gibson-dunn-posts-18-revenue-increase-to-42b-/",
       "title": "Gibson Dunn Posts 18% Revenue Increase to $4.2B | Law.com"
+    },
+    {
+      "slot": "financials",
+      "url": "https://x.com/AmericanLawyer/status/2041991306332008723",
+      "title": "The American Lawyer on X: \"Gibson Dunn Posts 18% Revenue Increase to $4.2B https://t.co/Bh2jYYsZHr\" / X | X"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.legalbusiness.co.uk/law-firms/gibson-dunn-passes-4bn-in-revenue-as-pep-jumps-24/",
+      "title": "Gibson Dunn passes $4bn in revenue as PEP jumps 24% – Legal Business | Legalbusiness"
     },
     {
       "slot": "leadership",
@@ -110,19 +130,29 @@
       "title": "Gibson Dunn & Crutcher \"firm culture\" Reviews | Glassdoor"
     },
     {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Gibson-Dunn-&-Crutcher-LLP/reviews?ftopic=culture",
+      "title": "Working at Gibson Dunn: Employee Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/uk-UK/companies/gibson-dunn-crutcher",
+      "title": "Gibson, Dunn & Crutcher Culture | Comparably"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.glassdoor.com/Reviews/Gibson-Dunn-and-Crutcher-work-life-balance-Reviews-EI_IE3198.0,24_KH25,42.htm",
       "title": "Gibson Dunn & Crutcher \"work life balance\" Reviews | Glassdoor"
     },
     {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Gibson-Dunn-&-Crutcher-LLP/reviews?ftopic=wlbalance",
+      "title": "Working at Gibson Dunn: Employee Reviews about Work-life balance | Indeed.com"
+    },
+    {
       "slot": "diversity",
       "url": "https://media2.vault.com/14346568/gibson-dunn-_-crutcher-diversity-report-edit.pdf",
       "title": "Gibson, Dunn & Crutcher LLP 2021 Vault Law Firm Diversity Survey LEADERSHIP | Vault"
-    },
-    {
-      "slot": "career",
-      "url": "https://www.glassdoor.com/Reviews/Employee-Review-Gibson-Dunn-and-Crutcher-E3198-RVW9124975.htm",
-      "title": "Gibson Dunn & Crutcher - Business Development & Marketing Manager | Glassdoor"
     }
   ]
 }

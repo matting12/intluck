@@ -90,6 +90,16 @@
       "title": "Koch Strengthens Retail Fulfillment Strategy with SOS Acquisition | Commercial Carrier Journal"
     },
     {
+      "slot": "news_business",
+      "url": "https://www.businesswire.com/news/home/20260108333998/en/Koch-Companies-Acquires-Store-Opening-Solutions-SOS",
+      "title": "Koch Companies Acquires Store Opening Solutions (SOS) | Businesswire"
+    },
+    {
+      "slot": "news_business",
+      "url": "https://matrixbcg.com/blogs/growth-strategy/kochind",
+      "title": "What is Growth Strategy and Future Prospects of Koch Industries Company? – MatrixBCG.com | Matrixbcg"
+    },
+    {
       "slot": "leadership",
       "url": "https://theshelbyreport.com/2026/07/15/kauffman-named-to-succeed-koch-in-cfo-role-at-awg/",
       "title": "Kauffman Named To Succeed Koch As CFO At AWG | Theshelbyreport"
@@ -100,9 +110,29 @@
       "title": "Koch \"corporate culture\" Reviews | Glassdoor"
     },
     {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Koch/reviews?ftopic=culture",
+      "title": "Working at Koch: 249 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/koch-industries",
+      "title": "Koch Industries Culture | Comparably"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.glassdoor.com/Reviews/Koch-work-life-balance-Reviews-EI_IE2864.0,4_KH5,22.htm",
       "title": "Koch \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Koch/reviews?ftopic=wlbalance",
+      "title": "Working at Koch: 339 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/koch-industries/work-life-balance",
+      "title": "Koch Industries Work Life Balance | Comparably"
     },
     {
       "slot": "diversity",
@@ -110,9 +140,24 @@
       "title": "Charles-Koch-Foundation: Diversity, Equity & Inclusion | Glassdoor | Glassdoor"
     },
     {
+      "slot": "diversity",
+      "url": "https://www.comparably.com/companies/koch-industries/diversity",
+      "title": "Diversity at Koch Industries | Comparably"
+    },
+    {
       "slot": "career",
       "url": "https://www.glassdoor.com/FAQ/Koch-Question-FAQ200054-E2864.htm",
       "title": "Koch Q&A: How are career development opportunities at Koch? <!-- --> | Glassdoor"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.ambitionbox.com/reviews/koch-business-solutions-career-growth-reviews-624376",
+      "title": "Koch Business Solutions Career Growth Reviews by 20+ Employees | AmbitionBox"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.comparably.com/companies/koch-industries/questions/i-289/how-s-career-growth-and-advancement-at-koch-industries",
+      "title": "How's career growth and advancement at Koch Industries? - Koch Industries Questions | Comparably"
     },
     {
       "slot": "tuition",

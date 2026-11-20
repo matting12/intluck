@@ -96,8 +96,23 @@
     },
     {
       "slot": "financials",
-      "url": "https://www.unitedhealthgroup.com/investors/financial-reports.html",
-      "title": "Financial & Earnings Reports - UnitedHealth Group | Unitedhealthgroup"
+      "url": "https://www.unitedhealthgroup.com/newsroom/2026/2026-04-21-uhg-reports-first-quarter-2026-results.html",
+      "title": "UnitedHealth Group Reports First Quarter 2026 Results - UnitedHealth Group | Unitedhealthgroup"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.cnbc.com/2026/10/13/unitedhealth-group-unh-earnings-q3-2026.html",
+      "title": "UnitedHealth Group (UNH) earnings Q3 2026 | Cnbc"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.fool.com/earnings/call-transcripts/2026/10/13/unitedhealth-unh-q3-2026-earnings-call-transcript/",
+      "title": "UnitedHealth (UNH) Q3 2026 Earnings Call Transcript | The Motley Fool"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://learn.oreateai.com/learn/unitedhealth-group-board-reshuffle-and-leadership-changes-for-2026-strategy",
+      "title": "UnitedHealth Group Board Reshuffle and Leadership Changes for 2026 Strategy | Oreate AI Guides"
     },
     {
       "slot": "leadership",
@@ -105,9 +120,24 @@
       "title": "UnitedHealth Group CEO Departs | Pharmaceutical Commerce"
     },
     {
+      "slot": "leadership",
+      "url": "https://www.healthcaredive.com/news/unitedhealthcare-names-new-president-in-latest-leadership-shuffle/831643/",
+      "title": "UnitedHealthcare names new president in latest leadership shuffle | Healthcare Dive"
+    },
+    {
       "slot": "culture",
       "url": "https://www.indeed.com/cmp/UnitedHealth-Group/reviews?ftopic=culture",
       "title": "Working at UnitedHealth Group: 3,689 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/unitedhealth-group",
+      "title": "UnitedHealth Group Culture | Comparably"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/UnitedHealth-Group-work-culture-Reviews-EI_IE1991.0,18_KH19,31.htm",
+      "title": "UnitedHealth Group \"work culture\" Reviews | Glassdoor"
     },
     {
       "slot": "work_life",
@@ -115,9 +145,24 @@
       "title": "Working at UnitedHealth Group: 5,508 Reviews about Work-life balance | Indeed.com"
     },
     {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/UnitedHealth-Group-work-life-balance-Reviews-EI_IE1991.0,18_KH19,36.htm",
+      "title": "UnitedHealth Group \"work life balance\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/unitedhealth-group/work-life-balance",
+      "title": "UnitedHealth Group Work Life Balance | Comparably"
+    },
+    {
       "slot": "diversity",
       "url": "https://www.glassdoor.com/Culture/UnitedHealth-Group-DEI-E1991.htm",
       "title": "Diversity, Equity & Inclusion (DEI) at UnitedHealth Group | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.comparably.com/companies/unitedhealth-group/diversity",
+      "title": "Diversity at UnitedHealth Group | Comparably"
     },
     {
       "slot": "career",
@@ -125,9 +170,24 @@
       "title": "Working at UnitedHealth Group: 8,204 Reviews about Job security and advancement | Indeed.com"
     },
     {
+      "slot": "career",
+      "url": "https://www.glassdoor.com/Reviews/Employee-Review-UnitedHealth-Group-RVW7236081.htm",
+      "title": "UnitedHealth Group - Poor Internal Promotion/Hiring Practices | Glassdoor"
+    },
+    {
       "slot": "tuition",
       "url": "https://www.collegetransitions.com/blog/unitedhealth-group-tuition-reimbursement/",
       "title": "UnitedHealth Group Tuition Reimbursement: Online Degrees for UHG Employees in 2026 - College Transitions | Collegetransitions"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.glassdoor.com/Benefits/UnitedHealth-Group-Tuition-Assistance-US-BNFT41_E1991_N1.htm",
+      "title": "UnitedHealth Group Employee Benefit: Tuition Assistance | Glassdoor"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.indeed.com/cmp/UnitedHealth-Group/reviews?ftopic=paybenefits&ftext=Tuition",
+      "title": "Working at UnitedHealth Group: Employee Reviews about Pay and benefits | Indeed.com"
     }
   ]
 }

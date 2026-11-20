@@ -100,9 +100,29 @@
       "title": "Delta Air Lines Addresses Rumors Amid Reports Of Broader Corporate Cuts - Live and Let's Fly | Liveandletsfly"
     },
     {
+      "slot": "news_business",
+      "url": "https://www.travelandtourworld.com/news/article/united-states-delta-air-lines-rejects-8-percent-workforce-cut-rumors-amid-growing-anxiety-over-organizational-restructuring/",
+      "title": "United States: Delta Air Lines Rejects 8 percent Workforce Cut Rumors Amid Growing Anxiety Over Organizational Restructuring - Travel And Tour World | Travelandtourworld"
+    },
+    {
+      "slot": "news_business",
+      "url": "https://www.ch-aviation.com/news/166210-delta-air-lines-downplays-interest-in-potential-mergers",
+      "title": "Delta Air Lines downplays interest in potential mergers - ch-aviation | Ch Aviation"
+    },
+    {
       "slot": "financials",
       "url": "https://ir.delta.com/news/news-details/2026/Delta-Air-Lines-Announces-September-Quarter-2026-Financial-Results/default.aspx",
       "title": "Delta Air Lines, Inc. - Delta Air Lines Announces September Quarter 2026 Financial Results | Delta"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.prnewswire.com/news-releases/delta-air-lines-announces-september-quarter-2026-financial-results-302903456.html",
+      "title": "Delta Air Lines Announces September Quarter 2026 Financial Results | Prnewswire"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.cnbc.com/2026/10/09/delta-air-lines-dal-q3-2026-earnings.html",
+      "title": "Delta Air Lines (DAL) Q3 2026 earnings | Cnbc"
     },
     {
       "slot": "leadership",
@@ -110,9 +130,29 @@
       "title": "Delta Air Lines, Inc. - Delta Announces Leadership Changes as John Laughter Concludes Distinguished 30-Year Career | Delta"
     },
     {
+      "slot": "leadership",
+      "url": "https://www.stocktitan.net/sec-filings/DAL/8-k-delta-air-lines-inc-reports-material-event-c594767542a6.html",
+      "title": "Delta Air Lines revamps leadership around 2026 retirement | DAL 8-K Filing"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://learn.oreateai.com/learn/delta-air-lines-2026-leadership-transition-strengthens-operational-and-strategic-alignment",
+      "title": "Delta Air Lines 2026 Leadership Transition Strengthens Operational and Strategic Alignment | Oreate AI Guides"
+    },
+    {
       "slot": "culture",
       "url": "https://www.glassdoor.com/Reviews/Delta-Air-Lines-company-culture-Reviews-EI_IE197.0,15_KH16,31.htm",
       "title": "Delta Air Lines \"company culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/delta-air-lines",
+      "title": "Delta Air Lines Culture | Comparably"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Delta-Air-Lines/reviews?ftopic=culture",
+      "title": "Working at Delta Air Lines: 1,443 Reviews about Culture | Indeed.com"
     },
     {
       "slot": "work_life",
@@ -120,9 +160,24 @@
       "title": "Delta Air Lines Work Life Balance | Comparably"
     },
     {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Delta-Air-Lines/reviews?ftopic=wlbalance",
+      "title": "Working at Delta Air Lines: 1,826 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.glassdoor.com/Reviews/Delta-Air-Lines-work-life-balance-Reviews-EI_IE197.0,15_KH16,33.htm",
+      "title": "Delta Air Lines \"work life balance\" Reviews | Glassdoor"
+    },
+    {
       "slot": "diversity",
       "url": "https://www.glassdoor.com/Culture/Delta-Air-Lines-DEI-E197.htm",
       "title": "Delta-Air-Lines: Diversity, Equity & Inclusion | Glassdoor | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.comparably.com/companies/delta-air-lines/diversity",
+      "title": "Diversity at Delta Air Lines | Comparably"
     },
     {
       "slot": "career",
@@ -130,9 +185,29 @@
       "title": "Delta Air Lines Q&A: How are career development opportunities at Delta Air Lines? | Glassdoor"
     },
     {
+      "slot": "career",
+      "url": "https://www.comparably.com/companies/delta-air-lines/studies/career-advancement",
+      "title": "Career Advancement at Delta Air Lines | Comparably"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.indeed.com/cmp/Delta-Air-Lines/reviews?fcountry=US&ftopic=jobsecadv&ftext=benefit",
+      "title": "Working at Delta Air Lines: Employee Reviews about Job security and advancement | Indeed.com"
+    },
+    {
       "slot": "tuition",
       "url": "https://www.collegetransitions.com/blog/delta-air-lines-tuition-reimbursement-online-degrees/",
       "title": "Delta Air Lines Tuition Reimbursement: Online Degrees for Delta Employees - College Transitions | Collegetransitions"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.glassdoor.com/Benefits/Delta-Air-Lines-Tuition-Assistance-US-BNFT41_E197_N1.htm",
+      "title": "Delta Air Lines Employee Benefit: Tuition Assistance | Glassdoor"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.jobzmall.com/delta-air-lines/faqs/are-there-any-scholarships-or-tuition-assistance-programs-available-at-delta-air-lines",
+      "title": "Are there any scholarships or tuition assistance programs available at Delta Air Lines? | Delta Air Lines FAQs | JobzMall"
     }
   ]
 }

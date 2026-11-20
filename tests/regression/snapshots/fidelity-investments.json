@@ -100,9 +100,14 @@
       "title": "Fidelity Investments cuts jobs in Covington but plans expansion - Cincinnati Business Courier | Bizjournals"
     },
     {
+      "slot": "news_business",
+      "url": "https://eciks.org/11844-26865-fidelity-layoffs-hiring-restructuring",
+      "title": "Fidelity Investments lays off 1% of workforce but plans major hiring push to rebuild tech teams | Eciks"
+    },
+    {
       "slot": "financials",
-      "url": "https://www.bostonglobe.com/2026/03/02/business/fidelity-investments-record-revenue-2025/",
-      "title": "Fidelity Investments sees record revenue in 2025 - The Boston Globe | Bostonglobe"
+      "url": "https://www.marketsmedia.com/fidelity-investments-increases-revenue-15/",
+      "title": "Fidelity Investments Increases Revenue 15% - Markets Media | Marketsmedia"
     },
     {
       "slot": "leadership",
@@ -115,14 +120,39 @@
       "title": "Fidelity Investments \"work culture\" Reviews | Glassdoor"
     },
     {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Fidelity-Investments/reviews?ftopic=culture",
+      "title": "Working at Fidelity Investments: 1,168 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/fidelity-investments",
+      "title": "Fidelity Investments Culture | Comparably"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.glassdoor.com/Reviews/Fidelity-Investments-work-life-balance-Reviews-EI_IE2786.0,20_KH21,38.htm",
       "title": "Fidelity Investments \"work life balance\" Reviews | Glassdoor"
     },
     {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Fidelity-Investments/reviews?ftopic=wlbalance",
+      "title": "Working at Fidelity Investments: 1,951 Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.ambitionbox.com/reviews/fidelity-investments-work-life-balance-reviews-756413",
+      "title": "Fidelity Investments Work Life Balance Reviews by 200+ Employees | AmbitionBox"
+    },
+    {
       "slot": "diversity",
       "url": "https://www.glassdoor.com/Culture/Fidelity-Investments-DEI-E2786.htm",
       "title": "Fidelity Investments: Diversity, Equity & Inclusion | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.comparably.com/companies/fidelity-investments/diversity",
+      "title": "Diversity at Fidelity Investments | Comparably"
     },
     {
       "slot": "career",
@@ -133,6 +163,16 @@
       "slot": "tuition",
       "url": "https://www.glassdoor.com/Benefits/Fidelity-Investments-Tuition-Assistance-US-BNFT41_E2786_N1.htm",
       "title": "Fidelity Investments Employee Benefit: Tuition Assistance | Glassdoor"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.bestcolleges.com/news/fidelity-investments-to-pay-college-tuition-for-entry-level-employees/",
+      "title": "Fidelity Investments Offering Free College to Employees | BestColleges"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://www.collegetransitions.com/blog/fidelity-investments-tuition-reimbursement-online-degrees-for-fidelity-employees/",
+      "title": "Fidelity Investments Tuition Reimbursement: Online Degrees for Fidelity Employees - College Transitions | Collegetransitions"
     }
   ]
 }

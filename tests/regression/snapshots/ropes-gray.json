@@ -86,8 +86,8 @@
   "box4": [
     {
       "slot": "leadership",
-      "url": "https://www.ropesgray.com/en/news-and-events/news/2025/12/ropes-gray-names-new-leadership-team-for-corporate-practices",
-      "title": "Ropes & Gray Names New Leadership Team for Corporate Practices to Accelerate Opportunity and Outcomes for Clients | News & Events | Ropes & Gray LLP"
+      "url": "https://www.ropesgray.com/en/news-and-events/news/2026/09/ropes-gray-appoints-seasoned-mergers-and-acquisitions-lawyer-as-general-counsel-and-partner",
+      "title": "Ropes & Gray Appoints Seasoned M&A Lawyer as General Counsel and Partner | News & Events | Ropes & Gray LLP"
     },
     {
       "slot": "culture",
@@ -95,19 +95,34 @@
       "title": "Ropes & Gray \"culture\" Reviews | Glassdoor"
     },
     {
+      "slot": "culture",
+      "url": "https://www.indeed.com/cmp/Ropes-&-Gray-LLP/reviews?fcountry=US&floc=New+York%2C+NY&ftopic=culture",
+      "title": "Working at Ropes & Gray LLP in New York, NY: Employee Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/ropes-gray",
+      "title": "Ropes & Gray Culture | Comparably"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.glassdoor.com/Reviews/Ropes-and-Gray-work-life-balance-Reviews-EI_IE3355.0,14_KH15,32.htm",
       "title": "Ropes & Gray \"work life balance\" Reviews | Glassdoor"
     },
     {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/Ropes-&-Gray-LLP/reviews?ftopic=wlbalance",
+      "title": "Working at Ropes & Gray LLP: Employee Reviews about Work-Life Balance | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/ropes-gray/work-life-balance",
+      "title": "Ropes & Gray Work Life Balance | Comparably"
+    },
+    {
       "slot": "diversity",
       "url": "https://media2.vault.com/14346609/ropes-_-gray-diversity-report-w_ad.pdf",
       "title": "At Ropes & Gray, we view our individual differences as assets | Vault"
-    },
-    {
-      "slot": "career",
-      "url": "https://www.indeed.com/cmp/Ropes-&-Gray-LLP",
-      "title": "Ropes & Gray LLP Careers and Employment | Indeed.com"
     }
   ]
 }

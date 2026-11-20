@@ -86,6 +86,11 @@
   "box4": [
     {
       "slot": "news_business",
+      "url": "https://www.law.com/americanlawyer/2026/10/15/white--case-ushers-in-largest-partner-class-in-5-years-emphasizing-us-growth/",
+      "title": "White & Case Ushers in Largest Partner Class in 5 Years, Emphasizing US Growth | Law.com"
+    },
+    {
+      "slot": "news_business",
       "url": "https://news.bloomberglaw.com/business-and-practice/white-case-targets-5-billion-revenue-in-ambitious-growth-plan",
       "title": "White & Case Targets $5 Billion Revenue in Ambitious Growth Plan | Bloomberglaw"
     },
@@ -93,6 +98,16 @@
       "slot": "financials",
       "url": "https://www.globallegalpost.com/news/white-case-revenue-hits-36bn-as-pep-jumps-10-290647087",
       "title": "White & Case revenue hits $3.6bn as PEP jumps 10% - The Global Legal Post | Globallegalpost"
+    },
+    {
+      "slot": "financials",
+      "url": "https://news.bloomberglaw.com/business-and-practice/white-case-posts-3-6-billion-revenue-as-profits-also-tick-up",
+      "title": "White & Case Posts $3.6 Billion Revenue as Profits Also Tick Up | Bloomberglaw"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.lawcareers.net/Explore/News/White-Case-revenue-climbs-to-36-billion-as-PEP-rises-10-30032026",
+      "title": "White & Case revenue climbs to $3.6 billion as PEP rises 10% - News | Lawcareers"
     },
     {
       "slot": "leadership",
@@ -105,19 +120,34 @@
       "title": "Working at White & Case: Employee Reviews about Culture | Indeed.com"
     },
     {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/White-and-Case-culture-Reviews-EI_IE3439.0,14_KH15,22.htm",
+      "title": "White & Case \"culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/white-case-llp",
+      "title": "White & Case LLP Culture | Comparably"
+    },
+    {
       "slot": "work_life",
       "url": "https://www.glassdoor.com/Reviews/White-and-Case-work-life-balance-Reviews-EI_IE3439.0,14_KH15,32.htm",
       "title": "White & Case \"work life balance\" Reviews | Glassdoor"
     },
     {
+      "slot": "work_life",
+      "url": "https://www.indeed.com/cmp/White-&-Case/reviews?ftopic=wlbalance",
+      "title": "Working at White & Case: Employee Reviews about Work-life balance | Indeed.com"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/white-case-llp/work-life-balance",
+      "title": "White & Case LLP Work Life Balance | Comparably"
+    },
+    {
       "slot": "diversity",
       "url": "https://media2.vault.com/14346654/white-_-case-llp-diversity-report-edit.pdf",
       "title": "White & Case LLP 2021 Vault Law Firm Diversity Survey LEADERSHIP Head of Firm | Vault"
-    },
-    {
-      "slot": "career",
-      "url": "https://www.indeed.com/cmp/White-&-Case",
-      "title": "White & Case Careers and Employment | Indeed.com"
     }
   ]
 }

@@ -95,9 +95,24 @@
       "title": "Amazon axes 16,000 jobs as it pushes AI and efficiency | Reuters"
     },
     {
+      "slot": "news_business",
+      "url": "https://www.gurufocus.com/news/9114912/amazon-cuts-hundreds-of-jobs-amid-retail-restructuring",
+      "title": "Amazon Cuts Hundreds of Jobs Amid Retail Restructuring | Gurufocus"
+    },
+    {
       "slot": "financials",
-      "url": "https://sterlingcharts.com/companies/amzn",
-      "title": "Amazon (AMZN) Revenue, Financials & KPIs | Sterling"
+      "url": "https://fourweekmba.com/amazon-annual-revenue/",
+      "title": "Amazon Annual Revenue 2026: $574.8B Total - FourWeekMBA | Fourweekmba"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.wallstreetzen.com/stocks/us/nasdaq/amzn/earnings",
+      "title": "Amazon Earnings Dates, Reports, Calls 2016-2026 (NASDAQ: AMZN) | WallStreetZen"
+    },
+    {
+      "slot": "financials",
+      "url": "https://www.cnbc.com/2026/04/29/amazon-amzn-q1-earnings-report-2026.html",
+      "title": "Amazon earnings beat expectations with strong cloud growth | Cnbc"
     },
     {
       "slot": "leadership",
@@ -105,9 +120,29 @@
       "title": "Jeff Bezos is stepping down as Amazon CEO | Tucson"
     },
     {
+      "slot": "leadership",
+      "url": "https://wwd.com/sourcing-journal/industry-news/jeff-bezos-amazon-ceo-andy-jassy-125-billion-q4-ecommerce-1238767601/",
+      "title": "Amazon CEO Jeff Bezos to Step Down, AWS Chief Selected as Replacement | Wwd"
+    },
+    {
+      "slot": "leadership",
+      "url": "https://www.datacenterdynamics.com/en/news/amazon-founder-jeff-bezos-step-down-ceo-be-replaced-aws-boss-andy-jassy/",
+      "title": "Amazon founder Jeff Bezos to step down as CEO, be replaced by AWS boss Andy Jassy - DCD | Datacenterdynamics"
+    },
+    {
       "slot": "culture",
       "url": "https://www.indeed.com/cmp/Amazon.com/reviews?ftopic=culture",
       "title": "Working at Amazon.com: 7,471 Reviews about Culture | Indeed.com"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.glassdoor.com/Reviews/Amazon-good-work-culture-Reviews-EI_IE6036.0,6_KH7,24.htm",
+      "title": "Amazon \"good work culture\" Reviews | Glassdoor"
+    },
+    {
+      "slot": "culture",
+      "url": "https://www.comparably.com/companies/amazon",
+      "title": "Amazon Culture | Comparably"
     },
     {
       "slot": "work_life",
@@ -115,9 +150,24 @@
       "title": "Working at Amazon.com: 14,813 Reviews about Work-life balance | Indeed.com"
     },
     {
+      "slot": "work_life",
+      "url": "https://www.ambitionbox.com/reviews/amazon-work-life-balance-reviews-114",
+      "title": "Amazon Work Life Balance Reviews by 2900+ Employees | AmbitionBox"
+    },
+    {
+      "slot": "work_life",
+      "url": "https://www.comparably.com/companies/amazon/work-life-balance",
+      "title": "Amazon Work Life Balance | Comparably"
+    },
+    {
       "slot": "diversity",
       "url": "https://www.glassdoor.com/Culture/Amazon-DEI-E6036.htm",
       "title": "Diversity, Equity & Inclusion (DEI) at Amazon | Glassdoor"
+    },
+    {
+      "slot": "diversity",
+      "url": "https://www.comparably.com/companies/amazon/diversity",
+      "title": "Diversity at Amazon | Comparably"
     },
     {
       "slot": "career",
@@ -125,9 +175,29 @@
       "title": "Amazon Career Growth Reviews by 1600+ Employees | AmbitionBox"
     },
     {
+      "slot": "career",
+      "url": "https://www.comparably.com/companies/amazon/studies/career-advancement",
+      "title": "Career Advancement at Amazon | Comparably"
+    },
+    {
+      "slot": "career",
+      "url": "https://www.glassdoor.com/Reviews/Employee-Review-Amazon-E6036-RVW15861272.htm",
+      "title": "Amazon - Career growth opportunities | Glassdoor"
+    },
+    {
       "slot": "tuition",
       "url": "https://hiring.amazon.com/why-amazon/career-advancement/higher-education-support",
       "title": "Amazon Career Choice - Tuition Reimbursement & Education Support | Amazon"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://spendmystipend.com/professional-development/amazon-tuition-reimbursement-2026",
+      "title": "Amazon Tuition Reimbursement (2026) | Spend My Stipend"
+    },
+    {
+      "slot": "tuition",
+      "url": "https://learn.org/financial-aid/amazon-tuition-reimbursement-scholarships",
+      "title": "Amazon Tuition Reimbursement & Future Engineer Scholarship 2026 | Learn"
     }
   ]
 }
